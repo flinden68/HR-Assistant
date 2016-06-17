@@ -1,0 +1,56 @@
+
+	<!--
+		The default theme contents use theme inheritance. Application themes
+		can extend an existing global theme using the extends attribute.
+		Existing themes include the following options: 1. webstandard 2. oneui
+		3. notes
+	-->
+<theme extends="webstandard" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="platform:/plugin/com.ibm.designer.domino.stylekits/schema/stylekit.xsd">
+	<!--
+		Use this pattern to include resources (such as style sheets and
+		JavaScript files that are used by this theme.
+	-->
+	<resource>
+		<content-type>text/css</content-type>
+		<href>bootstrap/css/bootstrap.min.css</href>
+	</resource>
+	<resource>
+		<content-type>text/css</content-type>
+		<href>https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css</href>
+	</resource>
+	<resource>
+		<content-type>text/css</content-type>
+		<href>https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css</href>
+	</resource>
+	<resource>
+		<content-type>text/css</content-type>
+		<href>dist/css/AdminLTE.min.css</href>
+	</resource>
+	<resource>
+		<content-type>text/css</content-type>
+		<href>dist/css/skins/skin-blue.min.css</href>
+	</resource>
+	<!--
+		<resource> <content-type>text/javascript</content-type>
+		<href>plugins/jQuery/jQuery-2.2.0.min.js</href> </resource> <resource>
+		<content-type>text/javascript</content-type>
+		<href>bootstrap/js/bootstrap.min.js</href> </resource> <resource>
+		<content-type>text/javascript</content-type>
+		<href>dist/js/app.min.js</href> </resource>
+	-->
+	<control override="false">
+		<name>ViewRoot</name>
+		<property mode="concat">
+			<name>styleClass</name>
+			<value>skin-blue sidebar-mini</value>
+		</property>
+	</control>
+	<!--
+		Use this pattern to define property name/value pairs for controls
+	-->
+	<!--
+		<control> <name>[Control Name]</name> <property> <name>[property
+		Name]</name> <value>[property Value]</value> </property> </control>
+	-->
+</theme>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="196" sequence="8" unid="30C24485E4E669B1C1257FD30034179F">
+<created><datetime dst="true">20160615T112859,19+02</datetime></created>
+<modified><datetime dst="true">20160615T221013,35+02</datetime></modified>
+<revised><datetime dst="true">20160615T221013,34+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160615T221013,35+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160615T203641,83+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=admin/O=IBM</name><name>CN=XPages/O=Bluemix</name><name>CN=connectdemo/O=IBM</name><name>CN=XPages/O=Bluemix</name><name>CN=connectdemo/O=IBM</name><name>CN=admin/O=IBM</name><name>CN=FDN01/O=FDN</name><name>CN=Administrator/O=FDN</name><name>CN=frederic_dehedin_belsoft_ch/O=Bluemix</name><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name><name>CN=Administrator/O=FDN</name></updatedby>
+<wassignedby><name>CN=Administrator/O=FDN</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>com/ibm/xsp/bluemix/util/RestUtil.java</text></item>
+
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>com/ibm/xsp/bluemix/util/RestUtil.java</text></item>
+
+</note>

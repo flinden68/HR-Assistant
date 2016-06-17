@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xc:ccLayout>
+		<xp:this.facets>
+			<xp:panel xp:key="Content">
+				this is theth asdflöjkasdlöf j
+			</xp:panel>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>

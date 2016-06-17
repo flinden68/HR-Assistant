@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="25e" sequence="41" unid="A3D08F62BDA5C706C1257FD200485946">
+<created><datetime dst="true">20160614T151014,46+02</datetime></created>
+<modified><datetime dst="true">20160615T203642,33+02</datetime></modified>
+<revised><datetime dst="true">20160614T152344,27+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160615T203642,33+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160615T203642,33+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
+<wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
+<item name="$Comment" sign="true"><text>UZH Nachbau</text></item>
+<item name="$Flags"><text>34567Cg~`</text></item>
+<item name="$TITLE" sign="true"><text>adminlte.theme</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>adminlte.theme</text></item>
+<item name="$CSSFiles"><textlist><text>bootstrap/css/bootstrap.min.css</text><text>https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css</text><text>https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css</text><text>dist/css/AdminLTE.min.css</text><text>dist/css/skins/skin-blue.min.css</text></textlist></item></note>

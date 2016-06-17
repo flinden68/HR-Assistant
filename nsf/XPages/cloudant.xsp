@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:this.onClientLoad><![CDATA[#{javascript:viewScope.databaseSetup = null;}]]></xp:this.onClientLoad>
+	<xc:ccLayout>
+		<xp:this.facets>
+			<xp:panel xp:key="Content">
+				<xp:panel id="topPanel" style="padding-top:20px;max-width:900px;">
+					<xp:panel id="panel2" styleClass="panel panel-default">
+						<xp:div styleClass="panel-body" style="text-align:center;">
+							<xp:div styleClass="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<xp:image url="/xsp_120x120.png" id="image1"
+									styleClass="xspIconImage">
+								</xp:image>
+								<xp:image url="/cloudant120.png" id="image2"
+									styleClass="cloudantIconImage">
+								</xp:image>
+								<xp:image url="/bluemix.png" id="image3" styleClass="bmixIconImage">
+								</xp:image>
+							</xp:div> 
+							<xp:div styleClass="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<h2 id="h21" class="panel-title">Cloudant Service and XPages
+									Runtime</h2>
+								<xp:br />
+								A book list to track books that you have read or that you want
+								to
+								read.
+							</xp:div>
+						</xp:div>
+					</xp:panel>
+				</xp:panel>
+
+				<xp:panel id="bottomPanel" style="max-width:900px;">
+					<xp:panel id="setupPanel" style="max-width:900px;margin-bottom:10px;">
+						<xp:button id="createBooklist" value="Setup Cloudant Database">
+							<xp:eventHandler event="onclick" submit="true"
+								refreshMode="partial" disableValidators="true" refreshId="wrapper">
+								<xp:this.action>
+									<xp:executeScript>
+										<xp:this.script><![CDATA[#{javascript:
+									var result = cloudant.initDefaultDatabase();
+									if(null != result && result == "success") {
+										viewScope.databaseSetup = true;
+									}else{
+										viewScope.databaseSetup = false;
+									} 
+								}]]></xp:this.script>
+									</xp:executeScript>
+								</xp:this.action>
+							</xp:eventHandler>
+						</xp:button> 
+						<xp:div
+							style="margin-left:5px;display:inline;top:1px;position:relative;">
+							<xp:this.rendered><![CDATA[#{javascript:return viewScope.databaseSetup;}]]></xp:this.rendered>
+							<xp:this.styleClass><![CDATA[#{javascript:
+							if(null != viewScope.databaseSetup) {
+								return viewScope.databaseSetup ? "alert alert-success" : "alert alert-danger";
+							}
+						}]]>
+							</xp:this.styleClass>
+							<xp:text>
+								<xp:this.value><![CDATA[#{javascript:
+							if(null != viewScope.databaseSetup) {
+								return viewScope.databaseSetup ? "Database initialised" : "Database initialisation error";
+							}}]]>
+								</xp:this.value>
+							</xp:text>
+						</xp:div>
+					</xp:panel>
+					<xp:table id="repeatTableContainer">
+						<xp:this.rendered><![CDATA[#{javascript:
+					var repeat = getComponent("repeat2");
+					return repeat.getRowCount();}]]>
+						</xp:this.rendered>
+						<xp:tr>
+							<th>Book Title</th>
+							<th>Author</th>
+							<th style="text-align:center;">Read?</th>
+							<th style="text-align:center;">Action</th>
+						</xp:tr>
+						<xp:repeat id="repeat2" rows="15" var="rowData"
+							indexVar="rowIndex">
+							<xp:this.value><![CDATA[#{javascript:
+							return cloudant.getView("booklist", "documents", "all");
+						}]]>
+							</xp:this.value>
+							<xp:tr>
+								<xp:td style="width:40%;vertical-align: middle;">
+									<xp:panel>
+										<xp:text style="margin-right: 10px;">
+											<xp:this.value><![CDATA[#{javascript:
+										return rowData.get("title");
+									}]]></xp:this.value>
+										</xp:text>
+										<xp:link escape="true" id="computedField4" title="Book cover">
+											<xp:this.rendered>
+										<![CDATA[#{javascript:
+											var jsonAttachments:com.ibm.commons.util.io.json.JsonJavaObject = rowData.get("_attachments");
+											return jsonAttachments != null;
+										}]]>
+											</xp:this.rendered>
+											<xp:eventHandler event="onclick" submit="true"
+												refreshMode="partial" immediate="true" refreshId="topPanel">
+												<xp:this.action><![CDATA[#{javascript:
+											var dialog = getComponent("imageDialog");
+											var jsonAttachments:com.ibm.commons.util.io.json.JsonJavaObject = rowData.get("_attachments");
+											if(jsonAttachments != null) {
+												var image:java.util.Set = jsonAttachments.keySet();
+												var keyArray = image.toArray();
+												var imageName = keyArray[0];
+												
+												viewScope.bookImageUrl = cloudant.getBaseUrl() + "/booklist/" + rowData.get("_id") + "/" + imageName;
+												println("url: " + viewScope.bookImageUrl);
+												dialog.show();
+											}
+										}]]></xp:this.action>
+											</xp:eventHandler>
+											<xp:div styleClass="glyphicon glyphicon-picture"></xp:div>
+										</xp:link>
+									</xp:panel>
+								</xp:td>
+								<xp:td style="width:40%;vertical-align: middle;">
+									<xp:panel>
+										<xp:text escape="true" id="computedField5">
+											<xp:this.value><![CDATA[#{javascript:return rowData.get("author");}]]></xp:this.value>
+										</xp:text>
+									</xp:panel>
+								</xp:td>
+								<xp:td styleClass="xspTableIconCell">
+									<xp:panel>
+										<xp:div id="computedField6" styleClass="glyphicon glyphicon-ok-sign readIcon">
+											<xp:this.style><![CDATA[#{javascript:
+										var isRead = rowData.get("read");
+										
+										if(isRead) {
+											return "font-size:16px;color:#5cb85c;";
+										}else{
+											return "font-size:16px;color:#eee;";
+										}}]]>
+											</xp:this.style>
+											<xp:eventHandler event="onclick" submit="true"
+												refreshMode="complete" disableValidators="true">
+												<xp:this.action><![CDATA[#{javascript:
+											var isRead = rowData.get("read");
+											cloudant.updateDoc("booklist", rowData.get("_id"), rowData.get("title"), rowData.get("author"), !isRead, rowData.get("_rev"));
+											viewScope.databaseSetup = null;
+										}]]></xp:this.action>
+											</xp:eventHandler>
+										</xp:div>
+									</xp:panel>
+								</xp:td>
+								<xp:td styleClass="xspTableIconCell">
+									<xp:panel>
+										<xp:button id="button3">
+											<xp:div styleClass="glyphicon glyphicon-remove" style="color:#d9534f;margin-right:0px">
+											</xp:div>
+											<xp:eventHandler event="onclick" submit="true"
+												refreshMode="partial" refreshId="repeatTableContainer"
+												disableValidators="true">
+												<xp:this.action>
+													<xp:actionGroup>
+														<xp:confirm
+															message="Are you sure you want to delete the document?">
+														</xp:confirm>
+														<xp:executeScript>
+															<xp:this.script><![CDATA[#{javascript://
+														cloudant.deleteDoc("booklist", rowData.get("_id"), rowData.get("_rev"));
+														context.reloadPage();
+													}]]></xp:this.script>
+														</xp:executeScript>
+													</xp:actionGroup>
+												</xp:this.action>
+											</xp:eventHandler>
+										</xp:button>
+									</xp:panel>
+								</xp:td>
+							</xp:tr>
+						</xp:repeat>
+					</xp:table>
+					<xp:br />
+					<xp:div styleClass="xspAddPanel">
+						<xp:this.rendered><![CDATA[#{javascript:
+					var repeat = getComponent("repeat2");
+					return null != repeat && repeat.getRowCount() > 0;}]]>
+						</xp:this.rendered>
+						<xp:div styleClass="form-inline">
+							<div class="form-group" style="margin:5px 10px;">
+								<label for="title" style="min-width:110px;margin-bottom:0px;">Title</label>
+								<xp:inputText id="title" styleClass="form-control"
+									style="min-width:300px;" required="true">
+									<xp:this.attrs>
+										<xp:attr name="placeholder" value="Title"></xp:attr>
+									</xp:this.attrs>
+									<xp:this.validators>
+										<xp:validateRequired message="Book title is required">
+										</xp:validateRequired>
+									</xp:this.validators>
+								</xp:inputText>
+							</div>
+						</xp:div>
+						<xp:div styleClass="form-inline">
+							<div class="form-group" style="margin:5px 10px;">
+								<label for="author" style="min-width:110px;margin-bottom:0px;">Author(s)</label>
+								<xp:inputText id="author" styleClass="form-control"
+									style="min-width:300px;" required="true">
+									<xp:this.attrs>
+										<xp:attr name="placeholder" value="Author(s)">
+										</xp:attr>
+									</xp:this.attrs>
+									<xp:this.validators>
+										<xp:validateRequired message="Author field is required">
+										</xp:validateRequired>
+									</xp:this.validators>
+								</xp:inputText>
+							</div>
+						</xp:div>
+						<xp:div styleClass="form-inline">
+							<div class="form-group" style="margin:5px 10px;">
+								<label for="coverImageUpload" style="min-width:110px;margin-bottom:0px;">Cover Image
+								</label>
+								<xp:fileUpload id="coverImageUpload" style="min-width:300px;">
+									<xp:this.accept><![CDATA[#{javascript:return "image/gif,image/jpeg,image/png";}]]></xp:this.accept>
+								</xp:fileUpload>
+							</div>
+						</xp:div>
+						<xp:div>
+							<xp:div styleClass="form-inline">
+								<div class="form-group">
+									<div class="checkbox">
+										<label class="xspReadCheckbox" style="margin:5px 10px;">
+											<div class="xspReadLabel" style="font-weight:bold;">Have you read it?
+											</div>
+											<xp:checkBox id="readCheck"></xp:checkBox>
+										</label>
+									</div>
+								</div>
+							</xp:div>
+						</xp:div>
+						<div style="margin:5px 10px;">
+							<xp:button value="Add Book" id="button4" styleClass="btn-primary">
+								<xp:eventHandler event="onclick" submit="true"
+									refreshMode="complete">
+									<xp:this.action><![CDATA[#{javascript://
+									var titleField  = getComponent("title");
+									var authorField = getComponent("author");
+									var readField   = getComponent("readCheck");
+									var coverField  = getComponent("coverImageUpload");
+									
+									var title = titleField.getValue();
+									var author = authorField.getValue();
+									var read = readField.getValue();
+									var fileData:com.ibm.xsp.http.UploadedFile = facesContext.getExternalContext().getRequest().getParameterMap().get(getClientId('coverImageUpload'));
+									
+									if(fileData != null) {
+										var filename = fileData.getServerFileName();
+										var contentType = fileData.getContentType();
+										cloudant.insertDoc("booklist", title, author, read == "true", filename, contentType);
+									}else{
+										cloudant.insertDoc("booklist", title, author, read == "true");
+									}
+									
+									titleField.setValue("");
+									authorField.setValue("");
+									readField.setValue("");
+									viewScope.databaseSetup = null;
+								}]]>
+									</xp:this.action>
+								</xp:eventHandler>
+							</xp:button>
+						</div>
+					</xp:div>
+					<xe:dialog id="imageDialog" keepComponents="false" title="Book Cover"
+						style="width:400px;height:600px;text-align:center;vertical-align:middle;">
+						<xp:image id="bookImage"
+							style="max-width:380px;max-height:540px;padding:10px;">
+							<xp:this.url><![CDATA[#{javascript:
+						println("bookImageUrl: " + bookImageUrl);
+						return viewScope.bookImageUrl;
+					}]]></xp:this.url>
+						</xp:image>
+					</xe:dialog>
+				</xp:panel>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>
