@@ -1,0 +1,9 @@
+*.class
+*.iml
+*/target
+*/bin
+
+nsf/.settings
+nsf/.DS_Store
+xspdesign.properties
+.DS_Store
