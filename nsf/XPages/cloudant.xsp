@@ -2,7 +2,7 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
 	xmlns:xe="http://www.ibm.com/xsp/coreex">
 	<xp:this.onClientLoad><![CDATA[#{javascript:viewScope.databaseSetup = null;}]]></xp:this.onClientLoad>
-	<xc:ccLayout>
+	<xc:ccLayout pageTitle="Cloudant Example..">
 		<xp:this.facets>
 			<xp:panel xp:key="Content">
 				<xp:panel id="topPanel" style="padding-top:20px;max-width:900px;">
@@ -17,7 +17,7 @@
 								</xp:image>
 								<xp:image url="/bluemix.png" id="image3" styleClass="bmixIconImage">
 								</xp:image>
-							</xp:div> 
+							</xp:div>
 							<xp:div styleClass="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 								<h2 id="h21" class="panel-title">Cloudant Service and XPages
 									Runtime</h2>
@@ -48,7 +48,7 @@
 									</xp:executeScript>
 								</xp:this.action>
 							</xp:eventHandler>
-						</xp:button> 
+						</xp:button>
 						<xp:div
 							style="margin-left:5px;display:inline;top:1px;position:relative;">
 							<xp:this.rendered><![CDATA[#{javascript:return viewScope.databaseSetup;}]]></xp:this.rendered>
