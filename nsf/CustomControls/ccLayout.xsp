@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	afterPageLoad="#{javascript:viewScope.pageTitle=compositeData.pageTitle}">
 	<xc:ccJQuery></xc:ccJQuery>
 	<xp:div styleClass="wrapper" id="wrapper">
 
@@ -10,13 +11,13 @@
 			<a href="index2.html" class="logo">
 				<!-- mini logo for sidebar mini 50x50 pixels -->
 				<span class="logo-mini">
-					<b>A</b>
-					LT
+					<b>HR</b>
+					A
 				</span>
 				<!-- logo for regular state and mobile devices -->
 				<span class="logo-lg">
-					<b>Admin</b>
-					LTE
+					<b>HR</b>
+					Assistant
 				</span>
 			</a>
 

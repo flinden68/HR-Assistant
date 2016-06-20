@@ -45,7 +45,20 @@
 			<name>styleClass</name>
 			<value>skin-blue sidebar-mini</value>
 		</property>
+
+
+		<!--
+			<property> <name>pageIcon</name> <value>/favicon.ico</value>
+			</property>
+		-->
+		<property>
+			<name>pageTitle</name>
+			<value>HR Assistant: #{javascript:var
+			title =
+			viewScope.pageTitle;if(title!=null){': '+title}}</value>
+		</property>
 	</control>
+
 	<!--
 		Use this pattern to define property name/value pairs for controls
 	-->
