@@ -234,12 +234,12 @@
 
 				<!-- Sidebar Menu -->
 				<ul class="sidebar-menu">
-					<li class="header">HEADER</li>
+					<li class="header">Menu</li>
 					<!-- Optionally, you can add icons to the links -->
 					<li class="active">
-						<a href="#">
-							<i class="fa fa-link"></i>
-							<span>Link</span>
+						<a href="configurations.xsp">
+							<i class="fa fa-cogs"></i>
+							<span>Configuration List</span>
 						</a>
 					</li>
 					<li>
@@ -274,7 +274,7 @@
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
 				<h1>
-					Page Header
+					<xp:text escape="true" id="computedField1" value="${compositeData.pageTitle}" ></xp:text>
 					<small>Optional description</small>
 				</h1>
 				<ol class="breadcrumb">
