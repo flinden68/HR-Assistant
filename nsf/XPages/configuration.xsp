@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xc:ccLayout pageTitle="DashBoard">
+		<xp:this.facets>
+			<xp:panel xp:key="Content">
+				I am the dashboard
+			</xp:panel>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>
