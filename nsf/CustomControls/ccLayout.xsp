@@ -274,7 +274,7 @@
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
 				<h1>
-					Page Header
+					<xp:text escape="true" id="computedField1" value="${compositeData.pageTitle}" ></xp:text>
 					<small>Optional description</small>
 				</h1>
 				<ol class="breadcrumb">

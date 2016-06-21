@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
-	<xc:ccLayout pageTitle="DashBoard">
+	<xc:ccLayout pageTitle="Configuration List">
 		<xp:this.facets>
 			<xp:panel xp:key="Content">
 				<div class="row">
+
 					<div class="col-xs-12">
+
 						<div class="box">
 							<div class="box-header">
 								<h3 class="box-title">Responsive Hover Table</h3>
@@ -12,13 +14,13 @@
 								<div class="box-tools">
 									<div style="width: 150px;" class="input-group input-group-sm">
 										<input type="text" placeholder="Search" class="form-control pull-right"
-											name="table_search"/>
+											name="table_search" />
 
-											<div class="input-group-btn">
-												<button class="btn btn-default" type="submit">
-													<i class="fa fa-search"></i>
-												</button>
-											</div>
+										<div class="input-group-btn">
+											<button class="btn btn-default" type="submit">
+												<i class="fa fa-search"></i>
+											</button>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -77,6 +79,11 @@
 								</table>
 							</div>
 							<!-- /.box-body -->
+							<div class="box-footer">
+								<button class="btn btn-primary" type="button">create new
+									config
+								</button>
+							</div>
 						</div>
 						<!-- /.box -->
 					</div>
