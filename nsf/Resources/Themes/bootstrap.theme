@@ -1,0 +1,286 @@
+<theme extends="Bootstrap3">
+
+
+	<!-- meta tags -->
+	<resources>
+        <metaData>
+            <name>viewport</name>
+            <content>width=device-width, initial-scale=1.0</content>
+        </metaData>
+    </resources>
+
+	<!-- pace -->
+	<resource>
+		<content-type>application/x-javascript</content-type>
+		<href>libs/pace/pace.js</href>
+	</resource>
+	
+	<resource>
+		<content-type>text/css</content-type>
+		<href>libs/pace/themes/blue/pace-theme-minimal.css</href>
+	</resource>
+	
+	<!-- bs4xp -->
+	<resource>
+		<content-type>application/x-javascript</content-type>
+		<href>bootstrap4xpages.js</href>
+	</resource>
+
+	<!-- fontawesome css-->
+	<resource>
+		<content-type>text/css</content-type>
+		<href>libs/fontawesome/css/font-awesome.min.css</href>
+	</resource>
+	
+	<!-- Bootstrap customizations -->
+	<resource>
+		<content-type>text/css</content-type>
+		<href>bootstrap-extended.css</href>
+	</resource>
+	
+	<!-- Date and Time picker resources -->
+	
+	<resource>
+		<content-type>text/css</content-type>
+		<href>libs/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css</href>
+	</resource>
+	
+	<resource>
+		<content-type>application/x-javascript</content-type>
+		<href>libs/moment/min/moment.min.js</href>
+	</resource>
+	
+	<resource>
+		<content-type>application/x-javascript</content-type>
+		<href>libs/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js</href>
+	</resource>
+	
+	<!-- growl -->
+	<resource>
+		<content-type>application/x-javascript</content-type>
+		<href>libs/bootstrap.growl/dist/bootstrap-growl.min.js</href>
+	</resource>
+	
+	<control override="false">
+		<name>ViewRoot</name>
+		<property>
+			<name>pageTitle</name>
+			<value>#{database.title}</value>
+		</property>
+		<property>
+			<name>pageIcon</name>
+			<value>#{configBean.configuration.faviconURL}</value>
+		</property>
+	</control>
+		
+	<!-- it looks like a link, but acts like a button -->
+	<control>
+		<name>link.button</name>
+		<property mode="override">
+			<name>styleClass</name>
+			<value>btn btn-link</value>
+		</property>
+	</control>
+	
+	<!-- Basic Button -->
+	<control>
+		<name>Button</name>
+		<property>
+			<name>styleClass</name>
+			<value>btn btn-default</value>
+		</property>
+	</control>
+	
+	<!-- Command Button -->
+	<control>
+		<name>Button.Command</name>
+		<property>
+			<name>styleClass</name>
+			<value>btn btn-default</value>
+		</property>
+	</control>
+	
+	<!-- Submit Button -->
+	<control>
+		<name>Button.Submit</name>
+		<property>
+			<name>styleClass</name>
+			<value>btn</value>
+		</property>
+	</control>
+	
+	<!-- Success Button -->
+	<control>
+		<name>Button.Success</name>
+		<property>
+			<name>styleClass</name>
+			<value>btn btn-success</value>
+		</property>
+	</control>
+	
+	<!-- Primary Button -->
+	<control>
+		<name>Button.Primary</name>
+		<property>
+			<name>styleClass</name>
+			<value>btn btn-primary</value>
+		</property>
+	</control>
+	
+	<!-- Info Button -->
+	<control>
+		<name>Button.Info</name>
+		<property>
+			<name>styleClass</name>
+			<value>btn btn-info</value>
+		</property>
+	</control>
+	
+	<!-- Info Button -->
+	<control>
+		<name>Button.Danger</name>
+		<property>
+			<name>styleClass</name>
+			<value>btn btn-danger</value>
+		</property>
+	</control>
+	 
+	<!-- Basic RadioButton btn-radio-->
+	<control>
+		<name>RadioButton</name>
+		<property>
+			<name>styleClass</name>
+			<value>btn-radio</value>
+		</property>
+	</control>
+	
+	<!-- Basic CheckBox -->
+	<control>
+		<name>CheckBox</name>
+		<property>
+			<name>styleClass</name>
+			<value>btn-checkbox</value>
+		</property>
+	</control>
+	
+	<!-- Basic ComboBox -->
+	<control>
+		<name>ComboBox</name>
+		<property>
+			<name>styleClass</name>
+			<value>form-control</value>
+		</property>
+	</control>
+	
+	<!-- TextArea -->
+	<control>
+		<name>InputField.TextArea</name>
+		<property>
+			<name>styleClass</name>
+			<value>form-control</value>
+		</property>
+	</control>
+	
+	<!-- Standard Edit Box -->
+	<control>
+		<name>InputField.EditBox</name>
+		<property>
+			<name>styleClass</name>
+			<value>form-control</value>
+		</property>
+	</control>
+	
+	<!-- Tabbed Panel -->
+	<control>
+		<name>TabbedPanel</name>
+		<property>
+			<name>styleClass</name>
+			<value>nav nav-tabs</value> 
+		</property>
+		<property>
+			<name>containerStyleClass</name>
+			<value></value> 
+		</property>
+	</control>
+	
+	<!-- Tab -->
+	<control>
+		<name>Tab.TabbedPanel</name>
+		<property>
+			<name>selectedTabStyleClass</name>
+			<value>active</value> 
+		</property>
+	</control>
+	
+	<!-- =======================================================================
+		File Download
+	======================================================================= -->
+
+	<!-- File Download Table -->
+	<control>
+		<name>DataTable.FileDownload</name>
+		<property>
+			<name>styleClass</name>
+			<value>table table-hover</value>
+		</property>
+		<property>
+			<name>typeStyleClass</name>
+			<value>xspDataTableFileDownloadType</value>
+		</property>
+		<property>
+			<name>sizeStyleClass</name>
+			<value>xspDataTableFileDownloadSize</value>
+		</property>
+		<property>
+			<name>nameStyleClass</name>
+			<value>xspDataTableFileDownloadName</value>
+		</property>
+		<property>
+			<name>createdStyleClass</name>
+			<value>xspDataTableFileDownloadCreated</value>
+		</property>
+		<property>
+			<name>modifiedStyleClass</name>
+			<value>xspDataTableFileDownloadModified</value>
+		</property>
+		<property>
+			<name>deleteStyleClass</name>
+			<value>deleteButtonColumn</value>
+		</property>
+		<property>
+            <name>captionStyleClass</name>
+            <value>xspDataTableFileDownloadCaption</value>
+        </property>
+	</control>
+	
+	<!-- View DataTable -->
+	<control>
+		<name>DataTable.ViewPanel</name>
+		<property>
+			<name>dataTableStyleClass</name>
+			<value>table table-hover</value>
+		</property>
+		<property>
+			<name>viewStyleClass</name>
+			<value>table-full-width</value>
+		</property>
+	</control>
+	
+	<control>
+		<name>DataTable</name>
+		<property>
+			<name>styleClass</name>
+			<value>table table-hover</value>
+		</property>
+	</control>
+	
+	<!-- Theme pager -->
+	<control>
+		<name>Pager</name>
+	    <property>
+	      <name>rendererType</name>
+	      <value>nl.elstarit.renderers.type.BootstrapPagerRenderer</value>
+	    </property>
+	  </control>
+
+</theme>

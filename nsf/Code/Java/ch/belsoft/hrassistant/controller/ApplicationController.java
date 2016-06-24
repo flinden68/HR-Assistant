@@ -6,6 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Vector;
 
+<<<<<<< HEAD
 import ch.belsoft.hrassistant.config.model.ConfigDefault;
 import ch.belsoft.hrassistant.config.model.ConfigType;
 import ch.belsoft.hrassistant.config.model.IConfiguration;
@@ -19,6 +20,18 @@ public class ApplicationController implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	private static final String REALHOMEPAGE = "dashboard.xsp";
+=======
+public abstract class ApplicationController implements Serializable {
+    
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 1L;
+    
+    public ApplicationController(){}
+    
+}
+>>>>>>> develop
 
 	private LinkedHashMap<ConfigType, List<String>> configSelections = new LinkedHashMap<ConfigType, List<String>>();
 	private LinkedHashMap<ConfigType, LinkedHashMap<String, IConfiguration>> config = new LinkedHashMap<ConfigType, LinkedHashMap<String, IConfiguration>>();

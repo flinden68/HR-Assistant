@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xp_1="http://www.ibm.com/xsp/coreex">
+	<xc:ccLayout pageTitle="Cloudant service status page">
+		<xp:this.facets>
+			<xp:panel xp:key="Content">
+				<div class="row">
+
+					<div class="col-xs-12">
+
+						<div class="box">
+							<div class="box-header">
+								<h3 class="box-title">
+									Cloudant service status
+								</h3>
+							</div>
+							<div class="box-body">
+								Status cloudant connection: 
+								<xp:text id="statusConnection" value="#{cloudantService.connected}">
+								</xp:text>
+								
+								<xp:dataTable id="dataTable1" rows="9999" rendered="#{cloudantService.connected}"
+									value="#{javascript:cloudantService.allIndices()}"
+									var="row" indexVar="rowIndex">
+									<xp:column id="column1">
+										<xp:this.facets>
+											<xp:label value="Name" id="label1"
+												xp:key="header">
+											</xp:label>
+										</xp:this.facets>
+										<xp:text value="#{row.name}"></xp:text>
+									</xp:column>
+									<xp:column id="column2">
+										<xp:this.facets>
+											<xp:label value="Type" id="label2"
+												xp:key="header">
+											</xp:label>
+										</xp:this.facets>
+										<xp:text value="#{row.type}"></xp:text>
+									</xp:column>
+									<xp:column id="column3">
+										<xp:this.facets>
+											<xp:label value="Design doc Id" id="label3"
+												xp:key="header">
+											</xp:label>
+										</xp:this.facets>
+										<xp:text value="#{row.designDocId}"></xp:text>
+									</xp:column>
+					
+								</xp:dataTable>
+								
+							</div>
+							<!-- /.box-body -->
+							<div class="box-footer">
+								<xp:button value="Test connection"
+									id="buttonTestConnection"
+									styleClass="btn btn-primary">
+									<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+										<xp:this.action>
+											<xp:executeScript
+												script="#{javascript:cloudantService.testConnection();}">
+											</xp:executeScript>
+										</xp:this.action>
+									</xp:eventHandler>
+								</xp:button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>
