@@ -20,7 +20,7 @@ public class ConfigurationController extends ControllerBase implements
 		IGuiController<IConfiguration>, Serializable {
 
 	/**
-	 * 
+	 *  
 	 */
 	private static final long serialVersionUID = 1L;
 	private static final String PAGETITLE_NEW = "New Configuration";
