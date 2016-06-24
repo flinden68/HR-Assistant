@@ -21,7 +21,8 @@ public class Util {
 	}
 
 	public static void logError(Exception e) {
-		OpenLogItem.logError(e);
+		e.printStackTrace();
+		//OpenLogItem.logError(e);
 	}
 
 	@SuppressWarnings("unchecked")

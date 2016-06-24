@@ -4,6 +4,10 @@ import ch.belsoft.hrassistant.config.model.ConfigType;
 
 public interface IConfiguration {
 
+	public int getSort();
+
+	public void setSort(int sort);
+
 	public ConfigType getType();
 
 	public void setType(ConfigType type);
