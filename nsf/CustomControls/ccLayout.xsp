@@ -298,7 +298,7 @@
 		</aside>
 
 		<!-- Content Wrapper. Contains page content -->
-		<div class="content-wrapper">
+		<xp:div styleClass="content-wrapper" id="content-wrapper">
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
 				<h1>
@@ -324,7 +324,7 @@
 				<xp:callback facetName="Content" id="callback1"></xp:callback>
 			</section>
 			<!-- /.content -->
-		</div>
+		</xp:div>
 		<!-- /.content-wrapper -->
 
 		<!-- Main Footer -->
