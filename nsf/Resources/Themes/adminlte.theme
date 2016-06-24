@@ -11,6 +11,10 @@
 		Use this pattern to include resources (such as style sheets and
 		JavaScript files that are used by this theme.
 	-->
+	<!--
+		<resources> <script src="custom/js/custom.js"
+		clientSide="true"></script> </resources>
+	-->
 	<resource>
 		<content-type>text/css</content-type>
 		<href>bootstrap/css/bootstrap.min.css</href>
@@ -31,6 +35,14 @@
 		<content-type>text/css</content-type>
 		<href>dist/css/skins/skin-blue.min.css</href>
 	</resource>
+	<resource>
+		<content-type>text/css</content-type>
+		<href>custom/css/custom.css</href>
+	</resource>
+	<!--
+		<resource> <content-type>text/javascript</content-type>
+		<href>custom/js/custom.js</href> </resource>
+	-->
 	<!--
 		<resource> <content-type>text/javascript</content-type>
 		<href>plugins/jQuery/jQuery-2.2.0.min.js</href> </resource> <resource>
@@ -57,12 +69,30 @@
 			title =
 			viewScope.pageTitle;if(title!=null){': '+title}}</value>
 		</property>
+<<<<<<< HEAD
+=======
 		<property>
 			<name>pageIcon</name>
 			<value>/hrassistent32.png</value>
 		</property>
 	</control>
+>>>>>>> develop
 
+	</control>
+	<control>
+		<name>InputField.EditBox</name>
+		<property mode="concat">
+			<name>styleClass</name>
+			<value>form-control</value>
+		</property>
+	</control>
+	<control>
+		<name>ComboBox</name>
+		<property mode="concat">
+			<name>styleClass</name>
+			<value>form-control</value>
+		</property>
+	</control>
 	<!--
 		Use this pattern to define property name/value pairs for controls
 	-->

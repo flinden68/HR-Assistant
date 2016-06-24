@@ -19,6 +19,12 @@
 				<xp:parameter name="src" value="dist/js/app.min.js" />
 			</xp:this.attributes>
 		</xp:headTag>
+		<xp:headTag tagName="script">
+			<xp:this.attributes>
+				<xp:parameter name="type" value="text/javascript" />
+				<xp:parameter name="src" value="custom/js/custom.js" />
+			</xp:this.attributes>
+		</xp:headTag>
 	</xp:this.resources>
 
 	<xp:scriptBlock id="scriptBlock1">

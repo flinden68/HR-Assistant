@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xc:ccLayout pageTitle="Error">
+		<xp:this.facets>
+			<xp:panel xp:key="Content">
+				<button class="mainBtn" type="button" onclick="window.location.reload()">Reload
+					Page</button>
+				<br />
+				<br />
+				<a href="#" id="expandLink"
+					onclick="dojo.style('#{id:errMsg}','display','block');
+						dojo.style('expandLink','display','none');dojo.style('collapseLink','display','block');">
+					Show detailed error</a>
+				<a href="#" id="collapseLink" style="display:none"
+					onclick="dojo.style('#{id:errMsg}','display','none');
+						dojo.style('expandLink','display','block');dojo.style('collapseLink','display','none');">
+					Hide detailed error</a>
+				<br />
+				<xp:text value="#{requestScope.error}" escape="true" id="errMsg"
+					style="display:none">
+				</xp:text>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>

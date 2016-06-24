@@ -1,3 +1,22 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="40e" sequence="7" unid="35F903C1AA36F091C1257FD5002D5AAD">
+<created><datetime dst="true">20160617T101523,33+02</datetime></created>
+<modified><datetime dst="true">20160620T154559,68+02</datetime></modified>
+<revised><datetime dst="true">20160620T154559,67+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160620T154559,68+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160617T101523,34+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=FDN</name></updatedby>
+<wassignedby><name>CN=Administrator/O=FDN</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>ch/belsoft/hrassistant/job/model/Applicant.java</text></item>
+<item name="$DesignerVersion" sign="true"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>ch/belsoft/hrassistant/job/model/Applicant.java</text></item>
+
+
+=======
 <?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
 <noteinfo noteid="30a" sequence="5" unid="0EB8E8B4C1519EBCC1257FD8006582E9">
 <created><datetime dst="true">20160620T202846,49+02</datetime></created>
@@ -15,4 +34,5 @@
 <item name="$FileNames" sign="true"><text>ch/belsoft/hrassistant/job/model/Applicant.java</text></item>
 
 
+>>>>>>> develop
 </note>
