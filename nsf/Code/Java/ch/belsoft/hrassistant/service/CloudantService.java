@@ -21,7 +21,9 @@ public class CloudantService {
     
     private CloudantConnector connector;
     
-    public CloudantService(){}
+    public CloudantService(){
+        //connect();
+    }
     
     public void connect(){
         connector = new CloudantConnector(account, username, password, cloudantDb, false);
@@ -76,6 +78,14 @@ public class CloudantService {
     public void saveDocument(Object obj){
         try{
             connector.getDocumentConnector().save(obj);
+        }catch(Exception e){
+            CloudantLogger.CLOUDANT.getLogger().log(Level.SEVERE, e.getMessage());
+        }
+    }
+    
+    public void updateDocument(Object obj){
+        try{
+            connector.getDocumentConnector().update(obj);
         }catch(Exception e){
             CloudantLogger.CLOUDANT.getLogger().log(Level.SEVERE, e.getMessage());
         }

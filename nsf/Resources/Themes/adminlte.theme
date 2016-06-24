@@ -57,6 +57,10 @@
 			title =
 			viewScope.pageTitle;if(title!=null){': '+title}}</value>
 		</property>
+		<property>
+			<name>pageIcon</name>
+			<value>/hrassistent32.png</value>
+		</property>
 	</control>
 
 	<!--

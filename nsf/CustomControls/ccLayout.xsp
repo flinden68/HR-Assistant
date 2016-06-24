@@ -243,6 +243,12 @@
 						</a>
 					</li>
 					<li>
+						<a href="cloudantstatus.xsp">
+							<i class="fa fa-database"></i>
+							<span>Cloudant status</span>
+						</a>
+					</li>
+					<li>
 						<a href="#">
 							<i class="fa fa-link"></i>
 							<span>Another Link</span>

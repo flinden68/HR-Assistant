@@ -15,6 +15,39 @@
   </managed-bean>
   
   <managed-bean>
+    <managed-bean-name>jobDAO</managed-bean-name>
+    <managed-bean-class>ch.belsoft.hrassistant.job.dao.JobDAO
+		</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+    <managed-property>
+      <property-name>cloudantService</property-name>
+      <value>#{cloudantService}</value>
+    </managed-property>
+  </managed-bean>
+  
+  <managed-bean>
+    <managed-bean-name>configurationDAO</managed-bean-name>
+    <managed-bean-class>ch.belsoft.hrassistant.config.dao.ConfigurationDAO
+		</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+    <managed-property>
+      <property-name>cloudantService</property-name>
+      <value>#{cloudantService}</value>
+    </managed-property>
+  </managed-bean>
+  
+  <managed-bean>
+    <managed-bean-name>jobApplicationDAO</managed-bean-name>
+    <managed-bean-class>ch.belsoft.hrassistant.job.dao.JobApplicationDAO
+		</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+    <managed-property>
+      <property-name>cloudantService</property-name>
+      <value>#{cloudantService}</value>
+    </managed-property>
+  </managed-bean>
+  
+  <managed-bean>
     <managed-bean-name>cloudantService</managed-bean-name>
     <managed-bean-class>ch.belsoft.hrassistant.service.CloudantService</managed-bean-class>
     <managed-bean-scope>session</managed-bean-scope>

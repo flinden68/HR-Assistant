@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xp_1="http://www.ibm.com/xsp/coreex">
+	<xc:ccLayout pageTitle="Cloudant service status page">
+		<xp:this.facets>
+			<xp:panel xp:key="Content">
+				<div class="row">
+
+					<div class="col-xs-12">
+
+						<div class="box">
+							<div class="box-header">
+								<h3 class="box-title">
+									Cloudant service status
+								</h3>
+							</div>
+							<div class="box-body">
+								Status cloudant connection: 
+								<xp:text id="statusConnection" value="#{cloudantService.connected}">
+								</xp:text>
+							</div>
+							<!-- /.box-body -->
+							<div class="box-footer">
+								<xp:button value="Test connection"
+									id="buttonTestConnection"
+									styleClass="btn btn-primary">
+									<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+										<xp:this.action>
+											<xp:executeScript
+												script="#{javascript:cloudantService.connect();}">
+											</xp:executeScript>
+										</xp:this.action>
+									</xp:eventHandler>
+								</xp:button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>
