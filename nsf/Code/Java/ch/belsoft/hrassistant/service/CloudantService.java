@@ -17,6 +17,8 @@ public class CloudantService {
     private String password;
     private String username;
     private String cloudantDb;
+    private boolean connected = false;
+    
     private static final String BEAN_NAME = "CloudantService";
     
     private CloudantConnector connector;
@@ -29,8 +31,20 @@ public class CloudantService {
         connector = new CloudantConnector(account, username, password, cloudantDb, false);
     }
     
+    public void testConnection(){
+        if(connector==null){
+            connect();
+        }
+        try{
+            List<ConnectorIndex> indices = allIndices();
+            setConnected(!indices.isEmpty());
+        }catch(Exception e){
+            setConnected(false);
+        }
+    }
+    
     public boolean isConnected(){
-        return connector != null;
+        return connected;
     }
     
     /*
@@ -186,6 +200,10 @@ public class CloudantService {
     
     public void setCloudantDb(String cloudantDb) {
         this.cloudantDb = cloudantDb;
+    }
+    
+    public void setConnected(boolean connected) {
+        this.connected = connected;
     }
     
 }
