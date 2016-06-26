@@ -37,6 +37,14 @@ public class ConfigurationController extends ControllerBase implements
 
 	}
 
+	public ConfigurationDAO getConfigurationDAO() {
+		return configurationDAO;
+	}
+
+	public void setConfigurationDAO(ConfigurationDAO configurationDAO) {
+		this.configurationDAO = configurationDAO;
+	}
+
 	public String getConfigurationListTitle() {
 		String result = "";
 		try {
@@ -98,6 +106,31 @@ public class ConfigurationController extends ControllerBase implements
 			Util.logError(e);
 		}
 		return pageTitle;
+	}
+
+	public List<IConfiguration> read() {
+		List<IConfiguration> result = new ArrayList<IConfiguration>();
+		try {
+
+			this.configurationDAO.read();
+
+		} catch (Exception e) {
+			Util.logError(e);
+		}
+		return result;
+	}
+
+	public void update() {
+		try {
+			if (this.newDataItem) {
+				this.configurationDAO.create(config);
+			} else {
+				this.configurationDAO.update(config);
+			}
+
+		} catch (Exception e) {
+			Util.logError(e);
+		}
 	}
 
 }
