@@ -5,3 +5,20 @@
 .btn-margin-right {
 	margin-right: 5px;
 }
+
+ul.alert {
+	list-style-type: none;
+}
+
+.form-group.is-valid-false label {
+	color: #dd4b39;
+}
+
+.form-group.is-valid-false .form-control {
+	border-color: #dd4b39;
+	box-shadow: none;
+}
+
+.form-group.is-valid-false .help-block {
+	color: #dd4b39;
+}
