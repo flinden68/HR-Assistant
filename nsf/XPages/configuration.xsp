@@ -28,7 +28,7 @@
 											itemValue="">
 										</xp:selectItem>
 										<xp:selectItems
-											value="#{configurationController.configTypeSelection}">
+											value="${configurationController.configTypeSelection}">
 										</xp:selectItems>
 										<xp:this.validators>
 											<xp:validateRequired message="Configuration type is mandatory">
@@ -96,11 +96,6 @@
 
 									<button class="btn btn-danger" type="submit">remove
 									</button>
-									<br />
-									TEST READ:
-									<xp:text escape="true"
-										value="#{javascript:configurationController.read()}" id="computedField2">
-									</xp:text>
 								</div>
 							</div>
 						</div>

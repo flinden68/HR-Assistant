@@ -33,6 +33,8 @@ public class ConfigurationController extends ControllerBase implements
 	private ConfigDefault config = new ConfigDefault();
 	private ConfigurationDAO configurationDAO = new ConfigurationDAO();
 
+	private String configTypeFilter = "";
+
 	public ConfigurationController() {
 
 	}
@@ -108,11 +110,11 @@ public class ConfigurationController extends ControllerBase implements
 		return pageTitle;
 	}
 
-	public List<IConfiguration> read() {
+	public List<IConfiguration> getConfigurations() {
 		List<IConfiguration> result = new ArrayList<IConfiguration>();
 		try {
 
-			this.configurationDAO.read();
+			result = this.configurationDAO.read();
 
 		} catch (Exception e) {
 			Util.logError(e);
@@ -131,6 +133,14 @@ public class ConfigurationController extends ControllerBase implements
 		} catch (Exception e) {
 			Util.logError(e);
 		}
+	}
+
+	public String getConfigTypeFilter() {
+		return configTypeFilter;
+	}
+
+	public void setConfigTypeFilter(String configTypeFilter) {
+		this.configTypeFilter = configTypeFilter;
 	}
 
 }

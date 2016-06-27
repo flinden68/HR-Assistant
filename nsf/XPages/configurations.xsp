@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
 	<xc:ccLayout pageTitle="Configuration List">
 		<xp:this.facets>
 			<xp:panel xp:key="Content">
 				<div class="row">
 
 					<div class="col-xs-12">
-
 						<div class="box">
 							<div class="box-header">
-								<h3 class="box-title">Responsive Hover Table</h3>
+								<h3 class="box-title">Configuration List</h3>
 
 								<div class="box-tools">
 									<div style="width: 150px;" class="input-group input-group-sm">
@@ -24,70 +24,79 @@
 									</div>
 								</div>
 							</div>
+							<div class="box-header">
+								<a class="btn btn-primary btn-margin-right" href="configuration.xsp">create
+									new
+									config
+								</a>
+								<a class="btn btn-success" href="configuration.xsp">create sample data
+									
+								</a>
+							</div>
 							<!-- /.box-header -->
-							<div class="box-body table-responsive no-padding">
-								<table class="table table-hover">
+
+							<div class="box-body table-responsive">
+								<table class="table table-hover table-striped">
+
+									<thead>
+										<tr>
+											<th>rev</th>
+											<th>id</th>
+											<th>sort</th>
+											<th>key</th>
+											<th>value</th>
+											<th></th>
+										</tr>
+									</thead>
 									<tbody>
-										<tr>
-											<th>ID</th>
-											<th>User</th>
-											<th>Date</th>
-											<th>Status</th>
-											<th>Reason</th>
-										</tr>
-										<tr>
-											<td>183</td>
-											<td>John Doe</td>
-											<td>11-7-2014</td>
+										<tr class="odd">
+											<td>123</td>
+											<td>456</td>
+											<td>10</td>
+											<td>keyvalue</td>
+											<td>value value</td>
+
 											<td>
-												<span class="label label-success">Approved</span>
+												<xp:button styleClass="btn btn-warning btn-margin-right"
+													value="edit" id="button1">
+													<i class="fa fa-pencil fa-fw"></i>
+												</xp:button>
+												<xp:button styleClass="btn btn-danger" value="remove"
+													id="button2">
+													<i class="fa fa-trash fa-fw"></i>
+												</xp:button>
 											</td>
-											<td>Bacon ipsum dolor sit amet salami venison chicken
-												flank fatback doner.</td>
 										</tr>
-										<tr>
-											<td>219</td>
-											<td>Alexander Pierce</td>
-											<td>11-7-2014</td>
+										<tr class="even">
+											<td>123</td>
+											<td>456</td>
+											<td>10</td>
+											<td>keyvalue</td>
+											<td>value value</td>
+
 											<td>
-												<span class="label label-warning">Pending</span>
+												<xp:button styleClass="btn btn-warning btn-margin-right"
+													value="edit" id="button5">
+													<i class="fa fa-pencil fa-fw"></i>
+												</xp:button>
+												<xp:button styleClass="btn btn-danger" value="remove"
+													id="button6">
+													<i class="fa fa-trash fa-fw"></i>
+												</xp:button>
 											</td>
-											<td>Bacon ipsum dolor sit amet salami venison chicken
-												flank fatback doner.</td>
 										</tr>
-										<tr>
-											<td>657</td>
-											<td>Bob Doe</td>
-											<td>11-7-2014</td>
-											<td>
-												<span class="label label-primary">Approved</span>
-											</td>
-											<td>Bacon ipsum dolor sit amet salami venison chicken
-												flank fatback doner.</td>
-										</tr>
-										<tr>
-											<td>175</td>
-											<td>Mike Doe</td>
-											<td>11-7-2014</td>
-											<td>
-												<span class="label label-danger">Denied</span>
-											</td>
-											<td>Bacon ipsum dolor sit amet salami venison chicken
-												flank fatback doner.</td>
-										</tr>
+
 									</tbody>
 								</table>
 							</div>
+
+
 							<!-- /.box-body -->
-							<div class="box-footer">
-								<a class="btn btn-primary" href="configuration.xsp">create new
-									config
-								</a>
-							</div>
 						</div>
-						<!-- /.box -->
+
 					</div>
 				</div>
+
 			</xp:panel>
 		</xp:this.facets>
 	</xc:ccLayout>
