@@ -24,15 +24,16 @@ public class CloudantService {
     private CloudantConnector connector;
     
     public CloudantService(){
-        //connect();
+        
     }
     
     public void connect(){
         connector = new CloudantConnector(account, username, password, cloudantDb, false);
+        connected = true;
     }
     
     public void testConnection(){
-        if(connector==null){
+        if(!connected){
             connect();
         }
         try{
