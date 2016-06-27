@@ -19,15 +19,16 @@
 							<!-- form start -->
 
 							<div class="box-body">
-								<div class="form-group">
+								<xp:div
+									styleClass="form-group is-valid-#{javascript:getComponent('fldType').isValid()}">
 									<label for="exampleInputEmail1">Type</label>
-									<xp:comboBox id="fldSelectItem" value="#{config.typeString}"
+									<xp:comboBox id="fldType" value="#{config.typeString}"
 										required="${compositeData.required}">
 										<xp:selectItem itemLabel="Please choose"
 											itemValue="">
 										</xp:selectItem>
 										<xp:selectItems
-											value="#{configurationController.configTypeSelection}">
+											value="${configurationController.configTypeSelection}">
 										</xp:selectItems>
 										<xp:this.validators>
 											<xp:validateRequired message="Configuration type is mandatory">
@@ -40,16 +41,23 @@
 											refreshId="pnlConfigurationList" disableValidators="true">
 										</xp:eventHandler>
 									</xp:comboBox>
-								</div> 
-								<div class="form-group has-error">
+									<xp:message id="message2" for="fldType"
+										styleClass="help-block with-errors"></xp:message>
+								</xp:div>
+								<xp:div
+									styleClass="form-group is-valid-#{javascript:getComponent('fldKey').isValid()}">
 									<label for="exampleInputEmail1">Key</label>
-									<xp:inputText id="inputText2" value="#{config.key}"></xp:inputText>
-									<div class="help-block with-errors">
-										<ul class="list-unstyled">
-											<li>Please fill out this field.</li>
-										</ul>
-									</div>
-								</div>
+									<xp:inputText id="fldKey" value="#{config.key}"
+										styleClass="valid-#{javascript:this.isValid()}" required="true">
+										<xp:this.validators>
+											<xp:validateRequired message="Please give a key value">
+											</xp:validateRequired>
+										</xp:this.validators>
+									</xp:inputText>
+
+									<xp:message id="message1" for="fldKey"
+										styleClass="help-block with-errors"></xp:message>
+								</xp:div>
 								<div class="form-group">
 									<label for="exampleInputEmail1">Value</label>
 									<xp:inputText id="inputText3" value="#{config.value}"></xp:inputText>
@@ -58,25 +66,12 @@
 									<label for="exampleInputEmail1">Sort</label>
 									<xp:inputText id="inputText4" value="#{config.sort}">
 										<xp:this.converter>
-											<xp:convertNumber type="number" integerOnly="true">
+											<xp:convertNumber type="number">
 											</xp:convertNumber>
 										</xp:this.converter>
 									</xp:inputText>
 								</div>
-								<div class="alert alert-danger alert-dismissible">
-									<button aria-hidden="true" data-dismiss="alert" class="close"
-										type="button">×</button>
-									<h4>
-										<i class="icon fa fa-ban"></i>
-										Alert!
-									</h4>
-									Danger alert preview. This alert is dismissable. A wonderful
-									serenity has taken possession of my entire
-									soul, like these
-									sweet mornings of spring which I enjoy with my
-									whole
-									heart.
-								</div>
+								<xp:messages id="messages1" styleClass="alert alert-danger"></xp:messages>
 							</div>
 							<!-- /.box-body -->
 
@@ -91,6 +86,11 @@
 											onStart="waitingDialog.show('saving...')" onComplete="waitingDialog.hide()"
 											refreshMode="partial" refreshId="content-wrapper" execMode="partial"
 											execId="content-wrapper">
+											<xp:this.action>
+												<xp:executeScript
+													script="#{javascript:configurationController.update()}">
+												</xp:executeScript>
+											</xp:this.action>
 										</xp:eventHandler>
 									</xp:button>
 

@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="16e" sequence="10" unid="D7C42C7E2E458A8EC1257FD8006581DC">
-<created><datetime dst="true">20160620T202843,80+02</datetime></created>
-<modified><datetime dst="true">20160621T211150,46+02</datetime></modified>
-<revised><datetime dst="true">20160621T211150,45+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160621T211150,46+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160620T202843,93+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
-<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="182" sequence="39" unid="27A3E12936F04D2CC1257FD30034048F">
+<created><datetime dst="true">20160615T112810,39+02</datetime></created>
+<modified><datetime dst="true">20160624T225103,97+02</datetime></modified>
+<revised><datetime dst="true">20160624T225103,96+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160624T225103,97+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160615T203641,78+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=FDN</name></updatedby>
+<wassignedby><name>CN=Administrator/O=FDN</name></wassignedby>
 <item name="$TITLE"><text>cloudant.xsp</text></item>
 <item name="$Flags"><text>gC~4K</text></item>
 

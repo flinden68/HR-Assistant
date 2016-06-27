@@ -21,6 +21,10 @@
 	</resource>
 	<resource>
 		<content-type>text/css</content-type>
+		<href>plugins/datatables/dataTables.bootstrap.css</href>
+	</resource>
+	<resource>
+		<content-type>text/css</content-type>
 		<href>https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css</href>
 	</resource>
 	<resource>
@@ -69,16 +73,14 @@
 			title =
 			viewScope.pageTitle;if(title!=null){': '+title}}</value>
 		</property>
-<<<<<<< HEAD
-=======
+
 		<property>
 			<name>pageIcon</name>
 			<value>/hrassistent32.png</value>
 		</property>
 	</control>
->>>>>>> develop
 
-	</control>
+
 	<control>
 		<name>InputField.EditBox</name>
 		<property mode="concat">

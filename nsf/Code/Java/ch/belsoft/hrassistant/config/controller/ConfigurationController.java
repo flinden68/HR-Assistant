@@ -20,7 +20,7 @@ public class ConfigurationController extends ControllerBase implements
 		IGuiController<IConfiguration>, Serializable {
 
 	/**
-	 * 
+	 *  
 	 */
 	private static final long serialVersionUID = 1L;
 	private static final String PAGETITLE_NEW = "New Configuration";
@@ -33,8 +33,18 @@ public class ConfigurationController extends ControllerBase implements
 	private ConfigDefault config = new ConfigDefault();
 	private ConfigurationDAO configurationDAO = new ConfigurationDAO();
 
+	private String configTypeFilter = "";
+
 	public ConfigurationController() {
 
+	}
+
+	public ConfigurationDAO getConfigurationDAO() {
+		return configurationDAO;
+	}
+
+	public void setConfigurationDAO(ConfigurationDAO configurationDAO) {
+		this.configurationDAO = configurationDAO;
 	}
 
 	public String getConfigurationListTitle() {
@@ -98,6 +108,39 @@ public class ConfigurationController extends ControllerBase implements
 			Util.logError(e);
 		}
 		return pageTitle;
+	}
+
+	public List<IConfiguration> getConfigurations() {
+		List<IConfiguration> result = new ArrayList<IConfiguration>();
+		try {
+
+			result = this.configurationDAO.read();
+
+		} catch (Exception e) {
+			Util.logError(e);
+		}
+		return result;
+	}
+
+	public void update() {
+		try {
+			if (this.newDataItem) {
+				this.configurationDAO.create(config);
+			} else {
+				this.configurationDAO.update(config);
+			}
+
+		} catch (Exception e) {
+			Util.logError(e);
+		}
+	}
+
+	public String getConfigTypeFilter() {
+		return configTypeFilter;
+	}
+
+	public void setConfigTypeFilter(String configTypeFilter) {
+		this.configTypeFilter = configTypeFilter;
 	}
 
 }
