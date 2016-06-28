@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="372" sequence="24" unid="AC7AF75E3300F7A6C1257FD9006753FB">
+<created><datetime dst="true">20160621T204837,07+02</datetime></created>
+<modified><datetime dst="true">20160627T185358,25+02</datetime></modified>
+<revised><datetime dst="true">20160627T185358,24+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160627T185358,25+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160621T204837,09+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
+<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
+=======
 <?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
 <noteinfo noteid="46e" sequence="265" unid="ABD62EF29F38F7E2C1257FD900273945">
 <created><datetime dst="true">20160621T090825,65+02</datetime></created>
@@ -7,13 +18,14 @@
 <addedtofile><datetime dst="true">20160621T090825,66+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Administrator/O=FDN</name></updatedby>
 <wassignedby><name>CN=Administrator/O=FDN</name></wassignedby>
+>>>>>>> 78aba655a420e22287b98643208c117c2bb0d76e
 <item name="$Flags"><text>gC~4K</text></item>
 <item name="$TITLE" sign="true"><text>configurations.xsp</text></item>
 
 
-
 <item name="$FileNames" sign="true"><text>configurations.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5.2</text></item>
+
 
 
 
