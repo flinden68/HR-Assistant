@@ -7,7 +7,7 @@ import java.util.Date;
 import ch.belsoft.hrassistant.config.model.ConfigType;
 import ch.belsoft.hrassistant.model.DataItem;
 
-public class Person extends DataItem implements Serializable {
+public class Person implements Serializable {
 
 	/**
 	 * 

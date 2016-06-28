@@ -7,7 +7,7 @@ import ch.belsoft.hrassistant.config.model.ConfigDefault;
 import ch.belsoft.hrassistant.config.model.ConfigType;
 import ch.belsoft.hrassistant.model.DataItem;
 
-public class Address extends DataItem implements Serializable {
+public class Address implements Serializable {
 
 	/**
 	 * 

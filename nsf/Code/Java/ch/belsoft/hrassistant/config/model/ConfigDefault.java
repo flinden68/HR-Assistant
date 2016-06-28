@@ -1,21 +1,19 @@
 package ch.belsoft.hrassistant.config.model;
 
-import java.io.Serializable;
-
 import ch.belsoft.hrassistant.config.model.ConfigType;
 import ch.belsoft.hrassistant.model.DataItem;
 
-public class ConfigDefault extends DataItem implements IConfiguration,
-		Serializable {
+public class ConfigDefault extends DataItem implements IConfiguration {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	protected ConfigType type = null;
-	protected int sort = 0;
-	protected String key = "";
-	protected String value = "";
+	private ConfigType type = null;
+	private int sort = 0;
+	private String key = "";
+	private String value = "";
+	private DataType dataType = DataType.CONFIG;
 
 	public ConfigDefault() {
 
@@ -81,4 +79,7 @@ public class ConfigDefault extends DataItem implements IConfiguration,
 		this.sort = sort;
 	}
 
+	public DataType getDataType() {
+		return dataType;
+	}
 }

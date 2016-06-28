@@ -44,6 +44,7 @@
 										<tr>
 											<th>rev</th>
 											<th>id</th>
+											<th>type</th>
 											<th>sort</th>
 											<th>key</th>
 											<th>value</th>
@@ -53,14 +54,15 @@
 									<tbody>
 										<xp:repeat id="repeat1" rows="30" var="config"
 											indexVar="i" value="#{configurationController.configurations}">
-
-
 											<xp:tr styleClass="#{(i mod 2 eq 0) ? 'even': 'odd'}">
 												<xp:text escape="true" id="computedField1" tagName="td"
 													value="#{config.rev}">
 												</xp:text>
 												<xp:text escape="true" id="computedField2" tagName="td"
 													value="#{config.id}">
+												</xp:text>
+												<xp:text escape="true" id="computedField6" tagName="td"
+													value="#{config.type}">
 												</xp:text>
 												<xp:text escape="true" id="computedField3" tagName="td"
 													value="#{config.sort}">

@@ -6,6 +6,7 @@ import java.util.Date;
 
 import ch.belsoft.hrassistant.config.model.ConfigType;
 import ch.belsoft.hrassistant.model.DataItem;
+import ch.belsoft.hrassistant.model.DataItem.DataType;
 
 public class Job extends DataItem implements Serializable {
 
@@ -16,7 +17,8 @@ public class Job extends DataItem implements Serializable {
 	private String name = "";
 	private Company company = null;
 	private Person representative = null;
- 
+	private final DataType dataType = DataType.JOB;
+
 	public String getName() {
 		return name;
 	}
@@ -41,4 +43,7 @@ public class Job extends DataItem implements Serializable {
 		this.representative = representative;
 	}
 
+	public DataType getDataType() {
+		return dataType;
+	}
 }

@@ -7,7 +7,7 @@ import java.util.Date;
 import ch.belsoft.hrassistant.config.model.ConfigType;
 import ch.belsoft.hrassistant.model.DataItem;
 
-public class Company extends DataItem implements Serializable {
+public class Company implements Serializable {
 
 	/**
 	 * 
@@ -27,7 +27,7 @@ public class Company extends DataItem implements Serializable {
 	public Address getAddress() {
 		return address;
 	}
- 
+
 	public void setAddress(Address address) {
 		this.address = address;
 	}
