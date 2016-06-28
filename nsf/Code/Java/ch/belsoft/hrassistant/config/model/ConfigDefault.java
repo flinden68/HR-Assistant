@@ -11,7 +11,7 @@ public class ConfigDefault extends DataItem implements IConfiguration,
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 8693716780920880271L;
+	private static final long serialVersionUID = 1L;
 	protected ConfigType type = null;
 	protected int sort = 0;
 	protected String key = "";

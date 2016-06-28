@@ -20,10 +20,10 @@ public class Util {
 				.logEvent(null, sError, OpenLogItem.getSeverity().INFO, null);
 	}
 
-	public static void logError(Exception e) {
-		e.printStackTrace();
-		// OpenLogItem.logError(e);
-	}
+	// public static void logError(Exception e) {
+	// e.printStackTrace();
+	// OpenLogItem.logError(e);
+	// }
 
 	@SuppressWarnings("unchecked")
 	public static ArrayList<String> convertObjectToStringList(List<Object> a) {
@@ -74,7 +74,7 @@ public class Util {
 				result = attachmentName.substring(i + 1);
 			}
 		} catch (Exception e) {
-			Util.logError(e);
+			Logging.logError(e);
 		}
 		return result;
 	}
@@ -94,7 +94,7 @@ public class Util {
 
 			result = attachmentName;
 		} catch (Exception e) {
-			Util.logError(e);
+			Logging.logError(e);
 		}
 		return result;
 	}
@@ -129,7 +129,7 @@ public class Util {
 				result += s;
 			}
 		} catch (Exception e) {
-			Util.logError(e);
+			Logging.logError(e);
 		}
 		return result;
 	}
@@ -143,7 +143,7 @@ public class Util {
 				result = (Vector<Double>) object;
 			}
 		} catch (Exception e) {
-			Util.logError(e);
+			Logging.logError(e);
 		}
 		return result;
 	}
@@ -157,7 +157,7 @@ public class Util {
 				result = (Vector<String>) object;
 			}
 		} catch (Exception e) {
-			Util.logError(e);
+			Logging.logError(e);
 		}
 		return result;
 	}

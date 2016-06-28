@@ -71,11 +71,10 @@
 												<xp:text escape="true" id="computedField5" tagName="td"
 													value="#{config.value}">
 												</xp:text>
-												<td>123</td>
-												<td>456</td>
-												<td>10</td>
-												<td>keyvalue</td>
-												<td>value value</td>
+												<!--
+													<td>123</td> <td>456</td> <td>10</td> <td>keyvalue</td>
+													<td>value value</td>
+												-->
 												<td>
 													<xp:button styleClass="btn btn-warning btn-margin-right"
 														value="edit" id="button4">
@@ -88,23 +87,15 @@
 												</td>
 											</xp:tr>
 
-											<xp:tr styleClass="item #{(i mod 2 eq 0) ? 'even': 'odd'}">
-												<td>123</td>
-												<td>456</td>
-												<td>10</td>
-												<td>keyvalue</td>
-												<td>value value</td>
-												<td>
-													<xp:button styleClass="btn btn-warning btn-margin-right"
-														value="edit" id="button1">
-														<i class="fa fa-pencil fa-fw"></i>
-													</xp:button>
-													<xp:button styleClass="btn btn-danger" value="remove"
-														id="button2">
-														<i class="fa fa-trash fa-fw"></i>
-													</xp:button>
-												</td>
-											</xp:tr>
+											<!--
+												<xp:tr styleClass="item #{(i mod 2 eq 0) ? 'even': 'odd'}">
+												<td>123</td> <td>456</td> <td>10</td> <td>keyvalue</td>
+												<td>value value</td> <td> <xp:button styleClass="btn
+												btn-warning btn-margin-right" value="edit" id="button1"> <i
+												class="fa fa-pencil fa-fw"></i> </xp:button> <xp:button
+												styleClass="btn btn-danger" value="remove" id="button2"> <i
+												class="fa fa-trash fa-fw"></i> </xp:button> </td> </xp:tr>
+											-->
 										</xp:repeat>
 										<tr class="even">
 											<td>123</td>

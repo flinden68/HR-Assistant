@@ -9,6 +9,7 @@ import java.util.Vector;
 import ch.belsoft.hrassistant.config.model.ConfigDefault;
 import ch.belsoft.hrassistant.config.model.ConfigType;
 import ch.belsoft.hrassistant.config.model.IConfiguration;
+import ch.belsoft.tools.Logging;
 import ch.belsoft.tools.Util;
 import ch.belsoft.tools.XPagesUtil;
 
@@ -34,7 +35,7 @@ public class ApplicationController implements Serializable {
 		try {
 			XPagesUtil.getXSPContext().redirectToPage(REALHOMEPAGE);
 		} catch (Exception e) {
-			Util.logError(e);
+			Logging.logError(e);
 		}
 	}
 
@@ -42,7 +43,7 @@ public class ApplicationController implements Serializable {
 		try {
 
 		} catch (Exception e) {
-			Util.logError(e);
+			Logging.logError(e);
 		}
 	}
 
@@ -71,7 +72,7 @@ public class ApplicationController implements Serializable {
 				}
 			}
 		} catch (Exception e) {
-			Util.logError(e);
+			Logging.logError(e);
 		}
 
 		return result;
@@ -94,7 +95,7 @@ public class ApplicationController implements Serializable {
 			}
 
 		} catch (Exception e) {
-			Util.logError(e);
+			Logging.logError(e);
 		}
 		return result;
 	}
@@ -108,7 +109,7 @@ public class ApplicationController implements Serializable {
 			result = getConfigItems(configType);
 
 		} catch (Exception e) {
-			Util.logError(e);
+			Logging.logError(e);
 		}
 
 		return result;
@@ -127,7 +128,7 @@ public class ApplicationController implements Serializable {
 					.values());
 
 		} catch (Exception e) {
-			Util.logError(e);
+			Logging.logError(e);
 		}
 
 		return result;
@@ -147,7 +148,7 @@ public class ApplicationController implements Serializable {
 			vResult = configSelections.get(sType);
 
 		} catch (Exception e) {
-			Util.logError(e);
+			Logging.logError(e);
 		}
 
 		return vResult;
@@ -204,7 +205,7 @@ public class ApplicationController implements Serializable {
 
 			mapConfig.put(configItem.getKey(), configItem);
 		} catch (Exception e) {
-			Util.logError(e);
+			Logging.logError(e);
 		}
 	}
 	/*

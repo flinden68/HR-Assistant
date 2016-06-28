@@ -13,6 +13,7 @@ import ch.belsoft.hrassistant.config.model.IConfiguration;
 import ch.belsoft.hrassistant.controller.ApplicationController;
 import ch.belsoft.hrassistant.controller.ControllerBase;
 import ch.belsoft.hrassistant.controller.IGuiController;
+import ch.belsoft.tools.Logging;
 import ch.belsoft.tools.Util;
 import ch.belsoft.tools.XPagesUtil;
 
@@ -60,7 +61,7 @@ public class ConfigurationController extends ControllerBase implements
 								.toString());
 			}
 		} catch (Exception e) {
-			Util.logError(e);
+			Logging.logError(e);
 		}
 		return result;
 	}
@@ -79,7 +80,7 @@ public class ConfigurationController extends ControllerBase implements
 
 			}
 		} catch (Exception e) {
-			Util.logError(e);
+			Logging.logError(e);
 		}
 		return config;
 	}
@@ -105,19 +106,20 @@ public class ConfigurationController extends ControllerBase implements
 						this.config.getKey());
 			}
 		} catch (Exception e) {
-			Util.logError(e);
+			Logging.logError(e);
 		}
 		return pageTitle;
 	}
 
-	public List<IConfiguration> getConfigurations() {
-		List<IConfiguration> result = new ArrayList<IConfiguration>();
+	public List<ConfigDefault> getConfigurations() {
+		List<ConfigDefault> result = new ArrayList<ConfigDefault>();
 		try {
-
+			System.out.println("inside getConfigurations: "
+					+ this.configurationDAO.read());
 			result = this.configurationDAO.read();
 
 		} catch (Exception e) {
-			Util.logError(e);
+			Logging.logError(e);
 		}
 		return result;
 	}
@@ -126,12 +128,14 @@ public class ConfigurationController extends ControllerBase implements
 		try {
 			if (this.newDataItem) {
 				this.configurationDAO.create(config);
+				System.out.println("created: " + config.getRev() + " id:"
+						+ config.getId());
 			} else {
 				this.configurationDAO.update(config);
 			}
 
 		} catch (Exception e) {
-			Util.logError(e);
+			Logging.logError(e);
 		}
 	}
 

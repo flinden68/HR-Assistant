@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="886" sequence="8" unid="8522BEDB7DDD7080C1257FE0003F8154">
+<created><datetime dst="true">20160628T133338,76+02</datetime></created>
+<modified><datetime dst="true">20160628T133952,16+02</datetime></modified>
+<revised><datetime dst="true">20160628T133952,15+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160628T133952,16+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160628T133338,77+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=FDN</name></updatedby>
+<wassignedby><name>CN=Administrator/O=FDN</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+
+
+
+<item name="$TITLE"><text>ch/belsoft/tools/Logging.java</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>ch/belsoft/tools/Logging.java</text></item></note>
