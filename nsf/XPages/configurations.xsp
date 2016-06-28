@@ -52,7 +52,7 @@
 										</tr>
 									</thead>
 									<tbody>
-										<xp:repeat id="repeat1" rows="30" var="config"
+										<xp:repeat id="rptConfigurations" rows="10" var="config"
 											indexVar="i" value="#{configurationController.configurations}">
 											<xp:tr styleClass="#{(i mod 2 eq 0) ? 'even': 'odd'}">
 												<xp:text escape="true" id="computedField1" tagName="td"
@@ -85,6 +85,16 @@
 													<xp:button styleClass="btn btn-danger" value="remove"
 														id="button7">
 														<i class="fa fa-trash fa-fw"></i>
+														<xp:eventHandler event="onclick" submit="true"
+															onStart="waitingDialog.show('removing')" onComplete="waitingDialog.hide()"
+															refreshMode="partial" refreshId="content-wrapper"
+															immediate="true" execMode="partial" execId="content-wrapper">
+															<xp:this.action>
+																<xp:executeScript
+																	script="#{javascript:configurationController.remove(config)}">
+																</xp:executeScript>
+															</xp:this.action>
+														</xp:eventHandler>
 													</xp:button>
 												</td>
 											</xp:tr>
@@ -99,32 +109,51 @@
 												class="fa fa-trash fa-fw"></i> </xp:button> </td> </xp:tr>
 											-->
 										</xp:repeat>
-										<tr class="even">
-											<td>123</td>
-											<td>456</td>
-											<td>10</td>
-											<td>keyvalue</td>
-											<td>value value</td>
-
-											<td>
-												<xp:button styleClass="btn btn-warning btn-margin-right"
-													value="edit" id="button5">
-													<i class="fa fa-pencil fa-fw"></i>
-												</xp:button>
-												<xp:button styleClass="btn btn-danger" value="remove"
-													id="button6">
-													<i class="fa fa-trash fa-fw"></i>
-												</xp:button>
-											</td>
-										</tr>
-
 									</tbody>
 								</table>
 							</div>
 
+							<div class="box-footer clearfix">
 
+								<xp:pager partialRefresh="true" id="pager2" for="rptConfigurations"
+									panelPosition="left" styleClass="bootstrapPager pull-right"
+									partialExecute="true">
+									<xp:pagerControl type="Previous" id="pagerControl4"
+										styleClass="bootstrapPagerPrevious">
+										<xp:this.value><![CDATA[«]]></xp:this.value>
+									</xp:pagerControl>
+									<xp:pagerControl type="Group" id="pagerControl5"
+										styleClass="bootstrapPagerMiddle">
+									</xp:pagerControl>
+									<xp:pagerControl type="Next" id="pagerControl6"
+										styleClass="bootstrapPagerNext">
+										<xp:this.value><![CDATA[»]]></xp:this.value>
+									</xp:pagerControl>
+								</xp:pager>
+
+
+
+								<ul class="pagination pagination-sm no-margin pull-right">
+									<li>
+										<a href="#">«</a>
+									</li>
+									<li>
+										<a href="#">1</a>
+									</li>
+									<li>
+										<a href="#">2</a>
+									</li>
+									<li>
+										<a href="#">3</a>
+									</li>
+									<li>
+										<a href="#">»</a>
+									</li>
+								</ul>
+							</div>
 							<!-- /.box-body -->
 						</div>
+
 
 					</div>
 				</div>

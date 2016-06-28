@@ -124,6 +124,23 @@ public class ConfigurationController extends ControllerBase implements
 		return result;
 	}
 
+	public void remove(ConfigDefault config) {
+		try {
+			this.configurationDAO.delete(config);
+		} catch (Exception e) {
+			Logging.logError(e);
+		}
+	}
+
+	public void remove() {
+		try {
+			this.remove(this.config);
+
+		} catch (Exception e) {
+			Logging.logError(e);
+		}
+	}
+
 	public void update() {
 		try {
 			if (this.newDataItem) {
