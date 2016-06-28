@@ -14,6 +14,8 @@ Serializable {
      */
     private static final long serialVersionUID = 1L;
     private CloudantService cloudantService = null;
+    private static final String DESIGN_DOC = "configuration";
+    private static final String VIEW_NAME = "configurations";
     
     public void update(IConfiguration config) {
         connectToService();

@@ -10,6 +10,8 @@ import ch.belsoft.hrassistant.service.CloudantService;
 public class JobApplicationDAO implements ICrudDAO<JobApplication, String>, Serializable {
     
     private static final long serialVersionUID = 1L;
+    private static final String DESIGN_DOC = "jobapplication";
+    private static final String VIEW_NAME = "jobapplications";
     private CloudantService cloudantService = null;
     
     public JobApplicationDAO(){

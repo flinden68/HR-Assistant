@@ -10,13 +10,19 @@ import nl.elstarit.cloudant.model.ConnectorIndex;
 import nl.elstarit.cloudant.model.ConnectorResponse;
 import ch.belsoft.tools.XPagesUtil;
 
+import com.ibm.xsp.bluemix.util.BluemixContextUtil;
+
 
 public class CloudantService {
     
+    private static final String SERVICE_NAME = "cloudantNoSQLDB";
     private String account;
     private String password;
     private String username;
     private String cloudantDb;
+    
+    private BluemixContextUtil bluemixUtil;
+    
     private boolean connected = false;
     
     private static final String BEAN_NAME = "CloudantService";
@@ -28,7 +34,10 @@ public class CloudantService {
     }
     
     public void connect(){
-        connector = new CloudantConnector(account, username, password, cloudantDb, false);
+        if(bluemixUtil == null){
+            bluemixUtil = new BluemixContextUtil(SERVICE_NAME, username, password, "");
+        }
+        connector = new CloudantConnector(bluemixUtil.getAccount(), bluemixUtil.getUsername(), bluemixUtil.getPassword(), cloudantDb, false);
         connected = true;
     }
     
@@ -132,7 +141,25 @@ public class CloudantService {
     
     public ConnectorResponse saveAttachment(final InputStream inputStream, final String name, final String contentType, final String docId, final String docRev){
         try{
-            connector.getDocumentConnector().saveAttachment(inputStream, name, contentType, docId, docRev);
+            return connector.getDocumentConnector().saveAttachment(inputStream, name, contentType, docId, docRev);
+        }catch(Exception e){
+            CloudantLogger.CLOUDANT.getLogger().log(Level.SEVERE, e.getMessage());
+        }
+        return null;
+    }
+    
+    /**
+     * 
+     * @param cls
+     * @param designDoc
+     * @param viewName
+     * @param keyType
+     * @param limit
+     * @return
+     */
+    public List<?> findAllDocumentFromView(final Class<?> cls, final String designDoc, final String viewName, final String keyType, final int limit){
+        try{
+            return connector.getDocumentConnector().findAllDocumentsFromView(cls, designDoc, viewName, keyType, limit);
         }catch(Exception e){
             CloudantLogger.CLOUDANT.getLogger().log(Level.SEVERE, e.getMessage());
         }
