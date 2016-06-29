@@ -115,7 +115,7 @@
 															immediate="true" execMode="partial" execId="content-wrapper">
 															<xp:this.action>
 																<xp:executeScript
-																	script="#{javascript:configurationController.remove(config)}">
+																	script="#{javascript:configurationController.removeFromList(config)}">
 																</xp:executeScript>
 															</xp:this.action>
 														</xp:eventHandler>

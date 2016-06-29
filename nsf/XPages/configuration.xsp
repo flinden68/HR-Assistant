@@ -5,7 +5,8 @@
 			var="config">
 		</xp:dataContext>
 	</xp:this.dataContexts>
-	<xc:ccLayout pageTitle="${configurationController.pageTitle}">
+	<xc:ccLayout pageTitle="${configurationController.pageTitle}"
+		pageSubTitle="ID: #{config.id}">
 		<xp:this.facets>
 			<xp:panel xp:key="Content">
 				<div class="row">
@@ -93,8 +94,20 @@
 										</xp:eventHandler>
 									</xp:button>
 
-									<button class="btn btn-danger" type="submit">remove
-									</button>
+									<xp:button styleClass="btn btn-danger" value="remove"
+										id="button7">
+										<i class="fa fa-trash fa-fw"></i>
+										<xp:eventHandler event="onclick" submit="true"
+											onStart="waitingDialog.show('removing')" onComplete="waitingDialog.hide();document.location='configurations.xsp'"
+											refreshMode="partial" refreshId="content-wrapper" immediate="true"
+											execMode="partial" execId="content-wrapper">
+											<xp:this.action>
+												<xp:executeScript
+													script="#{javascript:configurationController.remove(config)}">
+												</xp:executeScript>
+											</xp:this.action>
+										</xp:eventHandler>
+									</xp:button>
 								</div>
 							</div>
 						</div>

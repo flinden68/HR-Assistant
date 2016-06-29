@@ -130,6 +130,15 @@ public class ConfigurationController extends ControllerBase implements
 		return this.configurations;
 	}
 
+	public void removeFromList(ConfigDefault config) {
+		try {
+			this.remove(config);
+			this.configurations.remove(config);
+		} catch (Exception e) {
+			Logging.logError(e);
+		}
+	}
+
 	public void remove(ConfigDefault config) {
 		try {
 			this.configurationDAO.delete(config);

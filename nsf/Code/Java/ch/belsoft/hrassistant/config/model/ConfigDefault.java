@@ -26,14 +26,11 @@ public class ConfigDefault extends DataItem implements IConfiguration {
 	}
 
 	public void setTypeString(String type) {
-		System.out.println(this.hashCode() + " inside getTypeString: "
-				+ this.type);
 		this.setType(ConfigType.valueOf(type));
 	}
 
 	public String getTypeString() {
-		System.out.println(this.hashCode() + " inside getTypeString: "
-				+ this.type);
+
 		if (this.type != null) {
 			// System.out.println("get type: " + this.type);
 			return this.type.toString();
