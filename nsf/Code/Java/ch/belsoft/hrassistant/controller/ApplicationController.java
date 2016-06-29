@@ -88,7 +88,7 @@ public class ApplicationController implements Serializable {
 				IConfiguration config = getConfig(configType, sKey);
 
 				if (config != null) {
-					result = config.getValue();
+					result = config.getConfigValue();
 				} else {
 					result = sKey;
 				}
@@ -200,10 +200,10 @@ public class ApplicationController implements Serializable {
 				configSelections.put(configItem.getType(), vConfigSelection);
 			}
 
-			vConfigSelection.add(configItem.getValue() + "|"
-					+ configItem.getKey());
+			vConfigSelection.add(configItem.getConfigValue() + "|"
+					+ configItem.getConfigKey());
 
-			mapConfig.put(configItem.getKey(), configItem);
+			mapConfig.put(configItem.getConfigKey(), configItem);
 		} catch (Exception e) {
 			Logging.logError(e);
 		}

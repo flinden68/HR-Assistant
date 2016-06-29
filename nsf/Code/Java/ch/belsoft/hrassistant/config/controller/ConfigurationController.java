@@ -103,7 +103,7 @@ public class ConfigurationController extends ControllerBase implements
 				pageTitle = PAGETITLE_EXISTING.replace(PAGETITLE_REPLACE_TYPE,
 						this.config.getType().toString());
 				pageTitle = pageTitle.replace(PAGETITLE_REPLACE_KEY,
-						this.config.getKey());
+						this.config.getConfigKey());
 			}
 		} catch (Exception e) {
 			Logging.logError(e);

@@ -12,12 +12,12 @@ public interface IConfiguration {
 
 	public void setType(ConfigType type);
 
-	public String getKey();
+	public String getConfigKey();
 
-	public void setKey(String key);
+	public void setConfigKey(String configKey);
 
-	public String getValue();
+	public String getConfigValue();
 
-	public void setValue(String value);
+	public void setConfigValue(String configValue);
 
 }

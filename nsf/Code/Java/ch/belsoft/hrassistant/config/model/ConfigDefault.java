@@ -11,18 +11,18 @@ public class ConfigDefault extends DataItem implements IConfiguration {
 	private static final long serialVersionUID = 1L;
 	private ConfigType type = null;
 	private int sort = 0;
-	private String key = "";
-	private String value = "";
+	private String configKey = "";
+	private String configValue = "";
 	private DataType dataType = DataType.CONFIG;
 
 	public ConfigDefault() {
 
 	}
 
-	public ConfigDefault(ConfigType type, String key, String value) {
+	public ConfigDefault(ConfigType type, String configKey, String configValue) {
 		this.type = type;
-		this.key = key;
-		this.value = value;
+		this.configKey = configKey;
+		this.configValue = configValue;
 	}
 
 	public void setTypeString(String type) {
@@ -51,24 +51,24 @@ public class ConfigDefault extends DataItem implements IConfiguration {
 		this.type = type;
 	}
 
-	public String getKey() {
-		return key;
+	public String getConfigKey() {
+		return configKey;
 	}
 
-	public void setKey(String key) {
-		this.key = key;
+	public void setConfigKey(String configKey) {
+		this.configKey = configKey;
 	}
 
-	public String getValue() {
-		return value;
+	public String getConfigValue() {
+		return configValue;
 	}
 
-	public void setValue(String value) {
-		this.value = value;
+	public void setConfigValue(String configValue) {
+		this.configValue = configValue;
 	}
 
 	public String toString() {
-		return this.type + "@" + this.key + "@" + this.value;
+		return this.type + "@" + this.configKey + "@" + this.configValue;
 	}
 
 	public int getSort() {
