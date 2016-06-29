@@ -36,7 +36,7 @@ public class ConfigurationDAO implements ICrudDAO<ConfigDefault, String>,
 	public ConfigDefault read(String id) {
 		connectToService();
 		return (ConfigDefault) cloudantService.findDocumentByID(
-				IConfiguration.class, id);
+				ConfigDefault.class, id);
 	}
 
 	@SuppressWarnings("unchecked")

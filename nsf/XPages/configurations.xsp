@@ -25,14 +25,41 @@
 								</div>
 							</div>
 							<div class="box-header">
-								<a class="btn btn-primary btn-margin-right" href="configuration.xsp">create
+								<a class="btn btn-warning btn-margin-right" href="configuration.xsp">create
 									new
 									config
 								</a>
-								<xp:button styleClass="btn btn-success" value="create sample data"
-									id="button3">
-									<i class="fa fa-pencil fa-fw"></i>
+								<xp:button value="refresh" id="button1"
+									styleClass="btn btn-primary btn-margin-right">
+									<xp:eventHandler event="onclick" submit="true"
+										onStart="waitingDialog.show('refreshing')" onComplete="waitingDialog.hide()"
+										refreshMode="partial" refreshId="content-wrapper" immediate="true"
+										execMode="partial" execId="content-wrapper">
+										<xp:this.action>
+											<xp:executeScript
+												script="#{javascript:configurationController.clearConfigurations()}">
+											</xp:executeScript>
+										</xp:this.action>
+									</xp:eventHandler>
 								</xp:button>
+
+								<div class="pull-right">
+									<xp:pager partialRefresh="true" id="pager2" for="rptConfigurations"
+										panelPosition="left" styleClass="bootstrapPager"
+										partialExecute="true">
+										<xp:pagerControl type="Previous" id="pagerControl4"
+											styleClass="bootstrapPagerPrevious">
+											<xp:this.value><![CDATA[«]]></xp:this.value>
+										</xp:pagerControl>
+										<xp:pagerControl type="Group" id="pagerControl5"
+											styleClass="bootstrapPagerMiddle">
+										</xp:pagerControl>
+										<xp:pagerControl type="Next" id="pagerControl6"
+											styleClass="bootstrapPagerNext">
+											<xp:this.value><![CDATA[»]]></xp:this.value>
+										</xp:pagerControl>
+									</xp:pager>
+								</div>
 							</div>
 							<!-- /.box-header -->
 
@@ -42,12 +69,11 @@
 
 									<thead>
 										<tr>
-											<th>rev</th>
-											<th>id</th>
+											<!-- 	<th>rev</th>
+											<th>id</th> -->
 											<th>type</th>
 											<th>sort</th>
-											<th>key</th>
-											<th>value</th>
+											<th>key / value</th>
 											<th></th>
 										</tr>
 									</thead>
@@ -55,33 +81,31 @@
 										<xp:repeat id="rptConfigurations" rows="10" var="config"
 											indexVar="i" value="#{configurationController.configurations}">
 											<xp:tr styleClass="#{(i mod 2 eq 0) ? 'even': 'odd'}">
-												<xp:text escape="true" id="computedField1" tagName="td"
-													value="#{config.rev}">
-												</xp:text>
-												<xp:text escape="true" id="computedField2" tagName="td"
-													value="#{config.id}">
-												</xp:text>
 												<xp:text escape="true" id="computedField6" tagName="td"
 													value="#{config.type}">
 												</xp:text>
 												<xp:text escape="true" id="computedField3" tagName="td"
 													value="#{config.sort}">
 												</xp:text>
-												<xp:text escape="true" id="computedField4" tagName="td"
-													value="#{config.key}">
-												</xp:text>
-												<xp:text escape="true" id="computedField5" tagName="td"
-													value="#{config.value}">
-												</xp:text>
+												<td>
+													<xp:text escape="true" id="computedField1" style="display:block"
+														value="#{config.configKey} - #{config.configValue}">
+													</xp:text>
+													<xp:text escape="true" id="computedField2" value="ID: #{config.id}"
+														style="color:#777" tagName="small">
+													</xp:text>
+												</td>
+
 												<!--
 													<td>123</td> <td>456</td> <td>10</td> <td>keyvalue</td>
 													<td>value value</td>
 												-->
 												<td>
-													<xp:button styleClass="btn btn-warning btn-margin-right"
-														value="edit" id="button4">
+													<xp:link escape="true" styleClass="btn btn-warning btn-margin-right"
+														text="edit" id="link1"
+														value="configuration.xsp?openxpage&amp;id=#{config.id}">
 														<i class="fa fa-pencil fa-fw"></i>
-													</xp:button>
+													</xp:link>
 													<xp:button styleClass="btn btn-danger" value="remove"
 														id="button7">
 														<i class="fa fa-trash fa-fw"></i>
@@ -113,44 +137,9 @@
 								</table>
 							</div>
 
-							<div class="box-footer clearfix">
-
-								<xp:pager partialRefresh="true" id="pager2" for="rptConfigurations"
-									panelPosition="left" styleClass="bootstrapPager pull-right"
-									partialExecute="true">
-									<xp:pagerControl type="Previous" id="pagerControl4"
-										styleClass="bootstrapPagerPrevious">
-										<xp:this.value><![CDATA[«]]></xp:this.value>
-									</xp:pagerControl>
-									<xp:pagerControl type="Group" id="pagerControl5"
-										styleClass="bootstrapPagerMiddle">
-									</xp:pagerControl>
-									<xp:pagerControl type="Next" id="pagerControl6"
-										styleClass="bootstrapPagerNext">
-										<xp:this.value><![CDATA[»]]></xp:this.value>
-									</xp:pagerControl>
-								</xp:pager>
-
-
-
-								<ul class="pagination pagination-sm no-margin pull-right">
-									<li>
-										<a href="#">«</a>
-									</li>
-									<li>
-										<a href="#">1</a>
-									</li>
-									<li>
-										<a href="#">2</a>
-									</li>
-									<li>
-										<a href="#">3</a>
-									</li>
-									<li>
-										<a href="#">»</a>
-									</li>
-								</ul>
-							</div>
+							<!-- <div class="box-footer clearfix">
+							
+							</div> -->
 							<!-- /.box-body -->
 						</div>
 

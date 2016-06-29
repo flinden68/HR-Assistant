@@ -34,6 +34,8 @@ public class ConfigurationController extends ControllerBase implements
 	private ConfigDefault config = new ConfigDefault();
 	private ConfigurationDAO configurationDAO = new ConfigurationDAO();
 
+	List<ConfigDefault> configurations = new ArrayList<ConfigDefault>();
+
 	private String configTypeFilter = "";
 
 	public ConfigurationController() {
@@ -111,17 +113,21 @@ public class ConfigurationController extends ControllerBase implements
 		return pageTitle;
 	}
 
+	public void clearConfigurations() {
+		this.configurations = new ArrayList<ConfigDefault>();
+	}
+
 	public List<ConfigDefault> getConfigurations() {
-		List<ConfigDefault> result = new ArrayList<ConfigDefault>();
+
 		try {
-			System.out.println("inside getConfigurations: "
-					+ this.configurationDAO.read());
-			result = this.configurationDAO.read();
+			if (this.configurations.size() == 0) {
+				this.configurations = this.configurationDAO.read();
+			}
 
 		} catch (Exception e) {
 			Logging.logError(e);
 		}
-		return result;
+		return this.configurations;
 	}
 
 	public void remove(ConfigDefault config) {
@@ -145,10 +151,12 @@ public class ConfigurationController extends ControllerBase implements
 		try {
 			if (this.newDataItem) {
 				this.configurationDAO.create(config);
-				System.out.println("created: " + config.getRev() + " id:"
+				XPagesUtil.redirect("configuration.xsp?openxpage&id="
 						+ config.getId());
 			} else {
+				System.out.println("update: " + " id:" + config.getId());
 				this.configurationDAO.update(config);
+				this.config = configurationDAO.read(config.getId());
 			}
 
 		} catch (Exception e) {

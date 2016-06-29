@@ -13,8 +13,8 @@ public abstract class DataItem implements Serializable, IDataItem {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	protected String rev = "";
-	protected String id = "";
+	protected String _rev = null;
+	protected String _id = null;
 	protected Date created = new Date();
 	protected Date modified = new Date();
 
@@ -23,19 +23,19 @@ public abstract class DataItem implements Serializable, IDataItem {
 	}
 
 	public String getRev() {
-		return rev;
+		return _rev;
 	}
 
 	public void setRev(String rev) {
-		this.rev = rev;
+		this._rev = rev;
 	}
 
 	public String getId() {
-		return id;
+		return _id;
 	}
 
 	public void setId(String id) {
-		this.id = id;
+		this._id = id;
 	}
 
 	public long getCreatedMilliseconds() {
@@ -70,4 +70,13 @@ public abstract class DataItem implements Serializable, IDataItem {
 		this.modified = modified;
 	}
 
+	/*
+	 * public String get_rev() { return _rev; }
+	 * 
+	 * public void set_rev(String _rev) { this._rev = _rev; }
+	 * 
+	 * public String get_id() { return _id; }
+	 * 
+	 * public void set_id(String _id) { this._id = _id; }
+	 */
 }
