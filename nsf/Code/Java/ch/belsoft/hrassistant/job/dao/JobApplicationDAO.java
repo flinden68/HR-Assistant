@@ -3,6 +3,7 @@ package ch.belsoft.hrassistant.job.dao;
 import java.io.Serializable;
 import java.util.List;
 
+import nl.elstarit.cloudant.model.ConnectorResponse;
 import ch.belsoft.hrassistant.dao.ICrudDAO;
 import ch.belsoft.hrassistant.job.model.JobApplication;
 import ch.belsoft.hrassistant.service.CloudantService;
@@ -12,6 +13,7 @@ public class JobApplicationDAO implements ICrudDAO<JobApplication, String>, Seri
     private static final long serialVersionUID = 1L;
     private static final String DESIGN_DOC = "jobapplication";
     private static final String VIEW_NAME = "jobapplications";
+    private static final int VIEW_LIMIT = 1000;
     private CloudantService cloudantService = null;
     
     public JobApplicationDAO(){
@@ -19,9 +21,9 @@ public class JobApplicationDAO implements ICrudDAO<JobApplication, String>, Seri
     }
     
     
-    public void create(JobApplication t) {
+    public ConnectorResponse create(JobApplication t) {
         connectToService();
-        cloudantService.saveDocument(t);
+        return cloudantService.saveDocument(t);
     }
     
     public void delete(JobApplication t) {
@@ -37,12 +39,13 @@ public class JobApplicationDAO implements ICrudDAO<JobApplication, String>, Seri
     @SuppressWarnings("unchecked")
     public List<JobApplication> read() {
         connectToService();
-        return (List<JobApplication>) cloudantService.findAllDocuments(JobApplication.class);
+        return (List<JobApplication>) cloudantService
+        .findAllDocumentFromView(JobApplication.class, DESIGN_DOC, VIEW_NAME, "STRING", VIEW_LIMIT);
     }
     
-    public void update(JobApplication t) {
+    public ConnectorResponse update(JobApplication t) {
         connectToService();
-        cloudantService.updateDocument(t);
+        return cloudantService.updateDocument(t);
     }
     
     public void connectToService() {

@@ -99,20 +99,22 @@ public class CloudantService {
         }
     }
     
-    public void saveDocument(Object obj){
+    public ConnectorResponse saveDocument(Object obj){
         try{
             connector.getDocumentConnector().save(obj);
         }catch(Exception e){
             CloudantLogger.CLOUDANT.getLogger().log(Level.SEVERE, e.getMessage());
         }
+        return null;
     }
     
-    public void updateDocument(Object obj){
+    public ConnectorResponse updateDocument(Object obj){
         try{
             connector.getDocumentConnector().update(obj);
         }catch(Exception e){
             CloudantLogger.CLOUDANT.getLogger().log(Level.SEVERE, e.getMessage());
         }
+        return null;
     }
     
     public void saveDocuments(final List<?> docs){

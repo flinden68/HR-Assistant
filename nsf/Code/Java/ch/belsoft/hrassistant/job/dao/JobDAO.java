@@ -3,6 +3,7 @@ package ch.belsoft.hrassistant.job.dao;
 import java.io.Serializable;
 import java.util.List;
 
+import nl.elstarit.cloudant.model.ConnectorResponse;
 import ch.belsoft.hrassistant.dao.ICrudDAO;
 import ch.belsoft.hrassistant.job.model.Job;
 import ch.belsoft.hrassistant.service.CloudantService;
@@ -12,11 +13,12 @@ public class JobDAO implements ICrudDAO<Job, String>, Serializable {
     private static final long serialVersionUID = 1L;
     private static final String DESIGN_DOC = "job";
     private static final String VIEW_NAME = "jobs";
+    private static final int VIEW_LIMIT = 1000;
     private CloudantService cloudantService = null;
     
-    public void create(Job t) {
+    public ConnectorResponse create(Job t) {
         connectToService();
-        cloudantService.saveDocument(t);
+        return cloudantService.saveDocument(t);
     }
     
     public void delete(Job t) {
@@ -33,12 +35,13 @@ public class JobDAO implements ICrudDAO<Job, String>, Serializable {
     @SuppressWarnings("unchecked")
     public List<Job> read() {
         connectToService();
-        return (List<Job>) cloudantService.findAllDocuments(Job.class);
+        return (List<Job>) cloudantService
+        .findAllDocumentFromView(Job.class, DESIGN_DOC, VIEW_NAME, "STRING", VIEW_LIMIT);
     }
     
-    public void update(Job t) {
+    public ConnectorResponse update(Job t) {
         connectToService();
-        cloudantService.updateDocument(t);
+        return cloudantService.updateDocument(t);
     }
     
     public void connectToService() {
