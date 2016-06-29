@@ -149,6 +149,9 @@ public class BluemixContextUtil {
         return serviceName;
     }
     
+    /*
+     * compose the account part to connect to Cloudant directly
+     */
     public String getAccount(){
         return getUsername() + ":" + getPassword() + "@" + getUsername();
     }
