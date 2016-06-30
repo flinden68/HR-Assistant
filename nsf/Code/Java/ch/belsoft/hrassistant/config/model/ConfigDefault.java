@@ -61,6 +61,7 @@ public class ConfigDefault extends DataItem implements IConfiguration {
 	}
 
 	public void setConfigValue(String configValue) {
+		System.out.println(this.hashCode() + " inside setConfigValue:"+configValue);
 		this.configValue = configValue;
 	}
 

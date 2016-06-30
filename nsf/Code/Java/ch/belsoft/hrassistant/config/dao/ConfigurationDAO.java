@@ -26,7 +26,13 @@ public class ConfigurationDAO extends BaseDAO implements
 
 	public void update(ConfigDefault config) {
 		connectToService();
+		Logging.logEvent("rev before update: " + config.getRev()
+				+ " configValue:" + config.getConfigValue() + " and id: "
+				+ config.getId());
 		super.handleResponse(cloudantService.updateDocument(config), config);
+		Logging.logEvent("rev after update: " + config.getRev()
+				+ " configValue:" + config.getConfigValue() + " and id:"
+				+ config.getId());
 	}
 
 	public void create(ConfigDefault config) {

@@ -31,7 +31,7 @@ public class ConfigurationController extends ControllerBase implements
 	private static final String TITLE_CONFIGURATIONLIST_ALL = "All configuration items";
 	private static final String TITLE_CONFIGURATIONLIST_TYPE = "Other configuration items of type {TYPE}";
 
-	private ConfigDefault config = new ConfigDefault();
+	private ConfigDefault config = null;
 	private ConfigurationDAO configurationDAO = new ConfigurationDAO();
 
 	List<ConfigDefault> configurations = new ArrayList<ConfigDefault>();
@@ -74,17 +74,20 @@ public class ConfigurationController extends ControllerBase implements
 
 	public ConfigDefault getDataContext() {
 		try {
-			String id = this.getId();
-			if (!id.equals("")) {
-				config = (ConfigDefault) configurationDAO.read(id);
-			} else {
-				newDataItem = true;
+			if (this.config == null) {
+				String id = this.getId();
+				if (!id.equals("")) {
+					this.config = (ConfigDefault) configurationDAO.read(id);
+				} else {
+					newDataItem = true;
+					this.config = new ConfigDefault();
 
+				}
 			}
 		} catch (Exception e) {
 			Logging.logError(e);
 		}
-		return config;
+		return this.config;
 	}
 
 	public ApplicationController getApplicationController() {
