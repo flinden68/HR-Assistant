@@ -1,6 +1,8 @@
 package ch.belsoft.hrassistant.controller;
 
+import java.io.PrintWriter;
 import java.io.Serializable;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -35,6 +37,12 @@ public abstract class ControllerBase implements Serializable {
 
 	protected String getId() {
 		return XPagesUtil.getQueryString(PARAM_ID);
+	}
+
+	protected void handleException(Exception e) {
+		StringWriter errors = new StringWriter();
+		e.printStackTrace(new PrintWriter(errors));
+		XPagesUtil.showErrorMessage(errors.toString());
 	}
 
 }

@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="2da" sequence="14" unid="3DAAC9C9D64F8D20C1257FD8006582D6">
-<created><datetime dst="true">20160620T202846,30+02</datetime></created>
-<modified><datetime dst="true">20160627T185358,95+02</datetime></modified>
-<revised><datetime dst="true">20160627T185358,94+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160627T185358,95+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160620T202848,04+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
-<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="302" sequence="41" unid="F8014044E979C9E7C1257FD30034179D">
+<created><datetime dst="true">20160615T112859,17+02</datetime></created>
+<modified><datetime dst="true">20160629T134505,51+02</datetime></modified>
+<revised><datetime dst="true">20160629T134505,50+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160629T134505,51+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160615T203642,74+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=FDN</name></updatedby>
+<wassignedby><name>CN=Administrator/O=FDN</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>com/ibm/xsp/bluemix/services/data/Cloudant.java</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>

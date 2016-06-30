@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="2be" sequence="105" unid="68B56F6941F62F84C1257FD8006582C1">
-<created><datetime dst="true">20160620T202846,09+02</datetime></created>
-<modified><datetime dst="true">20160629T174110,98+02</datetime></modified>
-<revised><datetime dst="true">20160629T174110,97+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160629T174110,98+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160620T202847,58+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
-<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="14a" sequence="95" unid="0C8B12D2FA053BD9C1257FD2004C2EF8">
+<created><datetime dst="true">20160614T155207,60+02</datetime></created>
+<modified><datetime dst="true">20160629T170924,82+02</datetime></modified>
+<revised><datetime dst="true">20160629T170924,81+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160629T170924,82+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160615T203641,64+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=FDN</name></updatedby>
+<wassignedby><name>CN=Administrator/O=FDN</name></wassignedby>
 <item name="$Flags"><text>gC~4;</text></item>
 <item name="$TITLE" sign="true"><text>ccLayout.xsp</text></item>
 
 
 
-
 <item name="$FileNames" sign="true"><text>ccLayout.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5.2</text></item>
+
 
 
 

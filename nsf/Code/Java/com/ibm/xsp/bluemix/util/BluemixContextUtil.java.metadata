@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="2d6" sequence="20" unid="FA7F730C09D1C96CC1257FD8006582D5">
-<created><datetime dst="true">20160620T202846,29+02</datetime></created>
-<modified><datetime dst="true">20160628T200842,88+02</datetime></modified>
-<revised><datetime dst="true">20160628T200842,87+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160628T200842,88+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160620T202847,98+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
-<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="2de" sequence="35" unid="E90234211F53608CC1257FD30034179E">
+<created><datetime dst="true">20160615T112859,18+02</datetime></created>
+<modified><datetime dst="true">20160629T135719,31+02</datetime></modified>
+<revised><datetime dst="true">20160629T135719,30+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160629T135719,31+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160615T203642,65+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=FDN</name></updatedby>
+<wassignedby><name>CN=Administrator/O=FDN</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>com/ibm/xsp/bluemix/util/BluemixContextUtil.java</text></item>
-
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
 <item name="$FileNames" sign="true"><text>com/ibm/xsp/bluemix/util/BluemixContextUtil.java</text></item>
+
 
 </note>

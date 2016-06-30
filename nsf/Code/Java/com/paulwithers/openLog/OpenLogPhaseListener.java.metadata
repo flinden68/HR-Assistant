@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="2c6" sequence="13" unid="C5C4FB162BCFC952C1257FD8006582CA">
-<created><datetime dst="true">20160620T202846,18+02</datetime></created>
-<modified><datetime dst="true">20160627T185358,71+02</datetime></modified>
-<revised><datetime dst="true">20160627T185358,70+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160627T185358,71+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160620T202847,74+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
-<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1c2" sequence="31" unid="4721BC2BDD15940CC1257FD2004AF3D6">
+<created><datetime dst="true">20160614T153840,86+02</datetime></created>
+<modified><datetime dst="true">20160629T134505,27+02</datetime></modified>
+<revised><datetime dst="true">20160629T134505,26+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160629T134505,27+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160615T203641,94+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=FDN</name></updatedby>
+<wassignedby><name>CN=Administrator/O=FDN</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>com/paulwithers/openLog/OpenLogPhaseListener.java</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>
