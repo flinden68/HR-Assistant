@@ -10,6 +10,7 @@ import ch.belsoft.hrassistant.config.model.ConfigDefault;
 import ch.belsoft.hrassistant.config.model.IConfiguration;
 import ch.belsoft.hrassistant.dao.BaseDAO;
 import ch.belsoft.hrassistant.dao.ICrudDAO;
+import ch.belsoft.hrassistant.job.model.Job;
 import ch.belsoft.hrassistant.service.CloudantService;
 import ch.belsoft.tools.Logging;
 
@@ -21,6 +22,7 @@ public class ConfigurationDAO extends BaseDAO implements
 	private static final long serialVersionUID = 1L;
 	private static final String DESIGN_DOC = "configuration";
 	private static final String VIEW_NAME = "configurations";
+	private static final int VIEW_LIMIT = 1000;
 
 	public void update(ConfigDefault config) {
 		connectToService();
@@ -46,8 +48,9 @@ public class ConfigurationDAO extends BaseDAO implements
 	@SuppressWarnings("unchecked")
 	public List<ConfigDefault> read() {
 		connectToService();
-		return (List<ConfigDefault>) cloudantService
-				.findAllDocuments(ConfigDefault.class);
+		return (List<ConfigDefault>) cloudantService.findAllDocumentFromView(
+				ConfigDefault.class, DESIGN_DOC, VIEW_NAME, "STRING",
+				VIEW_LIMIT);
 	}
 
 }
