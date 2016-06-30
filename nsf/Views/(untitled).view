@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='view' xmlns='http://www.lotus.com/dxl' version='9.0'
  maintenanceversion='1.2' replicaid='C1257FD800653235'>
-<noteinfo noteid='116' unid='79843E29220F161CC1257FD800653236' sequence='1'>
+<noteinfo noteid='116' unid='79843E29220F161CC1257FD800653236' sequence='5'>
 <created><datetime dst='true'>20160620T202519,90+02</datetime></created>
-<modified><datetime dst='true'>20160620T202519,92+02</datetime></modified>
-<revised><datetime dst='true'>20160620T202519,91+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20160620T202520,10+02</datetime></lastaccessed>
+<modified><datetime dst='true'>20160628T203612,61+02</datetime></modified>
+<revised><datetime dst='true'>20160628T203612,60+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20160628T203612,61+02</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20160620T202519,92+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
+<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
 <item name='$TITLE'><text/></item>
 <item name='$Formula' summary='true'><formula compiled='true'>
 HAAFAA4ACgABAAQAJCQkJAQABAAAAAgAZgADAA==

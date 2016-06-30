@@ -1,20 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="8a6" sequence="15" unid="7FA5E444C0B2CB2AC1257FE100528B67">
-<created><datetime dst="true">20160629T170136,39+02</datetime></created>
-<modified><datetime dst="true">20160629T170221,20+02</datetime></modified>
-<revised><datetime dst="true">20160629T170221,19+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160629T170221,20+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160629T170136,40+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=FDN</name></updatedby>
-<wassignedby><name>CN=Administrator/O=FDN</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="722" sequence="5" unid="CAD03D0E8444ACCCC1257FE100552786">
+<created><datetime dst="true">20160629T173006,78+02</datetime></created>
+<modified><datetime dst="true">20160629T174111,92+02</datetime></modified>
+<revised><datetime dst="true">20160629T174111,91+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160629T174111,92+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160629T173007,62+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
+<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
-
-
-
-
-
 <item name="$TITLE"><text>ch/belsoft/hrassistant/config/controller/ConfigurationComparatorSort.java</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
-<item name="$FileNames" sign="true"><text>ch/belsoft/hrassistant/config/controller/ConfigurationComparatorSort.java</text></item></note>
+<item name="$FileNames" sign="true"><text>ch/belsoft/hrassistant/config/controller/ConfigurationComparatorSort.java</text></item>
+
+
+</note>

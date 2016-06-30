@@ -149,6 +149,7 @@ IGuiController<IConfiguration>, Serializable {
     
     public void remove() {
         try {
+            
             this.remove(this.config);
             
         } catch (Exception e) {
@@ -161,13 +162,13 @@ IGuiController<IConfiguration>, Serializable {
         try {
             if (this.newDataItem) {
                 response = this.configurationDAO.create(config);
-                config.setRev(response.getRev());
                 XPagesUtil.redirect("configuration.xsp?openxpage&id="
-                        + config.getId());
+                        + response.getId());
             } else {
                 System.out.println("update: " + " id:" + config.getId());
                 response = this.configurationDAO.update(config);
-                this.config = configurationDAO.read(response.getId());
+                config.setRev(response.getRev());
+                this.config = configurationDAO.read(config.getId());
             }
             
         } catch (Exception e) {

@@ -14,7 +14,6 @@ public abstract class DataItem implements Serializable, IDataItem {
     
     protected String _rev = null;
     protected String _id = null;
-    protected boolean _deleted = false;
     protected Date created = new Date();
     protected Date modified = new Date();
     
@@ -70,13 +69,6 @@ public abstract class DataItem implements Serializable, IDataItem {
         this.modified = modified;
     }
     
-    public boolean getDeleted() {
-        return _deleted;
-    }
-    
-    public void setDeleted(boolean deleted) {
-        this._deleted = deleted;
-    }
     /*
      * public String get_rev() { return _rev; }
      * 

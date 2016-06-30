@@ -12,9 +12,5 @@ public interface IDataItem {
     
     public void setId(String id);
     
-    public boolean getDeleted();
-    
-    public void setDeleted(boolean deleted);
-    
     public DataItem.DataType getDataType();
 }
