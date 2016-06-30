@@ -1,15 +1,19 @@
 package ch.belsoft.hrassistant.config.model;
 
+import java.util.Arrays;
+
 public enum ConfigType {
-	JOB_CATEGORY, GENDER, SALUTATION;
+	JOB_TYPE, JOB_INDUSTRY, GENDER, SALUTATION;
 
 	public static String[] types() {
-		ConfigType[] states = values();
-		String[] names = new String[states.length];
+		ConfigType[] configs = values();
+		String[] names = new String[configs.length];
 
-		for (int i = 0; i < states.length; i++) {
-			names[i] = states[i].name();
+		for (int i = 0; i < configs.length; i++) {
+			names[i] = configs[i].name();
 		}
+
+		Arrays.sort(names);
 
 		return names;
 	}
