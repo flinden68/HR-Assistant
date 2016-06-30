@@ -13,6 +13,7 @@ public class JobApplicationDAO implements ICrudDAO<JobApplication, String>, Seri
     private static final long serialVersionUID = 1L;
     private static final String DESIGN_DOC = "jobapplication";
     private static final String VIEW_NAME = "jobapplications";
+    //Limit of the returned documents
     private static final int VIEW_LIMIT = 1000;
     private CloudantService cloudantService = null;
     
