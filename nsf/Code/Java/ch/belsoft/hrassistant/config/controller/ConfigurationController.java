@@ -25,11 +25,9 @@ public class ConfigurationController extends ControllerBase implements
 	 */
 	private static final long serialVersionUID = 1L;
 	private static final String PAGETITLE_NEW = "New Configuration";
-	private static final String PAGETITLE_EXISTING = "Configuration {TYPE}: {KEY}";
-	private static final String PAGETITLE_REPLACE_TYPE = "{TYPE}";
-	private static final String PAGETITLE_REPLACE_KEY = "{KEY}";
+	private static final String PAGETITLE_EXISTING = "Configuration {NAME}: {DESCRIPTION}";
 	private static final String TITLE_CONFIGURATIONLIST_ALL = "All configuration items";
-	private static final String TITLE_CONFIGURATIONLIST_TYPE = "Other configuration items of type {TYPE}";
+	private static final String TITLE_CONFIGURATIONLIST_TYPE = "Other configuration items of type {NAME}";
 
 	private ConfigDefault config = null;
 	private ConfigurationDAO configurationDAO = new ConfigurationDAO();
@@ -59,7 +57,7 @@ public class ConfigurationController extends ControllerBase implements
 						+ this.config.getTypeString();
 			} else {
 				result = TITLE_CONFIGURATIONLIST_TYPE.replace(
-						PAGETITLE_REPLACE_TYPE, this.config.getType()
+						PAGETITLE_REPLACE_NAME, this.config.getType()
 								.toString());
 			}
 		} catch (Exception e) {
@@ -97,23 +95,6 @@ public class ConfigurationController extends ControllerBase implements
 	public void setApplicationController(
 			ApplicationController applicationController) {
 		this.applicationController = applicationController;
-	}
-
-	public String getPageTitle() {
-		String pageTitle = "";
-		try {
-			if (this.newDataItem) {
-				pageTitle = PAGETITLE_NEW;
-			} else {
-				pageTitle = PAGETITLE_EXISTING.replace(PAGETITLE_REPLACE_TYPE,
-						this.config.getType().toString());
-				pageTitle = pageTitle.replace(PAGETITLE_REPLACE_KEY,
-						this.config.getConfigKey());
-			}
-		} catch (Exception e) {
-			Logging.logError(e);
-		}
-		return pageTitle;
 	}
 
 	public void clearConfigurations() {
@@ -184,6 +165,23 @@ public class ConfigurationController extends ControllerBase implements
 
 	public void setConfigTypeFilter(String configTypeFilter) {
 		this.configTypeFilter = configTypeFilter;
+	}
+
+	public String getPageTitle() {
+		String pageTitle = "";
+		try {
+			if (this.newDataItem) {
+				pageTitle = PAGETITLE_NEW;
+			} else {
+				pageTitle = PAGETITLE_EXISTING.replace(PAGETITLE_REPLACE_NAME,
+						this.config.getType().toString());
+				pageTitle = pageTitle.replace(PAGETITLE_REPLACE_DESCRIPTION,
+						this.config.getConfigKey());
+			}
+		} catch (Exception e) {
+			Logging.logError(e);
+		}
+		return pageTitle;
 	}
 
 }

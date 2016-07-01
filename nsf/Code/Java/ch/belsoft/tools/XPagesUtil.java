@@ -1,8 +1,12 @@
 package ch.belsoft.tools;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
 
@@ -19,6 +23,7 @@ import lotus.domino.Name;
 import lotus.domino.NotesException;
 import lotus.domino.Session;
 
+import com.ibm.commons.util.DateTime;
 import com.ibm.domino.xsp.module.nsf.NotesContext;
 import com.ibm.xsp.application.DesignerApplicationEx;
 import com.ibm.xsp.component.UIViewRootEx;
@@ -433,6 +438,24 @@ public class XPagesUtil {
 		return UUID.randomUUID().toString();
 	}
 
+	public static String getDateTimeStringLocalized(Date dt) {
+
+		if (dt == null) {
+			return "";
+		} else {
+			Locale locale = XPagesUtil.getXSPContext().getLocale();
+			DateFormat formatterDate = DateFormat.getDateInstance(
+					DateFormat.MEDIUM, locale);
+
+			// String pattern = ((SimpleDateFormat) formatterDate).toPattern();
+			String localPattern = ((SimpleDateFormat) formatterDate)
+					.toLocalizedPattern();
+
+			SimpleDateFormat sdfDestination = new SimpleDateFormat(localPattern
+					+ " HH:mm", locale);
+			return sdfDestination.format(dt);
+		}
+	}
 	/*
 	 * public static ControllerConfiguration getControllerConfiguration() {
 	 * ControllerConfiguration result = null;

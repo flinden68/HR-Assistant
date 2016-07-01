@@ -1,6 +1,7 @@
 package ch.belsoft.hrassistant.dao;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import nl.elstarit.cloudant.model.ConnectorResponse;
@@ -35,6 +36,10 @@ public abstract class BaseDAO implements Serializable {
 
 	public void setCloudantService(CloudantService cloudantService) {
 		this.cloudantService = cloudantService;
+	}
+
+	public void updateModifiedDate(IDataItem dataItem) {
+		dataItem.setModified(new Date());
 	}
 
 }
