@@ -88,15 +88,6 @@ public class ConfigurationController extends ControllerBase implements
 		return this.config;
 	}
 
-	public ApplicationController getApplicationController() {
-		return applicationController;
-	}
-
-	public void setApplicationController(
-			ApplicationController applicationController) {
-		this.applicationController = applicationController;
-	}
-
 	public void clearConfigurations() {
 		this.configurations = new ArrayList<ConfigDefault>();
 	}
