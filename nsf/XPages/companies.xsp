@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xc:ccLayout pageTitle="#{companyController.listTitle}">
+		<xp:this.facets>
+			<xp:panel xp:key="Content">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="box">
+							<div class="box-header">
+								<h3 class="box-title">Companies</h3>
+
+								<div class="box-tools">
+									<div style="width: 150px;" class="input-group input-group-sm">
+										<input type="text" placeholder="Search" class="form-control pull-right"
+											name="table_search" />
+
+										<div class="input-group-btn">
+											<button class="btn btn-default" type="submit">
+												<i class="fa fa-search"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="box-header">
+								<a class="btn btn-warning btn-margin-right" href="company.xsp">create
+									new
+									company
+								</a>
+								<xp:button value="refresh" id="button1"
+									styleClass="btn btn-primary btn-margin-right">
+									<xp:eventHandler event="onclick" submit="true"
+										onStart="waitingDialog.show('refreshing')" onComplete="waitingDialog.hide()"
+										refreshMode="partial" refreshId="content-wrapper" immediate="true"
+										execMode="partial" execId="content-wrapper">
+										<xp:this.action>
+											<xp:executeScript
+												script="#{javascript:companyController.clearJobs()}">
+											</xp:executeScript>
+										</xp:this.action>
+									</xp:eventHandler>
+								</xp:button>
+
+								<div class="pull-right">
+									<xp:pager partialRefresh="true" id="pager2" for="rptCompanies"
+										panelPosition="left" styleClass="bootstrapPager"
+										partialExecute="true">
+										<xp:pagerControl type="Previous" id="pagerControl4"
+											styleClass="bootstrapPagerPrevious">
+											<xp:this.value><![CDATA[«]]></xp:this.value>
+										</xp:pagerControl>
+										<xp:pagerControl type="Group" id="pagerControl5"
+											styleClass="bootstrapPagerMiddle">
+										</xp:pagerControl>
+										<xp:pagerControl type="Next" id="pagerControl6"
+											styleClass="bootstrapPagerNext">
+											<xp:this.value><![CDATA[»]]></xp:this.value>
+										</xp:pagerControl>
+									</xp:pager>
+								</div>
+							</div>
+							<!-- /.box-header -->
+
+							<div class="box-body table-responsive">
+								<xc:ccCompanyList></xc:ccCompanyList>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</xp:panel>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>

@@ -300,6 +300,18 @@
 							<span>Configuration List</span>
 						</a>
 					</li>
+					<li class="active">
+						<a href="companies.xsp">
+							<i class="fa fa-building"></i>
+							<span>Companies</span>
+						</a>
+					</li>
+					<li class="active">
+						<a href="jobs.xsp">
+							<i class="fa fa-paper-plane"></i>
+							<span>Jobs</span>
+						</a>
+					</li>
 					<li>
 						<a href="cloudantstatus.xsp">
 							<i class="fa fa-database"></i>

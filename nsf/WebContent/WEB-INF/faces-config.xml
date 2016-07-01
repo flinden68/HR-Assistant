@@ -6,6 +6,8 @@
 		</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
+  
+  <!-- Model beans -->
   <!--
 		<lifecycle>
 		<phase-listener>com.paulwithers.openLog.OpenLogPhaseListener
@@ -17,6 +19,8 @@
 		</managed-bean-class>
     <managed-bean-scope>session</managed-bean-scope>
   </managed-bean>
+  
+  <!-- Application controller -->
   <managed-bean>
     <managed-bean-name>applicationController
 		</managed-bean-name>
@@ -25,6 +29,45 @@
 		</managed-bean-class>
     <managed-bean-scope>session</managed-bean-scope>
   </managed-bean>
+  
+  <!-- Job Controller -->
+  <managed-bean>
+    <managed-bean-name>jobController
+		</managed-bean-name>
+    <managed-bean-class>
+			ch.belsoft.hrassistant.job.controller.JobController
+		</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+    <managed-property>
+      <property-name>jobDAO</property-name>
+      <value>#{jobDAO}</value>
+    </managed-property>
+    <managed-property>
+      <property-name>applicationController</property-name>
+      <value>#{applicationController}</value>
+    </managed-property>
+  </managed-bean>
+  
+  <!-- Company Controller -->
+  <managed-bean>
+    <managed-bean-name>companyController
+		</managed-bean-name>
+    <managed-bean-class>
+			ch.belsoft.hrassistant.company.controller.CompanyController
+		</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+    <managed-property>
+      <property-name>companyDAO</property-name>
+      <value>#{companyDAO}</value>
+    </managed-property>
+    <managed-property>
+      <property-name>applicationController</property-name>
+      <value>#{applicationController}</value>
+    </managed-property>
+  </managed-bean>
+  
+  
+  <!-- Configuration controller -->
   <managed-bean>
     <managed-bean-name>configurationController
 		</managed-bean-name>
@@ -37,6 +80,20 @@
       <value>#{configurationDAO}</value>
     </managed-property>
   </managed-bean>
+  
+  <!-- Company DAO -->
+  <managed-bean>
+    <managed-bean-name>companyDAO</managed-bean-name>
+    <managed-bean-class>ch.belsoft.hrassistant.company.dao.CompanyDAO
+		</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+    <managed-property>
+      <property-name>cloudantService</property-name>
+      <value>#{cloudantService}</value>
+    </managed-property>
+  </managed-bean>
+  
+  <!-- Job DAO -->
   <managed-bean>
     <managed-bean-name>jobDAO</managed-bean-name>
     <managed-bean-class>ch.belsoft.hrassistant.job.dao.JobDAO
@@ -47,6 +104,8 @@
       <value>#{cloudantService}</value>
     </managed-property>
   </managed-bean>
+  
+  <!-- Configuration DAO -->
   <managed-bean>
     <managed-bean-name>configurationDAO
 		</managed-bean-name>
@@ -59,6 +118,8 @@
       <value>#{cloudantService}</value>
     </managed-property>
   </managed-bean>
+  
+  <!-- JobApplication DAO -->
   <managed-bean>
     <managed-bean-name>jobApplicationDAO
 		</managed-bean-name>

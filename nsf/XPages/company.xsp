@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.dataContexts>
+		<xp:dataContext value="#{companyController.dataContext}"
+			var="company">
+		</xp:dataContext>
+	</xp:this.dataContexts>
+	<xc:ccLayout pageTitle="${companyController.pageTitle}"
+		pageSubTitle="ID: #{company.id}">
+		<xp:this.facets>
+			<xp:panel xp:key="Content">
+				<div class="row">
+					<div class="col-md-6">
+						<!-- general form elements -->
+						<div class="box box-primary">
+							<div class="box-header with-border">
+								<h3 class="box-title">Company</h3>
+							</div>
+							<!-- /.box-header -->
+							<!-- form start -->
+
+							<div class="box-body">
+								<xp:div
+									styleClass="form-group is-valid-#{javascript:getComponent('fldName').isValid()}">
+									<label for="fldName">Company name</label>
+									<xp:inputText id="fldName" value="#{company.name}"
+										styleClass="valid-#{javascript:this.isValid()}" required="true">
+										<xp:this.validators>
+											<xp:validateRequired message="Please give a company name">
+											</xp:validateRequired>
+										</xp:this.validators>
+									</xp:inputText>
+
+									<xp:message id="message1" for="fldName"
+										styleClass="help-block with-errors"></xp:message>
+								</xp:div>
+								<xp:div
+									styleClass="form-group is-valid-#{javascript:getComponent('fldStreetName').isValid()}">
+									<label for="fldStreetName">Street name</label>
+									<xp:inputText id="fldStreetName" value="#{company.address.street}"
+										styleClass="valid-#{javascript:this.isValid()}" required="true">
+										<xp:this.validators>
+											<xp:validateRequired message="Please give a street name">
+											</xp:validateRequired>
+										</xp:this.validators>
+									</xp:inputText>
+
+									<xp:message id="message2" for="fldStreetName"
+										styleClass="help-block with-errors"></xp:message>
+								</xp:div>
+								
+								<xp:div
+									styleClass="form-group is-valid-#{javascript:getComponent('fldStreetNumber').isValid()}">
+									<label for="fldStreetNumber">Street number</label>
+									<xp:inputText id="fldStreetNumber" value="#{company.address.streetNumber}"
+										styleClass="valid-#{javascript:this.isValid()}" required="true">
+										<xp:this.validators>
+											<xp:validateRequired message="Please give a street number">
+											</xp:validateRequired>
+										</xp:this.validators>
+									</xp:inputText>
+
+									<xp:message id="message3" for="fldStreetNumber"
+										styleClass="help-block with-errors"></xp:message>
+								</xp:div>
+								
+								<xp:div
+									styleClass="form-group is-valid-#{javascript:getComponent('fldZip').isValid()}">
+									<label for="fldZip">Zip code</label>
+									<xp:inputText id="fldZip" value="#{company.address.zip}"
+										styleClass="valid-#{javascript:this.isValid()}" required="true">
+										<xp:this.validators>
+											<xp:validateRequired message="Please give a zip code">
+											</xp:validateRequired>
+										</xp:this.validators>
+									</xp:inputText>
+
+									<xp:message id="message4" for="fldZip"
+										styleClass="help-block with-errors"></xp:message>
+								</xp:div>
+								
+								<xp:div
+									styleClass="form-group is-valid-#{javascript:getComponent('fldCity').isValid()}">
+									<label for="fldCity">City</label>
+									<xp:inputText id="fldCity" value="#{company.address.city}"
+										styleClass="valid-#{javascript:this.isValid()}" required="true">
+										<xp:this.validators>
+											<xp:validateRequired message="Please give a city">
+											</xp:validateRequired>
+										</xp:this.validators>
+									</xp:inputText>
+
+									<xp:message id="message5" for="fldCity"
+										styleClass="help-block with-errors"></xp:message>
+								</xp:div>
+								
+								<xp:div
+									styleClass="form-group is-valid-#{javascript:getComponent('fldCountry').isValid()}">
+									<label for="fldCountry">Country</label>
+									<xp:inputText id="fldCountry" value="#{company.address.country}"
+										styleClass="valid-#{javascript:this.isValid()}" required="true">
+										<xp:this.validators>
+											<xp:validateRequired message="Please give a country">
+											</xp:validateRequired>
+										</xp:this.validators>
+									</xp:inputText>
+
+									<xp:message id="message6" for="fldCountry"
+										styleClass="help-block with-errors"></xp:message>
+								</xp:div>
+								
+								
+							</div>
+							<!-- /.box-body -->
+
+							<div class="box-footer">
+								<a href="companies.xsp" class="btn btn-default "
+									title="back to jobs">cancel</a>
+								<div class="pull-right">
+									<xp:button styleClass="btn btn-success btn-margin-right"
+										value="save" id="button1">
+										<xp:eventHandler event="onclick" submit="true"
+											onStart="waitingDialog.show('saving...')" onComplete="waitingDialog.hide()"
+											refreshMode="partial" refreshId="content-wrapper" execMode="partial"
+											execId="content-wrapper">
+											<xp:this.action>
+												<xp:executeScript
+													script="#{javascript:companyController.update()}">
+												</xp:executeScript>
+											</xp:this.action>
+										</xp:eventHandler>
+									</xp:button>
+
+									<xp:button styleClass="btn btn-danger" value="remove"
+										id="button7">
+										<i class="fa fa-trash fa-fw"></i>
+										<xp:eventHandler event="onclick" submit="true"
+											onStart="waitingDialog.show('removing')" onComplete="waitingDialog.hide();document.location='configurations.xsp'"
+											refreshMode="partial" refreshId="content-wrapper" immediate="true"
+											execMode="partial" execId="content-wrapper">
+											<xp:this.action>
+												<xp:executeScript
+													script="#{javascript:companyController.remove(company)}">
+												</xp:executeScript>
+											</xp:this.action>
+										</xp:eventHandler>
+									</xp:button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<xp:div styleClass="col-md-6" id="pnlConfigurationList">
+						<!-- general form elements -->
+						<div class="box box-primary">
+							<!--
+								<div class="box-header with-border"> <h3 class="box-title">Other
+								configs of type...</h3> </div>
+							-->
+							<!-- /.box-header -->
+							<!-- form start -->
+
+							<div class="box-header">
+								<xp:text escape="true" tagName="h3" styleClass="box-title"
+									value="#{companyController.listTitle}" id="computedField1">
+								</xp:text>
+
+
+								<div class="box-tools">
+									<div style="width: 150px;" class="input-group input-group-sm">
+										<input type="text" placeholder="Search" class="form-control pull-right"
+											name="table_search" />
+
+										<div class="input-group-btn">
+											<button class="btn btn-default" type="submit">
+												<i class="fa fa-search"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /.box-header -->
+							<div class="box-body table-responsive no-padding">
+								<xc:ccCompanyListSmall></xc:ccCompanyListSmall>
+							</div>
+							<!-- /.box-body -->
+							<div class="box-footer">
+								<a class="btn btn-primary" href="company.xsp">create company
+								</a>
+							</div>
+						</div>
+
+					</xp:div>
+				</div>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>
