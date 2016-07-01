@@ -13,6 +13,8 @@ Serializable {
     private static final long serialVersionUID = 1L;
     private static final String DESIGN_DOC = "company";
     private static final String VIEW_NAME = "companies";
+    private static final String DESIGN_DOC_KEYS = "companykey";
+    private static final String VIEW_NAME_KEYS = "companieskeys";
     private static final int VIEW_LIMIT = 1000;
     
     public void create(Company t) {
@@ -42,6 +44,13 @@ Serializable {
         connectToService();
         super.updateModifiedDate(t);
         super.handleResponse(cloudantService.updateDocument(t), t);
+    }
+    
+    @SuppressWarnings("unchecked")
+    public List<Company> readWithKeys(String startKey, String endKey) {
+        connectToService();
+        return (List<Company>) cloudantService.findAllDocumentFromViewKeys(Company.class,
+                DESIGN_DOC_KEYS, VIEW_NAME_KEYS, "STRING", VIEW_LIMIT, startKey, endKey);
     }
     
     

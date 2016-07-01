@@ -52,4 +52,9 @@ ICrudDAO<JobApplication, String>, Serializable {
         super.handleResponse(cloudantService.updateDocument(t), t);
     }
     
+    public List<JobApplication> readWithKeys(String startKey, String endKey) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+    
 }
