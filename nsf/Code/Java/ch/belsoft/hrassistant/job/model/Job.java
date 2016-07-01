@@ -61,4 +61,8 @@ public class Job extends DataItem implements Serializable {
         return representativeId;
     }
     
+    public boolean isHasCompanyId(){
+        return !"".equals(companyId);
+    }
+    
 }

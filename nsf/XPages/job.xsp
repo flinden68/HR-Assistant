@@ -22,7 +22,7 @@
 							<div class="box-body">
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldCompany').isValid()}">
-									<label for="fldCompany">Type</label>
+									<label for="fldCompany">Company</label>
 									<xp:comboBox id="fldCompany" value="#{job.companyId}"
 										required="true">
 										<xp:selectItem itemLabel="Please choose"
@@ -38,8 +38,8 @@
 
 										<xp:eventHandler event="onchange" submit="true"
 											onStart="waitingDialog.show('loading configurations')"
-											onComplete="waitingDialog.hide();" refreshMode="complete"
-											disableValidators="true">
+											onComplete="waitingDialog.hide();" refreshMode="partial"
+											disableValidators="true" refreshId="companyInfo">
 											<xp:this.action>
 												<xp:executeScript
 													script="#{javascript:jobController.changeCompany();}">
@@ -50,6 +50,17 @@
 									<xp:message id="message2" for="fldCompany"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
+								
+								<xp:panel id="companyInfo"
+									styleClass="form-group">
+
+									<xp:panel id="displayCompany" rendered="#{job.hasCompanyId}">
+									
+									<xp:text id="inputText1" value="#{job.company.address.addressDisplay}" escape="false" styleClass="form-control-static">
+										
+									</xp:text>
+									</xp:panel>
+								</xp:panel>
 								
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldJobName').isValid()}">
@@ -64,14 +75,6 @@
 
 									<xp:message id="message1" for="fldJobName"
 										styleClass="help-block with-errors"></xp:message>
-								</xp:div>
-								
-								<xp:div
-									styleClass="form-group">
-									<label for="fldJobName">Company name</label>
-									<xp:text id="inputText1" value="#{job.company.name}">
-										
-									</xp:text>
 								</xp:div>
 								
 							</div>
@@ -144,7 +147,7 @@
 							</div>
 							<!-- /.box-header -->
 							<div class="box-body table-responsive no-padding">
-								<xc:ccJobList></xc:ccJobList>
+								<xc:ccJobListSmall></xc:ccJobListSmall>
 							</div>
 							<!-- /.box-body -->
 							<div class="box-footer">

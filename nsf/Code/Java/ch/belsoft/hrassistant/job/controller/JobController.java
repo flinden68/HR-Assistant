@@ -14,6 +14,7 @@ import ch.belsoft.hrassistant.job.dao.JobDAO;
 import ch.belsoft.hrassistant.job.model.Address;
 import ch.belsoft.hrassistant.job.model.Company;
 import ch.belsoft.hrassistant.job.model.Job;
+import ch.belsoft.hrassistant.job.model.Person;
 import ch.belsoft.tools.Logging;
 import ch.belsoft.tools.XPagesUtil;
 
@@ -46,6 +47,9 @@ public class JobController extends ControllerBase implements IGuiController<Job>
                     Company company = new Company();
                     company.setAddress(new Address());
                     job.setCompany(company);
+                    Person person = new Person();
+                    person.setAddress(new Address());
+                    job.setRepresentative(person);
                 }
             }
         } catch (Exception e) {
@@ -138,9 +142,12 @@ public class JobController extends ControllerBase implements IGuiController<Job>
     public List<Job> getJobs() {
         
         try {
-            if (this.jobs.size() == 0) {
+            if (this.jobs.isEmpty()) {
                 this.jobs = this.jobDAO.read();
+                jobs.remove(this.job);
             }
+            
+            
             
         } catch (Exception e) {
             Logging.logError(e);
@@ -164,6 +171,7 @@ public class JobController extends ControllerBase implements IGuiController<Job>
         }
         return selectItems;
     }
+    
     /*
      * Getters and Setters
      */

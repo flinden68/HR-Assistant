@@ -31,6 +31,10 @@ public class Company extends DataItem implements Serializable {
         return dataType;
     }
     
+    public String getNameAndAddress(){
+        return getName() + "<br />" + getAddress().getAddressDisplay();
+    }
+    
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();

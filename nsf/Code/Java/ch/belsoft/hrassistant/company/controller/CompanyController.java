@@ -123,8 +123,9 @@ public class CompanyController extends ControllerBase implements IGuiController<
     public List<Company> getCompanies() {
         
         try {
-            if (this.companies.size() == 0) {
+            if (this.companies.isEmpty()) {
                 this.companies = this.companyDAO.read();
+                companies.remove(company);
             }
             
         } catch (Exception e) {
