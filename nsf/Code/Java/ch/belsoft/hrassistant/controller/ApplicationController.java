@@ -45,6 +45,9 @@ public class ApplicationController implements Serializable {
 	private void initConfiguration() {
 		try {
 
+			this.configurationController = (ConfigurationController) XPagesUtil
+					.getViewScope().get("configurationController");
+
 			for (IConfiguration config : this.configurationController
 					.getConfigurations()) {
 				this.addConfig(config);

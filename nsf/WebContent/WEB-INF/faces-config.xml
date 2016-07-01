@@ -36,6 +36,11 @@
 			<property-name>configurationDAO</property-name>
 			<value>#{configurationDAO}</value>
 		</managed-property>
+		<managed-property>
+			<property-name>applicationController
+			</property-name>
+			<value>#{applicationController}</value>
+		</managed-property>
 	</managed-bean>
 	<managed-bean>
 		<managed-bean-name>jobDAO</managed-bean-name>

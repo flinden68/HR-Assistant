@@ -9,6 +9,13 @@
 		pageSubTitle="#{javascript:configurationController.getCreatedModifiedInfo(config)}">
 		<xp:this.facets>
 			<xp:panel xp:key="Content">
+				<xp:comboBox id="comboBox1" value="#{config.typeString}"
+					required="${compositeData.required}">
+					<xp:selectItem itemLabel="Please choose" itemValue="">
+					</xp:selectItem>
+					<xp:selectItems value="${configurationController.jobIndustrySelection}">
+					</xp:selectItems>
+				</xp:comboBox>
 				<div class="row">
 					<div class="col-md-6">
 						<!-- general form elements -->

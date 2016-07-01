@@ -175,4 +175,9 @@ public class ConfigurationController extends ControllerBase implements
 		return pageTitle;
 	}
 
+	public List<String> getJobIndustrySelection() {
+		return applicationController
+				.getConfigSelection(ConfigType.JOB_INDUSTRY);
+	}
+
 }

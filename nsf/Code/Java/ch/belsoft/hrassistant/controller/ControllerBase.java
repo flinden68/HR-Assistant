@@ -34,6 +34,8 @@ public abstract class ControllerBase implements Serializable {
 	protected static final String PAGETITLE_REPLACE_NAME = "{NAME}";
 	protected static final String PAGETITLE_REPLACE_DESCRIPTION = "{DESCRIPTION}";
 
+	protected ApplicationController applicationController = null;
+
 	protected boolean newDataItem = false;
 
 	protected String getId() {
@@ -66,6 +68,15 @@ public abstract class ControllerBase implements Serializable {
 			Logging.logError(e);
 		}
 		return result;
+	}
+
+	public ApplicationController getApplicationController() {
+		return applicationController;
+	}
+
+	public void setApplicationController(
+			ApplicationController applicationController) {
+		this.applicationController = applicationController;
 	}
 
 }
