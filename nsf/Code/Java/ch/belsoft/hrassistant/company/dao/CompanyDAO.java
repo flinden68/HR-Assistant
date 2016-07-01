@@ -40,6 +40,7 @@ Serializable {
     
     public void update(Company t) {
         connectToService();
+        super.updateModifiedDate(t);
         super.handleResponse(cloudantService.updateDocument(t), t);
     }
     

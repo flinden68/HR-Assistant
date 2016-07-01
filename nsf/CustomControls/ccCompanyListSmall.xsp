@@ -10,20 +10,21 @@
 			</tr>
 		</thead>
 		<tbody>
-			<xp:repeat id="rptCompanies" rows="10" var="company" indexVar="i"
+			<xp:repeat id="rptCompanies" rows="10" var="entry" indexVar="i"
 				value="#{companyController.companies}">
-				<xp:tr styleClass="#{(i mod 2 eq 0) ? 'even': 'odd'}">
+				<xp:tr styleClass="#{(i mod 2 eq 0) ? 'even': 'odd'}"
+					 rendered="#{javascript:!company.getId().equals(entry.id)}">
 					<xp:text escape="true" id="columnName" tagName="td"
-						value="#{company.name}">
+						value="#{entry.name}">
 					</xp:text>
 					<xp:text escape="false" id="columnStreet" tagName="td"
-						value="#{company.address.addressDisplay}"
+						value="#{entry.address.addressDisplay}"
 						>
 					</xp:text>
 
 					<td>
 						<xp:link escape="true" styleClass="btn btn-warning btn-margin-right"
-							text="edit" id="link1" value="company.xsp?openxpage&amp;id=#{company.id}">
+							text="edit" id="link1" value="company.xsp?openxpage&amp;id=#{entry.id}">
 							<i class="fa fa-pencil fa-fw"></i>
 						</xp:link>
 						<xp:button styleClass="btn btn-danger" value="remove"
@@ -35,7 +36,7 @@
 								execMode="partial" execId="content-wrapper">
 								<xp:this.action>
 									<xp:executeScript
-										script="#{javascript:companyController.removeFromList(company)}">
+										script="#{javascript:companyController.removeFromList(entry)}">
 									</xp:executeScript>
 								</xp:this.action>
 							</xp:eventHandler>
