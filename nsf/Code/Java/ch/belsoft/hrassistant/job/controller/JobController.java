@@ -4,10 +4,15 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.model.SelectItem;
+
+import ch.belsoft.hrassistant.company.dao.CompanyDAO;
 import ch.belsoft.hrassistant.controller.ApplicationController;
 import ch.belsoft.hrassistant.controller.ControllerBase;
 import ch.belsoft.hrassistant.controller.IGuiController;
 import ch.belsoft.hrassistant.job.dao.JobDAO;
+import ch.belsoft.hrassistant.job.model.Address;
+import ch.belsoft.hrassistant.job.model.Company;
 import ch.belsoft.hrassistant.job.model.Job;
 import ch.belsoft.tools.Logging;
 import ch.belsoft.tools.XPagesUtil;
@@ -20,10 +25,12 @@ public class JobController extends ControllerBase implements IGuiController<Job>
     private static final String PAGETITLE_REPLACE_NAME = "{NAME}";
     private static final String PAGETITLE_REPLACE_COMPANY = "{COMPANY}";
     private static final String PAGETITLE_JOBLIST_ALL = "All jobs";
-    private static final String PAGETITLE_JOBLIST_COMPANY = "Other jobs of {COMPANY}";
+    
     private JobDAO jobDAO = new JobDAO();
+    private CompanyDAO companyDAO = new CompanyDAO();
     private Job job = null;
     private List<Job> jobs = new ArrayList<Job>();
+    private List<Company> companies;
     
     public JobController(){}
     
@@ -32,11 +39,13 @@ public class JobController extends ControllerBase implements IGuiController<Job>
             if (this.job == null) {
                 String id = this.getId();
                 if (!id.equals("")) {
-                    this.job = jobDAO.read(id);
+                    read(id);
                 } else {
                     newDataItem = true;
                     this.job = new Job();
-                    
+                    Company company = new Company();
+                    company.setAddress(new Address());
+                    job.setCompany(company);
                 }
             }
         } catch (Exception e) {
@@ -98,6 +107,11 @@ public class JobController extends ControllerBase implements IGuiController<Job>
         }
     }
     
+    private void read(String id){
+        this.job = jobDAO.read(id);
+        loadCompany();
+    }
+    
     public void update() {
         try {
             if (this.newDataItem) {
@@ -108,7 +122,7 @@ public class JobController extends ControllerBase implements IGuiController<Job>
                 Logging.logEvent("updating.. rev:" + job.getRev() + " id:"
                         + job.getId());
                 this.jobDAO.update(job);
-                this.job = jobDAO.read(job.getId());
+                read(job.getId());
             }
             
         } catch (Exception e) {
@@ -134,6 +148,22 @@ public class JobController extends ControllerBase implements IGuiController<Job>
         return this.jobs;
     }
     
+    private void loadCompany(){
+        job.setCompany(companyDAO.read(job.getCompanyId()));
+    }
+    
+    public void changeCompany(){
+        loadCompany();
+    }
+    
+    public List<SelectItem> getCompanySelection(){
+        List<SelectItem> selectItems = new ArrayList<SelectItem>();
+        companies = companyDAO.read();
+        for(Company comp : companies){
+            selectItems.add( new SelectItem(comp.getId(), comp.getName()));
+        }
+        return selectItems;
+    }
     /*
      * Getters and Setters
      */
@@ -162,6 +192,14 @@ public class JobController extends ControllerBase implements IGuiController<Job>
     
     public Job getJob() {
         return job;
+    }
+    
+    public CompanyDAO getCompanyDAO() {
+        return companyDAO;
+    }
+    
+    public void setCompanyDAO(CompanyDAO companyDAO) {
+        this.companyDAO = companyDAO;
     }
     
 }

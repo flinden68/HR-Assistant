@@ -30,6 +30,10 @@
 			<value>#{jobDAO}</value>
 		</managed-property>
 		<managed-property>
+			<property-name>companyDAO</property-name>
+			<value>#{companyDAO}</value>
+		</managed-property>
+		<managed-property>
 			<property-name>applicationController
 			</property-name>
 			<value>#{applicationController}</value>

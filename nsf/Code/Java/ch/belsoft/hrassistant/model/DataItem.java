@@ -69,6 +69,61 @@ public abstract class DataItem implements Serializable, IDataItem {
         this.modified = modified;
     }
     
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((_id == null) ? 0 : _id.hashCode());
+        result = prime * result + ((_rev == null) ? 0 : _rev.hashCode());
+        result = prime * result + ((created == null) ? 0 : created.hashCode());
+        result = prime * result
+        + ((modified == null) ? 0 : modified.hashCode());
+        return result;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        DataItem other = (DataItem) obj;
+        if (_id == null) {
+            if (other._id != null) {
+                return false;
+            }
+        } else if (!_id.equals(other._id)) {
+            return false;
+        }
+        if (_rev == null) {
+            if (other._rev != null) {
+                return false;
+            }
+        } else if (!_rev.equals(other._rev)) {
+            return false;
+        }
+        if (created == null) {
+            if (other.created != null) {
+                return false;
+            }
+        } else if (!created.equals(other.created)) {
+            return false;
+        }
+        if (modified == null) {
+            if (other.modified != null) {
+                return false;
+            }
+        } else if (!modified.equals(other.modified)) {
+            return false;
+        }
+        return true;
+    }
+    
     /*
      * public String get_rev() { return _rev; }
      * 
@@ -78,4 +133,6 @@ public abstract class DataItem implements Serializable, IDataItem {
      * 
      * public void set_id(String _id) { this._id = _id; }
      */
+    
+    
 }

@@ -6,7 +6,7 @@
 		</xp:dataContext>
 	</xp:this.dataContexts>
 	<xc:ccLayout pageTitle="${jobController.pageTitle}"
-		pageSubTitle="ID: #{job.id}">
+		pageSubTitle="#{javascript://jobController.getCreatedModifiedInfo(job)}">
 		<xp:this.facets>
 			<xp:panel xp:key="Content">
 				<div class="row">
@@ -21,6 +21,37 @@
 
 							<div class="box-body">
 								<xp:div
+									styleClass="form-group is-valid-#{javascript:getComponent('fldCompany').isValid()}">
+									<label for="fldCompany">Type</label>
+									<xp:comboBox id="fldCompany" value="#{job.companyId}"
+										required="true">
+										<xp:selectItem itemLabel="Please choose"
+											itemValue="">
+										</xp:selectItem>
+										<xp:selectItems
+											value="${jobController.companySelection}">
+										</xp:selectItems>
+										<xp:this.validators>
+											<xp:validateRequired message="Company is mandatory">
+											</xp:validateRequired>
+										</xp:this.validators>
+
+										<xp:eventHandler event="onchange" submit="true"
+											onStart="waitingDialog.show('loading configurations')"
+											onComplete="waitingDialog.hide();" refreshMode="complete"
+											disableValidators="true">
+											<xp:this.action>
+												<xp:executeScript
+													script="#{javascript:jobController.changeCompany();}">
+												</xp:executeScript>
+											</xp:this.action>
+										</xp:eventHandler>
+									</xp:comboBox>
+									<xp:message id="message2" for="fldCompany"
+										styleClass="help-block with-errors"></xp:message>
+								</xp:div>
+								
+								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldJobName').isValid()}">
 									<label for="fldJobName">Job name</label>
 									<xp:inputText id="fldJobName" value="#{job.name}"
@@ -33,6 +64,14 @@
 
 									<xp:message id="message1" for="fldJobName"
 										styleClass="help-block with-errors"></xp:message>
+								</xp:div>
+								
+								<xp:div
+									styleClass="form-group">
+									<label for="fldJobName">Company name</label>
+									<xp:text id="inputText1" value="#{job.company.name}">
+										
+									</xp:text>
 								</xp:div>
 								
 							</div>
