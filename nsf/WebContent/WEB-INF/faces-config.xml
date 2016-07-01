@@ -1,35 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faces-config>
-  <managed-bean>
-    <managed-bean-name>openLogBean</managed-bean-name>
-    <managed-bean-class>com.paulwithers.openLog.OpenLogErrorHolder
+	<managed-bean>
+		<managed-bean-name>openLogBean</managed-bean-name>
+		<managed-bean-class>com.paulwithers.openLog.OpenLogErrorHolder
 		</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
-  
-  <!-- Model beans -->
-  <!--
+
+	<!--
 		<lifecycle>
 		<phase-listener>com.paulwithers.openLog.OpenLogPhaseListener
 		</phase-listener> </lifecycle>
 	-->
-  <managed-bean>
-    <managed-bean-name>cloudant</managed-bean-name>
-    <managed-bean-class>com.ibm.xsp.bluemix.services.data.Cloudant
+	<managed-bean>
+		<managed-bean-name>cloudant</managed-bean-name>
+		<managed-bean-class>com.ibm.xsp.bluemix.services.data.Cloudant
 		</managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
-  </managed-bean>
-  
-  <!-- Application controller -->
-  <managed-bean>
-    <managed-bean-name>applicationController
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>applicationController
 		</managed-bean-name>
-    <managed-bean-class>
+		<managed-bean-class>
 			ch.belsoft.hrassistant.controller.ApplicationController
 		</managed-bean-class>
     <managed-bean-scope>session</managed-bean-scope>
   </managed-bean>
-  
+
   <!-- Job Controller -->
   <managed-bean>
     <managed-bean-name>jobController
@@ -47,7 +44,7 @@
       <value>#{applicationController}</value>
     </managed-property>
   </managed-bean>
-  
+
   <!-- Company Controller -->
   <managed-bean>
     <managed-bean-name>companyController
@@ -65,13 +62,13 @@
       <value>#{applicationController}</value>
     </managed-property>
   </managed-bean>
-  
-  
+
+
   <!-- Configuration controller -->
-  <managed-bean>
-    <managed-bean-name>configurationController
+	<managed-bean>
+		<managed-bean-name>configurationController
 		</managed-bean-name>
-    <managed-bean-class>
+		<managed-bean-class>
 			ch.belsoft.hrassistant.config.controller.ConfigurationController
 		</managed-bean-class>
     <managed-bean-scope>view</managed-bean-scope>
@@ -80,7 +77,7 @@
       <value>#{configurationDAO}</value>
     </managed-property>
   </managed-bean>
-  
+
   <!-- Company DAO -->
   <managed-bean>
     <managed-bean-name>companyDAO</managed-bean-name>
@@ -91,8 +88,13 @@
       <property-name>cloudantService</property-name>
       <value>#{cloudantService}</value>
     </managed-property>
+		<managed-property>
+			<property-name>applicationController
+			</property-name>
+			<value>#{applicationController}</value>
+		</managed-property>
   </managed-bean>
-  
+
   <!-- Job DAO -->
   <managed-bean>
     <managed-bean-name>jobDAO</managed-bean-name>
@@ -103,61 +105,74 @@
       <property-name>cloudantService</property-name>
       <value>#{cloudantService}</value>
     </managed-property>
+		<managed-property>
+			<property-name>applicationController
+			</property-name>
+			<value>#{applicationController}</value>
+		</managed-property>
   </managed-bean>
-  
+
   <!-- Configuration DAO -->
   <managed-bean>
     <managed-bean-name>configurationDAO
-		</managed-bean-name>
-    <managed-bean-class>
-			ch.belsoft.hrassistant.config.dao.ConfigurationDAO
-		</managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
-    <managed-property>
-      <property-name>cloudantService</property-name>
-      <value>#{cloudantService}</value>
-    </managed-property>
-  </managed-bean>
-  
+		<managed-bean-scope>view</managed-bean-scope>
+		<managed-property>
+			<property-name>configurationDAO</property-name>
+			<value>#{configurationDAO}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>applicationController
+			</property-name>
+			<value>#{applicationController}</value>
+		</managed-property>
+	</managed-bean>
+
   <!-- JobApplication DAO -->
   <managed-bean>
     <managed-bean-name>jobApplicationDAO
-		</managed-bean-name>
-    <managed-bean-class>ch.belsoft.hrassistant.job.dao.JobApplicationDAO
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>cloudantService</property-name>
+			<value>#{cloudantService}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>applicationController
+			</property-name>
+			<value>#{applicationController}</value>
+		</managed-property>
+	</managed-bean>
+
+
+	<managed-bean>
+		<managed-bean-name>cloudantService</managed-bean-name>
+		<managed-bean-class>ch.belsoft.hrassistant.service.CloudantService
 		</managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
-    <managed-property>
-      <property-name>cloudantService</property-name>
-      <value>#{cloudantService}</value>
-    </managed-property>
-  </managed-bean>
-  <managed-bean>
-    <managed-bean-name>cloudantService</managed-bean-name>
-    <managed-bean-class>ch.belsoft.hrassistant.service.CloudantService
-		</managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
-    <managed-property>
-      <property-name>account</property-name>
-      <value>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>account</property-name>
+			<value>
 				f44a2403-965e-4345-bc84-4fd485047735-bluemix:e0ab6592f8d6a0192d8d819fbe656a112f54fc82464a46ca9005cdc63b396d4a@f44a2403-965e-4345-bc84-4fd485047735-bluemix
 			</value>
-    </managed-property>
-    <managed-property>
-      <property-name>username</property-name>
-      <value>f44a2403-965e-4345-bc84-4fd485047735-bluemix
+		</managed-property>
+		<managed-property>
+			<property-name>username</property-name>
+			<value>f44a2403-965e-4345-bc84-4fd485047735-bluemix
 			</value>
-    </managed-property>
-    <managed-property>
-      <property-name>password</property-name>
-      <value>
+		</managed-property>
+		<managed-property>
+			<property-name>password</property-name>
+			<value>
 				e0ab6592f8d6a0192d8d819fbe656a112f54fc82464a46ca9005cdc63b396d4a
 			</value>
-    </managed-property>
-    <managed-property>
-      <property-name>cloudantDb</property-name>
-      <value>hrassistant</value>
-    </managed-property>
-  </managed-bean>
-  <!--AUTOGEN-START-BUILDER: Automatically generated by IBM Domino Designer. Do not modify.-->
-  <!--AUTOGEN-END-BUILDER: End of automatically generated section-->
+		</managed-property>
+		<managed-property>
+			<property-name>cloudantDb</property-name>
+			<value>hrassistant</value>
+		</managed-property>
+	</managed-bean>
+	<!--
+		AUTOGEN-START-BUILDER: Automatically generated by IBM Domino Designer.
+		Do not modify.
+	-->
+	<!--AUTOGEN-END-BUILDER: End of automatically generated section-->
 </faces-config>

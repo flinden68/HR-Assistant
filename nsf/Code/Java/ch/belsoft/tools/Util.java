@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Vector;
 import java.io.*;
 
@@ -108,16 +109,7 @@ public class Util {
 		}
 	}
 
-	public static String getDateString(Date dt) {
-		// TODO Auto-generated method stub
 
-		if (dt == null) {
-			return "";
-		} else {
-			SimpleDateFormat sdfDestination = new SimpleDateFormat("dd.MM.yyyy");
-			return sdfDestination.format(dt);
-		}
-	}
 
 	public static String implode(List<String> lst) {
 		String result = "";

@@ -6,6 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Vector;
 
+import ch.belsoft.hrassistant.config.controller.ConfigurationController;
 import ch.belsoft.hrassistant.config.model.ConfigDefault;
 import ch.belsoft.hrassistant.config.model.ConfigType;
 import ch.belsoft.hrassistant.config.model.IConfiguration;
@@ -22,10 +23,12 @@ public class ApplicationController implements Serializable {
 	private static final String REALHOMEPAGE = "dashboard.xsp";
 
 	private LinkedHashMap<ConfigType, List<String>> configSelections = new LinkedHashMap<ConfigType, List<String>>();
-	private LinkedHashMap<ConfigType, LinkedHashMap<String, IConfiguration>> config = new LinkedHashMap<ConfigType, LinkedHashMap<String, IConfiguration>>();
+	private LinkedHashMap<ConfigType, LinkedHashMap<String, IConfiguration>> configMap = new LinkedHashMap<ConfigType, LinkedHashMap<String, IConfiguration>>();
+
+	private ConfigurationController configurationController = null;
 
 	public ApplicationController() {
-		// initConfiguration();
+		initConfiguration();
 	}
 
 	/**
@@ -42,6 +45,14 @@ public class ApplicationController implements Serializable {
 	private void initConfiguration() {
 		try {
 
+			this.configurationController = (ConfigurationController) XPagesUtil
+					.getViewScope().get("configurationController");
+
+			for (IConfiguration config : this.configurationController
+					.getConfigurations()) {
+				this.addConfig(config);
+			}
+
 		} catch (Exception e) {
 			Logging.logError(e);
 		}
@@ -52,12 +63,12 @@ public class ApplicationController implements Serializable {
 
 		try {
 
-			if (!config.containsKey(configType)) {
+			if (!configMap.containsKey(configType)) {
 				initConfiguration();
 				Util.logEvent("Configuration with type: " + configType
 						+ " not found..");
 			} else {
-				LinkedHashMap<String, IConfiguration> configByKeys = config
+				LinkedHashMap<String, IConfiguration> configByKeys = configMap
 						.get(configType);
 				if (!configByKeys.containsKey(sKey)) {
 					Util.logEvent("Configuration in type " + configType
@@ -120,11 +131,11 @@ public class ApplicationController implements Serializable {
 
 		try {
 
-			if (!config.containsKey(configType)) {
+			if (!configMap.containsKey(configType)) {
 				initConfiguration();
 			}
 
-			result = new ArrayList<IConfiguration>(config.get(configType)
+			result = new ArrayList<IConfiguration>(configMap.get(configType)
 					.values());
 
 		} catch (Exception e) {
@@ -134,18 +145,17 @@ public class ApplicationController implements Serializable {
 		return result;
 	}
 
-	public List<String> getConfigSelection(String sType) {
+	public List<String> getConfigSelection(ConfigType configType) {
 
 		List<String> vResult = new Vector<String>();
 
 		try {
 
-			if (!configSelections.containsKey(sType)) {
-				Util.logEvent("its empty, so reloooad: " + sType);
+			if (!configSelections.containsKey(configType)) {
 				initConfiguration();
 			}
 
-			vResult = configSelections.get(sType);
+			vResult = configSelections.get(configType);
 
 		} catch (Exception e) {
 			Logging.logError(e);
@@ -154,20 +164,10 @@ public class ApplicationController implements Serializable {
 		return vResult;
 	}
 
-	private void addConfig(String type, String key, String value, String params) {
+	private void addConfig(IConfiguration configItem) {
 		try {
 
-			ConfigType configType = ConfigType.valueOf(type);
-
-			IConfiguration configItem = null;
-
-			String[] arrParams = null;
-
-			if (params.contains("|")) {
-				arrParams = params.split("\\|", -1);
-			}
-
-			switch (configType) {
+			// switch (configType) {
 			// case CONNECTIONS_CREDENTIALS:
 			// configItem = new ConfigCredentials(configType, key, value);
 			// ((ConfigCredentials) configItem).setPassword(arrParams[0]);
@@ -178,19 +178,19 @@ public class ApplicationController implements Serializable {
 			// ((ConfigBlogPostTemplate)
 			// configItem).setContent(arrParams[0]);
 			// break;
-			default:
-				configItem = new ConfigDefault(configType, key, value);
-				break;
-			}
+			// default:
+			// configItem = new ConfigDefault(configType, key, value);
+			// break;
+			// }
 
 			LinkedHashMap<String, IConfiguration> mapConfig = null;
 			List<String> vConfigSelection = null;
 
-			if (config.containsKey(configItem.getType())) {
-				mapConfig = config.get(configItem.getType());
+			if (configMap.containsKey(configItem.getType())) {
+				mapConfig = configMap.get(configItem.getType());
 			} else {
 				mapConfig = new LinkedHashMap<String, IConfiguration>();
-				config.put(configItem.getType(), mapConfig);
+				configMap.put(configItem.getType(), mapConfig);
 			}
 
 			if (configSelections.containsKey(configItem.getType())) {
@@ -200,14 +200,28 @@ public class ApplicationController implements Serializable {
 				configSelections.put(configItem.getType(), vConfigSelection);
 			}
 
-			vConfigSelection.add(configItem.getConfigValue() + "|"
-					+ configItem.getConfigKey());
+			StringBuilder configSelection = new StringBuilder(configItem
+					.getConfigValue());
+			configSelection.append("|");
+			configSelection.append(configItem.getConfigKey());
+
+			vConfigSelection.add(configSelection.toString());
 
 			mapConfig.put(configItem.getConfigKey(), configItem);
 		} catch (Exception e) {
 			Logging.logError(e);
 		}
 	}
+
+	public ConfigurationController getConfigurationController() {
+		return configurationController;
+	}
+
+	public void setConfigurationController(
+			ConfigurationController configurationController) {
+		this.configurationController = configurationController;
+	}
+
 	/*
 	 * private void addConfig(ViewEntry entry) { try { String type = (String)
 	 * entry.getColumnValues().elementAt(0); String key = (String)

@@ -6,9 +6,16 @@
 		</xp:dataContext>
 	</xp:this.dataContexts>
 	<xc:ccLayout pageTitle="${configurationController.pageTitle}"
-		pageSubTitle="ID: #{config.id}">
+		pageSubTitle="#{javascript:configurationController.getCreatedModifiedInfo(config)}">
 		<xp:this.facets>
 			<xp:panel xp:key="Content">
+				<xp:comboBox id="comboBox1" value="#{config.typeString}"
+					required="${compositeData.required}">
+					<xp:selectItem itemLabel="Please choose" itemValue="">
+					</xp:selectItem>
+					<xp:selectItems value="${configurationController.jobIndustrySelection}">
+					</xp:selectItems>
+				</xp:comboBox>
 				<div class="row">
 					<div class="col-md-6">
 						<!-- general form elements -->
@@ -59,10 +66,16 @@
 									<xp:message id="message1" for="fldKey"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
-								<div class="form-group">
+								<xp:div
+									styleClass="form-group is-valid-#{javascript:getComponent('fldConfigValue').isValid()}">
 									<label for="exampleInputEmail1">Value</label>
-									<xp:inputText id="inputText3" value="#{config.configValue}"></xp:inputText>
-								</div>
+									<xp:inputText id="fldConfigValue" value="#{config.configValue}">
+										<xp:this.validators>
+											<xp:validateRequired message="Config value is mandatory">
+											</xp:validateRequired>
+										</xp:this.validators>
+									</xp:inputText>
+								</xp:div>
 								<div class="form-group">
 									<label for="exampleInputEmail1">Sort</label>
 									<xp:inputText id="inputText4" value="#{config.sort}">
@@ -98,7 +111,8 @@
 										id="button7">
 										<i class="fa fa-trash fa-fw"></i>
 										<xp:eventHandler event="onclick" submit="true"
-											onStart="waitingDialog.show('removing')" onComplete="waitingDialog.hide();document.location='configurations.xsp'"
+											onStart="waitingDialog.show('removing')"
+											onComplete="waitingDialog.hide();document.location='configurations.xsp'"
 											refreshMode="partial" refreshId="content-wrapper" immediate="true"
 											execMode="partial" execId="content-wrapper">
 											<xp:this.action>
