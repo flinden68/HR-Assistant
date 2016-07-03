@@ -2,6 +2,7 @@ package ch.belsoft.hrassistant.config.model;
 
 import ch.belsoft.hrassistant.config.model.ConfigType;
 import ch.belsoft.hrassistant.model.DataItem;
+import ch.belsoft.tools.Logging;
 
 public class ConfigDefault extends DataItem implements IConfiguration {
 
@@ -26,7 +27,11 @@ public class ConfigDefault extends DataItem implements IConfiguration {
 	}
 
 	public void setTypeString(String type) {
-		this.setType(ConfigType.valueOf(type));
+		try {
+			this.setType(ConfigType.valueOf(type));
+		} catch (Exception e) {
+			Logging.logError(e);
+		}
 	}
 
 	public String getTypeString() {
@@ -61,7 +66,8 @@ public class ConfigDefault extends DataItem implements IConfiguration {
 	}
 
 	public void setConfigValue(String configValue) {
-		System.out.println(this.hashCode() + " inside setConfigValue:"+configValue);
+		System.out.println(this.hashCode() + " inside setConfigValue:"
+				+ configValue);
 		this.configValue = configValue;
 	}
 

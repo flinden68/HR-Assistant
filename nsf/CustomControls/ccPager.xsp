@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<div class="pull-right">
+		<xp:pager partialRefresh="true" id="pager2"
+			for="${compositeData.repeatId}" panelPosition="left" styleClass="bootstrapPager"
+			partialExecute="true">
+			<xp:pagerControl type="Previous" id="pagerControl4"
+				styleClass="bootstrapPagerPrevious">
+				<xp:this.value><![CDATA[«]]></xp:this.value>
+			</xp:pagerControl>
+			<xp:pagerControl type="Group" id="pagerControl5"
+				styleClass="bootstrapPagerMiddle">
+			</xp:pagerControl>
+			<xp:pagerControl type="Next" id="pagerControl6"
+				styleClass="bootstrapPagerNext">
+				<xp:this.value><![CDATA[»]]></xp:this.value>
+			</xp:pagerControl>
+		</xp:pager>
+	</div>
+</xp:view>

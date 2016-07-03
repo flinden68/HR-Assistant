@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="74e" sequence="20" unid="BF1F94EFEA617524C1257FE300304705">
-<created><datetime dst="true">20160701T104719,09+02</datetime></created>
-<modified><datetime dst="true">20160701T121951,51+02</datetime></modified>
-<revised><datetime dst="true">20160701T121951,50+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160701T121951,51+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160701T104719,11+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
-<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="10ee" sequence="7" unid="44584D716126C542C1257FE5005D437C">
+<created><datetime dst="true">20160703T185841,24+02</datetime></created>
+<modified><datetime dst="true">20160703T190127,52+02</datetime></modified>
+<revised><datetime dst="true">20160703T190127,51+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160703T190127,52+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160703T185841,23+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=FDN</name></updatedby>
+<wassignedby><name>CN=Administrator/O=FDN</name></wassignedby>
 <item name="$Flags"><text>gC~4K</text></item>
 <item name="$TITLE" sign="true"><text>companies.xsp</text></item>
 
 
-
 <item name="$FileNames" sign="true"><text>companies.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5.1</text></item>
+
 
 
 

@@ -6,6 +6,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Vector;
 
+import javax.faces.context.FacesContext;
+
 import ch.belsoft.hrassistant.config.controller.ConfigurationController;
 import ch.belsoft.hrassistant.config.model.ConfigDefault;
 import ch.belsoft.hrassistant.config.model.ConfigType;
@@ -48,6 +50,13 @@ public class ApplicationController implements Serializable {
 			this.configurationController = (ConfigurationController) XPagesUtil
 					.getViewScope().get("configurationController");
 
+			if (this.configurationController == null) {
+				FacesContext context = FacesContext.getCurrentInstance();
+				this.configurationController = (ConfigurationController) context
+						.getApplication().createValueBinding(
+								"#{configurationController}").getValue(context);
+			}
+			
 			for (IConfiguration config : this.configurationController
 					.getConfigurations()) {
 				this.addConfig(config);
