@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config>
+  <faces-config-extension>
+    <namespace-uri>http://www.ibm.com/xsp/custom</namespace-uri>
+    <default-prefix>xc</default-prefix>
+  </faces-config-extension>
+  <composite-component>
+    <component-type>ccMessageBox</component-type>
+    <composite-name>ccMessageBox</composite-name>
+    <composite-file>/ccMessageBox.xsp</composite-file>
+    <composite-extension>
+      <designer-extension>
+        <in-palette>true</in-palette>
+      </designer-extension>
+    </composite-extension>
+    <property>
+      <property-name>type</property-name>
+      <property-class>string</property-class>
+      <description>danger, info, warning, success</description>
+      <property-extension>
+        <required>true</required>
+      </property-extension>
+    </property>
+    <property>
+      <property-name>text</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <required>true</required>
+      </property-extension>
+    </property>
+    <property>
+      <property-name>title</property-name>
+      <property-class>string</property-class>
+    </property>
+    <property>
+      <property-name>icon</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <designer-extension>
+          <editor/>
+        </designer-extension>
+      </property-extension>
+      <description>ban,info,warning,check</description>
+    </property>
+  </composite-component>
+</faces-config>

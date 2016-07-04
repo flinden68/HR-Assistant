@@ -5,10 +5,8 @@
 		<xp:this.facets>
 			<xp:panel xp:key="Content">
 				<div class="row">
-
 					<div class="col-xs-12">
 						<xp:div styleClass="box" id="pnlDataItemList">
-
 							<xc:ccDataItemListHeader title="List of all Configuration Items"
 								refreshIdForSearch="pnlDataItemList" controller="#{configurationController}"></xc:ccDataItemListHeader>
 							<div class="box-header">
@@ -93,20 +91,8 @@
 														value="configuration.xsp?openxpage&amp;id=#{config.id}">
 														<i class="fa fa-pencil fa-fw"></i>
 													</xp:link>
-													<xp:button styleClass="btn btn-danger" value="remove"
-														id="button7">
-														<i class="fa fa-trash fa-fw"></i>
-														<xp:eventHandler event="onclick" submit="true"
-															onStart="waitingDialog.show('removing')" onComplete="waitingDialog.hide()"
-															refreshMode="partial" refreshId="content-wrapper"
-															immediate="true" execMode="partial" execId="content-wrapper">
-															<xp:this.action>
-																<xp:executeScript
-																	script="#{javascript:configurationController.removeFromList(config)}">
-																</xp:executeScript>
-															</xp:this.action>
-														</xp:eventHandler>
-													</xp:button>
+													<xc:ccDataItemButtonRemove
+														controller="${configurationController}" dataItem="#{config}"></xc:ccDataItemButtonRemove>
 												</td>
 											</xp:tr>
 										</xp:repeat>

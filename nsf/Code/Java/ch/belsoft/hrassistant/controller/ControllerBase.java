@@ -3,8 +3,11 @@ package ch.belsoft.hrassistant.controller;
 import java.io.PrintWriter;
 import java.io.Serializable;
 import java.io.StringWriter;
+import java.util.List;
 
+import ch.belsoft.hrassistant.config.model.ConfigDefault;
 import ch.belsoft.hrassistant.dao.IDataItem;
+import ch.belsoft.hrassistant.model.DataItem;
 import ch.belsoft.tools.Logging;
 import ch.belsoft.tools.XPagesUtil;
 
@@ -77,6 +80,18 @@ public abstract class ControllerBase implements Serializable {
 
 	public void setSearchQuery(String searchQuery) {
 		this.searchQuery = searchQuery;
+	}
+
+	public void postSearch(List<?> searchedDataItems) {
+		try {
+			if (searchedDataItems == null || searchedDataItems.size() == 0) {
+				XPagesUtil
+						.showErrorMessage("not items found with search query: "
+								+ this.searchQuery, "pnlSearchInfoNoItemsFound");
+			}
+		} catch (Exception e) {
+			Logging.logError(e);
+		}
 	}
 
 }

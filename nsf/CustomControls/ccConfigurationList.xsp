@@ -43,9 +43,12 @@
 		<!-- /.box-header -->
 
 		<div class="box-body table-responsive">
-
+			<!--
+				<xc:ccMessageBox type="info" title="title" text="tesssxxxt"
+				icon="info"></xc:ccMessageBox> <xc:ccMessageBox type="danger"
+				title="title" text="tesssxxxt" icon="ban"></xc:ccMessageBox>
+			-->
 			<table class="table table-hover table-striped">
-
 				<thead>
 					<tr>
 						<!-- 	<th>rev</th>

@@ -13,6 +13,7 @@ import ch.belsoft.hrassistant.config.model.IConfiguration;
 import ch.belsoft.hrassistant.controller.ApplicationController;
 import ch.belsoft.hrassistant.controller.ControllerBase;
 import ch.belsoft.hrassistant.controller.IGuiController;
+import ch.belsoft.hrassistant.dao.IDataItem;
 import ch.belsoft.tools.Logging;
 import ch.belsoft.tools.Util;
 import ch.belsoft.tools.XPagesUtil;
@@ -98,9 +99,11 @@ public class ConfigurationController extends ControllerBase implements
 			if (this.configurations.size() == 0) {
 				if (this.searchQuery.equals("")) {
 					this.configurations = this.configurationDAO.read();
+
 				} else {
 					this.configurations = this.configurationDAO
 							.search(this.searchQuery);
+					super.postSearch(this.configurations);
 				}
 			}
 		} catch (Exception e) {
@@ -121,6 +124,7 @@ public class ConfigurationController extends ControllerBase implements
 	public void remove(ConfigDefault config) {
 		try {
 			this.configurationDAO.delete(config);
+			this.clearDataItemList();
 		} catch (Exception e) {
 			Logging.logError(e);
 		}
@@ -143,7 +147,7 @@ public class ConfigurationController extends ControllerBase implements
 				this.configurationDAO.update(config);
 				this.config = configurationDAO.read(config.getId());
 			}
-
+			this.clearDataItemList();
 		} catch (Exception e) {
 			handleException(e);
 			Logging.logError(e);

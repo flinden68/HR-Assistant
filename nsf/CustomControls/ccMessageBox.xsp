@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:div styleClass="alert alert-${compositeData.type} alert-dismissible">
+		<button aria-hidden="true" data-dismiss="alert" class="close"
+			type="button">×</button>
+		<h4>
+			<i class="icon fa fa-${compositeData.icon}"></i>
+			<xp:text escape="true" id="computedField5" value="${compositeData.title}"></xp:text>
+		</h4>
+		<xp:text escape="true" id="computedField6" value="${compositeData.text}"></xp:text>
+	</xp:div>
+</xp:view>

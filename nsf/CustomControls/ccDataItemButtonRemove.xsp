@@ -11,8 +11,7 @@
 			<xp:this.action>
 				<xp:actionGroup>
 					<xp:confirm
-						message="Are you sure you want to remove this item?
-					wollen?">
+						message="Are you sure you want to remove this item?">
 					</xp:confirm>
 					<xp:executeScript
 						script="#{javascript:compositeData.controller.remove(compositeData.dataItem)}">
