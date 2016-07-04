@@ -88,7 +88,7 @@ public class ConfigurationController extends ControllerBase implements
 		return this.config;
 	}
 
-	public void clearConfigurations() {
+	public void clearDataItemList() {
 		this.configurations = new ArrayList<ConfigDefault>();
 	}
 
@@ -96,9 +96,13 @@ public class ConfigurationController extends ControllerBase implements
 
 		try {
 			if (this.configurations.size() == 0) {
-				this.configurations = this.configurationDAO.read();
+				if (this.searchQuery.equals("")) {
+					this.configurations = this.configurationDAO.read();
+				} else {
+					this.configurations = this.configurationDAO
+							.search(this.searchQuery);
+				}
 			}
-
 		} catch (Exception e) {
 			Logging.logError(e);
 		}
@@ -135,11 +139,7 @@ public class ConfigurationController extends ControllerBase implements
 		try {
 			if (this.newDataItem) {
 				this.configurationDAO.create(config);
-				XPagesUtil.redirect("configuration.xsp?openxpage&id="
-						+ config.getId());
 			} else {
-				Logging.logEvent("updating.. rev:" + config.getRev() + " id:"
-						+ config.getId());
 				this.configurationDAO.update(config);
 				this.config = configurationDAO.read(config.getId());
 			}

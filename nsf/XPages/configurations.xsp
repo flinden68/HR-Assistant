@@ -7,23 +7,35 @@
 				<div class="row">
 
 					<div class="col-xs-12">
-						<div class="box">
-							<div class="box-header">
-								<h3 class="box-title">Configuration List</h3>
+						<xp:div styleClass="box" id="pnlDataItemList">
 
-								<div class="box-tools">
-									<div style="width: 150px;" class="input-group input-group-sm">
-										<input type="text" placeholder="Search" class="form-control pull-right"
-											name="table_search" />
+							<xc:ccDataItemListHeader title="List of all Configuration Items"
+								refreshIdForSearch="pnlDataItemList" controller="#{configurationController}"></xc:ccDataItemListHeader>
+							<!--
+								<div class="box-header"> <h3 class="box-title">Configuration
+								List</h3> <div class="box-tools"> <div style="width: 150px;"
+								class="input-group input-group-sm"> <xp:inputText
+								id="inputText1" styleClass="form-control pull-right"
+								value="#{configurationController.searchQuery}"> <xp:eventHandler
+								event="onkeypress" submit="false"> <xp:this.script>
+								<xp:executeClientScript
+								script="onKeyPressSubmit('#{id:btnSearch}', thisEvent)">
+								</xp:executeClientScript> </xp:this.script> </xp:eventHandler>
+								<xp:this.attrs> <xp:attr name="placeholder" value="search">
+								</xp:attr> </xp:this.attrs> </xp:inputText> <div
+								class="input-group-btn" styleClass="btn btn-default"> <xp:button
+								value="" id="btnSearch" styleClass="btn btn-default"> <i
+								class="fa fa-search"></i> <xp:eventHandler event="onclick"
+								submit="true" onStart="waitingDialog.show('searching...')"
+								onComplete="waitingDialog.hide()" refreshMode="partial"
+								refreshId="content-wrapper" disableValidators="true"
+								execMode="partial" execId="content-wrapper"> <xp:this.action>
+								<xp:executeScript
+								script="#{javascript:configurationController.clearDataItemList()}">
+								</xp:executeScript> </xp:this.action> </xp:eventHandler>
+								</xp:button> </div> </div> </div></div>
+							-->
 
-										<div class="input-group-btn">
-											<button class="btn btn-default" type="submit">
-												<i class="fa fa-search"></i>
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
 							<div class="box-header">
 								<a class="btn btn-warning btn-margin-right" href="configuration.xsp">create
 									new
@@ -37,12 +49,12 @@
 										execMode="partial" execId="content-wrapper">
 										<xp:this.action>
 											<xp:executeScript
-												script="#{javascript:configurationController.clearConfigurations()}">
+												script="#{javascript:configurationController.clearDataItemList()}">
 											</xp:executeScript>
 										</xp:this.action>
 									</xp:eventHandler>
 								</xp:button>
-							
+
 								<div class="pull-right">
 									<xp:pager partialRefresh="true" id="pager2" for="rptConfigurations"
 										panelPosition="left" styleClass="bootstrapPager"
@@ -122,16 +134,6 @@
 													</xp:button>
 												</td>
 											</xp:tr>
-
-											<!--
-												<xp:tr styleClass="item #{(i mod 2 eq 0) ? 'even': 'odd'}">
-												<td>123</td> <td>456</td> <td>10</td> <td>keyvalue</td>
-												<td>value value</td> <td> <xp:button styleClass="btn
-												btn-warning btn-margin-right" value="edit" id="button1"> <i
-												class="fa fa-pencil fa-fw"></i> </xp:button> <xp:button
-												styleClass="btn btn-danger" value="remove" id="button2"> <i
-												class="fa fa-trash fa-fw"></i> </xp:button> </td> </xp:tr>
-											-->
 										</xp:repeat>
 									</tbody>
 								</table>
@@ -141,7 +143,7 @@
 							
 							</div> -->
 							<!-- /.box-body -->
-						</div>
+						</xp:div>
 
 
 					</div>

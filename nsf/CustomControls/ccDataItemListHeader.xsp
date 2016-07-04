@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<div class="box-header">
+		<xp:text escape="true" id="computedField1" tagName="h3"
+			styleClass="box-title" value="${compositeData.title}"></xp:text>
+		<div class="box-tools">
+			<div style="width: 150px;" class="input-group input-group-sm">
+				<xp:inputText id="inputText1" styleClass="form-control pull-right"
+					value="#{configurationController.searchQuery}">
+					<xp:eventHandler event="onkeypress" submit="false">
+						<xp:this.script>
+							<xp:executeClientScript
+								script="onKeyPressSubmit('#{id:btnSearch}', thisEvent)">
+							</xp:executeClientScript>
+						</xp:this.script>
+					</xp:eventHandler>
+					<xp:this.attrs>
+						<xp:attr name="placeholder" value="Search">
+						</xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+				<div class="input-group-btn" styleClass="btn btn-default">
+					<xp:button value="" id="btnSearch" styleClass="btn btn-default">
+						<i class="fa fa-search"></i>
+						<xp:eventHandler event="onclick" submit="true"
+							onStart="waitingDialog.show('searching...')" onComplete="waitingDialog.hide()"
+							refreshMode="partial" refreshId="${compositeData.refreshIdForSearch}"
+							disableValidators="true" execMode="partial"
+							execId="${compositeData.refreshIdForSearch}">
+							<xp:this.action>
+								<xp:executeScript
+									script="#{javascript:compositeData.controller.clearDataItemList()}">
+								</xp:executeScript>
+							</xp:this.action>
+						</xp:eventHandler>
+					</xp:button>
+				</div>
+			</div>
+		</div>
+	</div>
+</xp:view>

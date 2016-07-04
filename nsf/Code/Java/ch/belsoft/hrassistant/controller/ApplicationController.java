@@ -27,7 +27,7 @@ public class ApplicationController implements Serializable {
 	private LinkedHashMap<ConfigType, List<String>> configSelections = new LinkedHashMap<ConfigType, List<String>>();
 	private LinkedHashMap<ConfigType, LinkedHashMap<String, IConfiguration>> configMap = new LinkedHashMap<ConfigType, LinkedHashMap<String, IConfiguration>>();
 
-	private ConfigurationController configurationController = null;
+	// private ConfigurationController configurationController = null;
 
 	public ApplicationController() {
 		initConfiguration();
@@ -46,22 +46,20 @@ public class ApplicationController implements Serializable {
 
 	private void initConfiguration() {
 		try {
-
-			this.configurationController = (ConfigurationController) XPagesUtil
-					.getViewScope().get("configurationController");
-
-			if (this.configurationController == null) {
-				FacesContext context = FacesContext.getCurrentInstance();
-				this.configurationController = (ConfigurationController) context
-						.getApplication().createValueBinding(
-								"#{configurationController}").getValue(context);
-			}
-			
-			for (IConfiguration config : this.configurationController
-					.getConfigurations()) {
-				this.addConfig(config);
-			}
-
+			return;
+			/*
+			 * this.configurationController = (ConfigurationController)
+			 * XPagesUtil .getViewScope().get("configurationController");
+			 * 
+			 * if (this.configurationController == null) { FacesContext context
+			 * = FacesContext.getCurrentInstance(); this.configurationController
+			 * = (ConfigurationController) context
+			 * .getApplication().createValueBinding(
+			 * "#{configurationController}").getValue(context); }
+			 * 
+			 * for (IConfiguration config : this.configurationController
+			 * .getConfigurations()) { this.addConfig(config); }
+			 */
 		} catch (Exception e) {
 			Logging.logError(e);
 		}
@@ -220,15 +218,6 @@ public class ApplicationController implements Serializable {
 		} catch (Exception e) {
 			Logging.logError(e);
 		}
-	}
-
-	public ConfigurationController getConfigurationController() {
-		return configurationController;
-	}
-
-	public void setConfigurationController(
-			ConfigurationController configurationController) {
-		this.configurationController = configurationController;
 	}
 
 	/*
