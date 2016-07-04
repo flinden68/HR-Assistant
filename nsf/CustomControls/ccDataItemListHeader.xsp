@@ -5,13 +5,13 @@
 			styleClass="box-title" value="${compositeData.title}"></xp:text>
 		<div class="box-tools">
 			<div style="width: 150px;" class="input-group input-group-sm">
-				<xp:inputText id="inputText1" styleClass="form-control pull-right"
+				<xp:inputText id="inputText1" styleClass="form-control pull-right" onfocus="select()"
 					value="#{configurationController.searchQuery}">
 					<xp:eventHandler event="onkeypress" submit="false">
 						<xp:this.script>
 							<xp:executeClientScript
 								script="onKeyPressSubmit('#{id:btnSearch}', thisEvent)">
-							</xp:executeClientScript>
+							</xp:executeClientScript> 
 						</xp:this.script>
 					</xp:eventHandler>
 					<xp:this.attrs>

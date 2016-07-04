@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<div class="box-footer">
+		<xp:link escape="true" styleClass="btn btn-default" text="Cancel"
+			title="${compositeData.backLinkTitle}" value="${compositeData.backLinkValue}"
+			id="link1">
+		</xp:link>
+		<div class="pull-right">
+			<xp:button styleClass="btn btn-success btn-margin-right"
+				value="save" id="button1">
+				<xp:eventHandler event="onclick" submit="true"
+					onStart="waitingDialog.show('saving...')" onComplete="waitingDialog.hide()"
+					refreshMode="partial" refreshId="content-wrapper" execMode="partial"
+					execId="content-wrapper">
+					<xp:this.action>
+						<xp:executeScript
+							script="#{javascript:compositeData.controller.update()}">
+						</xp:executeScript>
+					</xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+
+			<xc:ccDataItemButtonRemove backLinkValue="${compositeData.backLinkValue}"
+				controller="${compositeData.controller}" dataItem="#{controller.dataContext"></xc:ccDataItemButtonRemove>
+
+			<!--
+				<xp:button styleClass="btn btn-danger" value="remove" id="button7">
+				<i class="fa fa-trash fa-fw"></i> <xp:eventHandler event="onclick"
+				submit="true" onStart="waitingDialog.show('removing')"
+				onComplete="waitingDialog.hide();document.location='#{compositeData.backLinkTitle}'"
+				refreshMode="partial" refreshId="content-wrapper" immediate="true"
+				execMode="partial" execId="content-wrapper"> <xp:this.action>
+				<xp:executeScript
+				script="#{javascript:compositeData.controller.remove()}">
+				</xp:executeScript> </xp:this.action> </xp:eventHandler>
+				</xp:button>
+			-->
+		</div>
+	</div>
+</xp:view>

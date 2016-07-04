@@ -81,3 +81,9 @@ function onKeyPressSubmit(buttonId, thisEvent) {
 		thisEvent.preventDefault();
 	}
 }
+
+function openUrl(targetUrl) {
+	if (targetUrl != "" && targetUrl != null) {
+		document.location = targetUrl;
+	}
+}

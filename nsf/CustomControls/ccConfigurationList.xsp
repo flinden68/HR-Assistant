@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:div styleClass="box" id="pnlDataItemList">
+
+		<xc:ccDataItemListHeader title="List of all Configuration Items"
+			refreshIdForSearch="pnlDataItemList" controller="#{configurationController}">
+		</xc:ccDataItemListHeader>
+		<div class="box-header">
+			<a class="btn btn-warning btn-margin-right" href="configuration.xsp">
+				create new config
+			</a>
+			<xp:button value="refresh" id="button1"
+				styleClass="btn btn-primary btn-margin-right">
+				<xp:eventHandler event="onclick" submit="true"
+					onStart="waitingDialog.show('refreshing')" onComplete="waitingDialog.hide()"
+					refreshMode="partial" refreshId="content-wrapper" immediate="true"
+					execMode="partial" execId="content-wrapper">
+					<xp:this.action>
+						<xp:executeScript
+							script="#{javascript:configurationController.clearDataItemList()}">
+						</xp:executeScript>
+					</xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+
+			<div class="pull-right">
+				<xp:pager partialRefresh="true" id="pager2" for="rptConfigurations"
+					panelPosition="left" styleClass="bootstrapPager" partialExecute="true">
+					<xp:pagerControl type="Previous" id="pagerControl4"
+						styleClass="bootstrapPagerPrevious">
+						<xp:this.value><![CDATA[«]]></xp:this.value>
+					</xp:pagerControl>
+					<xp:pagerControl type="Group" id="pagerControl5"
+						styleClass="bootstrapPagerMiddle">
+					</xp:pagerControl>
+					<xp:pagerControl type="Next" id="pagerControl6"
+						styleClass="bootstrapPagerNext">
+						<xp:this.value><![CDATA[»]]></xp:this.value>
+					</xp:pagerControl>
+				</xp:pager>
+			</div>
+		</div>
+		<!-- /.box-header -->
+
+		<div class="box-body table-responsive">
+
+			<table class="table table-hover table-striped">
+
+				<thead>
+					<tr>
+						<!-- 	<th>rev</th>
+							<th>id</th> -->
+						<th>type</th>
+						<th>sort</th>
+						<th>key / value</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<xp:repeat id="rptConfigurations" rows="10" var="config"
+						indexVar="i" value="#{configurationController.configurations}">
+						<xp:tr styleClass="#{(i mod 2 eq 0) ? 'even': 'odd'}">
+							<xp:text escape="true" id="computedField6" tagName="td"
+								value="#{config.type}">
+							</xp:text>
+							<xp:text escape="true" id="computedField3" tagName="td"
+								value="#{config.sort}">
+							</xp:text>
+							<td>
+								<xp:text escape="true" id="computedField1" style="display:block"
+									value="#{config.configKey} - #{config.configValue}">
+								</xp:text>
+								<xp:text escape="true" id="computedField2" value="ID: #{config.id}"
+									style="color:#777" tagName="small">
+								</xp:text>
+							</td>
+
+							<!--
+								<td>123</td> <td>456</td> <td>10</td> <td>keyvalue</td>
+								<td>value value</td>
+							-->
+							<td>
+								<xp:link escape="true" styleClass="btn btn-warning btn-margin-right"
+									text="edit" id="link1"
+									value="configuration.xsp?openxpage&amp;id=#{config.id}">
+									<i class="fa fa-pencil fa-fw"></i>
+								</xp:link>
+								<xc:ccDataItemButtonRemove controller="${configurationController}"
+									dataItem="#{config}"></xc:ccDataItemButtonRemove>
+							</td>
+						</xp:tr>
+					</xp:repeat>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- <div class="box-footer clearfix">
+			
+			</div> -->
+		<!-- /.box-body -->
+	</xp:div>
+</xp:view>

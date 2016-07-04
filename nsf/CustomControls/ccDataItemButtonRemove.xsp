@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:button styleClass="btn btn-danger" value="remove" id="button7"
+		title="remove this item">
+		<i class="fa fa-trash fa-fw"></i>
+		<xp:eventHandler event="onclick" submit="true"
+			onStart="waitingDialog.show('removing')"
+			onComplete="waitingDialog.hide();openUrl('#{compositeData.backLinkValue}');"
+			refreshMode="partial" refreshId="content-wrapper" immediate="true"
+			execMode="partial" execId="content-wrapper">
+			<xp:this.action>
+				<xp:actionGroup>
+					<xp:confirm
+						message="Are you sure you want to remove this item?
+					wollen?">
+					</xp:confirm>
+					<xp:executeScript
+						script="#{javascript:compositeData.controller.remove(compositeData.dataItem)}">
+					</xp:executeScript>
+				</xp:actionGroup>
+			</xp:this.action>
+		</xp:eventHandler>
+	</xp:button>
+</xp:view>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1112" sequence="27" unid="D3382E421F08EE25C1257FE6006AFA2D">
+<created><datetime dst="true">20160704T212828,61+02</datetime></created>
+<modified><datetime dst="true">20160704T213259,44+02</datetime></modified>
+<revised><datetime dst="true">20160704T213259,43+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160704T213259,44+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160704T212828,63+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=FDN</name></updatedby>
+<wassignedby><name>CN=Administrator/O=FDN</name></wassignedby>
+<item name="$Flags"><text>gC~4;</text></item>
+<item name="$TITLE" sign="true"><text>ccDataItemButtonRemove.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5.1</text></item>
+
+
+
+
+
+
+
+
+
+<item name="$FileNames" sign="true"><text>ccDataItemButtonRemove.xsp</text></item></note>
