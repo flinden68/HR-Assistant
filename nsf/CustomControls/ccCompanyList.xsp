@@ -2,7 +2,7 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
 	<xp:div styleClass="box" id="pnlDataItemList">
 
-		<xc:ccDataItemListHeader title="List of all jobs"
+		<xc:ccDataItemListHeader title="List of all companies"
 			refreshIdForSearch="pnlDataItemList" controller="#{companyController}">
 		</xc:ccDataItemListHeader>
 		<div class="box-header">

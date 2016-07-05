@@ -11,6 +11,7 @@ import ch.belsoft.hrassistant.config.model.IConfiguration;
 import ch.belsoft.hrassistant.controller.ControllerBase;
 import ch.belsoft.hrassistant.controller.IGuiController;
 import ch.belsoft.tools.Logging;
+import ch.belsoft.tools.XPagesUtil;
 
 public class ConfigurationController extends ControllerBase implements
 IGuiController<IConfiguration>, Serializable {
@@ -19,6 +20,7 @@ IGuiController<IConfiguration>, Serializable {
      * 
      */
     private static final long serialVersionUID = 1L;
+    private static final String BEAN_NAME = "configurationController";
     private static final String PAGETITLE_NEW = "New Configuration";
     private static final String PAGETITLE_EXISTING = "Configuration {NAME}: {DESCRIPTION}";
     private static final String TITLE_CONFIGURATIONLIST_ALL = "All configuration items";
@@ -33,6 +35,10 @@ IGuiController<IConfiguration>, Serializable {
     
     public ConfigurationController() {
         
+    }
+    
+    public static ConfigurationController get() {
+        return (ConfigurationController) XPagesUtil.resolveVariable(BEAN_NAME);
     }
     
     public ConfigurationDAO getConfigurationDAO() {

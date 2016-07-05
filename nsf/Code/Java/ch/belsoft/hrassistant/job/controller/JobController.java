@@ -7,6 +7,7 @@ import java.util.List;
 import javax.faces.model.SelectItem;
 
 import ch.belsoft.hrassistant.company.dao.CompanyDAO;
+import ch.belsoft.hrassistant.config.model.ConfigType;
 import ch.belsoft.hrassistant.controller.ApplicationController;
 import ch.belsoft.hrassistant.controller.ControllerBase;
 import ch.belsoft.hrassistant.controller.IGuiController;
@@ -176,6 +177,7 @@ public class JobController extends ControllerBase implements IGuiController<Job>
     }
     
     public void changeCompany(){
+        System.out.println("changeCompany....");
         loadCompany();
     }
     
@@ -186,6 +188,16 @@ public class JobController extends ControllerBase implements IGuiController<Job>
             selectItems.add( new SelectItem(comp.getId(), comp.getName()));
         }
         return selectItems;
+    }
+    
+    public List<String> getJobIndustrySelection() {
+        return applicationController
+        .getConfigSelection(ConfigType.JOB_INDUSTRY);
+    }
+    
+    public List<String> getJobTypeSelection() {
+        return applicationController
+        .getConfigSelection(ConfigType.JOB_TYPE);
     }
     
     /*

@@ -10,12 +10,15 @@ public class Job extends DataItem implements Serializable {
      * 
      */
     private static final long serialVersionUID = 1L;
+    private final DataType dataType = DataType.JOB;
     private String name = "";
     private Company company = null;
     private Person representative = null;
     private String companyId = "";
     private String representativeId = "";
-    private final DataType dataType = DataType.JOB;
+    private DataType jobType;
+    private DataType industry;
+    
     
     public String getName() {
         return name;
@@ -63,6 +66,22 @@ public class Job extends DataItem implements Serializable {
     
     public boolean isHasCompanyId(){
         return !"".equals(companyId);
+    }
+    
+    public void setJobType(DataType jobType) {
+        this.jobType = jobType;
+    }
+    
+    public DataType getJobType() {
+        return jobType;
+    }
+
+    public void setIndustry(DataType industry) {
+        this.industry = industry;
+    }
+
+    public DataType getIndustry() {
+        return industry;
     }
     
 }
