@@ -3,7 +3,7 @@
 	<xp:div styleClass="box" id="pnlDataItemList">
 
 		<xc:ccDataItemListHeader title="List of all jobs"
-			refreshIdForSearch="pnlDataItemList" controller="#{configurationController}">
+			refreshIdForSearch="pnlDataItemList" controller="#{jobController}">
 		</xc:ccDataItemListHeader>
 		<div class="box-header">
 			<a class="btn btn-primary" href="job.xsp">create job</a>
@@ -27,7 +27,7 @@
 		</div>
 	
 		<div class="box-body table-responsive">
-			<xc:ccMessageBoxSearch controller="#{configurationController}"></xc:ccMessageBoxSearch>
+			<xc:ccMessageBoxSearch controller="#{jobController}"></xc:ccMessageBoxSearch>
 			<table class="table table-hover table-striped">
 		
 				<thead>

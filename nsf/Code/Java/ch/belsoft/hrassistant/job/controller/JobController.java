@@ -139,12 +139,28 @@ public class JobController extends ControllerBase implements IGuiController<Job>
         this.jobs = new ArrayList<Job>();
     }
     
+    public void clearDataItemList() {
+        this.jobs = new ArrayList<Job>();
+    }
+    
+    public int getSearchResultCount() {
+        return super.getListCount(this.jobs);
+    }
+    
     public List<Job> getJobs() {
         
         try {
             if (this.jobs.isEmpty()) {
-                this.jobs = this.jobDAO.read();
-                jobs.remove(this.job);
+                if (this.searchQuery.equals("")) {
+                    this.jobs = this.jobDAO.read();
+                    
+                } else {
+                    this.jobs = this.jobDAO
+                    .search(this.searchQuery);
+                }
+                if(jobs != null){
+                    jobs.remove(this.job);
+                }
             }
             
             

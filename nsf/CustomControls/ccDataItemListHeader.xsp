@@ -6,7 +6,7 @@
 		<div class="box-tools">
 			<div style="width: 150px;" class="input-group input-group-sm">
 				<xp:inputText id="inputText1" styleClass="form-control pull-right" onfocus="select()"
-					value="#{configurationController.searchQuery}">
+					value="#{compositeData.controller.searchQuery}">
 					<xp:eventHandler event="onkeypress" submit="false">
 						<xp:this.script>
 							<xp:executeClientScript

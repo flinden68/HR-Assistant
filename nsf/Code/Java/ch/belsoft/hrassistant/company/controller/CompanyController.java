@@ -120,12 +120,28 @@ public class CompanyController extends ControllerBase implements IGuiController<
         this.companies = new ArrayList<Company>();
     }
     
+    public void clearDataItemList() {
+        this.companies = new ArrayList<Company>();
+    }
+    
+    public int getSearchResultCount() {
+        return super.getListCount(this.companies);
+    }
+    
     public List<Company> getCompanies() {
         
         try {
             if (this.companies.isEmpty()) {
-                this.companies = this.companyDAO.read();
-                companies.remove(company);
+                if (this.searchQuery.equals("")) {
+                    this.companies = this.companyDAO.read();
+                    
+                } else {
+                    this.companies = this.companyDAO
+                    .search(this.searchQuery);
+                }
+                if(companies != null){
+                    companies.remove(company);
+                }
             }
             
         } catch (Exception e) {
