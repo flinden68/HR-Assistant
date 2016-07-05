@@ -1,63 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
-	<table class="table table-hover table-striped">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:div styleClass="box" id="pnlDataItemList">
 
-		<thead>
-			<tr>
-				<th>name</th>
-				<th>street</th>
-				<th>zip</th>
-				<th>city</th>
-				<th>country</th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			<xp:repeat id="rptCompanies" rows="10" var="company" indexVar="i"
-				value="#{companyController.companies}">
-				<xp:tr styleClass="#{(i mod 2 eq 0) ? 'even': 'odd'}">
-					<xp:text escape="true" id="columnName" tagName="td"
-						value="#{company.name}">
-					</xp:text>
-					<xp:text escape="true" id="columnStreet" tagName="td"
-						value="#{company.address.streetAndNumber}"
-						>
-					</xp:text>
-					<xp:text escape="true" id="computedField5" tagName="td"
-						value="#{company.address.zip}"
-						>
-					</xp:text>
-					<xp:text escape="true" id="computedField1" tagName="td"
-						value="#{company.address.city}"
-						>
-					</xp:text>
-					<xp:text escape="true" id="computedField6" tagName="td"
-						value="#{company.address.country}"
-						>
-					</xp:text>
-
-					<td>
-						<xp:link escape="true" styleClass="btn btn-warning btn-margin-right"
-							text="edit" id="link1" value="company.xsp?openxpage&amp;id=#{company.id}">
-							<i class="fa fa-pencil fa-fw"></i>
-						</xp:link>
-						<xp:button styleClass="btn btn-danger" value="remove"
-							id="button7">
-							<i class="fa fa-trash fa-fw"></i>
-							<xp:eventHandler event="onclick" submit="true"
-								onStart="waitingDialog.show('removing')" onComplete="waitingDialog.hide()"
-								refreshMode="partial" refreshId="content-wrapper" immediate="true"
-								execMode="partial" execId="content-wrapper">
-								<xp:this.action>
-									<xp:executeScript
-										script="#{javascript:companyController.removeFromList(company)}">
-									</xp:executeScript>
-								</xp:this.action>
-							</xp:eventHandler>
-						</xp:button>
-					</td>
-				</xp:tr>
-			</xp:repeat>
-		</tbody>
-	</table>
+		<xc:ccDataItemListHeader title="List of all jobs"
+			refreshIdForSearch="pnlDataItemList" controller="#{configurationController}">
+		</xc:ccDataItemListHeader>
+		<div class="box-header">
+			<a class="btn btn-primary" href="company.xsp">create company</a>
+			
+			<div class="pull-right">
+				<xp:pager partialRefresh="true" id="pager2" for="rptList"
+					panelPosition="left" styleClass="bootstrapPager" partialExecute="true">
+					<xp:pagerControl type="Previous" id="pagerControl4"
+						styleClass="bootstrapPagerPrevious">
+						<xp:this.value><![CDATA[«]]></xp:this.value>
+					</xp:pagerControl>
+					<xp:pagerControl type="Group" id="pagerControl5"
+						styleClass="bootstrapPagerMiddle">
+					</xp:pagerControl>
+					<xp:pagerControl type="Next" id="pagerControl6"
+						styleClass="bootstrapPagerNext">
+						<xp:this.value><![CDATA[»]]></xp:this.value>
+					</xp:pagerControl>
+				</xp:pager>
+			</div>
+		</div>
+	
+		<div class="box-body table-responsive">
+			<xc:ccMessageBoxSearch controller="#{configurationController}"></xc:ccMessageBoxSearch>
+			<table class="table table-hover table-striped">
+		
+				<thead>
+					<tr>
+						<th>name</th>
+						<th>address</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<xp:repeat id="rptList" rows="10" var="company" indexVar="i"
+						value="#{companyController.companies}">
+						<xp:tr styleClass="#{(i mod 2 eq 0) ? 'even': 'odd'}">
+							<xp:text escape="true" id="columnName" tagName="td"
+								value="#{company.name}">
+							</xp:text>
+							<xp:text escape="false" id="columnStreet" tagName="td"
+								value="#{company.address.addressDisplay}">
+							</xp:text>
+		
+							<td>
+								<xp:link escape="true" styleClass="btn btn-warning btn-margin-right"
+									text="edit" id="link1" value="company.xsp?openxpage&amp;id=#{company.id}">
+									<i class="fa fa-pencil fa-fw"></i>
+								</xp:link>
+								<xp:button styleClass="btn btn-danger" value="remove"
+									id="button7">
+									<i class="fa fa-trash fa-fw"></i>
+									<xp:eventHandler event="onclick" submit="true"
+										onStart="waitingDialog.show('removing')" onComplete="waitingDialog.hide()"
+										refreshMode="partial" refreshId="content-wrapper" immediate="true"
+										execMode="partial" execId="content-wrapper">
+										<xp:this.action>
+											<xp:executeScript
+												script="#{javascript:companyController.removeFromList(company)}">
+											</xp:executeScript>
+										</xp:this.action>
+									</xp:eventHandler>
+								</xp:button>
+							</td>
+						</xp:tr>
+					</xp:repeat>
+				</tbody>
+			</table>
+	</div>
+	</xp:div>
 </xp:view>
