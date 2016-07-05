@@ -93,6 +93,10 @@ public class ConfigurationController extends ControllerBase implements
 		this.configurations = new ArrayList<ConfigDefault>();
 	}
 
+	public int getSearchResultCount() {
+		return super.getListCount(this.configurations);
+	}
+
 	public List<ConfigDefault> getConfigurations() {
 
 		try {
@@ -103,7 +107,7 @@ public class ConfigurationController extends ControllerBase implements
 				} else {
 					this.configurations = this.configurationDAO
 							.search(this.searchQuery);
-					super.postSearch(this.configurations);
+					// super.postSearch(this.configurations);
 				}
 			}
 		} catch (Exception e) {

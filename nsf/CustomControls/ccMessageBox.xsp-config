@@ -19,6 +19,13 @@
       <description>danger, info, warning, success</description>
       <property-extension>
         <required>true</required>
+        <designer-extension>
+          <editor>com.ibm.workplace.designer.property.editors.comboParameterEditor</editor>
+          <editor-parameter>danger&#xd;
+info&#xd;
+warning&#xd;
+success</editor-parameter>
+        </designer-extension>
       </property-extension>
     </property>
     <property>
@@ -37,8 +44,13 @@
       <property-class>string</property-class>
       <property-extension>
         <designer-extension>
-          <editor/>
+          <editor>com.ibm.workplace.designer.property.editors.comboParameterEditor</editor>
+          <editor-parameter>ban&#xd;
+info&#xd;
+warning&#xd;
+check</editor-parameter>
         </designer-extension>
+        <required>true</required>
       </property-extension>
       <description>ban,info,warning,check</description>
     </property>

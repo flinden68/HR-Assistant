@@ -3,10 +3,12 @@
 	<xp:div styleClass="alert alert-${compositeData.type} alert-dismissible">
 		<button aria-hidden="true" data-dismiss="alert" class="close"
 			type="button">×</button>
-		<h4>
+		<xp:panel tagName="h4" rendered="#{compositeData.title!=''}">
 			<i class="icon fa fa-${compositeData.icon}"></i>
-			<xp:text escape="true" id="computedField5" value="${compositeData.title}"></xp:text>
-		</h4>
-		<xp:text escape="true" id="computedField6" value="${compositeData.text}"></xp:text>
+			<xp:text escape="true" id="computedField5" value="#{compositeData.title}"></xp:text>
+		</xp:panel>
+		<xp:text escape="true" id="computedField6" value="${compositeData.text}"
+			loaded="${compositeData.text!=''}"></xp:text>
+		<xp:callback facetName="MessageContent" id="callback1"></xp:callback>
 	</xp:div>
-</xp:view>
+</xp:view> 

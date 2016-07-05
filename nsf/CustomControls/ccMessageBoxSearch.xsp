@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xp:div styleClass="alert alert-danger alert-dismissible"
+		rendered="#{compositeData.controller.searchQuery!='' and compositeData.controller.searchResultCount==0}">
+		<button aria-hidden="true" data-dismiss="alert" class="close"
+			type="button">×</button>
+		<xp:panel tagName="h4">
+			<i class="icon fa fa-ban"></i>
+			<xp:text escape="true" id="computedField5"
+				value="No search results with query '#{compositeData.controller.searchQuery}'"></xp:text>
+		</xp:panel>
+		<xp:text tagName="div" escape="true" id="computedField1"
+			value="Please redefine your search query"></xp:text>
+		<xp:button value="show to full list" id="button2"
+			styleClass="btn btn-default">
+			<xp:eventHandler event="onclick" submit="true"
+				onStart="waitingDialog.show('refreshing')" onComplete="waitingDialog.hide()"
+				refreshMode="partial" immediate="true" execMode="partial" refreshId="pnlDataItemList"
+				execId="pnlDataItemList">
+				<xp:this.action>
+					<xp:executeScript
+						script="#{javascript:compositeData.controller.clearSearchQuery();compositeData.controller.clearDataItemList()}">
+					</xp:executeScript>
+				</xp:this.action>
+			</xp:eventHandler>
+		</xp:button>
+	</xp:div>
+
+	<xp:div styleClass="alert alert-info alert-dismissible"
+		rendered="#{compositeData.controller.searchQuery!='' and compositeData.controller.searchResultCount!=0}">
+		<button aria-hidden="true" data-dismiss="alert" class="close"
+			type="button">×</button>
+		<xp:panel tagName="h4">
+			<i class="icon fa fa-info"></i>
+			<xp:text escape="true" id="computedField2"
+				value="#{compositeData.controller.searchResultCount} results with query '#{compositeData.controller.searchQuery}'"></xp:text>
+		</xp:panel>
+		<xp:button value="clear search" id="button1" styleClass="btn btn-default">
+			<xp:eventHandler event="onclick" submit="true"
+				onStart="waitingDialog.show('refreshing')" onComplete="waitingDialog.hide()"
+				refreshMode="partial" immediate="true" execMode="partial" refreshId="pnlDataItemList"
+				execId="pnlDataItemList">
+				<xp:this.action>
+					<xp:executeScript
+						script="#{javascript:compositeData.controller.clearSearchQuery();compositeData.controller.clearDataItemList()}">
+					</xp:executeScript>
+				</xp:this.action>
+			</xp:eventHandler>
+		</xp:button>
+	</xp:div>
+</xp:view>

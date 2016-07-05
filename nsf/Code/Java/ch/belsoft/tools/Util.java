@@ -109,8 +109,6 @@ public class Util {
 		}
 	}
 
-
-
 	public static String implode(List<String> lst) {
 		String result = "";
 		try {
@@ -188,4 +186,5 @@ public class Util {
 		return sb.toString();
 
 	}
+
 }

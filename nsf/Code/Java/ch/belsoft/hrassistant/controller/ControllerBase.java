@@ -82,16 +82,29 @@ public abstract class ControllerBase implements Serializable {
 		this.searchQuery = searchQuery;
 	}
 
-	public void postSearch(List<?> searchedDataItems) {
+	/*
+	 * public void postSearch(List<?> searchedDataItems) { try { if
+	 * (searchedDataItems == null || searchedDataItems.size() == 0) { XPagesUtil
+	 * .showErrorMessage("not items found with search query: " +
+	 * this.searchQuery, "pnlSearchInfoNoItemsFound"); } } catch (Exception e) {
+	 * Logging.logError(e); } }
+	 */
+
+	public int getListCount(List<?> list) {
+		int result = 0;
 		try {
-			if (searchedDataItems == null || searchedDataItems.size() == 0) {
-				XPagesUtil
-						.showErrorMessage("not items found with search query: "
-								+ this.searchQuery, "pnlSearchInfoNoItemsFound");
+			if (list != null) {
+				result = list.size();
 			}
 		} catch (Exception e) {
 			Logging.logError(e);
 		}
+		return result;
+
+	}
+
+	public void clearSearchQuery() {
+		this.searchQuery = "";
 	}
 
 }

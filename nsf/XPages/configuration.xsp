@@ -87,10 +87,10 @@
 					</div>
 					<xp:div styleClass="col-md-6" id="pnlConfigurationList">
 						<!-- general form elements -->
-								<xc:ccConfigurationList></xc:ccConfigurationList>
-							<!-- /.box-body -->
+						<xc:ccConfigurationList></xc:ccConfigurationList>
+						<!-- /.box-body -->
 
-										</xp:div>
+					</xp:div>
 				</div>
 			</xp:panel>
 		</xp:this.facets>

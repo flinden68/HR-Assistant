@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1116" sequence="20" unid="ADFEFDE6276E28BFC1257FE600705C36">
+<noteinfo noteid="1116" sequence="70" unid="ADFEFDE6276E28BFC1257FE600705C36">
 <created><datetime dst="true">20160704T222716,38+02</datetime></created>
-<modified><datetime dst="true">20160704T223331,74+02</datetime></modified>
-<revised><datetime dst="true">20160704T223331,73+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160704T223331,74+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160704T222716,39+02</datetime></addedtofile></noteinfo>
+<modified><datetime dst="true">20160705T085543,29+02</datetime></modified>
+<revised><datetime dst="true">20160705T085543,28+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160705T085543,29+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160704T224930,77+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Administrator/O=FDN</name></updatedby>
 <wassignedby><name>CN=Administrator/O=FDN</name></wassignedby>
 <item name="$TITLE"><text>ccMessageBox.xsp</text></item>
@@ -15,7 +15,7 @@
 
 
 <item name="$FileNames" sign="true"><text>ccMessageBox.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
 

@@ -22,6 +22,8 @@ public class ConfigurationDAO extends BaseDAO implements
 	private static final String VIEW_NAME = "configurations";
 	private static final int VIEW_LIMIT = 1000;
 	private static final String SEARCH_PATTERN = "configValue:{QUERY} OR configKey:{QUERY}";
+	private static final String SEARCH_INDEX = "configuration/ftsearchConfigurations";
+	private static final int SEARCH_COUNT = 100;
 
 	public void update(ConfigDefault config) {
 		connectToService();
@@ -61,36 +63,11 @@ public class ConfigurationDAO extends BaseDAO implements
 	public List<ConfigDefault> search(String query) {
 		List<ConfigDefault> result = new ArrayList<ConfigDefault>();
 		try {
-			// TODO: search within the CLOUDANT DB..
-
-			if (true) {
-				connectToService();
-				String queryFinal = SEARCH_PATTERN.replace(SEARCH_QUERYREPLACE,
-						query);
-				result = (List<ConfigDefault>) cloudantService.search(
-						"configuration/ftsearchConfigurations",
-						ConfigDefault.class, 100, queryFinal);
-
-				// System.out.println("result:" + result);
-				/*
-				 * for (ConnectorIndex index : cloudantService.allIndices()) {
-				 * System.out.println("index DesignDocId" +
-				 * index.getDesignDocId()); System.out.println("index Name" +
-				 * index.getName()); if (index.getDesignDocId() != null) {
-				 * cloudantService.search(index.getDesignDocId(),
-				 * ConfigDefault.class, 500, "configValue:male"); } }
-				 */
-			} else {
-				query = query.toLowerCase();
-				for (ConfigDefault config : this.read()) {
-					if ((config.getConfigKey() + "@" + config.getConfigValue())
-							.toLowerCase().contains(query)) {
-						result.add(config);
-					}
-				}
-			}
-
-			// result =
+			connectToService();
+			String queryFinal = SEARCH_PATTERN.replace(SEARCH_QUERYREPLACE,
+					query);
+			result = (List<ConfigDefault>) cloudantService.search(SEARCH_INDEX,
+					ConfigDefault.class, SEARCH_COUNT, queryFinal);
 
 		} catch (Exception e) {
 			Logging.logError(e);
