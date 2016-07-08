@@ -9,5 +9,6 @@
   <classpathentry kind="lib" path="WebContent/WEB-INF/lib/httpclient-4.3.6.jar"/>
   <classpathentry kind="lib" path="WebContent/WEB-INF/lib/httpcore-4.3.3.jar"/>
   <classpathentry kind="lib" path="WebContent/WEB-INF/lib/httpmime-4.3.6.jar"/>
+  <classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-codec-1.10.jar"/>
   <classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>

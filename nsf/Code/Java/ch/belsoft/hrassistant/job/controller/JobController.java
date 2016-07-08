@@ -177,7 +177,6 @@ public class JobController extends ControllerBase implements IGuiController<Job>
     }
     
     public void changeCompany(){
-        System.out.println("changeCompany....");
         loadCompany();
     }
     
