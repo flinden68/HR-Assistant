@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_yoR4UETZEeaE_LvRB4YnBQ" name="IBM Watson ToneAnalyzer">
+  <packagedElement xmi:type="uml:Class" xmi:id="_vGEgYETaEeaE_LvRB4YnBQ" name="ToneAnalyzerService">
+    <generalization xmi:id="_wQt8UETfEeaE_LvRB4YnBQ" general="_ssrN0ETfEeaE_LvRB4YnBQ"/>
+    <ownedAttribute xmi:id="_XGlhEETdEeaE_LvRB4YnBQ" name="apiUrl"/>
+    <ownedAttribute xmi:id="_YDiRgETdEeaE_LvRB4YnBQ" name="userName"/>
+    <ownedAttribute xmi:id="_YveKcETdEeaE_LvRB4YnBQ" name="password"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_m3TSsETbEeaE_LvRB4YnBQ" name="ToneAnalyzerController"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Dzf8QETcEeaE_LvRB4YnBQ" name="ToneAnalizerRequest">
+    <generalization xmi:id="_1pCzQETcEeaE_LvRB4YnBQ" general="_0FZ2QETcEeaE_LvRB4YnBQ"/>
+    <ownedAttribute xmi:id="_7K5SQETcEeaE_LvRB4YnBQ" name="text"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_0FZ2QETcEeaE_LvRB4YnBQ" name="WatsonRequest"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_3dnIMETcEeaE_LvRB4YnBQ" name="WatsonResponse"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_4-8_IETcEeaE_LvRB4YnBQ" name="ToneAnalyzerResponse">
+    <generalization xmi:id="_-FVqIETcEeaE_LvRB4YnBQ" general="_3dnIMETcEeaE_LvRB4YnBQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_cOiSUETdEeaE_LvRB4YnBQ" memberEnd="_cOi5YETdEeaE_LvRB4YnBQ _cOi5Y0TdEeaE_LvRB4YnBQ" navigableOwnedEnd="_cOi5YETdEeaE_LvRB4YnBQ _cOi5Y0TdEeaE_LvRB4YnBQ">
+    <ownedEnd xmi:id="_cOi5YETdEeaE_LvRB4YnBQ" name="toneAnalyzerControllers" type="_m3TSsETbEeaE_LvRB4YnBQ" association="_cOiSUETdEeaE_LvRB4YnBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cOi5YUTdEeaE_LvRB4YnBQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cOi5YkTdEeaE_LvRB4YnBQ"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_cOi5Y0TdEeaE_LvRB4YnBQ" name="toneAnalyzerServices" type="_vGEgYETaEeaE_LvRB4YnBQ" association="_cOiSUETdEeaE_LvRB4YnBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cOjgcETdEeaE_LvRB4YnBQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cOjgcUTdEeaE_LvRB4YnBQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_jhhXwETdEeaE_LvRB4YnBQ" name="Tone">
+    <ownedAttribute xmi:id="_l1AdUETdEeaE_LvRB4YnBQ" name="score"/>
+    <ownedAttribute xmi:id="_oe1mUETdEeaE_LvRB4YnBQ" name="tone_id"/>
+    <ownedAttribute xmi:id="_qKVe0ETdEeaE_LvRB4YnBQ" name="tone_name"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_EYnwoETeEeaE_LvRB4YnBQ" name="ToneCategory">
+    <ownedAttribute xmi:id="_IS84METeEeaE_LvRB4YnBQ" name="category_id"/>
+    <ownedAttribute xmi:id="_JDuN0ETeEeaE_LvRB4YnBQ" name="category_name"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_MVvYMETeEeaE_LvRB4YnBQ" name="emotion_tone" memberEnd="_MVvYMUTeEeaE_LvRB4YnBQ _MVv_QkTeEeaE_LvRB4YnBQ" navigableOwnedEnd="_MVvYMUTeEeaE_LvRB4YnBQ _MVv_QkTeEeaE_LvRB4YnBQ">
+    <ownedEnd xmi:id="_MVvYMUTeEeaE_LvRB4YnBQ" name="toneAnalyzerResponses" type="_4-8_IETcEeaE_LvRB4YnBQ" association="_MVvYMETeEeaE_LvRB4YnBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MVv_QETeEeaE_LvRB4YnBQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MVv_QUTeEeaE_LvRB4YnBQ"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_MVv_QkTeEeaE_LvRB4YnBQ" name="emotion_tones" type="_EYnwoETeEeaE_LvRB4YnBQ" association="_MVvYMETeEeaE_LvRB4YnBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MVwmUETeEeaE_LvRB4YnBQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MVwmUUTeEeaE_LvRB4YnBQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_hnVtkETeEeaE_LvRB4YnBQ" memberEnd="_hnWUoETeEeaE_LvRB4YnBQ _hnW7skTeEeaE_LvRB4YnBQ" navigableOwnedEnd="_hnWUoETeEeaE_LvRB4YnBQ _hnW7skTeEeaE_LvRB4YnBQ">
+    <ownedEnd xmi:id="_hnWUoETeEeaE_LvRB4YnBQ" name="toneCategorys" type="_EYnwoETeEeaE_LvRB4YnBQ" association="_hnVtkETeEeaE_LvRB4YnBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hnW7sETeEeaE_LvRB4YnBQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hnW7sUTeEeaE_LvRB4YnBQ"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_hnW7skTeEeaE_LvRB4YnBQ" name="tones" type="_jhhXwETdEeaE_LvRB4YnBQ" association="_hnVtkETeEeaE_LvRB4YnBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hnXiwETeEeaE_LvRB4YnBQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hnXiwUTeEeaE_LvRB4YnBQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_4GrocETeEeaE_LvRB4YnBQ" memberEnd="_4GrocUTeEeaE_LvRB4YnBQ _4Gs2kUTeEeaE_LvRB4YnBQ" navigableOwnedEnd="_4GrocUTeEeaE_LvRB4YnBQ _4Gs2kUTeEeaE_LvRB4YnBQ">
+    <ownedEnd xmi:id="_4GrocUTeEeaE_LvRB4YnBQ" name="toneAnalizerRequests" type="_Dzf8QETcEeaE_LvRB4YnBQ" association="_4GrocETeEeaE_LvRB4YnBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4GsPgETeEeaE_LvRB4YnBQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4Gs2kETeEeaE_LvRB4YnBQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_4Gs2kUTeEeaE_LvRB4YnBQ" name="toneAnalyzerServices" type="_vGEgYETaEeaE_LvRB4YnBQ" association="_4GrocETeEeaE_LvRB4YnBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4Gs2kkTeEeaE_LvRB4YnBQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4GtdoETeEeaE_LvRB4YnBQ"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_8MgOUETeEeaE_LvRB4YnBQ" memberEnd="_8MgOUUTeEeaE_LvRB4YnBQ _8Mg1YkTeEeaE_LvRB4YnBQ" navigableOwnedEnd="_8MgOUUTeEeaE_LvRB4YnBQ _8Mg1YkTeEeaE_LvRB4YnBQ">
+    <ownedEnd xmi:id="_8MgOUUTeEeaE_LvRB4YnBQ" name="toneAnalyzerServices" type="_vGEgYETaEeaE_LvRB4YnBQ" association="_8MgOUETeEeaE_LvRB4YnBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8Mg1YETeEeaE_LvRB4YnBQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8Mg1YUTeEeaE_LvRB4YnBQ"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_8Mg1YkTeEeaE_LvRB4YnBQ" name="toneAnalyzerResponses" type="_4-8_IETcEeaE_LvRB4YnBQ" association="_8MgOUETeEeaE_LvRB4YnBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8MhccETeEeaE_LvRB4YnBQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8MhccUTeEeaE_LvRB4YnBQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_F0HBwETfEeaE_LvRB4YnBQ" name="JacksonJSON&lt;>POJO"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_iCj0gETfEeaE_LvRB4YnBQ" name="language_tone" memberEnd="_iCkbkETfEeaE_LvRB4YnBQ _iClpsETfEeaE_LvRB4YnBQ" navigableOwnedEnd="_iCkbkETfEeaE_LvRB4YnBQ _iClpsETfEeaE_LvRB4YnBQ">
+    <ownedEnd xmi:id="_iCkbkETfEeaE_LvRB4YnBQ" name="toneAnalyzerResponses" type="_4-8_IETcEeaE_LvRB4YnBQ" association="_iCj0gETfEeaE_LvRB4YnBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iClCoETfEeaE_LvRB4YnBQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iClCoUTfEeaE_LvRB4YnBQ"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_iClpsETfEeaE_LvRB4YnBQ" name="language_tones" type="_EYnwoETeEeaE_LvRB4YnBQ" association="_iCj0gETfEeaE_LvRB4YnBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iClpsUTfEeaE_LvRB4YnBQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iClpskTfEeaE_LvRB4YnBQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ssrN0ETfEeaE_LvRB4YnBQ" name="WatsonService">
+    <ownedAttribute xmi:id="_uhEjoETfEeaE_LvRB4YnBQ" name="ApiUrlEnum"/>
+  </packagedElement>
+</uml:Model>
