@@ -27,7 +27,7 @@ import com.ibm.commons.util.io.json.JsonParser;
  * 
  * @author Brian Gleeson - brian.gleeson@ie.ibm.com
  */
-public class RestUtil {
+public class RestUtil_1 {
 	Executor executor = Executor.newInstance();
 	
 	/**
