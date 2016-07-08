@@ -54,8 +54,7 @@ public abstract class ControllerBase implements Serializable {
         try {
             String created = XPagesUtil.getDateTimeStringLocalized(dataItem
                     .getCreated());
-            
-            if (dataItem.getId().equals("")) {
+            if (dataItem.getId()!=null && "".equals(dataItem.getId())) {
                 result = INFO_CREATED.replace(INFO_CREATED_REPLACE, created);
             } else {
                 String modified = XPagesUtil

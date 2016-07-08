@@ -6,7 +6,7 @@
 		</xp:dataContext>
 	</xp:this.dataContexts>
 	<xc:ccLayout pageTitle="${companyController.pageTitle}"
-		pageSubTitle="ID: #{company.id}">
+		pageSubTitle="#{javascript:companyController.getCreatedModifiedInfo(company)}">
 		<xp:this.facets>
 			<xp:panel xp:key="Content">
 				<div class="row">
