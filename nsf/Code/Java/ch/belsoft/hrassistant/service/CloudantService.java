@@ -6,7 +6,6 @@ import java.util.logging.Level;
 
 import nl.elstarit.cloudant.connector.CloudantConnector;
 import nl.elstarit.cloudant.log.CloudantLogger;
-import nl.elstarit.cloudant.model.AttachmentResponse;
 import nl.elstarit.cloudant.model.ConnectorIndex;
 import nl.elstarit.cloudant.model.ConnectorResponse;
 import ch.belsoft.tools.XPagesUtil;
@@ -153,7 +152,7 @@ public class CloudantService {
         }
     }
     
-    public ConnectorResponse saveAttachment(final InputStream inputStream,
+    public ConnectorResponse saveStandaloneAttachment(final InputStream inputStream,
             final String name, final String contentType, final String docId,
             final String docRev) {
         try {
@@ -166,7 +165,7 @@ public class CloudantService {
         return null;
     }
     
-    public List<AttachmentResponse> findAttachmentsById(String id){
+    /*public List<AttachmentResponse> findAttachmentsById(String id){
         try {
             return connector.getDocumentConnector().findAttachmentsById(id);
         } catch (Exception e) {
@@ -184,7 +183,7 @@ public class CloudantService {
                     e.getMessage());
         }
         return null;
-    }
+    }*/
     
     /**
      * 
