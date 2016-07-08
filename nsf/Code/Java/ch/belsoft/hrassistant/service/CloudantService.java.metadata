@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="552" sequence="87" unid="0755B3C75B1EA69AC1257FDC00600E1C">
-<created><datetime dst="true">20160624T192910,68+02</datetime></created>
-<modified><datetime dst="true">20160704T130837,64+02</datetime></modified>
-<revised><datetime dst="true">20160704T130837,63+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160704T130837,64+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160624T192910,76+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=FDN</name></updatedby>
-<wassignedby><name>CN=Administrator/O=FDN</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="3ca" sequence="143" unid="4A8C642C9684042CC1257FDB0068A276">
+<created><datetime dst="true">20160623T210253,34+02</datetime></created>
+<modified><datetime dst="true">20160708T093238,52+02</datetime></modified>
+<revised><datetime dst="true">20160708T093238,51+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160708T093238,52+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160623T210253,35+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
+<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>ch/belsoft/hrassistant/service/CloudantService.java</text></item>
-
-
 
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
-<item name="$FileNames" sign="true"><text>ch/belsoft/hrassistant/service/CloudantService.java</text></item></note>
+<item name="$FileNames" sign="true"><text>ch/belsoft/hrassistant/service/CloudantService.java</text></item>
+
+</note>

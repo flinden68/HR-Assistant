@@ -109,7 +109,47 @@
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
 								
+								<xp:div
+									styleClass="form-group is-valid-#{javascript:getComponent('fldCountry').isValid()}">
+									<label for="fldDescription">Description</label>
+									<xp:inputTextarea id="fldDescription" value="#{company.description}"
+										styleClass="form-control valid-#{javascript:this.isValid()}" required="true">
+										<xp:this.validators>
+											<xp:validateRequired message="Please give a description">
+											</xp:validateRequired>
+										</xp:this.validators>
+									</xp:inputTextarea>
+									<xp:message id="message7" for="fldCountry"
+										styleClass="help-block with-errors"></xp:message>
+								</xp:div>
 								
+								<xp:div
+									styleClass="form-group">
+									<label for="fldLogo">Logo</label>
+									<xp:panel styleClass='input-group' id='fileupload1'>
+										<span class="input-group-btn">
+											<span class="btn btn-primary btn-file">				
+												<xp:fileUpload id="fileUpload3"
+													value="#{companyController.upload.uploadFile}">					
+													<xp:text escape="true" id="computedField2" value="Browse">
+														
+													</xp:text>
+												</xp:fileUpload>
+											</span>
+										</span>
+										<input type="text"
+											id="placeholder"
+											class="form-control" 
+											readonly="readonly" 
+											placeholder="" />
+									</xp:panel>
+								</xp:div>
+								
+								<xc:ccAttachmentList
+									controller="#{javascript:companyController}">
+								</xc:ccAttachmentList>
+
+
 							</div>
 							<!-- /.box-body -->
 

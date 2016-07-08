@@ -4,6 +4,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import ch.belsoft.hrassistant.attachment.controller.AttachmentController;
+import ch.belsoft.hrassistant.attachment.model.Attachment;
+import ch.belsoft.hrassistant.attachment.model.AttachmentHolder;
+import ch.belsoft.hrassistant.attachment.model.Upload;
 import ch.belsoft.hrassistant.company.dao.CompanyDAO;
 import ch.belsoft.hrassistant.controller.ApplicationController;
 import ch.belsoft.hrassistant.controller.ControllerBase;
@@ -34,11 +38,16 @@ public class CompanyController extends ControllerBase implements IGuiController<
                 String id = this.getId();
                 if (!id.equals("")) {
                     this.company = companyDAO.read(id);
+                    if(!"".equals(company.getAttachmentId())){
+                        loadAttachmnents(company);
+                    }
+                    this.upload = new Upload();
                 } else {
                     newDataItem = true;
                     this.company = new Company();
                     this.company.setAddress(new Address());
                     
+                    this.upload = new Upload();
                 }
             }
         } catch (Exception e) {
@@ -74,6 +83,7 @@ public class CompanyController extends ControllerBase implements IGuiController<
     
     public void remove(Company company) {
         try {
+            removeAttachments();
             this.companyDAO.delete(company);
         } catch (Exception e) {
             Logging.logError(e);
@@ -100,12 +110,12 @@ public class CompanyController extends ControllerBase implements IGuiController<
     
     public void update() {
         try {
+            updateAttachments(company);
             if (this.newDataItem) {
                 this.companyDAO.create(company);
                 XPagesUtil.redirect("company.xsp?openxpage&id=" + company.getId());
             } else {
-                Logging.logEvent("updating.. rev:" + company.getRev() + " id:"
-                        + company.getId());
+                Logging.logEvent("updating.. rev:" + company.getRev() + " id:" + company.getId());
                 this.companyDAO.update(company);
                 this.company = companyDAO.read(company.getId());
             }
@@ -113,6 +123,21 @@ public class CompanyController extends ControllerBase implements IGuiController<
         } catch (Exception e) {
             handleException(e);
             Logging.logError(e);
+        }
+    }
+    
+    public void removeAttachment(Attachment attachment){
+        attachmentHolder.getAttachments().remove(attachment.getName());
+        if(attachmentHolder.getAttachments().isEmpty()){
+            //list is empty so remove document
+            removeAttachments();
+            company.setAttachmentId("");
+            this.companyDAO.update(company);
+        }else{
+            //list is not yet empty, so call update and reload attachment list
+            System.out.println("list is not yet empty, so call update and reload attachment list");
+            attachmentController.update(attachmentHolder);
+            loadAttachmnents(company);
         }
     }
     
@@ -178,5 +203,35 @@ public class CompanyController extends ControllerBase implements IGuiController<
     
     public Company getCompany() {
         return company;
+    }
+    
+    @Override
+    public AttachmentController getAttachmentController() {
+        return attachmentController;
+    }
+    
+    @Override
+    public void setAttachmentController(AttachmentController attachmentController) {
+        this.attachmentController = attachmentController;
+    }
+    
+    @Override
+    public void setUpload(Upload upload) {
+        this.upload = upload;
+    }
+    
+    @Override
+    public Upload getUpload() {
+        return upload;
+    }
+    
+    @Override
+    public AttachmentHolder getAttachmentHolder() {
+        return attachmentHolder;
+    }
+    
+    @Override
+    public void setAttachmentHolder(AttachmentHolder attachmentHolder) {
+        this.attachmentHolder = attachmentHolder;
     }
 }
