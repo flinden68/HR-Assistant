@@ -14,11 +14,12 @@ public abstract class DataItem implements Serializable, IDataItem {
     
     protected String _rev = null;
     protected String _id = null;
+    protected String attachmentId = "";
     protected Date created = new Date();
     protected Date modified = new Date();
     
     public enum DataType {
-        CONFIG, JOB, JOBAPPLICATION, COMPANY
+        CONFIG, JOB, JOBAPPLICATION, COMPANY, ATTACHMENT, UPLOAD
     }
     
     public String getRev() {
@@ -67,6 +68,14 @@ public abstract class DataItem implements Serializable, IDataItem {
     
     public void setModified(Date modified) {
         this.modified = modified;
+    }
+    
+    public void setAttachmentId(String attachmentId) {
+        this.attachmentId = attachmentId;
+    }
+    
+    public String getAttachmentId() {
+        return attachmentId;
     }
     
     @Override

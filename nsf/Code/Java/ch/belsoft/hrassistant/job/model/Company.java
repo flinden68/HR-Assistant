@@ -8,6 +8,8 @@ public class Company extends DataItem implements Serializable {
     
     private static final long serialVersionUID = 1L;
     private String name = "";
+    private String description = "";
+    //private String attachmentId = "";
     private Address address = null;
     private final DataType dataType = DataType.COMPANY;
     
@@ -39,6 +41,7 @@ public class Company extends DataItem implements Serializable {
     public String toString(){
         StringBuilder sb = new StringBuilder();
         sb.append("Name: " + getName() + ",");
+        sb.append("Description: " + getDescription() + ",");
         sb.append("Address: " + getAddress());
         return sb.toString();
     }
@@ -90,5 +93,12 @@ public class Company extends DataItem implements Serializable {
         return true;
     }
     
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
+    public String getDescription() {
+        return description;
+    }
     
 }

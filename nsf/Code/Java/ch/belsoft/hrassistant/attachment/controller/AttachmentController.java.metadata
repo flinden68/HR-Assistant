@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="78e" sequence="84" unid="8617FA55E8FF8D3FC1257FE9003E5104">
+<created><datetime dst="true">20160707T132039,72+02</datetime></created>
+<modified><datetime dst="true">20160708T132006,86+02</datetime></modified>
+<revised><datetime dst="true">20160708T132006,85+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160708T132006,86+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160707T132039,73+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
+<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>ch/belsoft/hrassistant/attachment/controller/AttachmentController.java</text></item>
+
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>ch/belsoft/hrassistant/attachment/controller/AttachmentController.java</text></item>
+
+</note>

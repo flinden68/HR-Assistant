@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+	<xp:panel id="panel-attachment-list"
+		rendered="#{javascript:compositeData.controller.hasAttachments()}">
+		<table class="table table-hover table-striped">
+			<thead>
+				<tr>
+					<th></th>
+					<th>name</th>
+					<th>type</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<xp:repeat id="rptList" rows="10" var="attachment"
+					indexVar="i"
+					value="#{compositeData.controller.attachmentHolder.attachmentsAsList}">
+					<xp:tr styleClass="#{(i mod 2 eq 0) ? 'even': 'odd'}">
+						<td>
+							<xp:image url="#{attachment.extension}.png"
+								id="image1" style="width:25px">
+							</xp:image>
+						</td>
+						<xp:text escape="true" id="columnName" tagName="td"
+							value="#{attachment.nameOnly}">
+						</xp:text>
+						<xp:text escape="false" id="columnStreet" tagName="td"
+							value="#{attachment.content_type}">
+						</xp:text>
+
+						<td>
+							<xp:button styleClass="btn btn-danger" value="remove"
+								id="button7">
+								<i class="fa fa-trash fa-fw"></i>
+								<xp:eventHandler event="onclick" submit="true"
+									onStart="waitingDialog.show('removing')" onComplete="waitingDialog.hide()"
+									refreshMode="partial" refreshId="content-wrapper" immediate="true"
+									execMode="partial" execId="content-wrapper">
+									<xp:this.action>
+										<xp:executeScript
+											script="#{javascript:compositeData.controller.removeAttachment(attachment)}">
+										</xp:executeScript>
+									</xp:this.action>
+								</xp:eventHandler>
+							</xp:button>
+						</td>
+
+					</xp:tr>
+				</xp:repeat>
+
+			</tbody>
+		</table>
+	</xp:panel>
+</xp:view>
