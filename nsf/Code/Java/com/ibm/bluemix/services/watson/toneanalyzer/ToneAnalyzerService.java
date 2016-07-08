@@ -37,8 +37,8 @@ public class ToneAnalyzerService extends CloudService {
 			ToneAnalyzerRequest req = new ToneAnalyzerRequest();
 			req.setText(text);
 			String postDataString = mapper.writeValueAsString(req);
-			RestUtil.post(API_URL, bluemixUtil.getAuthorizationHeader(),
-					postDataString);
+		//	RestUtil.post(API_URL, bluemixUtil.getAuthorizationHeader(),
+			//		postDataString);
 		} catch (Exception e) {
 			Logging.logError(e);
 		}
