@@ -156,7 +156,7 @@ public class CloudantService {
             final String name, final String contentType, final String docId,
             final String docRev) {
         try {
-            return connector.getDocumentConnector().saveAttachment(inputStream,
+            return connector.getDocumentConnector().saveStandAloneAttachment(inputStream,
                     name, contentType, docId, docRev);
         } catch (Exception e) {
             CloudantLogger.CLOUDANT.getLogger().log(Level.SEVERE,
@@ -164,26 +164,6 @@ public class CloudantService {
         }
         return null;
     }
-    
-    /*public List<AttachmentResponse> findAttachmentsById(String id){
-        try {
-            return connector.getDocumentConnector().findAttachmentsById(id);
-        } catch (Exception e) {
-            CloudantLogger.CLOUDANT.getLogger().log(Level.SEVERE,
-                    e.getMessage());
-        }
-        return null;
-    }
-    
-    public Object findAttachment(Class<?> cls, String id){
-        try {
-            return connector.getDocumentConnector().findAttachment(cls, id );
-        } catch (Exception e) {
-            CloudantLogger.CLOUDANT.getLogger().log(Level.SEVERE,
-                    e.getMessage());
-        }
-        return null;
-    }*/
     
     /**
      * 

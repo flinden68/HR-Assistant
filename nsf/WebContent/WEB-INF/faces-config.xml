@@ -36,6 +36,11 @@
 			</property-name>
 			<value>#{applicationController}</value>
 		</managed-property>
+		<managed-property>
+			<property-name>attachmentController
+			</property-name>
+			<value>#{attachmentController}</value>
+		</managed-property>
 	</managed-bean>
 	<!-- Company Controller -->
 	<managed-bean>
@@ -53,6 +58,11 @@
 			<property-name>applicationController
 			</property-name>
 			<value>#{applicationController}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>attachmentController
+			</property-name>
+			<value>#{attachmentController}</value>
 		</managed-property>
 	</managed-bean>
 	<!-- Configuration controller -->
@@ -73,17 +83,7 @@
 			<value>#{applicationController}</value>
 		</managed-property>
 	</managed-bean>
-	
-	<!-- Company DAO -->
-	<managed-bean>
-		<managed-bean-name>companyDAO</managed-bean-name>
-		<managed-bean-class>ch.belsoft.hrassistant.company.dao.CompanyDAO</managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
-		<managed-property>
-      <property-name>cloudantService</property-name>
-      <value>#{cloudantService}</value>
-    </managed-property>
-  </managed-bean>
+
   <!-- Attachment controller -->
   <managed-bean>
     <managed-bean-name>attachmentController
@@ -102,6 +102,18 @@
       <value>#{applicationController}</value>
     </managed-property>
   </managed-bean>
+  
+  <!-- Company DAO -->
+	<managed-bean>
+		<managed-bean-name>companyDAO</managed-bean-name>
+		<managed-bean-class>ch.belsoft.hrassistant.company.dao.CompanyDAO</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+      <property-name>cloudantService</property-name>
+      <value>#{cloudantService}</value>
+    </managed-property>
+  </managed-bean>
+  
   <!-- Attachment DAO -->
   <managed-bean>
     <managed-bean-name>attachmentDAO</managed-bean-name>
