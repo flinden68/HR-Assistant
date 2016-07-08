@@ -32,7 +32,6 @@ public abstract class CloudService {
 			bluemixUtil = new BluemixContextUtil(getServiceName(), username,
 					password, "");
 		}
-
 	}
 
 	public String getPassword() {

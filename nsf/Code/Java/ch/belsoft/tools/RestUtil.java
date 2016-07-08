@@ -8,11 +8,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.fluent.Executor;
 import org.apache.http.client.fluent.Request;
 import org.apache.http.client.fluent.Response;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.impl.client.BasicResponseHandler;
 
 import com.ibm.commons.util.StringUtil;
 
@@ -22,27 +25,28 @@ import com.ibm.commons.util.StringUtil;
  * @author Brian Gleeson - brian.gleeson@ie.ibm.com
  */
 public class RestUtil {
-	private final Executor executor = Executor.newInstance();
+	private static final Executor executor = Executor.newInstance();
 	private static final String HEADER_AUTHORIZATION = "Authorization";
+	private static final ResponseHandler<String> responseHandler = new BasicResponseHandler();
 
 	/**
 	 * Send basic GET request with authorization header
 	 */
-	public Response get(String url, String auth) throws URISyntaxException,
-			IOException {
+	public static String get(String url, String auth)
+			throws URISyntaxException, IOException {
 		URI normUri = new URI(url).normalize();
 		Request getRequest = Request.Get(normUri);
 		if (StringUtil.isNotEmpty(auth)) {
 			getRequest.addHeader(HEADER_AUTHORIZATION, auth);
 		}
-		Response response = executor.execute(getRequest);
-		return response;
+
+		return executor.execute(getRequest).handleResponse(responseHandler);
 	}
 
 	/**
 	 * Send basic GET request
 	 */
-	public Response get(String url) throws URISyntaxException, IOException {
+	public static String get(String url) throws URISyntaxException, IOException {
 		return get(url, null);
 	}
 
@@ -59,7 +63,7 @@ public class RestUtil {
 	 *            - The body of the POST
 	 * @return the Response to the POST request
 	 */
-	public Response post(String url, String auth,
+	public static String post(String url, String auth,
 			HashMap<String, String> headers, String postDataString)
 			throws IOException, URISyntaxException {
 		URI normUri = new URI(url).normalize();
@@ -75,12 +79,15 @@ public class RestUtil {
 			}
 		}
 
-		Response response = executor.execute(postRequest.bodyString(
-				postDataString, ContentType.APPLICATION_JSON));
-		return response;
+		System.out.println("executing url: "+url);
+		
+		return executor.execute(
+				postRequest.bodyString(postDataString,
+						ContentType.APPLICATION_JSON)).handleResponse(
+				responseHandler);
 	}
 
-	public Response post(String url, String auth, String postDataString,
+	public static String post(String url, String auth, String postDataString,
 			File fileUpload) throws IOException, URISyntaxException {
 		URI normUri = new URI(url).normalize();
 		Request postRequest = Request.Post(normUri);
@@ -100,8 +107,8 @@ public class RestUtil {
 		HttpEntity multipart = builder.build();
 		postRequest.body(multipart);
 
-		Response response = executor.execute(postRequest);
-		return response;
+		return executor.execute(postRequest).handleResponse(responseHandler);
+
 	}
 
 	/**
@@ -113,7 +120,7 @@ public class RestUtil {
 	 *            - The body of the POST
 	 * @return the Response to the POST request
 	 */
-	public Response post(String url, String postDataString)
+	public static String post(String url, String postDataString)
 			throws URISyntaxException, IOException {
 		return post(url, null, null, postDataString);
 	}
@@ -122,14 +129,14 @@ public class RestUtil {
 	 * Send basic POST request with authorization header
 	 * 
 	 * @param url
-	 *            - The url of the POST request
+	 *            - The url of the POST reques,t
 	 * @param auth
 	 *            - String for authorization header
 	 * @param postData
 	 *            - The body of the POST
 	 * @return the Response to the POST request
 	 */
-	public Response post(String url, String auth, String postDataString)
+	public static String post(String url, String auth, String postDataString)
 			throws URISyntaxException, IOException {
 		return post(url, auth, null, postDataString);
 	}
@@ -144,7 +151,7 @@ public class RestUtil {
 	 * @param putData
 	 *            - The body of the PUT
 	 */
-	public Response put(String url, String auth, String putDataString)
+	public static String put(String url, String auth, String putDataString)
 			throws URISyntaxException, IOException {
 		URI normUri = new URI(url).normalize();
 		Request putRequest = Request.Put(normUri);
@@ -157,12 +164,12 @@ public class RestUtil {
 		putRequest = putRequest.bodyString(putDataString,
 				ContentType.APPLICATION_JSON);
 
-		Response response = executor.execute(putRequest);
-		return response;
+		return executor.execute(putRequest).handleResponse(responseHandler);
+
 	}
 
-	public Response put(String url, String auth) throws URISyntaxException,
-			IOException {
+	public static String put(String url, String auth)
+			throws URISyntaxException, IOException {
 		return put(url, auth, null);
 	}
 

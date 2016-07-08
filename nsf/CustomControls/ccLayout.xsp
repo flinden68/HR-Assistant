@@ -427,6 +427,26 @@
 						</xp:button>
 						<xp:messages id="pnlTestResults" styleClass="alert alert-danger"></xp:messages>
 					</xp:div>
+
+					<h3 class="control-sidebar-heading">
+						Watson Test
+					</h3>
+					This will analize the tone..
+					<xp:div id="pnlWatsonTone">
+						<xp:button value="Run test" id="button2" styleClass="btn btn-warning"
+							style="margin-bottom:10px;">
+							<xp:eventHandler event="onclick" submit="true"
+								onStart="waitingDialog.show('analyzing...')" onComplete="waitingDialog.hide()"
+								refreshMode="partial" refreshId="pnlWatsonTone" immediate="true"
+								execMode="partial" execId="pnlWatsonTone">
+								<xp:this.action>
+									<xp:executeScript script="#{toneAnalyzerService.analyzeTone}"></xp:executeScript>
+								</xp:this.action>
+							</xp:eventHandler>
+						</xp:button>
+						<xp:messages id="pnlWatsonResponse" styleClass="alert alert-danger"></xp:messages>
+					</xp:div>
+
 				</div>
 
 
