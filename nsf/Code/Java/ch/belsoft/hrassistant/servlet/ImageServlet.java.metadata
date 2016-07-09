@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="7ea" sequence="62" unid="551E09BD7CC0B1F2C1257FEB004295C1">
+<created><datetime dst="true">20160709T140717,13+02</datetime></created>
+<modified><datetime dst="true">20160709T170818,65+02</datetime></modified>
+<revised><datetime dst="true">20160709T170818,64+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160709T170818,65+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160709T140717,14+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
+<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>ch/belsoft/hrassistant/servlet/ImageServlet.java</text></item>
+
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>ch/belsoft/hrassistant/servlet/ImageServlet.java</text></item>
+
+</note>

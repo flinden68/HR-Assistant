@@ -199,6 +199,11 @@ public class JobController extends ControllerBase implements IGuiController<Job>
         .getConfigSelection(ConfigType.JOB_TYPE);
     }
     
+    public List<String> getCareerLevelSelection() {
+        return applicationController
+        .getConfigSelection(ConfigType.CAREERLEVEL);
+    }
+    
     /*
      * Getters and Setters
      */

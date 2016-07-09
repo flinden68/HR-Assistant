@@ -70,7 +70,7 @@ public class Attachment implements Serializable {
         sb.append("Name: " + getName() + ",");
         sb.append("ContentType: " + getContent_type() + ",");
         sb.append("Digest: " + getDigest() + ",");
-        sb.append("Data: " + getData() + ",");
+        //sb.append("Data: " + getData() + ",");
         sb.append("length: " + getLength());
         
         return sb.toString();
@@ -82,5 +82,9 @@ public class Attachment implements Serializable {
     
     public String getExtension(){
         return getName().split("\\.(?=[^\\.]+$)")[1];
+    }
+    
+    public String getSrcForImageTag(){
+        return "data:"+getContent_type()+";base64,"+getData();
     }
 }

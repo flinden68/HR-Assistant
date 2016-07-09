@@ -112,7 +112,7 @@
 									<label for="fldIndustry">Industry</label>
 									<xp:comboBox id="fldIndustry" value="#{job.industry}"
 										required="true">
-										<xp:selectItem itemLabel="Please choose"
+										<xp:selectItem itemLabel="Please choose industry"
 											itemValue="">
 										</xp:selectItem>
 										<xp:selectItems
@@ -138,7 +138,7 @@
 									<label for="fldJobType">Job type</label>
 									<xp:comboBox id="fldJobType" value="#{job.jobType}"
 										required="true">
-										<xp:selectItem itemLabel="Please choose"
+										<xp:selectItem itemLabel="Please choose a job type"
 											itemValue="">
 										</xp:selectItem>
 										<xp:selectItems
@@ -156,6 +156,46 @@
 										</xp:eventHandler>
 									</xp:comboBox>
 									<xp:message id="message5" for="fldJobType"
+										styleClass="help-block with-errors"></xp:message>
+								</xp:div>
+								
+								<xp:div
+									styleClass="form-group is-valid-#{javascript:getComponent('fldCareerLevel').isValid()}">
+									<label for="fldCareerLevel">Job type</label>
+									<xp:comboBox id="fldCareerLevel" value="#{job.careerLevel}"
+										required="true">
+										<xp:selectItem itemLabel="Please choose a career level"
+											itemValue="">
+										</xp:selectItem>
+										<xp:selectItems
+											value="${jobController.careerLevelSelection}">
+										</xp:selectItems>
+										<xp:this.validators>
+											<xp:validateRequired message="Career level is mandatory">
+											</xp:validateRequired>
+										</xp:this.validators>
+
+										<xp:eventHandler event="onchange" submit="true"
+											onStart="waitingDialog.show('loading job type')"
+											onComplete="waitingDialog.hide();" refreshMode="partial"
+											disableValidators="true" refreshId="fldCareerLevel">
+										</xp:eventHandler>
+									</xp:comboBox>
+									<xp:message id="message7" for="fldCareerLevel"
+										styleClass="help-block with-errors"></xp:message>
+								</xp:div>
+								
+								<xp:div
+									styleClass="form-group is-valid-#{javascript:getComponent('fldDescription').isValid()}">
+									<label for="fldDescription">Description</label>
+									<xp:inputTextarea id="fldDescription" value="#{job.description}"
+										styleClass="form-control valid-#{javascript:this.isValid()}" required="true">
+										<xp:this.validators>
+											<xp:validateRequired message="Please give a description">
+											</xp:validateRequired>
+										</xp:this.validators>
+									</xp:inputTextarea>
+									<xp:message id="message8" for="fldDescription"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
 								

@@ -1,12 +1,10 @@
 package ch.belsoft.hrassistant.attachment.controller;
 
-import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.Serializable;
 
 import org.apache.commons.codec.binary.Base64;
@@ -18,6 +16,7 @@ import ch.belsoft.hrassistant.attachment.model.Upload;
 import ch.belsoft.hrassistant.controller.ControllerBase;
 import ch.belsoft.hrassistant.controller.IGuiController;
 import ch.belsoft.tools.Logging;
+import ch.belsoft.tools.XPagesUtil;
 
 import com.ibm.xsp.component.UIFileuploadEx.UploadedFile;
 import com.ibm.xsp.http.IUploadedFile;
@@ -26,9 +25,13 @@ public class AttachmentController extends ControllerBase implements IGuiControll
     
     private static final long serialVersionUID = 1L;
     private AttachmentDAO attachmentDAO;
+    private static final String BEAN_NAME = "attachmentController";
     
     public AttachmentController(){
         
+    }
+    public static AttachmentController get() {
+        return (AttachmentController) XPagesUtil.resolveVariable(BEAN_NAME);
     }
     
     public Attachment getDataContext() {
@@ -100,31 +103,31 @@ public class AttachmentController extends ControllerBase implements IGuiControll
     
     
     
-    private byte[] convertUploadFileToBytes(UploadedFile uploadFile){
-        //get the uploaded file
-        BufferedReader br = null;
-        StringBuilder sb = new StringBuilder();
-        InputStream inputStream = null;
-        String line;
+    public byte[] convertUploadFileToBytes(UploadedFile uploadFile){
         
         IUploadedFile iUploadedFile = uploadFile.getUploadedFile();
-        //get the server file (with a cryptic filename)
         File serverFile = iUploadedFile.getServerFile();
+        byte[] bFile = new byte[(int) serverFile.length()];
         
         try {
-            inputStream = new FileInputStream(serverFile);
-            br = new BufferedReader(new InputStreamReader(inputStream));
-            while ((line = br.readLine()) != null) {
-                sb.append(line);
-            }
-            
+            FileInputStream fileInputStream = new FileInputStream(serverFile);
+            fileInputStream.read(bFile);
+            fileInputStream.close();
         } catch (FileNotFoundException e) {
             Logging.logError(e);
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+        } catch (Exception e) {
+            Logging.logError(e);
         }
-        return sb.toString().getBytes();
+        return bFile;
+        
+    }
+    
+    public InputStream convertAttachmentInputstream(Attachment attachment){
+        return new ByteArrayInputStream(decodeBase64Attachment(attachment));
+    }
+    
+    public byte[] decodeBase64Attachment(Attachment attachment){
+        return Base64.decodeBase64(attachment.getData());
     }
     
     /*

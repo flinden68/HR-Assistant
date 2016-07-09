@@ -110,7 +110,7 @@
 								</xp:div>
 								
 								<xp:div
-									styleClass="form-group is-valid-#{javascript:getComponent('fldCountry').isValid()}">
+									styleClass="form-group is-valid-#{javascript:getComponent('fldDescription').isValid()}">
 									<label for="fldDescription">Description</label>
 									<xp:inputTextarea id="fldDescription" value="#{company.description}"
 										styleClass="form-control valid-#{javascript:this.isValid()}" required="true">
@@ -119,7 +119,7 @@
 											</xp:validateRequired>
 										</xp:this.validators>
 									</xp:inputTextarea>
-									<xp:message id="message7" for="fldCountry"
+									<xp:message id="message7" for="fldDescription"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
 								
@@ -185,6 +185,7 @@
 											</xp:this.action>
 										</xp:eventHandler>
 									</xp:button>
+									
 								</div>
 							</div>
 						</div>

@@ -18,7 +18,8 @@ public class Job extends DataItem implements Serializable {
     private String representativeId = "";
     private DataType jobType;
     private DataType industry;
-    
+    private DataType careerLevel;
+    private String description;
     
     public String getName() {
         return name;
@@ -75,13 +76,29 @@ public class Job extends DataItem implements Serializable {
     public DataType getJobType() {
         return jobType;
     }
-
+    
     public void setIndustry(DataType industry) {
         this.industry = industry;
     }
-
+    
     public DataType getIndustry() {
         return industry;
+    }
+    
+    public void setCareerLevel(DataType careerLevel) {
+        this.careerLevel = careerLevel;
+    }
+    
+    public DataType getCareerLevel() {
+        return careerLevel;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
     }
     
 }
