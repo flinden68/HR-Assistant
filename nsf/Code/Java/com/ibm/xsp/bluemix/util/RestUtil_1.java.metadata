@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="118a" sequence="3" unid="A0F02E64B233AF85C1257FEA0043FAAA">
+<created><datetime dst="true">20160708T142230,82+02</datetime></created>
+<modified><datetime dst="true">20160708T142230,97+02</datetime></modified>
+<revised><datetime dst="true">20160708T142230,96+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160708T142230,97+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160708T142230,83+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=FDN</name></updatedby>
+<wassignedby><name>CN=Administrator/O=FDN</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>com/ibm/xsp/bluemix/util/RestUtil_1.java</text></item>
+
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>com/ibm/xsp/bluemix/util/RestUtil_1.java</text></item></note>
