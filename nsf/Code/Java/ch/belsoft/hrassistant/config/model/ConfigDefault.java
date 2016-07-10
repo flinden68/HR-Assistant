@@ -3,6 +3,7 @@ package ch.belsoft.hrassistant.config.model;
 import ch.belsoft.hrassistant.config.model.ConfigType;
 import ch.belsoft.hrassistant.model.DataItem;
 import ch.belsoft.tools.Logging;
+import java.util.HashMap;
 
 public class ConfigDefault extends DataItem implements IConfiguration {
 
@@ -15,6 +16,7 @@ public class ConfigDefault extends DataItem implements IConfiguration {
 	private String configKey = "";
 	private String configValue = "";
 	private DataType dataType = DataType.CONFIG;
+	private HashMap<ConfigParams, ConfigParam> params = new HashMap<ConfigParams, ConfigParam>();
 
 	public ConfigDefault() {
 
@@ -85,5 +87,28 @@ public class ConfigDefault extends DataItem implements IConfiguration {
 
 	public DataType getDataType() {
 		return dataType;
+	}
+
+	public HashMap<ConfigParams, ConfigParam> getParams() {
+		return params;
+	}
+
+	public void setParams(HashMap<ConfigParams, ConfigParam> params) {
+		this.params = params;
+	}
+
+	public void setParam(ConfigParams configParams, ConfigParam configParam) {
+		this.params.put(configParams, configParam);
+	}
+
+	public ConfigParam getParam(ConfigParams configParams) {
+		if (!this.params.containsKey(configParams)) {
+			this.setParam(configParams, new ConfigParam());
+		}
+		return this.params.get(configParams);
+	}
+	
+	public String getParamValue(ConfigParams configParams){
+		return this.getParam(configParams).getParamValue();
 	}
 }

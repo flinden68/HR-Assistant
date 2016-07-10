@@ -10,6 +10,7 @@ import javax.faces.context.FacesContext;
 
 import ch.belsoft.hrassistant.config.controller.ConfigurationController;
 import ch.belsoft.hrassistant.config.dao.ConfigurationDAO;
+import ch.belsoft.hrassistant.config.model.ConfigDefault;
 import ch.belsoft.hrassistant.config.model.ConfigType;
 import ch.belsoft.hrassistant.config.model.IConfiguration;
 import ch.belsoft.tools.Logging;
@@ -27,7 +28,7 @@ public class ApplicationController implements Serializable {
 	private static final String BEAN_CONFIGURATIONDAO = "configurationDAO";
 
 	private final LinkedHashMap<ConfigType, List<String>> configSelections = new LinkedHashMap<ConfigType, List<String>>();
-	private final LinkedHashMap<ConfigType, LinkedHashMap<String, IConfiguration>> configMap = new LinkedHashMap<ConfigType, LinkedHashMap<String, IConfiguration>>();
+	private final LinkedHashMap<ConfigType, LinkedHashMap<String, ConfigDefault>> configMap = new LinkedHashMap<ConfigType, LinkedHashMap<String, ConfigDefault>>();
 
 	private ConfigurationController configurationController = null;
 
@@ -46,7 +47,7 @@ public class ApplicationController implements Serializable {
 		}
 	}
 
-	private void initConfiguration() {
+	public void initConfiguration() {
 		try {
 			this.configurationController = (ConfigurationController) XPagesUtil
 					.getViewScope().get(BEAN_CONFIGURATIONCONTROLLER);
@@ -72,7 +73,7 @@ public class ApplicationController implements Serializable {
 
 			}
 
-			for (IConfiguration config : ConfigurationController.get()
+			for (ConfigDefault config : ConfigurationController.get()
 					.getConfigurations()) {
 				this.addConfig(config);
 			}
@@ -80,6 +81,24 @@ public class ApplicationController implements Serializable {
 		} catch (Exception e) {
 			// Logging.logError(e);
 		}
+	}
+
+	public List<ConfigDefault> getMenuItems() {
+
+		List<ConfigDefault> result = new ArrayList<ConfigDefault>();
+		try {
+			LinkedHashMap<String, ConfigDefault> map = this.configMap
+					.get(ConfigType.MENU_ITEM);
+			// result.add(map.entrySet());
+			result = new ArrayList<ConfigDefault>(map.values());
+		} catch (Exception e) {
+			// Logging.logError(e);
+		}
+		return result;
+	}
+
+	public String getCurrentPageName() {
+		return XPagesUtil.getCurrentPageName();
 	}
 
 	public IConfiguration getConfig(ConfigType configType, String sKey) {
@@ -92,7 +111,7 @@ public class ApplicationController implements Serializable {
 				Util.logEvent("Configuration with type: " + configType
 						+ " not found..");
 			} else {
-				LinkedHashMap<String, IConfiguration> configByKeys = configMap
+				LinkedHashMap<String, ConfigDefault> configByKeys = configMap
 						.get(configType);
 				if (!configByKeys.containsKey(sKey)) {
 					Util.logEvent("Configuration in type " + configType
@@ -187,7 +206,7 @@ public class ApplicationController implements Serializable {
 		return vResult;
 	}
 
-	private void addConfig(IConfiguration configItem) {
+	private void addConfig(ConfigDefault configItem) {
 		try {
 
 			// switch (configType) {
@@ -206,13 +225,13 @@ public class ApplicationController implements Serializable {
 			// break;
 			// }
 
-			LinkedHashMap<String, IConfiguration> mapConfig = null;
+			LinkedHashMap<String, ConfigDefault> mapConfig = null;
 			List<String> vConfigSelection = null;
 
 			if (configMap.containsKey(configItem.getType())) {
 				mapConfig = configMap.get(configItem.getType());
 			} else {
-				mapConfig = new LinkedHashMap<String, IConfiguration>();
+				mapConfig = new LinkedHashMap<String, ConfigDefault>();
 				configMap.put(configItem.getType(), mapConfig);
 			}
 
