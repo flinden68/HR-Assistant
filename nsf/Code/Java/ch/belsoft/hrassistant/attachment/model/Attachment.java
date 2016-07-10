@@ -87,4 +87,5 @@ public class Attachment implements Serializable {
     public String getSrcForImageTag(){
         return "data:"+getContent_type()+";base64,"+getData();
     }
+    
 }

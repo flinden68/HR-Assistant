@@ -26,6 +26,7 @@ public class CompanyController extends ControllerBase implements IGuiController<
     private static final String PAGETITLE_LIST_ALL = "All companies";
     
     private CompanyDAO companyDAO = new CompanyDAO();
+    //private JobDAO jobDAO = new JobDAO();
     private Company company = null;
     private List<Company> companies = new ArrayList<Company>();
     
@@ -129,13 +130,10 @@ public class CompanyController extends ControllerBase implements IGuiController<
     public void removeAttachment(Attachment attachment){
         attachmentHolder.getAttachments().remove(attachment.getName());
         if(attachmentHolder.getAttachments().isEmpty()){
-            //list is empty so remove document
             removeAttachments();
             company.setAttachmentId("");
             this.companyDAO.update(company);
         }else{
-            //list is not yet empty, so call update and reload attachment list
-            System.out.println("list is not yet empty, so call update and reload attachment list");
             attachmentController.update(attachmentHolder);
             loadAttachmnents(company);
         }
@@ -234,4 +232,5 @@ public class CompanyController extends ControllerBase implements IGuiController<
     public void setAttachmentHolder(AttachmentHolder attachmentHolder) {
         this.attachmentHolder = attachmentHolder;
     }
+    
 }

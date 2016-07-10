@@ -16,9 +16,9 @@ public class Job extends DataItem implements Serializable {
     private Person representative = null;
     private String companyId = "";
     private String representativeId = "";
-    private DataType jobType;
-    private DataType industry;
-    private DataType careerLevel;
+    private String jobType;
+    private String industry;
+    private String careerLevel;
     private String description;
     
     public String getName() {
@@ -69,34 +69,34 @@ public class Job extends DataItem implements Serializable {
         return !"".equals(companyId);
     }
     
-    public void setJobType(DataType jobType) {
+    public void setJobType(String jobType) {
         this.jobType = jobType;
     }
     
-    public DataType getJobType() {
+    public String getJobType() {
         return jobType;
     }
     
-    public void setIndustry(DataType industry) {
+    public void setIndustry(String industry) {
         this.industry = industry;
     }
     
-    public DataType getIndustry() {
+    public String getIndustry() {
         return industry;
     }
     
-    public void setCareerLevel(DataType careerLevel) {
+    public void setCareerLevel(String careerLevel) {
         this.careerLevel = careerLevel;
     }
     
-    public DataType getCareerLevel() {
+    public String getCareerLevel() {
         return careerLevel;
     }
-
+    
     public void setDescription(String description) {
         this.description = description;
     }
-
+    
     public String getDescription() {
         return description;
     }

@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.faces.model.SelectItem;
 
+import ch.belsoft.hrassistant.attachment.model.AttachmentHolder;
 import ch.belsoft.hrassistant.company.dao.CompanyDAO;
 import ch.belsoft.hrassistant.config.model.ConfigType;
 import ch.belsoft.hrassistant.controller.ApplicationController;
@@ -84,6 +85,11 @@ public class JobController extends ControllerBase implements IGuiController<Job>
             Logging.logError(e);
         }
         return result;
+    }
+    
+    public void apply(Job job){
+        System.out.println("Apply.....");
+        //XPagesUtil.redirect("jobapplication.xsp?openxpage&id=" + job.getId());
     }
     
     public void remove(Job job) {
@@ -178,6 +184,17 @@ public class JobController extends ControllerBase implements IGuiController<Job>
     
     public void changeCompany(){
         loadCompany();
+    }
+    
+    public String getLogo(Job job){
+        if(!"".equals(job.getCompany().getAttachmentId())){
+            System.out.println("name="+ job.getName() + " - attachmentId="+job.getCompany().getAttachmentId());
+            AttachmentHolder attachmentHolder = attachmentController.findAttachment(job.getCompany().getAttachmentId());
+            if(attachmentHolder != null){
+                return attachmentHolder.getAttachments().entrySet().iterator().next().getValue().getSrcForImageTag();
+            }
+        }
+        return new String("hrassistent32.png");
     }
     
     public List<SelectItem> getCompanySelection(){

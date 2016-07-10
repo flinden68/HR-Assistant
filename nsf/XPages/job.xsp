@@ -6,7 +6,7 @@
 		</xp:dataContext>
 	</xp:this.dataContexts>
 	<xc:ccLayout pageTitle="${jobController.pageTitle}"
-		pageSubTitle="#{javascript://jobController.getCreatedModifiedInfo(job)}">
+		pageSubTitle="#{javascript:jobController.getCreatedModifiedInfo(job)}">
 		<xp:this.facets>
 			<xp:panel xp:key="Content">
 				<div class="row">
@@ -127,7 +127,9 @@
 											onStart="waitingDialog.show('loading industry')"
 											onComplete="waitingDialog.hide();" refreshMode="partial"
 											disableValidators="true" refreshId="fldIndustry">
+	
 										</xp:eventHandler>
+										
 									</xp:comboBox>
 									<xp:message id="message6" for="fldIndustry"
 										styleClass="help-block with-errors"></xp:message>

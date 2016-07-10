@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xc:ccLayout pageTitle="#{jobController.jobListTitle}">
+		<xp:this.facets>
+			<xp:panel xp:key="Content">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="box-header">
+							<div class="pull-right">
+								<xp:pager partialRefresh="true" id="pager2" for="rptList"
+									panelPosition="left" styleClass="bootstrapPager"
+									partialExecute="true">
+									<xp:pagerControl type="Previous" id="pagerControl4"
+										styleClass="bootstrapPagerPrevious">
+										<xp:this.value><![CDATA[«]]></xp:this.value>
+									</xp:pagerControl>
+									<xp:pagerControl type="Group" id="pagerControl5"
+										styleClass="bootstrapPagerMiddle">
+									</xp:pagerControl>
+									<xp:pagerControl type="Next" id="pagerControl6"
+										styleClass="bootstrapPagerNext">
+										<xp:this.value><![CDATA[»]]></xp:this.value>
+									</xp:pagerControl>
+								</xp:pager>
+							</div>
+						</div>
+						<div class="col-xs-12">
+							<xp:repeat id="rptList" rows="6" var="job" indexVar="i"
+								value="#{jobController.jobs}">
+								<div class="col-md-6">
+									<div class="box box-primary">
+										<div class="box-header with-border">
+											<div class="pull-left">
+												<xp:text escape="true" id="computedField1"
+													styleClass="box-title" value="#{job.name}" tagName="h3">
+												</xp:text>
+												<br />
+												<xp:text escape="true" id="computedField3"
+													value="#{job.company.name}" tagName="small">
+												</xp:text>
+											</div>
+											<div class="pull-right">
+												<img src="#{javascript:jobController.getLogo(job);}" height="32px" />
+											</div>
+										</div>
+										<div class="box-body">
+											
+											<xp:text escape="true" id="computedField2" value="#{job.description}">
+											</xp:text>	
+										</div>
+										<div class="box-footer">
+											<div class="pull-right">
+												<xp:button styleClass="btn btn-success btn-margin-right"
+													value="more info" id="button2">
+													<xp:eventHandler event="onclick" submit="true"
+														onStart="waitingDialog.show('more info...')" onComplete="waitingDialog.hide()"
+														refreshMode="partial" refreshId="content-wrapper"
+														execMode="partial" execId="content-wrapper">
+														<xp:this.action>
+															<xp:executeScript
+																script="#{javascript://jobController.update()}">
+															</xp:executeScript>
+														</xp:this.action>
+													</xp:eventHandler>
+												</xp:button>
+												<xp:button styleClass="btn btn-primary btn-margin-right"
+													value="apply" id="button1">
+													<xp:eventHandler event="onclick" submit="true"
+														onStart="waitingDialog.show('apply...')" onComplete="waitingDialog.hide()"
+														refreshMode="partial" refreshId="content-wrapper"
+														execMode="partial" execId="content-wrapper">
+														<xp:this.action>
+															<xp:executeScript
+																script="#{javascript:jobController.apply()}">
+															</xp:executeScript>
+														</xp:this.action>
+													</xp:eventHandler>
+												</xp:button>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</xp:repeat>
+						</div>
+
+					</div>
+				</div>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>
