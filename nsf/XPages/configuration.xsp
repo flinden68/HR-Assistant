@@ -39,7 +39,7 @@
 										<xp:eventHandler event="onchange" submit="true"
 											onStart="waitingDialog.show('loading configurations')"
 											onComplete="waitingDialog.hide();" refreshMode="partial"
-											refreshId="pnlConfigurationList" disableValidators="true">
+											refreshId="pnlDataItem" disableValidators="true">
 										</xp:eventHandler>
 									</xp:comboBox>
 									<xp:message id="message2" for="fldType"
@@ -78,6 +78,11 @@
 										</xp:this.converter>
 									</xp:inputText>
 								</div>
+ 
+								<xc:ccConfigurationParamsMenuItem
+									rendered="#{config.typeString=='MENU_ITEM'}"
+									paramIcon="#{javascript:config.getParam(ch.belsoft.hrassistant.config.model.ConfigParams.ICON)}"></xc:ccConfigurationParamsMenuItem>
+
 								<xp:messages id="messages1" styleClass="alert alert-danger"></xp:messages>
 							</div>
 							<!-- /.box-body -->

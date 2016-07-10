@@ -55,10 +55,6 @@
       <value>#{companyDAO}</value>
     </managed-property>
     <managed-property>
-      <property-name>jobDAO</property-name>
-      <value>#{jobDAO}</value>
-    </managed-property>
-    <managed-property>
       <property-name>applicationController
 			</property-name>
       <value>#{applicationController}</value>
