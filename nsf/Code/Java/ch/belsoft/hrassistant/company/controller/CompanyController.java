@@ -12,8 +12,10 @@ import ch.belsoft.hrassistant.company.dao.CompanyDAO;
 import ch.belsoft.hrassistant.controller.ApplicationController;
 import ch.belsoft.hrassistant.controller.ControllerBase;
 import ch.belsoft.hrassistant.controller.IGuiController;
+import ch.belsoft.hrassistant.job.dao.JobDAO;
 import ch.belsoft.hrassistant.job.model.Address;
 import ch.belsoft.hrassistant.job.model.Company;
+import ch.belsoft.hrassistant.job.model.Job;
 import ch.belsoft.tools.Logging;
 import ch.belsoft.tools.XPagesUtil;
 
@@ -26,7 +28,7 @@ public class CompanyController extends ControllerBase implements IGuiController<
     private static final String PAGETITLE_LIST_ALL = "All companies";
     
     private CompanyDAO companyDAO = new CompanyDAO();
-    //private JobDAO jobDAO = new JobDAO();
+    private JobDAO jobDAO = new JobDAO();
     private Company company = null;
     private List<Company> companies = new ArrayList<Company>();
     
@@ -43,12 +45,15 @@ public class CompanyController extends ControllerBase implements IGuiController<
                         loadAttachmnents(company);
                     }
                     this.upload = new Upload();
+                    
                 } else {
                     newDataItem = true;
                     this.company = new Company();
                     this.company.setAddress(new Address());
                     
                     this.upload = new Upload();
+                    
+                    
                 }
             }
         } catch (Exception e) {
@@ -133,9 +138,20 @@ public class CompanyController extends ControllerBase implements IGuiController<
             removeAttachments();
             company.setAttachmentId("");
             this.companyDAO.update(company);
+            removeAttachmentIdFromJobs();
         }else{
             attachmentController.update(attachmentHolder);
             loadAttachmnents(company);
+        }
+    }
+    
+    public void removeAttachmentIdFromJobs(){
+        if(company.getId()!=null && !"".equals(company.getId())){
+            List<Job> jobs = jobDAO.searchByCompanyId(company.getId());
+            for(Job job : jobs){
+                job.getCompany().setAttachmentId("");
+                jobDAO.update(job);
+            }
         }
     }
     
@@ -231,6 +247,14 @@ public class CompanyController extends ControllerBase implements IGuiController<
     @Override
     public void setAttachmentHolder(AttachmentHolder attachmentHolder) {
         this.attachmentHolder = attachmentHolder;
+    }
+    
+    public JobDAO getJobDAO() {
+        return jobDAO;
+    }
+    
+    public void setJobDAO(JobDAO jobDAO) {
+        this.jobDAO = jobDAO;
     }
     
 }
