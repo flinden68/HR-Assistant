@@ -2,6 +2,7 @@ package ch.belsoft.hrassistant.service;
 
 import java.io.InputStream;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 import nl.elstarit.cloudant.connector.CloudantConnector;
@@ -37,8 +38,8 @@ public class CloudantService {
             bluemixUtil = new BluemixContextUtil(SERVICE_NAME, username,
                     password, "");
         }
-        connector = new CloudantConnector(bluemixUtil.getAccount(), bluemixUtil
-                .getUsername(), bluemixUtil.getPassword(), cloudantDb, false);
+        connector = new CloudantConnector();
+        connector.initCloudantClientAdvanced(bluemixUtil.getAccount(), bluemixUtil.getUsername(), bluemixUtil.getPassword(), cloudantDb, false, 1, 1, TimeUnit.MINUTES);
         connected = true;
     }
     
