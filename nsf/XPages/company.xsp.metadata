@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="74a" sequence="54" unid="64B7E14439E83401C1257FE3003046F9">
+<noteinfo noteid="74a" sequence="147" unid="64B7E14439E83401C1257FE3003046F9">
 <created><datetime dst="true">20160701T104718,97+02</datetime></created>
-<modified><datetime dst="true">20160705T173314,73+02</datetime></modified>
-<revised><datetime dst="true">20160705T173314,72+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160705T173314,73+02</datetime></lastaccessed>
+<modified><datetime dst="true">20160711T202252,60+02</datetime></modified>
+<revised><datetime dst="true">20160711T202252,59+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160711T202252,60+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20160701T104718,98+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
 <wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
@@ -13,7 +13,8 @@
 
 
 <item name="$FileNames" sign="true"><text>company.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5.1</text></item>
+<item name="$DesignerVersion"><text>8.5.2</text></item>
+
 
 
 

@@ -124,7 +124,7 @@
 										</xp:this.validators>
 
 										<xp:eventHandler event="onchange" submit="true"
-											onStart="waitingDialog.show('loading industry')"
+											onStart="waitingDialog.show('loading industries')"
 											onComplete="waitingDialog.hide();" refreshMode="partial"
 											disableValidators="true" refreshId="fldIndustry">
 	

@@ -97,15 +97,28 @@
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldCountry').isValid()}">
 									<label for="fldCountry">Country</label>
-									<xp:inputText id="fldCountry" value="#{company.address.country}"
-										styleClass="valid-#{javascript:this.isValid()}" required="true">
+									<xp:comboBox id="fldCountry" value="#{company.address.country}"
+										required="true">
+										<xp:selectItem itemLabel="Please choose industry"
+											itemValue="">
+										</xp:selectItem>
+										<xp:selectItems
+											value="${companyController.countrySelection}">
+										</xp:selectItems>
 										<xp:this.validators>
-											<xp:validateRequired message="Please give a country">
+											<xp:validateRequired message="Country is mandatory">
 											</xp:validateRequired>
 										</xp:this.validators>
-									</xp:inputText>
 
-									<xp:message id="message6" for="fldCountry"
+										<xp:eventHandler event="onchange" submit="true"
+											onStart="waitingDialog.show('loading countries')"
+											onComplete="waitingDialog.hide();" refreshMode="partial"
+											disableValidators="true" refreshId="fldCountry">
+	
+										</xp:eventHandler>
+										
+									</xp:comboBox>
+									<xp:message id="message8" for="fldIndustry"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
 								
