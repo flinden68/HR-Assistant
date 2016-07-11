@@ -18,6 +18,7 @@ Serializable {
     private static final String DESIGN_DOC_KEYS = "jobkey";
     private static final String VIEW_NAME_KEYS = "jobkeys";
     private static final String SEARCH_PATTERN_BY_COMPANYID = "companyid:";
+    private static final String SEARCH_PATTERN_BY_COUNTRY = "companycountry:";
     private static final String SEARCH_PATTERN = "name:{QUERY} OR companyname:{QUERY} OR companystreet:{QUERY} OR companystreetnumber:{QUERY} OR companyzip:{QUERY} OR companycity:{QUERY} OR companycountry:{QUERY} OR jobtype:{QUERY} OR careerlevel:{QUERY} OR industry:{QUERY}";
     private static final String SEARCH_INDEX = "job/ftsearchJobs";
     private static final int VIEW_LIMIT = 1000;
@@ -84,6 +85,21 @@ Serializable {
             connectToService();
             String query = SEARCH_PATTERN_BY_COMPANYID+companyId;
             System.out.println("query="+query);
+            result = (List<Job>) cloudantService.search(SEARCH_INDEX,
+                    Job.class, SEARCH_COUNT, query);
+            
+        } catch (Exception e) {
+            Logging.logError(e);
+        }
+        
+        return result;
+    }
+    
+    public List<Job> searchByCountry(String country){
+        List<Job> result = new ArrayList<Job>();
+        try {
+            connectToService();
+            String query = SEARCH_PATTERN_BY_COUNTRY+country;
             result = (List<Job>) cloudantService.search(SEARCH_INDEX,
                     Job.class, SEARCH_COUNT, query);
             
