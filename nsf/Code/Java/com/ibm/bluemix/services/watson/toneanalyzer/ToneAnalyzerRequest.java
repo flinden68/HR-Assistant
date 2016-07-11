@@ -1,5 +1,7 @@
 package com.ibm.bluemix.services.watson.toneanalyzer;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class ToneAnalyzerRequest {
 
 	private String text = "";
@@ -11,5 +13,4 @@ public class ToneAnalyzerRequest {
 	public void setText(String text) {
 		this.text = text;
 	}
-
 }

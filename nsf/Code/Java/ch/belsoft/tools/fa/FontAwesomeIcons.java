@@ -5,7 +5,7 @@ import java.util.Arrays;
 import ch.belsoft.hrassistant.config.model.ConfigType;
 
 public enum FontAwesomeIcons {
-	COGS("cogs"), BUILDING("building"), PAPER_PLANE("paper-plane"), LINK("link"),DATABASE("database");
+	COGS("cogs"), BUILDING("building"), PAPER_PLANE("paper-plane"), LINK("link"),DATABASE("database"), GRADUATION_CAP("graduation-cap");
 
 	private final String icon;
 

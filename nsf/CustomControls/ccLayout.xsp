@@ -432,7 +432,6 @@
 						</xp:button>
 						<xp:messages id="pnlWatsonResponse" styleClass="alert alert-danger"></xp:messages>
 					</xp:div>
-
 				</div>
 
 

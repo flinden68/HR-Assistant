@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.dataContexts>
+		<xp:dataContext value="#{watsonAPITestController.toneAnalyzerRequest}"
+			var="toneAnalyzerRequest">
+		</xp:dataContext>
+		<xp:dataContext value="#{watsonAPITestController.toneAnalyzerResult}"
+			var="toneAnalyzerResult">
+		</xp:dataContext>
+	</xp:this.dataContexts>
+	<xp:div styleClass="box" id="pnlDataItemList">
+
+		<div class="box-header">
+			<xp:text escape="true" id="computedField4" tagName="h3"
+				styleClass="box-title" value="Watson Tone Analyzer"></xp:text>
+		</div>
+
+		<!-- /.box-header -->
+
+		<div class="box-body">
+			<xp:div styleClass="form-group}">
+				<label for="fldText">Text to analyze</label>
+				<xp:inputTextarea id="inputText1" value="#{toneAnalyzerRequest.text}"
+					rows="10" styleClass="form-control">
+					<xp:this.attrs>
+						<xp:attr name="placeholder" value="Enter the text you want Watson to analyze">
+						</xp:attr>
+					</xp:this.attrs>
+				</xp:inputTextarea>
+			</xp:div>
+		</div>
+		<div class="box-footer ">
+			<div class="pull-right">
+				<xp:button styleClass="btn btn-success btn-margin-right"
+					value="analize" id="button1">
+					<xp:eventHandler event="onclick" submit="true"
+						onStart="waitingDialog.show('analyzing...')" onComplete="waitingDialog.hide()"
+						refreshMode="partial" refreshId="content-wrapper" execMode="partial"
+						execId="content-wrapper">
+						<xp:this.action>
+							<xp:executeScript script="#{watsonAPITestController.analizeText}">
+							</xp:executeScript>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+			</div>
+		</div>
+		<div class="box-header  with-border">
+			<xp:text escape="true" id="computedField1" tagName="h3"
+				styleClass="box-title" value="Result"></xp:text>
+		</div>
+		<div class="box-body">
+			<xp:div styleClass="form-group}" rendered="#{toneAnalyzerResult!=null}">
+				the reuslt is here
+			</xp:div>
+		</div>
+	</xp:div>
+</xp:view>
