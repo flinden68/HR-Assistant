@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1256" sequence="1" unid="FE57626C91AF31FAC1257FEC0069EFBF">
+<created><datetime dst="true">20160710T211706,55+02</datetime></created>
+<modified><datetime dst="true">20160710T211706,61+02</datetime></modified>
+<revised><datetime dst="true">20160710T211706,60+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160710T211706,61+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160710T211706,61+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=FDN</name></updatedby>
+<wassignedby><name>CN=Administrator/O=FDN</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>ch/belsoft/hrassistant/config/model/ConfigParams.java</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>ch/belsoft/hrassistant/config/model/ConfigParams.java</text></item>
+
+
+</note>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:div id="pnlIconSelection"
+		styleClass="form-group is-valid-#{javascript://getComponent('fldIcon').isValid()}">
+		<label for="exampleInputEmail1">Icon</label>
+		<div class="btn-group" style="display:block;">
+			<xp:repeat id="repeat1" rows="30" var="icon"
+				disableOutputTag="true" disableTheme="true"
+				value="${configurationController.fontAwesomeIconSelection}">
+				<xp:button value="" id="button1"
+					styleClass="btn btn-default #{compositeData.paramIcon.paramValue==icon?'active':''}">
+					<i class="fa fa-#{icon}"></i>
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="partial" refreshId="pnlIconSelection" immediate="true"
+						execMode="partial" execId="pnlIconSelection">
+						<xp:this.action>
+							<xp:executeScript
+								script="#{javascript:compositeData.paramIcon.setParamValue(icon)}">
+							</xp:executeScript>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+			</xp:repeat>
+		</div>
+		<xp:message id="message2" for="fldIcon" styleClass="help-block with-errors"></xp:message>
+	</xp:div>
+
+</xp:view>

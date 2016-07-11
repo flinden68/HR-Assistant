@@ -210,7 +210,7 @@ public class XPagesUtil {
 	public static String getCurrentPageName() {
 		String pageName = getViewRoot().getPageName();
 		pageName = pageName.replace("/", "");
-		pageName = pageName.replace(".xsp", "");
+	//	pageName = pageName.replace(".xsp", "");
 		return pageName;
 	}
 
