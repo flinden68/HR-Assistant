@@ -45,124 +45,22 @@
 				</xp:button>
 			</div>
 		</div>
-		<div class="box-header  with-border">
-			<xp:text escape="true" id="computedField1" tagName="h3"
-				styleClass="box-title" value="Result"></xp:text>
+
+	</xp:div>
+	<xp:div styleClass="row"
+		rendered="#{watsonAPITestController.toneAnalyzerResult!=null}">
+		<div class="col-md-4">
+			<xc:ccChart data="#{watsonAPITestController.toneAnalyzerEmotionToneChart}"
+				chartAlias="emotion" title="Emotion Tone"></xc:ccChart>
 		</div>
-		<div class="box-body">
-			<xp:div styleClass="form-group}"
-				rendered="#{watsonAPITestController.toneAnalyzerChart!=''}">
-				<!--  rendered="#{watsonAPITestController.toneAnalyzerChart!=''}">-->
-
-				<!--
-					<xp:text escape="true" id="computedField2"
-					value="#{watsonAPITestController.toneAnalyzerChart}"></xp:text>
-				-->
-
-				<canvas id="canvas" style="height:100px"></canvas>
-				<xp:scriptBlock id="scriptBlock2">
-					<xp:this.value><![CDATA[
-				dojo.addOnLoad(function(){
-	  var randomScalingFactor = function() {
-        return Math.round(Math.random() * 100);
-    };
-    var randomColorFactor = function() {
-        return Math.round(Math.random() * 255);
-    };
-    var randomColor = function(opacity) {
-        return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')';
-    };
-
-    var config = {
-        type: 'radar',
-        data: #{watsonAPITestController.toneAnalyzerChart},
-        options: {
-            legend: {
-                position: 'top',
-            },
-            title: {
-                display: false,
-                text: 'Chart.js Radar Chart'
-            },
-            scale: {
-              reverse: false,
-             // gridLines: {
-              //  color: ['black', 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
-              //},
-              ticks: {
-                beginAtZero: true
-              }
-            }
-        }
-    };
-
-    
-       var myChart= new Chart(document.getElementById("canvas"), config);
-    
-
-    $('#randomizeData').click(function() {
-        $.each(config.data.datasets, function(i, dataset) {
-            dataset.data = dataset.data.map(function() {
-                return randomScalingFactor();
-            });
-
-        });
-
-        myChart.update();
-    });
-
-    $('#addDataset').click(function() {
-        var newDataset = {
-            label: 'Dataset ' + config.data.datasets.length,
-            borderColor: randomColor(0.4),
-            backgroundColor: randomColor(0.5),
-            pointBorderColor: randomColor(0.7),
-            pointBackgroundColor: randomColor(0.5),
-            pointBorderWidth: 1,
-            data: [],
-        };
-
-        for (var index = 0; index < config.data.labels.length; ++index) {
-            newDataset.data.push(randomScalingFactor());
-        }
-
-        config.data.datasets.push(newDataset);
-        myChart.update();
-    });
-
-    $('#addData').click(function() {
-        if (config.data.datasets.length > 0) {
-            config.data.labels.push('dataset #' + config.data.labels.length);
-
-            $.each(config.data.datasets, function (i, dataset) {
-                dataset.data.push(randomScalingFactor());
-            });
-
-            myChart.update();
-        }
-    });
-
-    $('#removeDataset').click(function() {
-        config.data.datasets.splice(0, 1);
-        myChart.update();
-    });
-
-    $('#removeData').click(function() {
-        config.data.labels.pop(); // remove the label first
-
-        $.each(config.data.datasets, function(i, dataset) {
-            dataset.data.pop();
-        });
-
-        myChart.update();
-    });
-    });
-		]]></xp:this.value>
-				</xp:scriptBlock>
-
-
-			</xp:div>
-
+		<div class="col-md-4">
+			<xc:ccChart
+				data="#{watsonAPITestController.toneAnalyzerLanguageToneChart}"
+				chartAlias="lang" title="Language Tone"></xc:ccChart>
+		</div>
+		<div class="col-md-4">
+			<xc:ccChart data="#{watsonAPITestController.toneAnalyzerSocialToneChart}"
+				chartAlias="social" title="Social Tone"></xc:ccChart>
 		</div>
 	</xp:div>
 </xp:view>

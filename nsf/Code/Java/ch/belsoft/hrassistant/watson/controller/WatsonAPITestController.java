@@ -38,6 +38,12 @@ public class WatsonAPITestController extends ControllerBase implements
 	private LinkedHashMap<String, Chart> toneAnalyzerChart = null;
 	private final ObjectMapper mapper = new ObjectMapper();
 	private static final String EMOTION_TONE = "emotion_tone";
+	private static final String LANGUAGE_TONE = "language_tone";
+	private static final String SOCIAL_TONE = "social_tone";
+
+	private String toneAnalyzerEmotionToneChart = "";
+	private String toneAnalyzerLanguageToneChart = "";
+	private String toneAnalyzerSocialToneChart = "";
 
 	public WatsonAPITestController() {
 
@@ -62,14 +68,13 @@ public class WatsonAPITestController extends ControllerBase implements
 		}
 	}
 
-	public String getToneAnalyzerChart() {
-
+	private String getToneAnalyzerChart(String categoryId) {
 		String result = "";
 
 		try {
 			if (toneAnalyzerChart != null) {
 				result = mapper.writeValueAsString(this.toneAnalyzerChart
-						.get(EMOTION_TONE));
+						.get(categoryId));
 			}
 
 		} catch (Exception e) {
@@ -77,6 +82,18 @@ public class WatsonAPITestController extends ControllerBase implements
 		}
 
 		return result;
+	}
+
+	public String getToneAnalyzerEmotionToneChart() {
+		return this.getToneAnalyzerChart(EMOTION_TONE);
+	}
+
+	public String getToneAnalyzerLanguageToneChart() {
+		return this.getToneAnalyzerChart(LANGUAGE_TONE);
+	}
+
+	public String getToneAnalyzerSocialToneChart() {
+		return this.getToneAnalyzerChart(SOCIAL_TONE);
 	}
 
 	public ToneAnalyzerRequest getToneAnalyzerRequest() {

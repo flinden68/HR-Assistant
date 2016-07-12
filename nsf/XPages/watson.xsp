@@ -4,7 +4,7 @@
 		<xp:this.facets>
 			<xp:panel xp:key="Content">
 				<div class="row">
-					<div class="col-xs-12">
+					<div class="col-md-12">
 						<xc:ccWatson></xc:ccWatson>
 					</div>
 				</div>

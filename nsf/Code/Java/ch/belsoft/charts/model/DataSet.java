@@ -27,7 +27,7 @@ public class DataSet implements Serializable {
 	private String label = "";
 	private List<Float> data = new ArrayList<Float>();
 
-	private String backgroundColor = "rgba(179,181,198,0.2)";
+	private String backgroundColor = "rgba(179,181,198,0.5)";
 	private String borderColor = "rgba(179,181,198,1)";
 	private String pointBackgroundColor = "rgba(179,181,198,1)";
 	private String pointBorderColor = "#fff";
