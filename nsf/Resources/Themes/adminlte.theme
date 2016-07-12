@@ -15,22 +15,25 @@
 		<resources> <script src="custom/js/custom.js"
 		clientSide="true"></script> </resources>
 	-->
-	
-	<resource> 
+
+	<!--
+		DO NOT LOAD JQUERY HERE, IT IS TOO LATE!! <resource>
 		<content-type>application/x-javascript</content-type>
-		<href>plugins/jQuery/jQuery-2.2.0.min.js</href> 
-	</resource>
-	
-	<resource> 
+		<href>plugins/jQuery/jQuery-2.2.0.min.js</href> </resource> <resource>
 		<content-type>application/x-javascript</content-type>
-		<href>bootstrap/js/bootstrap.min.js</href> 
-	</resource>
-	
-	<resource> 
+		<href>plugins/chartjs/Chart.min.js</href> </resource>
+	-->
+
+	<resource>
 		<content-type>application/x-javascript</content-type>
-		<href>dist/js/app.min.js</href> 
+		<href>bootstrap/js/bootstrap.min.js</href>
 	</resource>
-	
+
+	<resource>
+		<content-type>application/x-javascript</content-type>
+		<href>dist/js/app.min.js</href>
+	</resource>
+
 	<resource>
 		<content-type>text/css</content-type>
 		<href>bootstrap/css/bootstrap.min.css</href>
@@ -59,12 +62,12 @@
 		<content-type>text/css</content-type>
 		<href>custom/css/custom.css</href>
 	</resource>
-	
-	<resource> 
+
+	<resource>
 		<content-type>application/x-javascript</content-type>
-		<href>custom/js/custom.js</href> 
+		<href>custom/js/custom.js</href>
 	</resource>
-	
+
 	<!--
 		<resource> <content-type>text/javascript</content-type>
 		<href>plugins/jQuery/jQuery-2.2.0.min.js</href> </resource> <resource>
@@ -73,19 +76,19 @@
 		<content-type>text/javascript</content-type>
 		<href>dist/js/app.min.js</href> </resource>
 	-->
-	
+
 	<!-- Date and Time picker resources -->
-	
+
 	<resource>
 		<content-type>text/css</content-type>
 		<href>plugins/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css</href>
 	</resource>
-	
+
 	<resource>
 		<content-type>application/x-javascript</content-type>
 		<href>plugins/moment/min/moment.min.js</href>
 	</resource>
-	
+
 	<resource>
 		<content-type>application/x-javascript</content-type>
 		<href>plugins/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js</href>

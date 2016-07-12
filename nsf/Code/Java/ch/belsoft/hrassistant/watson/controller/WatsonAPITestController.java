@@ -70,8 +70,6 @@ public class WatsonAPITestController extends ControllerBase implements
 			if (toneAnalyzerChart != null) {
 				result = mapper.writeValueAsString(this.toneAnalyzerChart
 						.get(EMOTION_TONE));
-			} else {
-				result = "Could not get a chart json..";
 			}
 
 		} catch (Exception e) {

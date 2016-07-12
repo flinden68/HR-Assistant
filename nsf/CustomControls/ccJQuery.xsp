@@ -10,21 +10,28 @@
 		<xp:headTag tagName="script">
 			<xp:this.attributes>
 				<xp:parameter name="type" value="text/javascript" />
-				<xp:parameter name="src" value="bootstrap/js/bootstrap.min.js" />
+				<xp:parameter name="src" value="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js" />
 			</xp:this.attributes>
 		</xp:headTag>
-		<xp:headTag tagName="script">
+
+		<!--
+			<xp:headTag tagName="script">
 			<xp:this.attributes>
 				<xp:parameter name="type" value="text/javascript" />
-				<xp:parameter name="src" value="dist/js/app.min.js" />
+				<xp:parameter name="src" value="plugins/chartjs/Chart.min.js" />
 			</xp:this.attributes>
 		</xp:headTag>
-		<xp:headTag tagName="script">
-			<xp:this.attributes>
-				<xp:parameter name="type" value="text/javascript" />
-				<xp:parameter name="src" value="custom/js/custom.js" />
-			</xp:this.attributes>
-		</xp:headTag>
+			<xp:headTag tagName="script"> <xp:this.attributes> <xp:parameter
+			name="type" value="text/javascript" /> <xp:parameter name="src"
+			value="bootstrap/js/bootstrap.min.js" /> </xp:this.attributes>
+			</xp:headTag> <xp:headTag tagName="script"> <xp:this.attributes>
+			<xp:parameter name="type" value="text/javascript" /> <xp:parameter
+			name="src" value="dist/js/app.min.js" /> </xp:this.attributes>
+			</xp:headTag> <xp:headTag tagName="script"> <xp:this.attributes>
+			<xp:parameter name="type" value="text/javascript" /> <xp:parameter
+			name="src" value="custom/js/custom.js" /> </xp:this.attributes>
+			</xp:headTag>
+		-->
 	</xp:this.resources>
 
 	<xp:scriptBlock id="scriptBlock1">
