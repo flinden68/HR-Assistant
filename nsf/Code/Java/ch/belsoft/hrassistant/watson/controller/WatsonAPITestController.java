@@ -57,12 +57,14 @@ public class WatsonAPITestController extends ControllerBase implements
 		return PAGETITLE;
 	}
 
-	public void analizeText() {
+	public void analyzeTone() {
 		try {
 			this.toneAnalyzerResult = toneAnalyzerService
 					.analyzeTone(toneAnalyzerRequest);
-			this.toneAnalyzerChart = ChartFactory
-					.createToneAnalyzerChartTone(toneAnalyzerResult);
+			if (toneAnalyzerResult != null) {
+				this.toneAnalyzerChart = ChartFactory
+						.createToneAnalyzerChartTone(toneAnalyzerResult);
+			}
 		} catch (Exception e) {
 			Logging.logError(e);
 		}
