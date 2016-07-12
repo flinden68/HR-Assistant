@@ -2,7 +2,10 @@ package ch.belsoft.hrassistant.job.controller;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 import javax.faces.model.SelectItem;
 
@@ -34,6 +37,8 @@ public class JobController extends ControllerBase implements IGuiController<Job>
     private Job job = null;
     private List<Job> jobs = new ArrayList<Job>();
     private List<Company> companies;
+    private String searchQueryListing;
+    
     
     public JobController(){}
     
@@ -160,7 +165,6 @@ public class JobController extends ControllerBase implements IGuiController<Job>
             if (this.jobs.isEmpty()) {
                 if (this.searchQuery.equals("")) {
                     this.jobs = this.jobDAO.read();
-                    
                 } else {
                     this.jobs = this.jobDAO
                     .search(this.searchQuery);
@@ -188,7 +192,6 @@ public class JobController extends ControllerBase implements IGuiController<Job>
     
     public String getLogo(Job job){
         if(!"".equals(job.getCompany().getAttachmentId())){
-            System.out.println("name="+ job.getName() + " - attachmentId="+job.getCompany().getAttachmentId());
             AttachmentHolder attachmentHolder = attachmentController.findAttachment(job.getCompany().getAttachmentId());
             if(attachmentHolder != null){
                 return attachmentHolder.getAttachments().entrySet().iterator().next().getValue().getSrcForImageTag();
@@ -203,6 +206,26 @@ public class JobController extends ControllerBase implements IGuiController<Job>
         for(Company comp : companies){
             selectItems.add( new SelectItem(comp.getId(), comp.getName()));
         }
+        return selectItems;
+    }
+    
+    public void filterJoblisting(){
+        if("".equals(searchQueryListing)){
+            jobs = jobDAO.read();
+        }else{
+            jobs = jobDAO.searchByCountry(searchQueryListing);
+        }
+    }
+    
+    public List<String> getCountrySelection() {
+        jobs = getJobs();
+        List<String> selectItems = new ArrayList<String>();
+        Set<String> countries = new TreeSet<String>();
+        for(Job job : jobs){
+            countries.add(job.getCompany().getAddress().getCountry());
+        }
+        selectItems.addAll(countries);
+        Collections.sort(selectItems);
         return selectItems;
     }
     
@@ -257,6 +280,14 @@ public class JobController extends ControllerBase implements IGuiController<Job>
     
     public void setCompanyDAO(CompanyDAO companyDAO) {
         this.companyDAO = companyDAO;
+    }
+    
+    public void setSearchQueryListing(String searchQueryListing) {
+        this.searchQueryListing = searchQueryListing;
+    }
+    
+    public String getSearchQueryListing() {
+        return searchQueryListing;
     }
     
 }

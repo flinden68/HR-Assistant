@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+	<xp:div>
+		<xp:this.styleClass><![CDATA[#{javascript:( getComponent("dateC").isValid() ? "form-group" : "form-group has-error" )}]]></xp:this.styleClass>
+	<xp:label for="dateC" styleClass="control-label">
+			<xp:this.value><![CDATA[#{compositeData.fieldLabel}]]></xp:this.value>
+		</xp:label>
+
+	<!-- Edit mode -->
+	<xp:panel styleClass='input-group date' id='datepicker1'>
+		<xp:inputText styleClass="form-control" id="dateC"
+			value="#{compositeData.fieldDataSource[compositeData.fieldName]}"
+			required="${compositeData.required}">
+			<xp:this.attrs>
+				<xp:attr name="placeholder"
+					value="#{javascript:compositeData.dateFormat.toUpperCase()}">
+				</xp:attr>
+				<xp:attr name="data-date-format"
+					value="#{javascript:compositeData.dateFormat.toUpperCase()}">
+				</xp:attr>
+			</xp:this.attrs>
+			<xp:this.converter>
+				<xp:convertDateTime type="date"
+					pattern="${compositeData.dateFormat}">
+				</xp:convertDateTime>
+			</xp:this.converter>
+			<xp:this.validators>
+				<xp:validateRequired>
+					<xp:this.message><![CDATA[#{javascript:compositeData.fieldLabel + ' is required'}]]></xp:this.message>
+				</xp:validateRequired>
+			</xp:this.validators>
+		</xp:inputText>
+		
+		<span class="input-group-addon">
+			<i class="fa fa-calendar"></i>
+		</span>
+	</xp:panel>
+	<xp:message id="message9" for="dateC" styleClass="help-block with-errors"></xp:message>
+</xp:div>
+	<xp:scriptBlock id="scriptBlock2">
+		<xp:this.value><![CDATA[		
+$( document ).ready(function(){
+	x$('#{id:datepicker1}').datetimepicker({
+		pickTime: false
+	});
+});
+]]></xp:this.value>
+	</xp:scriptBlock>
+	
+</xp:view>

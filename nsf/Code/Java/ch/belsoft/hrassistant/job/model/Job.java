@@ -1,6 +1,7 @@
 package ch.belsoft.hrassistant.job.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import ch.belsoft.hrassistant.model.DataItem;
 
@@ -20,6 +21,7 @@ public class Job extends DataItem implements Serializable {
     private String industry;
     private String careerLevel;
     private String description;
+    private Date startDate;
     
     public String getName() {
         return name;
@@ -99,6 +101,14 @@ public class Job extends DataItem implements Serializable {
     
     public String getDescription() {
         return description;
+    }
+    
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+    
+    public Date getStartDate() {
+        return startDate;
     }
     
 }

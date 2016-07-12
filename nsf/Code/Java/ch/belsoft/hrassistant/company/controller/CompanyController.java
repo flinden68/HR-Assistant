@@ -9,6 +9,7 @@ import ch.belsoft.hrassistant.attachment.model.Attachment;
 import ch.belsoft.hrassistant.attachment.model.AttachmentHolder;
 import ch.belsoft.hrassistant.attachment.model.Upload;
 import ch.belsoft.hrassistant.company.dao.CompanyDAO;
+import ch.belsoft.hrassistant.config.model.ConfigType;
 import ch.belsoft.hrassistant.controller.ApplicationController;
 import ch.belsoft.hrassistant.controller.ControllerBase;
 import ch.belsoft.hrassistant.controller.IGuiController;
@@ -153,6 +154,11 @@ public class CompanyController extends ControllerBase implements IGuiController<
                 jobDAO.update(job);
             }
         }
+    }
+    
+    public List<String> getCountrySelection() {
+        return applicationController
+        .getConfigSelection(ConfigType.COUNTRY);
     }
     
     public void clearCompanies() {
