@@ -19,7 +19,7 @@ import ch.belsoft.hrassistant.controller.IGuiController;
 import ch.belsoft.tools.Logging;
 import ch.belsoft.tools.XPagesUtil;
 import ch.belsoft.tools.fa.FontAwesomeIcons;
-
+ 
 public class ChartFactory implements Serializable {
 
 	/**

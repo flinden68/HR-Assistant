@@ -44,7 +44,7 @@
 					</xp:eventHandler>
 				</xp:button>
 			</div>
-		</div>
+		</div> 
 		<div class="box-header  with-border">
 			<xp:text escape="true" id="computedField1" tagName="h3"
 				styleClass="box-title" value="Result"></xp:text>

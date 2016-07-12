@@ -7,7 +7,7 @@ import java.util.List;
 import com.ibm.bluemix.services.watson.toneanalyzer.ToneAnalyzerRequest;
 import com.ibm.bluemix.services.watson.toneanalyzer.ToneAnalyzerResult;
 import com.ibm.bluemix.services.watson.toneanalyzer.ToneAnalyzerService;
-
+ 
 import ch.belsoft.hrassistant.config.dao.ConfigurationDAO;
 import ch.belsoft.hrassistant.config.model.ConfigDefault;
 import ch.belsoft.hrassistant.config.model.ConfigType;
