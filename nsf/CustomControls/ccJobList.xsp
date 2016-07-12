@@ -8,22 +8,7 @@
 		<div class="box-header">
 			<a class="btn btn-primary" href="job.xsp">create job</a>
 			
-			<div class="pull-right">
-				<xp:pager partialRefresh="true" id="pager2" for="rptList"
-					panelPosition="left" styleClass="bootstrapPager" partialExecute="true">
-					<xp:pagerControl type="Previous" id="pagerControl4"
-						styleClass="bootstrapPagerPrevious">
-						<xp:this.value><![CDATA[«]]></xp:this.value>
-					</xp:pagerControl>
-					<xp:pagerControl type="Group" id="pagerControl5"
-						styleClass="bootstrapPagerMiddle">
-					</xp:pagerControl>
-					<xp:pagerControl type="Next" id="pagerControl6"
-						styleClass="bootstrapPagerNext">
-						<xp:this.value><![CDATA[»]]></xp:this.value>
-					</xp:pagerControl>
-				</xp:pager>
-			</div>
+			<xc:ccPager repeatId="rptList"></xc:ccPager>
 		</div>
 	
 		<div class="box-body table-responsive">
