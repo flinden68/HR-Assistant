@@ -17,7 +17,7 @@ import ch.belsoft.hrassistant.controller.IGuiController;
 import ch.belsoft.tools.Logging;
 import ch.belsoft.tools.XPagesUtil;
 import ch.belsoft.tools.fa.FontAwesomeIcons;
-
+ 
 public class DataSet implements Serializable {
 
 	/**
@@ -25,7 +25,7 @@ public class DataSet implements Serializable {
      */
 	private static final long serialVersionUID = 1L;
 	private String label = "";
-	private List<Long> data = new ArrayList<Long>();
+	private List<Float> data = new ArrayList<Float>();
 
 	public String getLabel() {
 		return label;
@@ -35,15 +35,15 @@ public class DataSet implements Serializable {
 		this.label = label;
 	}
 
-	public List<Long> getData() {
+	public List<Float> getData() {
 		return data;
 	}
 
-	public void setData(List<Long> data) {
+	public void setData(List<Float> data) {
 		this.data = data;
 	}
 
-	public void addData(long data) {
+	public void addData(float data) {
 		this.data.add(data);
 	}
 
