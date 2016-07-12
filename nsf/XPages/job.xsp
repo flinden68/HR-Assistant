@@ -187,6 +187,14 @@
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
 								
+								<xc:ccBSDatePickerFull
+									dateFormat="dd-MM-yyyy"
+									fieldDataSource="#{job}"
+									fieldName="startDate"
+									fieldLabel="Start date"
+									required="true">
+								</xc:ccBSDatePickerFull>
+
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldDescription').isValid()}">
 									<label for="fldDescription">Description</label>
@@ -200,7 +208,6 @@
 									<xp:message id="message8" for="fldDescription"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
-								
 							</div>
 							<!-- /.box-body -->
 
