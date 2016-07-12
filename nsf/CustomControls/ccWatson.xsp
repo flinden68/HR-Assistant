@@ -38,14 +38,13 @@
 						refreshMode="partial" refreshId="content-wrapper" execMode="partial"
 						execId="content-wrapper">
 						<xp:this.action>
-							<xp:executeScript script="#{watsonAPITestController.analizeText}">
+							<xp:executeScript script="#{watsonAPITestController.analyzeTone}">
 							</xp:executeScript>
 						</xp:this.action>
 					</xp:eventHandler>
 				</xp:button>
 			</div>
 		</div>
-
 	</xp:div>
 	<xp:div styleClass="row"
 		rendered="#{watsonAPITestController.toneAnalyzerResult!=null}">
