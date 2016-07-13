@@ -15,6 +15,35 @@
 		</managed-bean-class>
     <managed-bean-scope>session</managed-bean-scope>
   </managed-bean>
+  
+  <!-- JobApplication Controller -->
+  <managed-bean>
+    <managed-bean-name>jobApplicationController
+		</managed-bean-name>
+    <managed-bean-class>
+			ch.belsoft.hrassistant.job.controller.JobApplicationController
+		</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+    <managed-property>
+      <property-name>jobDAO</property-name>
+      <value>#{jobDAO}</value>
+    </managed-property>
+    <managed-property>
+      <property-name>jobApplicationDAO</property-name>
+      <value>#{jobApplicationDAO}</value>
+    </managed-property>
+    <managed-property>
+      <property-name>applicationController
+			</property-name>
+      <value>#{applicationController}</value>
+    </managed-property>
+    <managed-property>
+      <property-name>attachmentController
+			</property-name>
+      <value>#{attachmentController}</value>
+    </managed-property>
+  </managed-bean>
+  
   <!-- Job Controller -->
   <managed-bean>
     <managed-bean-name>jobController
@@ -146,6 +175,19 @@
       <value>#{cloudantService}</value>
     </managed-property>
   </managed-bean>
+  
+  <!-- JobApplication DAO -->
+  <managed-bean>
+    <managed-bean-name>jobApplicationDAO</managed-bean-name>
+    <managed-bean-class>ch.belsoft.hrassistant.job.dao.JobApplicationDAO
+		</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+    <managed-property>
+      <property-name>cloudantService</property-name>
+      <value>#{cloudantService}</value>
+    </managed-property>
+  </managed-bean>
+  
   <!-- Configuration DAO -->
   <managed-bean>
     <managed-bean-name>configurationDAO

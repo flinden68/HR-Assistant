@@ -71,18 +71,11 @@
 												</xp:this.action>
 											</xp:eventHandler>
 										</xp:button>
-										<xp:button styleClass="btn btn-primary btn-margin-right"
-											value="apply" id="button1">
-											<xp:eventHandler event="onclick" submit="true"
-												onStart="waitingDialog.show('apply...')" onComplete="waitingDialog.hide()"
-												refreshMode="partial" refreshId="content-wrapper" execMode="partial"
-												execId="content-wrapper">
-												<xp:this.action>
-													<xp:executeScript script="#{javascript:jobController.apply()}">
-													</xp:executeScript>
-												</xp:this.action>
-											</xp:eventHandler>
-										</xp:button>
+										<xp:link escape="true"
+											text="Apply" id="link1"
+											 styleClass="btn btn-primary btn-margin-right">
+											<xp:this.value><![CDATA[#{javascript:"jobapplication.xsp?openxpage&jobid="+job.getId()}]]></xp:this.value>
+										</xp:link>
 									</div>
 								</div>
 

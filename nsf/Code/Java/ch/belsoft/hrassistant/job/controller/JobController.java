@@ -94,7 +94,7 @@ public class JobController extends ControllerBase implements IGuiController<Job>
     
     public void apply(Job job){
         System.out.println("Apply.....");
-        //XPagesUtil.redirect("jobapplication.xsp?openxpage&id=" + job.getId());
+        XPagesUtil.redirect("jobapplication.xsp?openxpage&jobid=" + job.getId());
     }
     
     public void remove(Job job) {
@@ -135,8 +135,6 @@ public class JobController extends ControllerBase implements IGuiController<Job>
                 XPagesUtil.redirect("job.xsp?openxpage&id="
                         + job.getId());
             } else {
-                Logging.logEvent("updating.. rev:" + job.getRev() + " id:"
-                        + job.getId());
                 this.jobDAO.update(job);
                 read(job.getId());
             }

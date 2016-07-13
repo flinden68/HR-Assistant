@@ -122,7 +122,6 @@ public class CompanyController extends ControllerBase implements IGuiController<
                 this.companyDAO.create(company);
                 XPagesUtil.redirect("company.xsp?openxpage&id=" + company.getId());
             } else {
-                Logging.logEvent("updating.. rev:" + company.getRev() + " id:" + company.getId());
                 this.companyDAO.update(company);
                 this.company = companyDAO.read(company.getId());
             }

@@ -118,7 +118,7 @@
 										</xp:eventHandler>
 										
 									</xp:comboBox>
-									<xp:message id="message8" for="fldIndustry"
+									<xp:message id="message8" for="fldCountry"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
 								
