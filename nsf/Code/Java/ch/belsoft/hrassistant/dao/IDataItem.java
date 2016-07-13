@@ -28,4 +28,12 @@ public interface IDataItem {
     
     public String getAttachmentId();
     
+    public void setCreatedBy(String userName);
+    
+    public String getCreatedBy();
+    
+    public void setModifiedBy(String userName);
+    
+    public String getModifiedBy();
+    
 }

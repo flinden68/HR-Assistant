@@ -17,6 +17,8 @@ public abstract class DataItem implements Serializable, IDataItem {
     protected String attachmentId = "";
     protected Date created = new Date();
     protected Date modified = new Date();
+    protected String createdBy;
+    protected String modifiedBy;
     
     public enum DataType {
         CONFIG, JOB, JOBAPPLICATION, COMPANY, ATTACHMENT, UPLOAD
@@ -76,6 +78,22 @@ public abstract class DataItem implements Serializable, IDataItem {
     
     public String getAttachmentId() {
         return attachmentId;
+    }
+    
+    public String getCreatedBy() {
+        return createdBy;
+    }
+    
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+    
+    public String getModifiedBy() {
+        return modifiedBy;
+    }
+    
+    public void setModifiedBy(String modifiedBy) {
+        this.modifiedBy = modifiedBy;
     }
     
     @Override

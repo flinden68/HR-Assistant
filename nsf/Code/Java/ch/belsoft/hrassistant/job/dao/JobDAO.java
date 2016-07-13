@@ -26,6 +26,7 @@ Serializable {
     
     public void create(Job t) {
         connectToService();
+        super.setCreatedBy(t);
         super.handleResponse(cloudantService.saveDocument(t), t);
     }
     
@@ -50,6 +51,7 @@ Serializable {
     public void update(Job t) {
         connectToService();
         super.updateModifiedDate(t);
+        super.updateModifiedBy(t);
         super.handleResponse(cloudantService.updateDocument(t), t);
     }
     

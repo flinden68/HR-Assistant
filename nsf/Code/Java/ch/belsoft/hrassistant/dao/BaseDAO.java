@@ -5,6 +5,7 @@ import java.util.Date;
 
 import nl.elstarit.cloudant.model.ConnectorResponse;
 import ch.belsoft.hrassistant.service.CloudantService;
+import ch.belsoft.tools.XPagesUtil;
 
 public abstract class BaseDAO implements Serializable {
     /**
@@ -37,6 +38,16 @@ public abstract class BaseDAO implements Serializable {
     
     public void updateModifiedDate(IDataItem dataItem) {
         dataItem.setModified(new Date());
+    }
+    
+    public void updateModifiedBy(IDataItem dataItem){
+        String userName = XPagesUtil.getUserNameAbbreviated();
+        dataItem.setModifiedBy(userName);
+    }
+    
+    public void setCreatedBy(IDataItem dataItem){
+        String userName = XPagesUtil.getUserNameAbbreviated();
+        dataItem.setCreatedBy(userName);
     }
     
 }

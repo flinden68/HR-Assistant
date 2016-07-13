@@ -25,6 +25,7 @@ Serializable {
     
     public void create(AttachmentHolder t) {
         connectToService();
+        super.setCreatedBy(t);
         super.handleResponse(cloudantService.saveDocument(t), t);
     }
     
@@ -70,6 +71,7 @@ Serializable {
     public void update(AttachmentHolder t) {
         connectToService();
         super.updateModifiedDate(t);
+        super.updateModifiedBy(t);
         super.handleResponse(cloudantService.updateDocument(t), t);
     }
     
