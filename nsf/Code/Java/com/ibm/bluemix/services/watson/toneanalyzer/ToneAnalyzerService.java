@@ -23,7 +23,7 @@ import ch.belsoft.tools.RestUtil;
 public class ToneAnalyzerService extends CloudService {
 
 	private static final String SERVICE_NAME = "tone_analyzer";
-	private static final String API_URL = "https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2016-05-19";
+	private static final String API_URL = "https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2016-05-19&sentences=false";
 
 	// private boolean connected = false;
 
@@ -44,6 +44,7 @@ public class ToneAnalyzerService extends CloudService {
 			String postDataString = mapper.writeValueAsString(req);
 			String response = RestUtil.post(API_URL, bluemixUtil
 					.getAuthorizationHeader(), postDataString);
+			XPagesUtil.showErrorMessage(response);
 			mapper.enable(DeserializationFeature.UNWRAP_ROOT_VALUE);
 			result = mapper.readValue(response, ToneAnalyzerResult.class);
 		} catch (Exception e) {
