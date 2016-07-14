@@ -1,6 +1,4 @@
-package com.ibm.bluemix.services.watson.toneanalyzer;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
+package com.ibm.bluemix.services.watson.toneanalyzer.model;
 
 public class ToneAnalyzerRequest {
 

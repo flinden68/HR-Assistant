@@ -1,4 +1,4 @@
-package com.ibm.bluemix.services.watson.toneanalyzer;
+package com.ibm.bluemix.services.watson.toneanalyzer.model;
 
 import java.util.List;
 

@@ -8,11 +8,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.fluent.Executor;
 import org.apache.http.client.fluent.Request;
-import org.apache.http.client.fluent.Response;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.impl.client.BasicResponseHandler;
@@ -79,8 +77,8 @@ public class RestUtil {
 			}
 		}
 
-		System.out.println("executing url: "+url);
-		
+		System.out.println("executing url: " + url);
+
 		return executor.execute(
 				postRequest.bodyString(postDataString,
 						ContentType.APPLICATION_JSON)).handleResponse(

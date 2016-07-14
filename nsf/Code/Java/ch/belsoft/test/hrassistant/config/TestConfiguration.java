@@ -1,16 +1,13 @@
 package ch.belsoft.test.hrassistant.config;
 
-import java.util.Collection;
 import java.util.List;
 
-import org.hamcrest.Matcher;
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 
 import ch.belsoft.hrassistant.config.controller.ConfigurationController;
-import ch.belsoft.hrassistant.config.dao.ConfigurationDAO;
 import ch.belsoft.hrassistant.config.model.ConfigDefault;
 import ch.belsoft.tools.Logging;
 import ch.belsoft.tools.XPagesUtil;

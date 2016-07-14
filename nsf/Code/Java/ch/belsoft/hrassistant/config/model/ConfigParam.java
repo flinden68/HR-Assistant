@@ -1,7 +1,5 @@
 package ch.belsoft.hrassistant.config.model;
 
-import java.util.Arrays;
-
 public class ConfigParam {
 	String paramValue = "";
 

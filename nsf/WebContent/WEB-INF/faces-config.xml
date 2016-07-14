@@ -15,7 +15,6 @@
 		</managed-bean-class>
     <managed-bean-scope>session</managed-bean-scope>
   </managed-bean>
-  
   <!-- JobApplication Controller -->
   <managed-bean>
     <managed-bean-name>jobApplicationController
@@ -43,7 +42,6 @@
       <value>#{attachmentController}</value>
     </managed-property>
   </managed-bean>
-  
   <!-- Job Controller -->
   <managed-bean>
     <managed-bean-name>jobController
@@ -175,10 +173,10 @@
       <value>#{cloudantService}</value>
     </managed-property>
   </managed-bean>
-  
   <!-- JobApplication DAO -->
   <managed-bean>
-    <managed-bean-name>jobApplicationDAO</managed-bean-name>
+    <managed-bean-name>jobApplicationDAO
+		</managed-bean-name>
     <managed-bean-class>ch.belsoft.hrassistant.job.dao.JobApplicationDAO
 		</managed-bean-class>
     <managed-bean-scope>session</managed-bean-scope>
@@ -187,7 +185,6 @@
       <value>#{cloudantService}</value>
     </managed-property>
   </managed-bean>
-  
   <!-- Configuration DAO -->
   <managed-bean>
     <managed-bean-name>configurationDAO
@@ -244,7 +241,7 @@
     <managed-bean-name>toneAnalyzerService
 		</managed-bean-name>
     <managed-bean-class>
-			com.ibm.bluemix.services.watson.toneanalyzer.ToneAnalyzerService
+			com.ibm.bluemix.services.watson.toneanalyzer.service.ToneAnalyzerService
 		</managed-bean-class>
     <managed-bean-scope>session</managed-bean-scope>
     <managed-property>
@@ -268,10 +265,10 @@
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
   <managed-bean>
-    <managed-bean-name>watsonAPITestController
+    <managed-bean-name>toneAnalyzerInjector
 		</managed-bean-name>
     <managed-bean-class>
-			ch.belsoft.hrassistant.watson.controller.WatsonAPITestController
+			ch.belsoft.hrassistant.watson.injector.ToneAnalyzerInjector
 		</managed-bean-class>
     <managed-bean-scope>view</managed-bean-scope>
     <managed-property>
