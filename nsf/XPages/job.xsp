@@ -28,8 +28,7 @@
 										<xp:selectItem itemLabel="Please choose"
 											itemValue="">
 										</xp:selectItem>
-										<xp:selectItems
-											value="${jobController.companySelection}">
+										<xp:selectItems value="${jobController.companySelection}">
 										</xp:selectItems>
 										<xp:this.validators>
 											<xp:validateRequired message="Company is mandatory">
@@ -37,9 +36,9 @@
 										</xp:this.validators>
 
 										<xp:eventHandler event="onchange" submit="true"
-											onStart="waitingDialog.show('loading company')"
-											onComplete="waitingDialog.hide();" refreshMode="partial"
-											disableValidators="true" execMode="partial" refreshId="companyInfo">
+											onStart="waitingDialog.show('loading company')" onComplete="waitingDialog.hide();"
+											refreshMode="partial" disableValidators="true" execMode="partial"
+											refreshId="companyInfo">
 											<xp:this.action>
 												<xp:executeScript
 													script="#{javascript:jobController.changeCompany();}">
@@ -50,18 +49,18 @@
 									<xp:message id="message2" for="fldCompany"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
-								
-								<xp:panel id="companyInfo"
-									styleClass="form-group">
+
+								<xp:panel id="companyInfo" styleClass="form-group">
 
 									<xp:panel id="displayCompany" rendered="#{job.hasCompanyId}">
-									
-									<xp:text id="inputText1" value="#{job.company.address.addressDisplay}" escape="false" styleClass="form-control-static">
-										
-									</xp:text>
+
+										<xp:text id="inputText1" value="#{job.company.address.addressDisplay}"
+											escape="false" styleClass="form-control-static">
+
+										</xp:text>
 									</xp:panel>
 								</xp:panel>
-								
+
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldFirstName').isValid()}">
 									<label for="fldFirstName">Representive first name</label>
@@ -76,7 +75,7 @@
 									<xp:message id="message3" for="fldFirstName"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
-								
+
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldLastName').isValid()}">
 									<label for="fldLastName">Representive last name</label>
@@ -91,7 +90,7 @@
 									<xp:message id="message4" for="fldLastName"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
-								
+
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldJobName').isValid()}">
 									<label for="fldJobName">Job name</label>
@@ -106,7 +105,7 @@
 									<xp:message id="message1" for="fldJobName"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
-								
+
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldIndustry').isValid()}">
 									<label for="fldIndustry">Industry</label>
@@ -115,8 +114,7 @@
 										<xp:selectItem itemLabel="Please choose industry"
 											itemValue="">
 										</xp:selectItem>
-										<xp:selectItems
-											value="${jobController.jobIndustrySelection}">
+										<xp:selectItems value="${jobController.jobIndustrySelection}">
 										</xp:selectItems>
 										<xp:this.validators>
 											<xp:validateRequired message="Industry is mandatory">
@@ -127,14 +125,14 @@
 											onStart="waitingDialog.show('loading industries')"
 											onComplete="waitingDialog.hide();" refreshMode="partial"
 											disableValidators="true" refreshId="fldIndustry">
-	
+
 										</xp:eventHandler>
-										
+
 									</xp:comboBox>
 									<xp:message id="message6" for="fldIndustry"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
-								
+
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldJobType').isValid()}">
 									<label for="fldJobType">Job type</label>
@@ -143,8 +141,7 @@
 										<xp:selectItem itemLabel="Please choose a job type"
 											itemValue="">
 										</xp:selectItem>
-										<xp:selectItems
-											value="${jobController.jobTypeSelection}">
+										<xp:selectItems value="${jobController.jobTypeSelection}">
 										</xp:selectItems>
 										<xp:this.validators>
 											<xp:validateRequired message="Job type is mandatory">
@@ -152,15 +149,14 @@
 										</xp:this.validators>
 
 										<xp:eventHandler event="onchange" submit="true"
-											onStart="waitingDialog.show('loading job type')"
-											onComplete="waitingDialog.hide();" refreshMode="partial"
-											disableValidators="true" refreshId="fldJobType">
+											onStart="waitingDialog.show('loading job type')" onComplete="waitingDialog.hide();"
+											refreshMode="partial" disableValidators="true" refreshId="fldJobType">
 										</xp:eventHandler>
 									</xp:comboBox>
 									<xp:message id="message5" for="fldJobType"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
-								
+
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldCareerLevel').isValid()}">
 									<label for="fldCareerLevel">Job type</label>
@@ -169,8 +165,7 @@
 										<xp:selectItem itemLabel="Please choose a career level"
 											itemValue="">
 										</xp:selectItem>
-										<xp:selectItems
-											value="${jobController.careerLevelSelection}">
+										<xp:selectItems value="${jobController.careerLevelSelection}">
 										</xp:selectItems>
 										<xp:this.validators>
 											<xp:validateRequired message="Career level is mandatory">
@@ -178,42 +173,56 @@
 										</xp:this.validators>
 
 										<xp:eventHandler event="onchange" submit="true"
-											onStart="waitingDialog.show('loading job type')"
-											onComplete="waitingDialog.hide();" refreshMode="partial"
-											disableValidators="true" refreshId="fldCareerLevel">
+											onStart="waitingDialog.show('loading job type')" onComplete="waitingDialog.hide();"
+											refreshMode="partial" disableValidators="true" refreshId="fldCareerLevel">
 										</xp:eventHandler>
 									</xp:comboBox>
 									<xp:message id="message7" for="fldCareerLevel"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
-								
-								<xc:ccBSDatePickerFull
-									dateFormat="dd-MM-yyyy"
-									fieldDataSource="#{job}"
-									fieldName="startDate"
-									fieldLabel="Start date"
+
+								<xc:ccBSDatePickerFull dateFormat="dd-MM-yyyy"
+									fieldDataSource="#{job}" fieldName="startDate" fieldLabel="Start date"
 									required="true">
 								</xc:ccBSDatePickerFull>
 
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldDescription').isValid()}">
 									<label for="fldDescription">Description</label>
-									<xp:inputTextarea id="fldDescription" value="#{job.description}"
-										styleClass="form-control valid-#{javascript:this.isValid()}" required="true">
+									<xp:inputRichText value="#{job.description}"
+										id="fldDescription"></xp:inputRichText>
+									<xp:message id="message9" for="fldDescription"
+										styleClass="help-block with-errors"></xp:message>
+								</xp:div>
+
+
+								<xp:div loaded="false"
+									styleClass="form-group
+									is-valid-#{javascript:getComponent('fldDescriptionAbstract').isValid()}">
+									<label for="fldDescription">Description</label>
+									<xp:inputTextarea id="fldDescriptionAbstract"
+										value="#{job.descriptionAbstract}"
+										styleClass="form-control
+									valid-#{javascript:this.isValid()}"
+										required="true">
 										<xp:this.validators>
-											<xp:validateRequired message="Please give a description">
+											<xp:validateRequired
+												message="Please give
+									a description abstract">
 											</xp:validateRequired>
 										</xp:this.validators>
 									</xp:inputTextarea>
-									<xp:message id="message8" for="fldDescription"
-										styleClass="help-block with-errors"></xp:message>
+									<xp:message id="message8" for="fldDescriptionAbstract"
+										styleClass="help-block
+									with-errors"></xp:message>
 								</xp:div>
+
 							</div>
 							<!-- /.box-body -->
 
 							<div class="box-footer">
-								<a href="jobs.xsp" class="btn btn-default "
-									title="back to jobs">cancel</a>
+								<a href="jobs.xsp" class="btn btn-default " title="back to jobs">cancel
+								</a>
 								<div class="pull-right">
 									<xp:button styleClass="btn btn-success btn-margin-right"
 										value="save" id="button1">
@@ -222,8 +231,7 @@
 											refreshMode="partial" refreshId="content-wrapper" execMode="partial"
 											execId="content-wrapper">
 											<xp:this.action>
-												<xp:executeScript
-													script="#{javascript:jobController.update()}">
+												<xp:executeScript script="#{javascript:jobController.update()}">
 												</xp:executeScript>
 											</xp:this.action>
 										</xp:eventHandler>
@@ -233,12 +241,12 @@
 										id="button7">
 										<i class="fa fa-trash fa-fw"></i>
 										<xp:eventHandler event="onclick" submit="true"
-											onStart="waitingDialog.show('removing')" onComplete="waitingDialog.hide();document.location='configurations.xsp'"
+											onStart="waitingDialog.show('removing')"
+											onComplete="waitingDialog.hide();document.location='configurations.xsp'"
 											refreshMode="partial" refreshId="content-wrapper" immediate="true"
 											execMode="partial" execId="content-wrapper">
 											<xp:this.action>
-												<xp:executeScript
-													script="#{javascript:jobController.remove(job)}">
+												<xp:executeScript script="#{javascript:jobController.remove(job)}">
 												</xp:executeScript>
 											</xp:this.action>
 										</xp:eventHandler>
