@@ -1,5 +1,5 @@
 package ch.belsoft.hrassistant.config.model;
 
 public enum ConfigParams {
-	ICON
+	ICON,MENU_CATEGORY
 }

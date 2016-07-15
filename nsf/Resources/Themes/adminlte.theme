@@ -58,10 +58,7 @@
 		<content-type>text/css</content-type>
 		<href>dist/css/skins/skin-blue.min.css</href>
 	</resource>
-	<resource>
-		<content-type>text/css</content-type>
-		<href>custom/css/custom.css</href>
-	</resource>
+
 
 	<resource>
 		<content-type>application/x-javascript</content-type>
@@ -87,6 +84,11 @@
 	<resource>
 		<content-type>application/x-javascript</content-type>
 		<href>plugins/moment/min/moment.min.js</href>
+	</resource>
+
+	<resource>
+		<content-type>text/css</content-type>
+		<href>custom/css/custom.css</href>
 	</resource>
 
 	<resource>

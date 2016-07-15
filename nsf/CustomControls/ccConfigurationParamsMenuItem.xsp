@@ -3,7 +3,7 @@
 	<xp:div id="pnlIconSelection"
 		styleClass="form-group is-valid-#{javascript://getComponent('fldIcon').isValid()}">
 		<label for="exampleInputEmail1">Icon</label>
-		<div class="btn-group" style="display:block;">
+		<div class="btn-group btn-group-nofloat" style="display:block;">
 			<xp:repeat id="repeat1" rows="30" var="icon"
 				disableOutputTag="true" disableTheme="true"
 				value="${configurationController.fontAwesomeIconSelection}">
@@ -24,5 +24,20 @@
 		</div>
 		<xp:message id="message2" for="fldIcon" styleClass="help-block with-errors"></xp:message>
 	</xp:div>
-
+	<xp:div
+		styleClass="form-group is-valid-#{javascript:getComponent('fldMenuCategory').isValid()}">
+		<label for="fldMenuCategory">Menu Category</label>
+		<xp:comboBox id="fldMenuCategory"
+			value="#{compositeData.paramMenuCategory.paramValue}" required="true">
+			<xp:selectItem itemLabel="Please choose" itemValue="">
+			</xp:selectItem>
+			<xp:selectItems value="${configurationController.menuCategorySelection}">
+			</xp:selectItems>
+			<xp:this.validators>
+				<xp:validateRequired message="Menu Category is mandatory">
+				</xp:validateRequired>
+			</xp:this.validators>
+		</xp:comboBox>
+		<xp:message id="message1" for="fldMenuCategory" styleClass="help-block with-errors"></xp:message>
+	</xp:div>
 </xp:view>

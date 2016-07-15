@@ -6,6 +6,7 @@ import java.util.List;
 
 import ch.belsoft.hrassistant.config.dao.ConfigurationDAO;
 import ch.belsoft.hrassistant.config.model.ConfigDefault;
+import ch.belsoft.hrassistant.config.model.ConfigParamsMenuCategory;
 import ch.belsoft.hrassistant.config.model.ConfigType;
 import ch.belsoft.hrassistant.config.model.IConfiguration;
 import ch.belsoft.hrassistant.controller.ControllerBase;
@@ -27,12 +28,11 @@ public class ConfigurationController extends ControllerBase implements
 	private static final String TITLE_CONFIGURATIONLIST_ALL = "All configuration items";
 	private static final String TITLE_CONFIGURATIONLIST_TYPE = "Other configuration items of type {NAME}";
 
+	private ConfigDefault configFilter = new ConfigDefault();
 	private ConfigDefault config = null;
 	private ConfigurationDAO configurationDAO = new ConfigurationDAO();
 
 	List<ConfigDefault> configurations = new ArrayList<ConfigDefault>();
-
-	private String configTypeFilter = "";
 
 	public ConfigurationController() {
 
@@ -76,6 +76,10 @@ public class ConfigurationController extends ControllerBase implements
 		return FontAwesomeIcons.iconSelection();
 	}
 
+	public String[] getMenuCategorySelection() {
+		return ConfigParamsMenuCategory.menuCategorySelection();
+	}
+
 	public ConfigDefault getDataContext() {
 		try {
 			if (this.config == null) {
@@ -107,7 +111,14 @@ public class ConfigurationController extends ControllerBase implements
 		try {
 			if (this.configurations.size() == 0) {
 				if (this.searchQuery.equals("")) {
-					this.configurations = this.configurationDAO.read();
+					if (this.configFilter.getType() != null
+							&& !this.configFilter.getTypeString().equals("")) {
+						this.configurations = this.configurationDAO.search(
+								this.configFilter.getTypeString(),
+								"type:{QUERY}");
+					} else {
+						this.configurations = this.configurationDAO.read();
+					}
 
 				} else {
 					this.configurations = this.configurationDAO
@@ -163,12 +174,12 @@ public class ConfigurationController extends ControllerBase implements
 		}
 	}
 
-	public String getConfigTypeFilter() {
-		return configTypeFilter;
+	public ConfigDefault getConfigFilter() {
+		return configFilter;
 	}
 
-	public void setConfigTypeFilter(String configTypeFilter) {
-		this.configTypeFilter = configTypeFilter;
+	public void setConfigFilter(ConfigDefault configFilter) {
+		this.configFilter = configFilter;
 	}
 
 	public String getPageTitle() {

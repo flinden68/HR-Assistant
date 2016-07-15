@@ -280,57 +280,7 @@
 					</div>
 				</div>
 
-				<!-- search form (Optional) -->
-				<div action="#" method="get" class="sidebar-form">
-					<div class="input-group">
-						<input type="text" name="q" class="form-control"
-							placeholder="Search..." />
-						<span class="input-group-btn">
-							<button type="submit" name="search" id="search-btn" class="btn btn-flat">
-								<i class="fa fa-search"></i>
-							</button>
-						</span>
-
-					</div>
-				</div>
-				<!-- /.search form -->
-
-				<!-- Sidebar Menu -->
-
-				<ul class="sidebar-menu">
-					<li class="header">HR Menu</li>
-					<!-- Optionally, you can add icons to the links -->
-					<li
-						class="#{applicationController.currentPageName=='configurations.xsp'?'active':''}">
-						<a href="configurations.xsp">
-							<i class="fa fa-cogs"></i>
-							<span>Configuration List</span>
-						</a>
-					</li>
-					<xp:repeat id="repeat1" rows="30" disableOutputTag="true"
-						disableTheme="true" value="${applicationController.menuItems}"
-						var="menuItem">
-						<li
-							class="#{applicationController.currentPageName==menuItem.configKey?'active':''}">
-							<xp:link escape="true" value="#{menuItem.configKey}"
-								text="#{menuItem.configValue}" id="link1">
-								<i
-									class="fa fa-#{javascript:menuItem.getParamValue(ch.belsoft.hrassistant.config.model.ConfigParams.ICON)}"></i>
-							</xp:link>
-						</li>
-					</xp:repeat>
-
-
-
-
-					<!--
-						<li class="treeview"> <a href="#"> <i class="fa fa-link"></i>
-						<span>Multilevel</span> <i class="fa fa-angle-left
-						pull-right"></i> </a> <ul class="treeview-menu"> <li> <a
-						href="#">Link in level 2</a> </li> <li> <a href="#">Link in level
-						2</a> </li> </ul> </li>
-					-->
-				</ul>
+				<xc:ccLayoutLeftMenu></xc:ccLayoutLeftMenu>
 				<!-- /.sidebar-menu -->
 			</section>
 			<!-- /.sidebar -->
@@ -445,18 +395,30 @@
 				<div class="tab-pane" id="control-sidebar-settings-tab">
 					<!-- 	<form method="post"> -->
 					<h3 class="control-sidebar-heading">
-						General Settings
+						Configuration
 					</h3>
 
 					<div class="form-group">
-						<label class="control-sidebar-subheading">
-							Report panel usage
-							<input type="checkbox" class="pull-right" />
-						</label>
+						<xp:button value="Reset Configuration" id="btnResetConfig"
+							styleClass="btn btn-warning">
+							<xp:eventHandler event="onclick" submit="true"
+								onStart="waitingDialog.show('resetting..')" onComplete="document.location=document.location"
+								refreshMode="partial" refreshId="btnResetConfig" immediate="true"
+								execMode="partial" execId="btnResetConfig">
+								<xp:this.action>
+									<xp:actionGroup>
+										<xp:executeScript
+											script="#{applicationController.clearConfiguration}">
+										</xp:executeScript>
+										<xp:executeScript script="#{applicationController.initConfiguration}">
+										</xp:executeScript>
+									</xp:actionGroup>
+								</xp:this.action>
+							</xp:eventHandler>
+						</xp:button>
 
 						<p>
-							Some information about this general settings
-							option
+							this action will clear the in-memory configuration list.
 						</p>
 					</div>
 					<!-- /.form-group -->

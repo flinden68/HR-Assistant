@@ -30,7 +30,12 @@ public class ConfigDefault extends DataItem implements IConfiguration {
 
 	public void setTypeString(String type) {
 		try {
-			this.setType(ConfigType.valueOf(type));
+			if (type.equals("")) {
+				this.setType(null);
+			} else {
+				this.setType(ConfigType.valueOf(type));
+			}
+
 		} catch (Exception e) {
 			Logging.logError(e);
 		}
@@ -107,8 +112,8 @@ public class ConfigDefault extends DataItem implements IConfiguration {
 		}
 		return this.params.get(configParams);
 	}
-	
-	public String getParamValue(ConfigParams configParams){
+
+	public String getParamValue(ConfigParams configParams) {
 		return this.getParam(configParams).getParamValue();
 	}
 }

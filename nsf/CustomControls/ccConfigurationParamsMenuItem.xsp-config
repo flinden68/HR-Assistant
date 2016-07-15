@@ -20,5 +20,12 @@
         <required>true</required>
       </property-extension>
     </property>
+    <property>
+      <property-name>paramMenuCategory</property-name>
+      <property-class>object</property-class>
+      <property-extension>
+        <required>true</required>
+      </property-extension>
+    </property>
   </composite-component>
 </faces-config>

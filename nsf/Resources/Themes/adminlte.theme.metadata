@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="6c2" sequence="288" unid="A3D08F62BDA5C706C1257FD200485946">
+<noteinfo noteid="6c2" sequence="317" unid="A3D08F62BDA5C706C1257FD200485946">
 <created><datetime dst="true">20160614T151014,46+02</datetime></created>
-<modified><datetime dst="true">20160712T151429,29+02</datetime></modified>
-<revised><datetime dst="true">20160712T151429,27+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160712T151429,27+02</datetime></lastaccessed>
+<modified><datetime dst="true">20160715T100759,97+02</datetime></modified>
+<revised><datetime dst="true">20160715T100759,96+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160715T100759,96+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20160711T105440,20+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
 <wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
@@ -14,4 +14,4 @@
 
 
 <item name="$FileNames" sign="true"><text>adminlte.theme</text></item>
-<item name="$CSSFiles"><textlist><text>bootstrap/css/bootstrap.min.css</text><text>plugins/datatables/dataTables.bootstrap.css</text><text>https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css</text><text>https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css</text><text>dist/css/AdminLTE.min.css</text><text>dist/css/skins/skin-blue.min.css</text><text>custom/css/custom.css</text><text>plugins/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css</text></textlist></item></note>
+<item name="$CSSFiles"><textlist><text>bootstrap/css/bootstrap.min.css</text><text>plugins/datatables/dataTables.bootstrap.css</text><text>https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css</text><text>https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css</text><text>dist/css/AdminLTE.min.css</text><text>dist/css/skins/skin-blue.min.css</text><text>plugins/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css</text><text>custom/css/custom.css</text></textlist></item></note>

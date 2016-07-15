@@ -55,6 +55,42 @@
 						<th>key / value</th>
 						<th></th>
 					</tr>
+					<tr>
+						<!-- 	<th>rev</th>
+							<th>id</th> -->
+						<th>
+							<xp:comboBox id="fldType" styleClass="font-normal"
+								value="#{configurationController.configFilter.typeString}">
+								<xp:selectItem itemLabel="Filter by.." itemValue="">
+								</xp:selectItem>
+								<xp:selectItems value="${configurationController.configTypeSelection}">
+								</xp:selectItems>
+								<xp:eventHandler event="onchange" submit="true"
+									onStart="waitingDialog.show('filtering...')" onComplete="waitingDialog.hide();"
+									refreshMode="partial" refreshId="pnlDataItemList"
+									disableValidators="true" execMode="partial" execId="pnlDataItemList">
+									<xp:this.action>
+										<xp:executeScript
+											script="#{configurationController.clearDataItemList}">
+										</xp:executeScript>
+									</xp:this.action>
+								</xp:eventHandler>
+							</xp:comboBox>
+						</th>
+						<th>
+
+						</th>
+						<th>
+							<xp:inputText id="fldConfigValue" value="#{requestScope.typeString}"
+								styleClass="font-normal">
+								<xp:this.attrs>
+									<xp:attr name="placeholder" value="search value/key">
+									</xp:attr>
+								</xp:this.attrs>
+							</xp:inputText>
+						</th>
+						<th></th>
+					</tr>
 				</thead>
 				<tbody>
 					<xp:repeat id="rptConfigurations" rows="10" var="config"

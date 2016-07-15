@@ -78,9 +78,10 @@
 										</xp:this.converter>
 									</xp:inputText>
 								</div>
- 
+
 								<xc:ccConfigurationParamsMenuItem
 									rendered="#{config.typeString=='MENU_ITEM'}"
+									paramMenuCategory="#{javascript:config.getParam(ch.belsoft.hrassistant.config.model.ConfigParams.MENU_CATEGORY)}"
 									paramIcon="#{javascript:config.getParam(ch.belsoft.hrassistant.config.model.ConfigParams.ICON)}"></xc:ccConfigurationParamsMenuItem>
 
 								<xp:messages id="messages1" styleClass="alert alert-danger"></xp:messages>
