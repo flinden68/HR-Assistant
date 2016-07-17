@@ -50,7 +50,7 @@
 
 	<xp:div
 		styleClass="form-group is-valid-#{javascript:getComponent('fldCareerLevel').isValid()}">
-		<label for="fldCareerLevel">Job type</label>
+		<label for="fldCareerLevel">Career level</label>
 		<xp:comboBox id="fldCareerLevel" value="#{job.careerLevel}"
 			required="true">
 			<xp:selectItem itemLabel="Please choose a career level"

@@ -40,36 +40,41 @@
 		</xp:panel>
 	</xp:panel>
 
-	<xp:div
-		styleClass="form-group is-valid-#{javascript:getComponent('fldFirstName').isValid()}">
-		<label for="fldFirstName">
-			Representive first name
-				</label>
-		<xp:inputText id="fldFirstName" value="#{job.representative.firstName}"
-			styleClass="valid-#{javascript:this.isValid()}" required="true">
-			<xp:this.validators>
-				<xp:validateRequired message="Please give a representive first name">
-				</xp:validateRequired>
-			</xp:this.validators>
-		</xp:inputText>
-
-		<xp:message id="message3" for="fldFirstName" styleClass="help-block with-errors">
-		</xp:message>
+	<xp:div>
+		<xp:this.styleClass><![CDATA[#{javascript:"form-group is-valid-"+(getComponent('fldFirstName').isValid() && getComponent('fldLastName').isValid())}]]></xp:this.styleClass>
+		<label for="fldFirstName">Representive</label>
+		<div class="row">
+			<div class="col-xs-6">
+				<xp:inputText id="fldFirstName" value="#{job.representative.firstName}"
+					styleClass="valid-#{javascript:this.isValid()}" required="true">
+					<xp:this.validators>
+						<xp:validateRequired message="Please give a representive first name">
+						</xp:validateRequired>
+					</xp:this.validators>
+					<xp:this.attrs>
+						<xp:attr name="placeholder" value="First name"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</div>
+			<div class="col-xs-6">
+				<xp:inputText id="fldLastName" value="#{job.representative.lastName}"
+					styleClass="valid-#{javascript:this.isValid()}" required="true">
+					<xp:this.validators>
+						<xp:validateRequired message="Please give a representive last name">
+						</xp:validateRequired>
+					</xp:this.validators>
+					<xp:this.attrs>
+						<xp:attr name="placeholder" value="Last name"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</div>
+			<xp:message id="message4" for="fldLastName" styleClass="help-block with-errors">
+			</xp:message>
+			<xp:message id="message3" for="fldFirstName" styleClass="help-block with-errors">
+			</xp:message>
+		</div>
 	</xp:div>
 
-	<xp:div
-		styleClass="form-group is-valid-#{javascript:getComponent('fldLastName').isValid()}">
-		<label for="fldLastName">Representive last name</label>
-		<xp:inputText id="fldLastName" value="#{job.representative.lastName}"
-			styleClass="valid-#{javascript:this.isValid()}" required="true">
-			<xp:this.validators>
-				<xp:validateRequired message="Please give a representive last name">
-				</xp:validateRequired>
-			</xp:this.validators>
-		</xp:inputText>
 
-		<xp:message id="message4" for="fldLastName" styleClass="help-block with-errors">
-		</xp:message>
-	</xp:div>
 
 </xp:view>

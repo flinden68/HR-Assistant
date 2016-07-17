@@ -54,7 +54,7 @@
 								</div>
 								<div class="box-body">
 
-									<xp:text escape="true" id="computedField2" value="#{job.description}">
+									<xp:text escape="true" id="computedField2" value="#{job.descriptionAbstract}">
 									</xp:text>
 								</div>
 								<div class="box-footer">
