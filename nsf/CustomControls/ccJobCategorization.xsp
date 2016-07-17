@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:div
+		styleClass="form-group is-valid-#{javascript:getComponent('fldIndustry').isValid()}">
+		<label for="fldIndustry">Industry</label>
+		<xp:comboBox id="fldIndustry" value="#{job.industry}"
+			required="true">
+			<xp:selectItem itemLabel="Please choose industry"
+				itemValue="">
+			</xp:selectItem>
+			<xp:selectItems value="${jobController.jobIndustrySelection}">
+			</xp:selectItems>
+			<xp:this.validators>
+				<xp:validateRequired message="Industry is mandatory">
+				</xp:validateRequired>
+			</xp:this.validators>
+
+			<xp:eventHandler event="onchange" submit="true"
+				onStart="waitingDialog.show('loading industries')" onComplete="waitingDialog.hide();"
+				refreshMode="partial" disableValidators="true" refreshId="fldIndustry">
+
+			</xp:eventHandler>
+
+		</xp:comboBox>
+		<xp:message id="message6" for="fldIndustry" styleClass="help-block with-errors"></xp:message>
+	</xp:div>
+
+	<xp:div
+		styleClass="form-group is-valid-#{javascript:getComponent('fldJobType').isValid()}">
+		<label for="fldJobType">Job type</label>
+		<xp:comboBox id="fldJobType" value="#{job.jobType}"
+			required="true">
+			<xp:selectItem itemLabel="Please choose a job type"
+				itemValue="">
+			</xp:selectItem>
+			<xp:selectItems value="${jobController.jobTypeSelection}">
+			</xp:selectItems>
+			<xp:this.validators>
+				<xp:validateRequired message="Job type is mandatory">
+				</xp:validateRequired>
+			</xp:this.validators>
+
+			<xp:eventHandler event="onchange" submit="true"
+				onStart="waitingDialog.show('loading job type')" onComplete="waitingDialog.hide();"
+				refreshMode="partial" disableValidators="true" refreshId="fldJobType">
+			</xp:eventHandler>
+		</xp:comboBox>
+		<xp:message id="message5" for="fldJobType" styleClass="help-block with-errors"></xp:message>
+	</xp:div>
+
+	<xp:div
+		styleClass="form-group is-valid-#{javascript:getComponent('fldCareerLevel').isValid()}">
+		<label for="fldCareerLevel">Job type</label>
+		<xp:comboBox id="fldCareerLevel" value="#{job.careerLevel}"
+			required="true">
+			<xp:selectItem itemLabel="Please choose a career level"
+				itemValue="">
+			</xp:selectItem>
+			<xp:selectItems value="${jobController.careerLevelSelection}">
+			</xp:selectItems>
+			<xp:this.validators>
+				<xp:validateRequired message="Career level is mandatory">
+				</xp:validateRequired>
+			</xp:this.validators>
+
+			<xp:eventHandler event="onchange" submit="true"
+				onStart="waitingDialog.show('loading job type')" onComplete="waitingDialog.hide();"
+				refreshMode="partial" disableValidators="true" refreshId="fldCareerLevel">
+			</xp:eventHandler>
+		</xp:comboBox>
+		<xp:message id="message7" for="fldCareerLevel" styleClass="help-block with-errors"></xp:message>
+	</xp:div>
+
+	<xc:ccBSDatePickerFull dateFormat="dd-MM-yyyy"
+		fieldDataSource="#{job}" fieldName="startDate" fieldLabel="Start date"
+		required="true">
+	</xc:ccBSDatePickerFull>
+
+
+
+
+</xp:view>

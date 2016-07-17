@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xp:div
+		styleClass="form-group is-valid-#{javascript:getComponent('fldJobName').isValid()}">
+		<label for="fldJobName">Job name</label>
+		<xp:inputText id="fldJobName" value="#{job.name}"
+			styleClass="valid-#{javascript:this.isValid()}" required="true">
+			<xp:this.validators>
+				<xp:validateRequired message="Please give a job name">
+				</xp:validateRequired>
+			</xp:this.validators>
+		</xp:inputText>
+		<xp:message id="message1" for="fldJobName" styleClass="help-block with-errors"></xp:message>
+	</xp:div>
+	<xp:div
+		styleClass="form-group
+									is-valid-#{javascript:getComponent('fldDescriptionAbstract').isValid()}">
+		<label for="fldDescription">Abstract</label>
+		<xp:inputTextarea id="fldDescriptionAbstract" value="#{job.descriptionAbstract}"
+			styleClass="form-control
+									valid-#{javascript:this.isValid()}"
+			required="true">
+			<xp:this.validators>
+				<xp:validateRequired message="Please give
+									a description abstract">
+				</xp:validateRequired>
+			</xp:this.validators>
+		</xp:inputTextarea>
+		<xp:message id="message8" for="fldDescriptionAbstract"
+			styleClass="help-block
+									with-errors"></xp:message>
+	</xp:div>
+	<xp:div
+		styleClass="form-group is-valid-#{javascript:getComponent('fldDescription').isValid()}">
+		<label for="fldDescription">Description</label>
+		<xp:inputRichText value="#{job.description}" id="fldDescription"></xp:inputRichText>
+		<xp:message id="message9" for="fldDescription" styleClass="help-block with-errors"></xp:message>
+	</xp:div>
+
+
+
+</xp:view>
