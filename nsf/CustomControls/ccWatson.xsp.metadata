@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="a7a" sequence="97" unid="E994080068CCD508C1257FED00416963">
+<noteinfo noteid="a7a" sequence="427" unid="E994080068CCD508C1257FED00416963">
 <created><datetime dst="true">20160711T135428,19+02</datetime></created>
-<modified><datetime dst="true">20160711T142144,16+02</datetime></modified>
-<revised><datetime dst="true">20160711T142144,14+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160711T142144,14+02</datetime></lastaccessed>
+<modified><datetime dst="true">20160718T211421,06+02</datetime></modified>
+<revised><datetime dst="true">20160718T211421,04+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160718T211421,04+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20160711T135428,19+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
 <wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$Flags"><text>gC~4;</text></item>
-
-
 <item name="$TITLE" sign="true"><text>ccWatson.xsp</text></item>
 
 
 
+
+
 <item name="$FileNames" sign="true"><text>ccWatson.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
+<item name="$DesignerVersion"><text>8.5.2</text></item>
 
 
 

@@ -1,283 +1,292 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faces-config>
-  <managed-bean>
-    <managed-bean-name>openLogBean</managed-bean-name>
-    <managed-bean-class>com.paulwithers.openLog.OpenLogErrorHolder
+	<managed-bean>
+		<managed-bean-name>openLogBean</managed-bean-name>
+		<managed-bean-class>com.paulwithers.openLog.OpenLogErrorHolder
 		</managed-bean-class>
-    <managed-bean-scope>request</managed-bean-scope>
-  </managed-bean>
-  <!-- Application Controller -->
-  <managed-bean>
-    <managed-bean-name>applicationController
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<!-- Application Controller -->
+	<managed-bean>
+		<managed-bean-name>applicationController
 		</managed-bean-name>
-    <managed-bean-class>
+		<managed-bean-class>
 			ch.belsoft.hrassistant.controller.ApplicationController
 		</managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
-  </managed-bean>
-  <!-- JobApplication Controller -->
-  <managed-bean>
-    <managed-bean-name>jobApplicationController
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<!-- JobApplication Controller -->
+	<managed-bean>
+		<managed-bean-name>jobApplicationController
 		</managed-bean-name>
-    <managed-bean-class>
+		<managed-bean-class>
 			ch.belsoft.hrassistant.job.controller.JobApplicationController
 		</managed-bean-class>
-    <managed-bean-scope>view</managed-bean-scope>
-    <managed-property>
-      <property-name>jobDAO</property-name>
-      <value>#{jobDAO}</value>
-    </managed-property>
-    <managed-property>
-      <property-name>jobApplicationDAO</property-name>
-      <value>#{jobApplicationDAO}</value>
-    </managed-property>
-    <managed-property>
-      <property-name>applicationController
+		<managed-bean-scope>view</managed-bean-scope>
+		<managed-property>
+			<property-name>jobDAO</property-name>
+			<value>#{jobDAO}</value>
+		</managed-property>
+
+		<managed-property>
+			<property-name>jobApplicationDAO</property-name>
+			<value>#{jobApplicationDAO}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>applicationController
 			</property-name>
-      <value>#{applicationController}</value>
-    </managed-property>
-    <managed-property>
-      <property-name>attachmentController
+			<value>#{applicationController}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>attachmentController
 			</property-name>
-      <value>#{attachmentController}</value>
-    </managed-property>
-  </managed-bean>
-  <!-- Job Controller -->
-  <managed-bean>
-    <managed-bean-name>jobController
+			<value>#{attachmentController}</value>
+		</managed-property>
+	</managed-bean>
+	<!-- Job Controller -->
+	<managed-bean>
+		<managed-bean-name>jobController
 		</managed-bean-name>
-    <managed-bean-class>
+		<managed-bean-class>
 			ch.belsoft.hrassistant.job.controller.JobController
 		</managed-bean-class>
-    <managed-bean-scope>view</managed-bean-scope>
-    <managed-property>
-      <property-name>jobDAO</property-name>
-      <value>#{jobDAO}</value>
-    </managed-property>
-    <managed-property>
-      <property-name>companyDAO</property-name>
-      <value>#{companyDAO}</value>
-    </managed-property>
-    <managed-property>
-      <property-name>applicationController
+		<managed-bean-scope>view</managed-bean-scope>
+		<managed-property>
+			<property-name>toneAnalyzerInjector
 			</property-name>
-      <value>#{applicationController}</value>
-    </managed-property>
-    <managed-property>
-      <property-name>attachmentController
+			<value>#{toneAnalyzerInjector}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>jobDAO</property-name>
+			<value>#{jobDAO}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>companyDAO</property-name>
+			<value>#{companyDAO}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>applicationController
 			</property-name>
-      <value>#{attachmentController}</value>
-    </managed-property>
-  </managed-bean>
-  <!-- Company Controller -->
-  <managed-bean>
-    <managed-bean-name>companyController
+			<value>#{applicationController}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>attachmentController
+			</property-name>
+			<value>#{attachmentController}</value>
+		</managed-property>
+	</managed-bean>
+	<!-- Company Controller -->
+	<managed-bean>
+		<managed-bean-name>companyController
 		</managed-bean-name>
-    <managed-bean-class>
+		<managed-bean-class>
 			ch.belsoft.hrassistant.company.controller.CompanyController
 		</managed-bean-class>
-    <managed-bean-scope>view</managed-bean-scope>
-    <managed-property>
-      <property-name>companyDAO</property-name>
-      <value>#{companyDAO}</value>
-    </managed-property>
-    <managed-property>
-      <property-name>applicationController
+		<managed-bean-scope>view</managed-bean-scope>
+		<managed-property>
+			<property-name>companyDAO</property-name>
+			<value>#{companyDAO}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>applicationController
 			</property-name>
-      <value>#{applicationController}</value>
-    </managed-property>
-    <managed-property>
-      <property-name>attachmentController
+			<value>#{applicationController}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>attachmentController
 			</property-name>
-      <value>#{attachmentController}</value>
-    </managed-property>
-  </managed-bean>
-  <!-- Configuration controller -->
-  <managed-bean>
-    <managed-bean-name>configurationController
+			<value>#{attachmentController}</value>
+		</managed-property>
+	</managed-bean>
+	<!-- Configuration controller -->
+	<managed-bean>
+		<managed-bean-name>configurationController
 		</managed-bean-name>
-    <managed-bean-class>
+		<managed-bean-class>
 			ch.belsoft.hrassistant.config.controller.ConfigurationController
 		</managed-bean-class>
-    <managed-bean-scope>view</managed-bean-scope>
-    <managed-property>
-      <property-name>configurationDAO</property-name>
-      <value>#{configurationDAO}</value>
-    </managed-property>
-    <managed-property>
-      <property-name>applicationController
+		<managed-bean-scope>view</managed-bean-scope>
+		<managed-property>
+			<property-name>configurationDAO</property-name>
+			<value>#{configurationDAO}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>applicationController
 			</property-name>
-      <value>#{applicationController}</value>
-    </managed-property>
-  </managed-bean>
-  <!-- Attachment controller -->
-  <managed-bean>
-    <managed-bean-name>attachmentController
+			<value>#{applicationController}</value>
+		</managed-property>
+	</managed-bean>
+	<!-- Attachment controller -->
+	<managed-bean>
+		<managed-bean-name>attachmentController
 		</managed-bean-name>
-    <managed-bean-class>
+		<managed-bean-class>
 			ch.belsoft.hrassistant.attachment.controller.AttachmentController
 		</managed-bean-class>
-    <managed-bean-scope>view</managed-bean-scope>
-    <managed-property>
-      <property-name>attachmentDAO</property-name>
-      <value>#{attachmentDAO}</value>
-    </managed-property>
-    <managed-property>
-      <property-name>applicationController
+		<managed-bean-scope>view</managed-bean-scope>
+		<managed-property>
+			<property-name>attachmentDAO</property-name>
+			<value>#{attachmentDAO}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>applicationController
 			</property-name>
-      <value>#{applicationController}</value>
-    </managed-property>
-  </managed-bean>
-  <!-- Company DAO -->
-  <managed-bean>
-    <managed-bean-name>companyDAO</managed-bean-name>
-    <managed-bean-class>ch.belsoft.hrassistant.company.dao.CompanyDAO
+			<value>#{applicationController}</value>
+		</managed-property>
+	</managed-bean>
+	<!-- Company DAO -->
+	<managed-bean>
+		<managed-bean-name>companyDAO</managed-bean-name>
+		<managed-bean-class>ch.belsoft.hrassistant.company.dao.CompanyDAO
 		</managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
-    <managed-property>
-      <property-name>cloudantService</property-name>
-      <value>#{cloudantService}</value>
-    </managed-property>
-  </managed-bean>
-  <!-- Attachment DAO -->
-  <managed-bean>
-    <managed-bean-name>attachmentDAO</managed-bean-name>
-    <managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>cloudantService</property-name>
+			<value>#{cloudantService}</value>
+		</managed-property>
+	</managed-bean>
+	<!-- Attachment DAO -->
+	<managed-bean>
+		<managed-bean-name>attachmentDAO</managed-bean-name>
+		<managed-bean-class>
 			ch.belsoft.hrassistant.attachment.dao.AttachmentDAO
 		</managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
-    <managed-property>
-      <property-name>cloudantService</property-name>
-      <value>#{cloudantService}</value>
-    </managed-property>
-  </managed-bean>
-  <!-- Company DAO -->
-  <managed-bean>
-    <managed-bean-name>companyDAO</managed-bean-name>
-    <managed-bean-class>ch.belsoft.hrassistant.company.dao.CompanyDAO
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>cloudantService</property-name>
+			<value>#{cloudantService}</value>
+		</managed-property>
+	</managed-bean>
+	<!-- Company DAO -->
+	<managed-bean>
+		<managed-bean-name>companyDAO</managed-bean-name>
+		<managed-bean-class>ch.belsoft.hrassistant.company.dao.CompanyDAO
 		</managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
-    <managed-property>
-      <property-name>cloudantService</property-name>
-      <value>#{cloudantService}</value>
-    </managed-property>
-  </managed-bean>
-  <!-- Job DAO -->
-  <managed-bean>
-    <managed-bean-name>jobDAO</managed-bean-name>
-    <managed-bean-class>ch.belsoft.hrassistant.job.dao.JobDAO
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>cloudantService</property-name>
+			<value>#{cloudantService}</value>
+		</managed-property>
+	</managed-bean>
+	<!-- Job DAO -->
+	<managed-bean>
+		<managed-bean-name>jobDAO</managed-bean-name>
+		<managed-bean-class>ch.belsoft.hrassistant.job.dao.JobDAO
 		</managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
-    <managed-property>
-      <property-name>cloudantService</property-name>
-      <value>#{cloudantService}</value>
-    </managed-property>
-  </managed-bean>
-  <!-- JobApplication DAO -->
-  <managed-bean>
-    <managed-bean-name>jobApplicationDAO
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>cloudantService</property-name>
+			<value>#{cloudantService}</value>
+		</managed-property>
+	</managed-bean>
+	<!-- JobApplication DAO -->
+	<managed-bean>
+		<managed-bean-name>jobApplicationDAO
 		</managed-bean-name>
-    <managed-bean-class>ch.belsoft.hrassistant.job.dao.JobApplicationDAO
+		<managed-bean-class>ch.belsoft.hrassistant.job.dao.JobApplicationDAO
 		</managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
-    <managed-property>
-      <property-name>cloudantService</property-name>
-      <value>#{cloudantService}</value>
-    </managed-property>
-  </managed-bean>
-  <!-- Configuration DAO -->
-  <managed-bean>
-    <managed-bean-name>configurationDAO
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>cloudantService</property-name>
+			<value>#{cloudantService}</value>
+		</managed-property>
+	</managed-bean>
+	<!-- Configuration DAO -->
+	<managed-bean>
+		<managed-bean-name>configurationDAO
 		</managed-bean-name>
-    <managed-bean-class>
+		<managed-bean-class>
 			ch.belsoft.hrassistant.config.dao.ConfigurationDAO
 		</managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
-    <managed-property>
-      <property-name>cloudantService</property-name>
-      <value>#{cloudantService}</value>
-    </managed-property>
-  </managed-bean>
-  <!-- JobApplication DAO -->
-  <managed-bean>
-    <managed-bean-name>jobApplicationDAO
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>cloudantService</property-name>
+			<value>#{cloudantService}</value>
+		</managed-property>
+	</managed-bean>
+	<!-- JobApplication DAO -->
+	<managed-bean>
+		<managed-bean-name>jobApplicationDAO
 		</managed-bean-name>
-    <managed-bean-class>ch.belsoft.hrassistant.job.dao.JobApplicationDAO
+		<managed-bean-class>ch.belsoft.hrassistant.job.dao.JobApplicationDAO
 		</managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
-    <managed-property>
-      <property-name>cloudantService</property-name>
-      <value>#{cloudantService}</value>
-    </managed-property>
-  </managed-bean>
-  <managed-bean>
-    <managed-bean-name>cloudantService</managed-bean-name>
-    <managed-bean-class>ch.belsoft.hrassistant.service.CloudantService
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>cloudantService</property-name>
+			<value>#{cloudantService}</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>cloudantService</managed-bean-name>
+		<managed-bean-class>ch.belsoft.hrassistant.service.CloudantService
 		</managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
-    <managed-property>
-      <property-name>account</property-name>
-      <value>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>account</property-name>
+			<value>
 				f44a2403-965e-4345-bc84-4fd485047735-bluemix:e0ab6592f8d6a0192d8d819fbe656a112f54fc82464a46ca9005cdc63b396d4a@f44a2403-965e-4345-bc84-4fd485047735-bluemix
 			</value>
-    </managed-property>
-    <managed-property>
-      <property-name>username</property-name>
-      <value>f44a2403-965e-4345-bc84-4fd485047735-bluemix
+		</managed-property>
+		<managed-property>
+			<property-name>username</property-name>
+			<value>f44a2403-965e-4345-bc84-4fd485047735-bluemix
 			</value>
-    </managed-property>
-    <managed-property>
-      <property-name>password</property-name>
-      <value>
+		</managed-property>
+		<managed-property>
+			<property-name>password</property-name>
+			<value>
 				e0ab6592f8d6a0192d8d819fbe656a112f54fc82464a46ca9005cdc63b396d4a
 			</value>
-    </managed-property>
-    <managed-property>
-      <property-name>cloudantDb</property-name>
-      <value>hrassistant</value>
-    </managed-property>
-  </managed-bean>
-  <managed-bean>
-    <managed-bean-name>toneAnalyzerService
+		</managed-property>
+		<managed-property>
+			<property-name>cloudantDb</property-name>
+			<value>hrassistant</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>toneAnalyzerService
 		</managed-bean-name>
-    <managed-bean-class>
+		<managed-bean-class>
 			com.ibm.bluemix.services.watson.toneanalyzer.service.ToneAnalyzerService
 		</managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
-    <managed-property>
-      <property-name>username</property-name>
-      <value>dab3983d-7c06-4a51-b1f2-d50bd211d093
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>username</property-name>
+			<value>dab3983d-7c06-4a51-b1f2-d50bd211d093
 			</value>
-    </managed-property>
-    <managed-property>
-      <property-name>password</property-name>
-      <value>
+		</managed-property>
+		<managed-property>
+			<property-name>password</property-name>
+			<value>
 				G41GQt8q6J5I
 			</value>
-    </managed-property>
-  </managed-bean>
-  <managed-bean>
-    <managed-bean-name>testConfiguration
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>testConfiguration
 		</managed-bean-name>
-    <managed-bean-class>
+		<managed-bean-class>
 			ch.belsoft.test.hrassistant.config.TestConfiguration
 		</managed-bean-class>
-    <managed-bean-scope>request</managed-bean-scope>
-  </managed-bean>
-  <managed-bean>
-    <managed-bean-name>toneAnalyzerInjector
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>toneAnalyzerInjector
 		</managed-bean-name>
-    <managed-bean-class>
-			ch.belsoft.hrassistant.watson.injector.ToneAnalyzerInjector
+		<managed-bean-class>
+			com.ibm.bluemix.services.watson.toneanalyzer.injector.ToneAnalyzerInjector
 		</managed-bean-class>
-    <managed-bean-scope>view</managed-bean-scope>
-    <managed-property>
-      <property-name>toneAnalyzerService</property-name>
-      <value>
+		<managed-bean-scope>view</managed-bean-scope>
+		<managed-property>
+			<property-name>toneAnalyzerService</property-name>
+			<value>
 				#{toneAnalyzerService}
 			</value>
-    </managed-property>
-  </managed-bean>
-  <!--AUTOGEN-START-BUILDER: Automatically generated by IBM Domino Designer. Do not modify.-->
-  <!--AUTOGEN-END-BUILDER: End of automatically generated section-->
+		</managed-property>
+	</managed-bean>
+	<!--
+		AUTOGEN-START-BUILDER: Automatically generated by IBM Domino Designer.
+		Do not modify.
+	-->
+	<!--AUTOGEN-END-BUILDER: End of automatically generated section-->
 </faces-config>

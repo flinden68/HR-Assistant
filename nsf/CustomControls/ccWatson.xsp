@@ -5,62 +5,51 @@
 		value="#{requestScope.textToAnalyser}" var="textToAnalyse">
 		</xp:dataContext> </xp:this.dataContexts>
 	-->
-	<xp:div styleClass="box" id="pnlDataItemList">
+	<xp:div styleClass="box" id="pnlToneAnalyzer">
 
 		<div class="box-header">
 			<xp:text escape="true" id="computedField4" tagName="h3"
-				styleClass="box-title" value="Watson Tone Analyzer"></xp:text>
+				styleClass="box-title" value="Watson Tone Analyzer #{compositeData.toneAnalyzerable}"></xp:text>
+
+		</div>
+
+		<div class="box-header">
+			<xp:button value="refresh" id="button2" styleClass="btn btn-danger">
+				<xp:eventHandler event="onclick" submit="true"
+					onStart="waitingDialog.show('analyzing text...')" onComplete="waitingDialog.hide()"
+					refreshMode="partial" refreshId="pnlToneAnalyzer"
+					disableValidators="true" execMode="partial" execId="content-wrapper">
+					<xp:this.action>
+						<xp:executeScript
+							script="#{javascript:compositeData.toneAnalyzerable.analyzeText()}">
+						</xp:executeScript>
+					</xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
 		</div>
 
 		<!-- /.box-header -->
 
 		<div class="box-body">
-			<xp:div styleClass="form-group}">
-				<label for="fldText">Text to analyze</label>
-				<xp:inputTextarea id="inputText1"
-					value="#{requestScope.textToAnalyser}" rows="5" styleClass="form-control">
-					<xp:this.attrs>
-						<xp:attr name="placeholder" value="Enter the text you want Watson to analyze">
-						</xp:attr>
-					</xp:this.attrs>
-				</xp:inputTextarea>
+			<xp:div styleClass="row"
+				rendered="#{toneAnalyzerInjector.toneAnalyzerResult!=null}">
+
+				<div class="col-md-4">
+					<xc:ccChart data="#{toneAnalyzerInjector.toneAnalyzerEmotionToneChart}"
+						chartAlias="emotion" title="Emotion Tone"></xc:ccChart>
+				</div>
+				<div class="col-md-4">
+					<xc:ccChart data="#{toneAnalyzerInjector.toneAnalyzerLanguageToneChart}"
+						chartAlias="lang" title="Language Tone"></xc:ccChart>
+				</div>
+				<div class="col-md-4">
+					<xc:ccChart data="#{toneAnalyzerInjector.toneAnalyzerSocialToneChart}"
+						chartAlias="social" title="Social Tone"></xc:ccChart>
+				</div>
 			</xp:div>
 		</div>
-		<div class="box-footer ">
-			<div class="pull-right">
-				<xp:button styleClass="btn btn-success btn-margin-right"
-					value="analize" id="button1">
-					<xp:eventHandler event="onclick" submit="true"
-						onStart="waitingDialog.show('analyzing...')" onComplete="waitingDialog.hide()"
-						refreshMode="partial" refreshId="content-wrapper" execMode="partial"
-						execId="content-wrapper">
-						<xp:this.action>
-							<xp:executeScript
-								script="#{javascript:toneAnalyzerInjector.analyzeTone(requestScope.textToAnalyser)}">
-							</xp:executeScript>
-						</xp:this.action>
-					</xp:eventHandler>
-				</xp:button>
-			</div>
-		</div>
-	</xp:div>
-
-	<xp:div styleClass="row"
-		rendered="#{toneAnalyzerInjector.toneAnalyzerResult!=null}">
-
-		<div class="col-md-4">
-			<xc:ccChart data="#{toneAnalyzerInjector.toneAnalyzerEmotionToneChart}"
-				chartAlias="emotion" title="Emotion Tone"></xc:ccChart>
-		</div>
-		<div class="col-md-4">
-			<xc:ccChart data="#{toneAnalyzerInjector.toneAnalyzerLanguageToneChart}"
-				chartAlias="lang" title="Language Tone"></xc:ccChart>
-		</div>
-		<div class="col-md-4">
-			<xc:ccChart data="#{toneAnalyzerInjector.toneAnalyzerSocialToneChart}"
-				chartAlias="social" title="Social Tone"></xc:ccChart>
-		</div>
 
 	</xp:div>
+
 
 </xp:view>

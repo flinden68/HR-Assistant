@@ -9,6 +9,11 @@ import java.util.TreeSet;
 
 import javax.faces.model.SelectItem;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
+import com.ibm.bluemix.services.watson.toneanalyzer.injector.ToneAnalyzerInjector;
+import com.ibm.bluemix.services.watson.toneanalyzer.interfaces.ToneAnalyzable;
+
 import ch.belsoft.hrassistant.attachment.model.AttachmentHolder;
 import ch.belsoft.hrassistant.company.dao.CompanyDAO;
 import ch.belsoft.hrassistant.config.model.ConfigType;
@@ -20,11 +25,12 @@ import ch.belsoft.hrassistant.job.model.Address;
 import ch.belsoft.hrassistant.job.model.Company;
 import ch.belsoft.hrassistant.job.model.Job;
 import ch.belsoft.hrassistant.job.model.Person;
+
 import ch.belsoft.tools.Logging;
 import ch.belsoft.tools.XPagesUtil;
 
 public class JobController extends ControllerBase implements
-		IGuiController<Job>, Serializable {
+		IGuiController<Job>, ToneAnalyzable, Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private static final String PAGETITLE_NEW = "New Job";
@@ -39,6 +45,8 @@ public class JobController extends ControllerBase implements
 	private List<Job> jobs = new ArrayList<Job>();
 	private List<Company> companies;
 	private String searchQueryListing;
+
+	private ToneAnalyzerInjector toneAnalyzerInjector = null;
 
 	public JobController() {
 	}
@@ -284,6 +292,26 @@ public class JobController extends ControllerBase implements
 
 	public String getSearchQueryListing() {
 		return searchQueryListing;
+	}
+
+	public void analyzeText() {
+		try {
+			System.out.println("analyzeText");
+			String html = this.job.getDescription().getHTML();
+			String text = StringEscapeUtils.escapeHtml4(html);
+			this.toneAnalyzerInjector.analyzeTone(text);
+		} catch (Exception e) {
+			Logging.logError(e);
+		}
+	}
+
+	public ToneAnalyzerInjector getToneAnalyzerInjector() {
+		return toneAnalyzerInjector;
+	}
+
+	public void setToneAnalyzerInjector(
+			ToneAnalyzerInjector toneAnalyzerInjector) {
+		this.toneAnalyzerInjector = toneAnalyzerInjector;
 	}
 
 }

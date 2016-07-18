@@ -5,7 +5,7 @@
 			<xp:panel xp:key="Content">
 				<div class="row">
 					<div class="col-md-12">
-						<xc:ccWatson></xc:ccWatson>
+						<!-- <xc:ccWatson></xc:ccWatson> -->
 					</div>
 				</div>
 			</xp:panel>

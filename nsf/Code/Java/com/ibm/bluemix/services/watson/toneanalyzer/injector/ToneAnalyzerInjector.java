@@ -1,4 +1,4 @@
-package ch.belsoft.hrassistant.watson.injector;
+package com.ibm.bluemix.services.watson.toneanalyzer.injector;
 
 import java.io.Serializable;
 
@@ -10,7 +10,9 @@ import com.ibm.bluemix.services.watson.toneanalyzer.service.ToneAnalyzerService;
 import ch.belsoft.charts.model.Chart;
 import ch.belsoft.hrassistant.controller.ControllerBase;
 import ch.belsoft.hrassistant.controller.IGuiController;
+import ch.belsoft.hrassistant.service.CloudantService;
 import ch.belsoft.tools.Logging;
+import ch.belsoft.tools.XPagesUtil;
 
 public class ToneAnalyzerInjector implements Serializable {
 
@@ -22,8 +24,15 @@ public class ToneAnalyzerInjector implements Serializable {
 	private ToneAnalyzerService toneAnalyzerService = null;
 	private ToneAnalyzerConsumer toneAnalyzerConsumer = null;
 
+	private static final String BEAN_NAME = "toneAnalyzerInjector";
+
 	public ToneAnalyzerInjector() {
 
+	}
+
+	// access to the bean
+	public static ToneAnalyzerInjector get() {
+		return (ToneAnalyzerInjector) XPagesUtil.resolveVariable(BEAN_NAME);
 	}
 
 	private ToneAnalyzerConsumer getToneAnalyzerConsumer() {

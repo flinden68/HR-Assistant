@@ -16,6 +16,10 @@ input.font-normal,select.font-normal {
 	float: none;
 }
 
+.cke_combo_text{
+	height:21px;
+	}
+
 .bootstrapPagerPrevious {
 	padding: 6px 12px;
 	background-color: #fff;
