@@ -5,9 +5,9 @@
     <default-prefix>xc</default-prefix>
   </faces-config-extension>
   <composite-component>
-    <component-type>ccWatson</component-type>
-    <composite-name>ccWatson</composite-name>
-    <composite-file>/ccWatson.xsp</composite-file>
+    <component-type>ccWatsonToneAnalyzer</component-type>
+    <composite-name>ccWatsonToneAnalyzer</composite-name>
+    <composite-file>/ccWatsonToneAnalyzer.xsp</composite-file>
     <composite-extension>
       <designer-extension>
         <in-palette>true</in-palette>
@@ -15,6 +15,13 @@
     </composite-extension>
     <property>
       <property-name>toneAnalyzerable</property-name>
+      <property-class>object</property-class>
+      <property-extension>
+        <required>true</required>
+      </property-extension>
+    </property>
+    <property>
+      <property-name>toneAnalyzerableController</property-name>
       <property-class>object</property-class>
       <property-extension>
         <required>true</required>

@@ -2,6 +2,7 @@ package com.ibm.bluemix.services.watson.toneanalyzer.injector;
 
 import java.io.Serializable;
 
+import com.ibm.bluemix.services.watson.toneanalyzer.interfaces.ToneAnalyzable;
 import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneAnalyzerRequest;
 import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneAnalyzerResult;
 import com.ibm.bluemix.services.watson.toneanalyzer.service.ToneAnalyzerConsumer;
@@ -42,11 +43,15 @@ public class ToneAnalyzerInjector implements Serializable {
 		return toneAnalyzerConsumer;
 	}
 
-	public void analyzeTone(String text) {
+	public void analyzeTone(String text, ToneAnalyzable toneAnalyzerable) {
 		try {
 			ToneAnalyzerRequest toneAnalyzerRequest = new ToneAnalyzerRequest();
 			toneAnalyzerRequest.setText(text);
 			getToneAnalyzerConsumer().analyzeTone(toneAnalyzerRequest);
+			toneAnalyzerable
+					.setToneAnalyzerResult(this.getToneAnalyzerResult());
+			System.out.println("toneAnalyzerable: "
+					+ toneAnalyzerable.getToneAnalyzerResult());
 		} catch (Exception e) {
 			Logging.logError(e);
 		}

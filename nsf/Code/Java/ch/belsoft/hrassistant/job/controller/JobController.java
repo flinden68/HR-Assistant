@@ -12,7 +12,7 @@ import javax.faces.model.SelectItem;
 import org.apache.commons.lang3.StringEscapeUtils;
 
 import com.ibm.bluemix.services.watson.toneanalyzer.injector.ToneAnalyzerInjector;
-import com.ibm.bluemix.services.watson.toneanalyzer.interfaces.ToneAnalyzable;
+import com.ibm.bluemix.services.watson.toneanalyzer.interfaces.ToneAnalyzableController;
 
 import ch.belsoft.hrassistant.attachment.model.AttachmentHolder;
 import ch.belsoft.hrassistant.company.dao.CompanyDAO;
@@ -30,7 +30,7 @@ import ch.belsoft.tools.Logging;
 import ch.belsoft.tools.XPagesUtil;
 
 public class JobController extends ControllerBase implements
-		IGuiController<Job>, ToneAnalyzable, Serializable {
+		IGuiController<Job>, ToneAnalyzableController, Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private static final String PAGETITLE_NEW = "New Job";
@@ -299,7 +299,10 @@ public class JobController extends ControllerBase implements
 			System.out.println("analyzeText");
 			String html = this.job.getDescription().getHTML();
 			String text = StringEscapeUtils.escapeHtml4(html);
-			this.toneAnalyzerInjector.analyzeTone(text);
+			System.out.println("analyzing: "+text);
+			this.toneAnalyzerInjector.analyzeTone(text, this.job);
+			System.out.println("result: "+this.job.getToneAnalyzerResult());
+			
 		} catch (Exception e) {
 			Logging.logError(e);
 		}

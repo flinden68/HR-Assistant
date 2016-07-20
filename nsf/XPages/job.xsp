@@ -69,7 +69,8 @@
 						</div>
 					</div>
 				</div>
-				<xc:ccWatson toneAnalyzerable="#{jobController}"></xc:ccWatson>
+				<xc:ccWatsonToneAnalyzer toneAnalyzerable="#{job}"
+					toneAnalyzerableController="#{jobController}"></xc:ccWatsonToneAnalyzer>
 				<div class="row">
 					<xp:div styleClass="col-md-12" id="pnlConfigurationList">
 						<xc:ccJobList></xc:ccJobList>

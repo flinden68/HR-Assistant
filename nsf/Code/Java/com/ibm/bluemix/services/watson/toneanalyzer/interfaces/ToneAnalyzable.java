@@ -1,14 +1,10 @@
 package com.ibm.bluemix.services.watson.toneanalyzer.interfaces;
 
-import com.ibm.bluemix.services.watson.toneanalyzer.injector.ToneAnalyzerInjector;
-
+import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneAnalyzerResult;
 
 public interface ToneAnalyzable {
 
-	public void analyzeText();
+	public ToneAnalyzerResult getToneAnalyzerResult();
 
-	public ToneAnalyzerInjector getToneAnalyzerInjector();
-	 
-	public void setToneAnalyzerInjector(ToneAnalyzerInjector toneAnalyzerInjector);
-
+	public void setToneAnalyzerResult(ToneAnalyzerResult toneAnalyzerResult);
 }

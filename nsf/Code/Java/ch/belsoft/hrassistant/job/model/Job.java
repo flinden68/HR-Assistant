@@ -5,8 +5,10 @@ import java.util.Date;
 
 import ch.belsoft.hrassistant.model.DataItem;
 import com.ibm.xsp.http.MimeMultipart;
+import com.ibm.bluemix.services.watson.toneanalyzer.interfaces.ToneAnalyzable;
+import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneAnalyzerResult;
 
-public class Job extends DataItem implements Serializable {
+public class Job extends DataItem implements ToneAnalyzable, Serializable {
 
 	/**
      * 
@@ -24,6 +26,7 @@ public class Job extends DataItem implements Serializable {
 	private MimeMultipart description;
 	private String descriptionAbstract;
 	private Date startDate;
+	private ToneAnalyzerResult toneAnalyzerResult;
 
 	public String getName() {
 		return name;
@@ -123,6 +126,14 @@ public class Job extends DataItem implements Serializable {
 
 	public Date getStartDate() {
 		return startDate;
+	}
+
+	public ToneAnalyzerResult getToneAnalyzerResult() {
+		return toneAnalyzerResult;
+	}
+
+	public void setToneAnalyzerResult(ToneAnalyzerResult toneAnalyzerResult) {
+		this.toneAnalyzerResult = toneAnalyzerResult;
 	}
 
 }
