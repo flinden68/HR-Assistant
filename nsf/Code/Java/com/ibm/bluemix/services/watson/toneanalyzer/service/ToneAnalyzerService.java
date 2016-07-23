@@ -1,6 +1,4 @@
 package com.ibm.bluemix.services.watson.toneanalyzer.service;
-
-import ch.belsoft.hrassistant.service.CloudantService;
 import ch.belsoft.tools.Logging;
 import ch.belsoft.tools.XPagesUtil;
 

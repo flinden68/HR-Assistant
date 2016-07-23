@@ -2,8 +2,6 @@ package ch.belsoft.hrassistant.config.model;
 
 import java.util.Arrays;
 
-import ch.belsoft.tools.fa.FontAwesomeIcons;
-
 public enum ConfigParamsMenuCategory {
 	HR("HR Menu"), JOB_APPLICANT("Job Applicant's Menu");
 

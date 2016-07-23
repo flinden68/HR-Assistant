@@ -2,16 +2,13 @@ package com.ibm.bluemix.services.watson.toneanalyzer.injector;
 
 import java.io.Serializable;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
 import com.ibm.bluemix.services.watson.toneanalyzer.interfaces.ToneAnalyzable;
 import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneAnalyzerRequest;
-import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneAnalyzerResult;
 import com.ibm.bluemix.services.watson.toneanalyzer.service.ToneAnalyzerConsumer;
 import com.ibm.bluemix.services.watson.toneanalyzer.service.ToneAnalyzerService;
 
-import ch.belsoft.charts.model.Chart;
-import ch.belsoft.hrassistant.controller.ControllerBase;
-import ch.belsoft.hrassistant.controller.IGuiController;
-import ch.belsoft.hrassistant.service.CloudantService;
 import ch.belsoft.tools.Logging;
 import ch.belsoft.tools.XPagesUtil;
 
@@ -43,22 +40,17 @@ public class ToneAnalyzerInjector implements Serializable {
 		return toneAnalyzerConsumer;
 	}
 
-	public void analyzeTone(String text, ToneAnalyzable toneAnalyzerable) {
+	public void analyzeTone(ToneAnalyzable toneAnalyzerable) {
 		try {
 			ToneAnalyzerRequest toneAnalyzerRequest = new ToneAnalyzerRequest();
-			toneAnalyzerRequest.setText(text);
-			getToneAnalyzerConsumer().analyzeTone(toneAnalyzerRequest);
-			toneAnalyzerable
-					.setToneAnalyzerResult(this.getToneAnalyzerResult());
-			System.out.println("toneAnalyzerable: "
-					+ toneAnalyzerable.getToneAnalyzerResult());
+			String textToAnalyze = StringEscapeUtils
+					.escapeHtml4(toneAnalyzerable.getTextToAnalyze());
+			toneAnalyzerRequest.setText(textToAnalyze);
+			getToneAnalyzerConsumer().analyzeTone(toneAnalyzerRequest,
+					toneAnalyzerable);
 		} catch (Exception e) {
 			Logging.logError(e);
 		}
-	}
-
-	public ToneAnalyzerResult getToneAnalyzerResult() {
-		return getToneAnalyzerConsumer().getToneAnalyzerResult();
 	}
 
 	public ToneAnalyzerService getToneAnalyzerService() {
@@ -67,18 +59,6 @@ public class ToneAnalyzerInjector implements Serializable {
 
 	public void setToneAnalyzerService(ToneAnalyzerService toneAnalyzerService) {
 		this.toneAnalyzerService = toneAnalyzerService;
-	}
-
-	public String getToneAnalyzerEmotionToneChart() {
-		return getToneAnalyzerConsumer().getToneAnalyzerEmotionToneChart();
-	}
-
-	public String getToneAnalyzerLanguageToneChart() {
-		return getToneAnalyzerConsumer().getToneAnalyzerLanguageToneChart();
-	}
-
-	public String getToneAnalyzerSocialToneChart() {
-		return getToneAnalyzerConsumer().getToneAnalyzerSocialToneChart();
 	}
 
 }

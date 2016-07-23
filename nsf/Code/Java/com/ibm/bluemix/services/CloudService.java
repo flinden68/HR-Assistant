@@ -1,7 +1,5 @@
 package com.ibm.bluemix.services;
 
-import ch.belsoft.hrassistant.service.CloudantService;
-
 import com.ibm.xsp.bluemix.util.BluemixContextUtil;
 
 public abstract class CloudService implements ICloudService {

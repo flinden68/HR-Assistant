@@ -7,4 +7,8 @@ public interface ToneAnalyzable {
 	public ToneAnalyzerResult getToneAnalyzerResult();
 
 	public void setToneAnalyzerResult(ToneAnalyzerResult toneAnalyzerResult);
+
+	public String getTextToAnalyze();
+
+	public void setTextToAnalyze(String textToAnalyze);
 }

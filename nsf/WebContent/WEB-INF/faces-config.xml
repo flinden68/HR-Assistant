@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faces-config>
   <managed-bean>
+    <managed-bean-name>chartFactory</managed-bean-name>
+    <managed-bean-class>ch.belsoft.charts.controller.ChartFactory
+		</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean>
     <managed-bean-name>openLogBean</managed-bean-name>
     <managed-bean-class>com.paulwithers.openLog.OpenLogErrorHolder
 		</managed-bean-class>

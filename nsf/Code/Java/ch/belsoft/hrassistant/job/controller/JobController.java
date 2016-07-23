@@ -9,8 +9,6 @@ import java.util.TreeSet;
 
 import javax.faces.model.SelectItem;
 
-import org.apache.commons.lang3.StringEscapeUtils;
-
 import com.ibm.bluemix.services.watson.toneanalyzer.injector.ToneAnalyzerInjector;
 import com.ibm.bluemix.services.watson.toneanalyzer.interfaces.ToneAnalyzableController;
 
@@ -296,13 +294,7 @@ public class JobController extends ControllerBase implements
 
 	public void analyzeText() {
 		try {
-			System.out.println("analyzeText");
-			String html = this.job.getDescription().getHTML();
-			String text = StringEscapeUtils.escapeHtml4(html);
-			System.out.println("analyzing: "+text);
-			this.toneAnalyzerInjector.analyzeTone(text, this.job);
-			System.out.println("result: "+this.job.getToneAnalyzerResult());
-			
+			this.toneAnalyzerInjector.analyzeTone(this.job);
 		} catch (Exception e) {
 			Logging.logError(e);
 		}

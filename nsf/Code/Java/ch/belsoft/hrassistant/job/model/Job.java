@@ -8,6 +8,10 @@ import com.ibm.xsp.http.MimeMultipart;
 import com.ibm.bluemix.services.watson.toneanalyzer.interfaces.ToneAnalyzable;
 import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneAnalyzerResult;
 
+/**
+ * @author FDN
+ * 
+ */
 public class Job extends DataItem implements ToneAnalyzable, Serializable {
 
 	/**
@@ -134,6 +138,19 @@ public class Job extends DataItem implements ToneAnalyzable, Serializable {
 
 	public void setToneAnalyzerResult(ToneAnalyzerResult toneAnalyzerResult) {
 		this.toneAnalyzerResult = toneAnalyzerResult;
+	}
+
+	public String getTextToAnalyze() {
+		StringBuilder sb = new StringBuilder(this.name);
+		sb.append('\n');
+		sb.append(this.descriptionAbstract);
+		sb.append(this.description.getHTML());
+		return sb.toString();
+	}
+
+	public void setTextToAnalyze(String textToAnalyze) {
+		// no setter needed.
+		return;
 	}
 
 }
