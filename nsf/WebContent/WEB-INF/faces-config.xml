@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faces-config>
   <managed-bean>
-    <managed-bean-name>chartFactory</managed-bean-name>
-    <managed-bean-class>ch.belsoft.charts.controller.ChartFactory
+    <managed-bean-name>chartFactoryToneAnalyzer</managed-bean-name>
+    <managed-bean-class>ch.belsoft.charts.controller.ChartFactoryToneAnalyzer
 		</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>

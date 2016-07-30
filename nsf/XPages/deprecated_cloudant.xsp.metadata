@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="29a" sequence="122" unid="27A3E12936F04D2CC1257FD30034048F">
+<created><datetime dst="true">20160615T112810,39+02</datetime></created>
+<modified><datetime dst="true">20160730T123258,92+02</datetime></modified>
+<revised><datetime dst="true">20160730T123258,90+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160730T123258,90+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160711T105437,54+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
+<wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
+<item name="$Flags"><text>gC~4K</text></item>
+
+
+<item name="$FileNames" sign="true"><text>cloudant.xsp</text></item>
+<item name="$TITLE" sign="true"><text>deprecated_cloudant.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+
+
+
+</note>

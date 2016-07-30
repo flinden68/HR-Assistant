@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xc:ccLayout pageTitle="Configuration List">
+		<xp:this.facets>
+			<xp:panel xp:key="Content">
+				<div class="row">
+					<div class="col-xs-12">
+						<xc:configuration_list></xc:configuration_list>
+					</div>
+				</div>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>

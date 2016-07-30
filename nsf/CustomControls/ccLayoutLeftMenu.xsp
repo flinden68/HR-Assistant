@@ -42,8 +42,8 @@
 		<li class="header">Administration</li>
 		<!-- Optionally, you can add icons to the links -->
 		<li
-			class="#{applicationController.currentPageName=='configurations.xsp'?'active':''}">
-			<a href="configurations.xsp">
+			class="#{applicationController.currentPageName=='admin_configurations.xsp'?'active':''}">
+			<a href="admin_configurations.xsp">
 				<i class="fa fa-cogs"></i>
 				<span>Configuration List</span>
 			</a>

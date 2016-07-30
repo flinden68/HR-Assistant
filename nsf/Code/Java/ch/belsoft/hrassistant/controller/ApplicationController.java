@@ -24,7 +24,7 @@ public class ApplicationController implements Serializable {
      * 
      */
 	private static final long serialVersionUID = 1L;
-	private static final String REALHOMEPAGE = "dashboard.xsp";
+	private static final String REALHOMEPAGE = "hr_dashboard.xsp";
 	private static final String BEAN_CONFIGURATIONCONTROLLER = "configurationController";
 	private static final String BEAN_CONFIGURATIONDAO = "configurationDAO";
 
@@ -33,6 +33,9 @@ public class ApplicationController implements Serializable {
 	private final LinkedHashMap<ConfigParamsMenuCategory, List<ConfigDefault>> configMapMenuItems = new LinkedHashMap<ConfigParamsMenuCategory, List<ConfigDefault>>();
 
 	private ConfigurationController configurationController = null;
+
+	private List<String> chartTypeSelection;
+	private String chartType;;
 
 	public ApplicationController() {
 		initConfiguration();
@@ -61,6 +64,17 @@ public class ApplicationController implements Serializable {
 
 	public void initConfiguration() {
 		try {
+
+			chartTypeSelection = new ArrayList<String>();
+			chartTypeSelection.add("Radar Chart|radar");
+			chartTypeSelection.add("Line Chart|line");
+			chartTypeSelection.add("Bar Chart|bar");
+			chartTypeSelection.add("Polar Area Chart|polarArea");
+			chartTypeSelection.add("Pie Chart|pie");
+			chartTypeSelection.add("doughnut Chart|doughnut");
+
+			this.chartType = "radar";
+
 			this.clearConfiguration();
 			this.configurationController = (ConfigurationController) XPagesUtil
 					.getViewScope().get(BEAN_CONFIGURATIONCONTROLLER);
@@ -299,6 +313,23 @@ public class ApplicationController implements Serializable {
 			Logging.logError(e);
 		}
 	}
+
+	public List<String> getChartTypeSelection() {
+		return chartTypeSelection;
+	}
+
+	public void setChartTypeSelection(List<String> chartTypeSelection) {
+		this.chartTypeSelection = chartTypeSelection;
+	}
+
+	public String getChartType() {
+		return chartType;
+	}
+
+	public void setChartType(String chartType) {
+		this.chartType = chartType;
+	}
+
 	/*
 	 * private void addConfig(ViewEntry entry) { try { String type = (String)
 	 * entry.getColumnValues().elementAt(0); String key = (String)

@@ -25,7 +25,9 @@ public class Chart implements Serializable {
 	}
 
 	public void addLabel(String label) {
-		this.labels.add(label);
+		if (this.labels.contains(label) == false) {
+			this.labels.add(label);
+		}
 	}
 
 	public List<DataSet> getDataSets() {
