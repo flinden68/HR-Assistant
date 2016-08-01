@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="47a" sequence="204" unid="5D859AF04F9962CDC1257FE60063C97D">
+<noteinfo noteid="47a" sequence="209" unid="5D859AF04F9962CDC1257FE60063C97D">
 <created><datetime dst="true">20160704T200956,45+02</datetime></created>
-<modified><datetime dst="true">20160730T124922,83+02</datetime></modified>
-<revised><datetime dst="true">20160730T124922,82+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160730T124922,82+02</datetime></lastaccessed>
+<modified><datetime dst="true">20160801T190758,37+02</datetime></modified>
+<revised><datetime dst="true">20160801T190758,36+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160801T190758,36+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20160711T105438,74+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
+<wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$Flags"><text>gC~4;</text></item>
-
-
-<item name="$FileNames" sign="true"><text>ccConfigurationList.xsp</text></item>
 
 
 <item name="$TITLE" sign="true"><text>configuration_list.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
-</note>
+
+
+
+
+
+<item name="$FileNames" sign="true"><text>configuration_list.xsp</text></item></note>

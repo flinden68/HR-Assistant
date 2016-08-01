@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="32a" sequence="50" unid="A3837879D10F123BC1257FD3006E2A0F">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="6be" sequence="91" unid="A3837879D10F123BC1257FD3006E2A0F">
 <created><datetime dst="true">20160615T220317,27+02</datetime></created>
-<modified><datetime dst="true">20160629T171224,13+02</datetime></modified>
-<revised><datetime dst="true">20160629T171224,12+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160629T171224,13+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160615T220317,28+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=FDN</name></updatedby>
-<wassignedby><name>CN=Administrator/O=FDN</name></wassignedby>
+<modified><datetime dst="true">20160712T144235,71+02</datetime></modified>
+<revised><datetime dst="true">20160712T144235,69+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160712T144235,69+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160711T105440,19+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
+<wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>ch/belsoft/hrassistant/config/model/IConfiguration.java</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>

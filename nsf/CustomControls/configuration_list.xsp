@@ -6,7 +6,7 @@
 			refreshIdForSearch="pnlDataItemList" controller="#{configurationController}">
 		</xc:ccDataItemListHeader>
 		<div class="box-header">
-			<a class="btn btn-warning btn-margin-right" href="configuration.xsp">
+			<a class="btn btn-warning btn-margin-right" href="admin_configuration.xsp">
 				create new config
 			</a>
 			<xp:button value="refresh" id="button1"

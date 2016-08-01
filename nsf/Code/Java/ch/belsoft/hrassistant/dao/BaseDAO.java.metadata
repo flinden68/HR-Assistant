@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="72a" sequence="40" unid="7CD8919AF240369CC1257FE3001C0AC2">
-<created><datetime dst="true">20160701T070617,62+02</datetime></created>
-<modified><datetime dst="true">20160708T141821,91+02</datetime></modified>
-<revised><datetime dst="true">20160708T141821,90+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160708T141821,91+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160701T070618,08+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
-<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="266" sequence="87" unid="1FEB79F5742EB73BC1257FE2002BDEF8">
+<created><datetime dst="true">20160630T095911,28+02</datetime></created>
+<modified><datetime dst="true">20160715T085231,72+02</datetime></modified>
+<revised><datetime dst="true">20160715T085231,70+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160715T085231,70+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160711T105437,41+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
+<wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>ch/belsoft/hrassistant/dao/BaseDAO.java</text></item>
-
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
 <item name="$FileNames" sign="true"><text>ch/belsoft/hrassistant/dao/BaseDAO.java</text></item>
+
 
 </note>

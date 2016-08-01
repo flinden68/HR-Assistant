@@ -20,20 +20,22 @@
 						<th>name</th>
 						<th>company</th>
 						<th>date</th>
-						<th></th>
-						<th></th>
+						<th>tone analyzed</th>
+						
 					</tr>
 				</thead>
 				<tbody>
 					<xp:repeat id="rptList" rows="10" var="entry" indexVar="i"
 						value="#{jobController.jobs}">
 						<xp:tr styleClass="#{(i mod 2 eq 0) ? 'even': 'odd'}">
-							<xp:text escape="true" id="columnName" tagName="td"
-								value="#{entry.name}">
-							</xp:text>
-							<xp:text escape="true" id="columnCompany" tagName="td"
-								value="#{entry.company.name}">
-							</xp:text>
+							<td>
+								<xp:link value="hr_job.xsp?openxpage&amp;id=#{entry.id}"
+									escape="true" text="#{entry.name}" id="link2"></xp:link>
+							</td>
+							<!--
+								<xp:text escape="true" id="columnCompany" tagName="td"
+								value="#{entry.company.name}"> </xp:text>
+							-->
 							<td>
 								<xp:text escape="true" id="computedField1" style="display:block"
 									value="#{entry.created}">
@@ -70,4 +72,5 @@
 			</table>
 		</div>
 	</xp:div>
+
 </xp:view>

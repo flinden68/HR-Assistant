@@ -9,7 +9,6 @@
 						<xc:jobApplication_list></xc:jobApplication_list>
 					</div>
 				</div>
-
 			</xp:panel>
 		</xp:this.facets>
 	</xc:ccLayout>

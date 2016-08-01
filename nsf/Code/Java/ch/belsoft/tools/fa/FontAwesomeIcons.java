@@ -4,7 +4,8 @@ import java.util.Arrays;
 
 public enum FontAwesomeIcons {
 	COGS("cogs"), BUILDING("building"), PAPER_PLANE("paper-plane"), LINK("link"), DATABASE(
-			"database"), GRADUATION_CAP("graduation-cap"), DASHBOARD("dashboard");
+			"database"), GRADUATION_CAP("graduation-cap"), DASHBOARD(
+			"dashboard"), USER("user");
 
 	private final String icon;
 

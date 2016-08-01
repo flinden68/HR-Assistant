@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="49e" sequence="39" unid="00DE6A22E11FB2F5C1257FDB00653682">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="146" sequence="101" unid="00DE6A22E11FB2F5C1257FDB00653682">
 <created><datetime dst="true">20160623T202530,90+02</datetime></created>
-<modified><datetime dst="true">20160629T134504,74+02</datetime></modified>
-<revised><datetime dst="true">20160629T134504,73+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160629T134504,74+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160624T193801,07+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=FDN</name></updatedby>
-<wassignedby><name>CN=Administrator/O=FDN</name></wassignedby>
+<modified><datetime dst="true">20160712T144233,24+02</datetime></modified>
+<revised><datetime dst="true">20160712T144233,22+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160712T144233,22+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160711T105436,69+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
+<wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$Flags"><text>gC~4K</text></item>
 <item name="$TITLE" sign="true"><text>error.xsp</text></item>
 

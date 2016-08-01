@@ -48,6 +48,13 @@
 				<span>Configuration List</span>
 			</a>
 		</li>
+		<li
+			class="#{applicationController.currentPageName=='admin_cloudantstatus.xsp'?'active':''}">
+			<a href="admin_cloudantstatus.xsp">
+				<i class="fa fa-database"></i>
+				<span>Cloudant Status</span>
+			</a>
+		</li>
 
 
 

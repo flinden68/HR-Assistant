@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1aa" sequence="40" unid="3B435B4C1D967947C1257FD2004AF3D4">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="32e" sequence="95" unid="3B435B4C1D967947C1257FD2004AF3D4">
 <created><datetime dst="true">20160614T153840,84+02</datetime></created>
-<modified><datetime dst="true">20160629T134505,39+02</datetime></modified>
-<revised><datetime dst="true">20160629T134505,38+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160629T134505,39+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160615T203641,88+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=FDN</name></updatedby>
-<wassignedby><name>CN=Administrator/O=FDN</name></wassignedby>
+<modified><datetime dst="true">20160712T144234,65+02</datetime></modified>
+<revised><datetime dst="true">20160712T144234,63+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160712T144234,63+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160711T105437,91+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
+<wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>com/paulwithers/openLog/OpenLogErrorHolder.java</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>

@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='view' xmlns='http://www.lotus.com/dxl' version='9.0'
  maintenanceversion='1.0' replicaid='C1257FD30065445B'>
-<noteinfo noteid='13a' unid='B497FECCF6BE0494C1257FD2004790AC' sequence='14'>
+<noteinfo noteid='13a' unid='B497FECCF6BE0494C1257FD2004790AC' sequence='20'>
 <created><datetime dst='true'>20160614T150140,92+02</datetime></created>
-<modified><datetime dst='true'>20160711T105436,67+02</datetime></modified>
-<revised><datetime dst='true'>20160710T205431,35+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20160711T105554,86+02</datetime></lastaccessed>
+<modified><datetime dst='true'>20160712T144546,46+02</datetime></modified>
+<revised><datetime dst='true'>20160712T144546,44+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20160712T144546,44+02</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20160711T105436,66+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=FDN</name></updatedby>
-<wassignedby><name>CN=Administrator/O=FDN</name></wassignedby>
+<updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
+<wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name='$TITLE'><text/></item>
 <item name='$Formula' summary='true'><formula compiled='true'>
 HAAFAA4ACgABAAQAJCQkJAQABAAAAAgAZgADAA==

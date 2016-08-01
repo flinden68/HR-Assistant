@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="7d2" sequence="3" unid="73EEF3FF95E87ABCC1257FEA006C31D1">
-<created><datetime dst="true">20160708T214146,41+02</datetime></created>
-<modified><datetime dst="true">20160708T214313,95+02</datetime></modified>
-<revised><datetime dst="true">20160708T214313,94+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160708T214313,95+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160708T214146,42+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
-<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="932" sequence="9" unid="DD164EEBCFA01E44C1257FEC00694049">
+<created><datetime dst="true">20160710T210937,37+02</datetime></created>
+<modified><datetime dst="true">20160712T144229,00+02</datetime></modified>
+<revised><datetime dst="true">20160712T144228,99+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160712T144228,99+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160711T105441,76+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
+<wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>META-INF/services/com.ibm.xsp.adapter.servletFactory</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>

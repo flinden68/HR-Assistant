@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="2c6" sequence="11" unid="D5D487518B094DC3C1257FD3003516D4">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="8ee" sequence="41" unid="D5D487518B094DC3C1257FD3003516D4">
 <created><datetime dst="true">20160615T113952,52+02</datetime></created>
-<modified><datetime dst="true">20160627T164907,84+02</datetime></modified>
-<revised><datetime dst="true">20160627T164907,83+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160627T164907,84+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160615T203642,59+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=FDN</name></updatedby>
-<wassignedby><name>CN=Administrator/O=FDN</name></wassignedby>
+<modified><datetime dst="true">20160712T144231,54+02</datetime></modified>
+<revised><datetime dst="true">20160712T144231,53+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160712T144231,53+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160711T105441,59+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
+<wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$TITLE"><text>cloudant120.png</text></item>
 <item name="$Flags"><text>34CiQ</text></item>
 <item name="$FlagsExt" sign="true"><text>D</text></item>

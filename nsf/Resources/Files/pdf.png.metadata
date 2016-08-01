@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="7b2" sequence="1" unid="A8288964345DCEBFC1257FEA0040B00E">
-<created><datetime dst="true">20160708T134633,74+02</datetime></created>
-<modified><datetime dst="true">20160708T134633,79+02</datetime></modified>
-<revised><datetime dst="true">20160708T134633,78+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160708T134633,79+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160708T134633,79+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
-<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="33a" sequence="9" unid="3D50D72BC126811FC1257FEA006EE034">
+<created><datetime dst="true">20160708T221103,56+02</datetime></created>
+<modified><datetime dst="true">20160712T144231,34+02</datetime></modified>
+<revised><datetime dst="true">20160712T144231,33+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160712T144231,33+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160711T105437,94+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
+<wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$TITLE"><text>pdf.png</text></item>
 <item name="$Flags"><text>345CgQ</text></item>
 <item name="$FlagsExt"><text>D</text></item>
-
 <item name="$MimeType" sign="true"><text>image/png</text></item>
 <item name="$FileModDT" sign="true"><datetime dst="true">20130718T144104,00+02</datetime></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
 
-<item name="$FileNames" sign="true"><text>pdf.png</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item></note>
+
+<item name="$FileNames" sign="true"><text>pdf.png</text></item></note>
