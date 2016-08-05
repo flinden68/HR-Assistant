@@ -29,7 +29,7 @@
 						value="#{jobController.jobs}">
 						<xp:tr styleClass="#{(i mod 2 eq 0) ? 'even': 'odd'}">
 							<td>
-								<xp:link value="hr_job.xsp?openxpage&amp;id=#{entry.id}"
+								<xp:link value="hr_job.xsp?openxpage&amp;id=#{entry.id}&amp;readonly=true"
 									escape="true" text="#{entry.name}" id="link2"></xp:link>
 							</td>
 							<!--

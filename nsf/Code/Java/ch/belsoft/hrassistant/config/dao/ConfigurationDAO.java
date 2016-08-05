@@ -4,10 +4,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import ch.belsoft.hrassistant.config.controller.ConfigurationComparatorSort;
 import ch.belsoft.hrassistant.config.model.ConfigDefault;
 import ch.belsoft.hrassistant.dao.BaseDAO;
 import ch.belsoft.hrassistant.dao.ICrudDAO;
 import ch.belsoft.tools.Logging;
+import java.util.Collections;
 
 public class ConfigurationDAO extends BaseDAO implements
 		ICrudDAO<ConfigDefault, String>, Serializable {
@@ -52,6 +54,12 @@ public class ConfigurationDAO extends BaseDAO implements
 		return (List<ConfigDefault>) cloudantService.findAllDocumentFromView(
 				ConfigDefault.class, DESIGN_DOC, VIEW_NAME, "STRING",
 				VIEW_LIMIT);
+	}
+
+	public List<ConfigDefault> readSortedBySort() {
+		List<ConfigDefault> lst = this.read();
+		Collections.sort(lst, new ConfigurationComparatorSort());
+		return lst;
 	}
 
 	public List<ConfigDefault> readWithKeys(String startKey, String endKey) {

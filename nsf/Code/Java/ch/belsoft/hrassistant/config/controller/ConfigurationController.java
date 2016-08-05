@@ -117,7 +117,8 @@ public class ConfigurationController extends ControllerBase implements
 								this.configFilter.getTypeString(),
 								"type:{QUERY}");
 					} else {
-						this.configurations = this.configurationDAO.read();
+						this.configurations = this.configurationDAO
+								.readSortedBySort();
 					}
 
 				} else {

@@ -47,6 +47,7 @@ public class JobController extends ControllerBase implements
 	private ToneAnalyzerInjector toneAnalyzerInjector = null;
 
 	public JobController() {
+		super();
 	}
 
 	public Job getDataContext() {
