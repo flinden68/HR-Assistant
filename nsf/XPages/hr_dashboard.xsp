@@ -18,20 +18,20 @@
 								<xp:div styleClass="row">
 									<div class="col-md-4 col-xs-12">
 										<xc:chart
-											data="#{javascript:chartFactoryToneAnalyzer.getToneAnalyzerEmotionToneChart(jobController.jobs)}"
+											data="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerEmotionTone().createChart(jobController.jobs)}"
 											chartAlias="emotion" title="Emotion Tone">
 										</xc:chart>
 									</div>
 									<div class="col-md-4 col-xs-12">
 										<xc:chart
-											data="#{javascript:chartFactoryToneAnalyzer.getToneAnalyzerLanguageToneChart(jobController.jobs)}"
+											data="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerLanguageTone().createChart(jobController.jobs)}"
 											chartAlias="language" title="Language Tone">
 										</xc:chart>
 
 									</div>
 									<div class="col-md-4 col-xs-12">
 										<xc:chart
-											data="#{javascript:chartFactoryToneAnalyzer.getToneAnalyzerSocialToneChart(jobController.jobs)}"
+											data="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerSocialTone().createChart(jobController.jobs)}"
 											chartAlias="social" title="Social Tone">
 										</xc:chart>
 									</div>
