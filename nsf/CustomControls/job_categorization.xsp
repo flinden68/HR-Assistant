@@ -71,9 +71,15 @@
 		<xp:message id="message7" for="fldCareerLevel" styleClass="help-block with-errors"></xp:message>
 	</xp:div>
 
+	<xp:div loaded="${jobController.readOnly}"
+		styleClass="form-group is-valid-#{javascript:getComponent('fldCareerLevel').isValid()}">
+		<label for="fldCareerLevel">Start date</label>
+		<xp:text escape="true" id="computedField1" value="${job.startDate}"></xp:text>
+	</xp:div>
+
 	<xc:ccBSDatePickerFull dateFormat="dd-MM-yyyy"
-		fieldDataSource="#{job}" fieldName="startDate" fieldLabel="Start date"
-		required="true">
+		loaded="${!jobController.readOnly}" fieldDataSource="#{job}"
+		fieldName="startDate" fieldLabel="Start date" required="true">
 	</xc:ccBSDatePickerFull>
 
 

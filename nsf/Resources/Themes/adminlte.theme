@@ -59,7 +59,6 @@
 		<href>dist/css/skins/skin-blue.min.css</href>
 	</resource>
 
-
 	<resource>
 		<content-type>application/x-javascript</content-type>
 		<href>custom/js/custom.js</href>

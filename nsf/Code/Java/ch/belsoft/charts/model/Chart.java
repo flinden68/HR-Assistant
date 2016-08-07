@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import ch.belsoft.charts.factory.ChartFactory;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Chart implements Serializable {
@@ -22,6 +24,11 @@ public class Chart implements Serializable {
 
 	public void setLabels(List<String> labels) {
 		this.labels = labels;
+	}
+
+	@Override
+	public String toString() {
+		return ChartFactory.getChartAsJson(this);
 	}
 
 	public void addLabel(String label) {

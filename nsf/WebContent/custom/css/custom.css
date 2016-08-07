@@ -16,6 +16,32 @@ input.font-normal,select.font-normal {
 	float: none;
 }
 
+
+#wrapped_text_true {
+   /*  width: 600px;*/
+     height: 200px;
+     position: relative;
+     overflow:hidden;
+}
+
+.fade_text {
+     bottom: 0;
+     position: absolute;
+  /*   width: 600px;*/
+     z-index: 9999;
+     background: url('img/fade_text.png') transparent no-repeat;
+}
+
+span.show_text, span.hide_text  {
+   	text-decoration:underline;
+	cursor:pointer;
+}
+
+span.hide_text {
+  
+     display: none;
+    
+}
 .form-group label {
 	display: block;
 }

@@ -114,6 +114,18 @@ $(document).ready( function() {
 	        }
 	        
 	    });
+	    $("span.show_text").click(function() {
+	        $(this).hide();
+	        $("span.hide_text").show();
+	        $("div.fade_text").hide();
+	        $("div#wrapped_text_true").css("height","auto");
+	   });
+	   $("span.hide_text").click(function() {
+	        $(this).hide();
+	        $("span.show_text").show();
+	        $("div.fade_text").hide();
+	        $("div#wrapped_text_true").css("height","200px");
+	   });    
 });
 
 function x$(idTag, param){ //Updated 18 Feb 2012

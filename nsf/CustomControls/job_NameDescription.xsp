@@ -34,7 +34,16 @@
 	<xp:div
 		styleClass="form-group is-valid-#{javascript:getComponent('fldDescription').isValid()}">
 		<label for="fldDescription">Description</label>
-		<xp:inputRichText value="#{job.description}" id="fldDescription"></xp:inputRichText>
+
+		<div id="wrapped_text_${jobController.readOnly}">
+			<xp:inputRichText value="#{job.description}" id="fldDescription"></xp:inputRichText>
+			<div class="fade_text"></div>
+		</div>
+		<xp:div loaded="${jobController.readOnly}">
+
+			<span class="show_text">Show More</span>
+			<span class="hide_text">Hide This</span>
+		</xp:div>
 		<xp:message id="message9" for="fldDescription" styleClass="help-block with-errors"></xp:message>
 	</xp:div>
 
