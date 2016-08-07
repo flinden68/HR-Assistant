@@ -9,64 +9,98 @@
 		pageSubTitle="#{javascript:jobController.getCreatedModifiedInfo(job)}">
 		<xp:this.facets>
 			<xp:panel xp:key="Content" readonly="${jobController.readOnly}">
-				<div class="box box-primary">
-					<div class="box-header with-border">
-						<h3 class="box-title">Name and Description</h3>
-					</div>
-					<!-- /.box-header -->
+				<div class="row">
+					<div class="col-xs-12">
 
-					<!-- form start -->
+						<div class="nav-tabs-custom">
+							<ul class="nav nav-tabs">
+								<li class="active">
+									<a data-toggle="tab" href="#tab_1" aria-expanded="false">Name and
+										Description</a>
+								</li>
+								<li class="">
+									<a data-toggle="tab" href="#tab_2" aria-expanded="true">IBM
+										Watson Tone Analyzed Job Text</a>
+								</li>
+							</ul>
+							<div class="tab-content">
+								<div id="tab_1" class="tab-pane active">
+									<div class="row">
 
-					<div class="box-body">
-						<div class="row">
-							<div class="col-md-6">
-								<!-- general form elements -->
-								<xc:job_NameDescription></xc:job_NameDescription>
+										<div class="col-md-6">
+											<!-- general form elements -->
+											<xc:job_NameDescription></xc:job_NameDescription>
+
+										</div>
+										<div class="col-md-6">
+											<xc:job_companyRepresentative></xc:job_companyRepresentative>
+											<xc:job_categorization></xc:job_categorization>
+										</div>
+									</div>
+								</div>
+								<!-- /.tab-pane -->
+								<div id="tab_2" class="tab-pane">
+									<xc:watson_toneanalyzer
+										toneAnalyzerable="#{job}" toneAnalyzerableController="#{jobController}"></xc:watson_toneanalyzer>
+								</div>
+								<!-- /.tab-pane -->
 
 							</div>
-							<div class="col-md-6">
-								<xc:job_companyRepresentative></xc:job_companyRepresentative>
-								<xc:job_categorization></xc:job_categorization>
-							</div>
+							<!-- /.tab-content -->
 
-						</div>
-					</div>
-					<div class="box-footer">
-						<a href="hr_jobs.xsp" class="btn
+							<div class="box-footer">
+								<a href="hr_jobs.xsp" class="btn
 								btn-default " title="back to jobs">
-							cancel </a>
-						<div class="pull-right">
-							<xp:button styleClass="btn btn-success
+									cancel </a>
+								<div class="pull-right">
+									<a href="${applicationController.linkEditMode}"
+										class="btn btn-warning ${jobController.readOnly ? '' : 'disabled'}
 								btn-margin-right"
-								value="save" id="button1">
-								<xp:eventHandler event="onclick" submit="true"
-									onStart="waitingDialog.show('saving...')" onComplete="waitingDialog.hide()"
-									refreshMode="partial" refreshId="content-wrapper" execMode="partial"
-									execId="content-wrapper">
-									<xp:this.action>
-										<xp:executeScript script="#{javascript:jobController.update()}">
-										</xp:executeScript>
-									</xp:this.action>
-								</xp:eventHandler>
-							</xp:button>
-							<xp:button styleClass="btn btn-danger" value="remove"
-								id="button7">
-								<i class="fa fa-trash fa-fw"></i>
-								<xp:eventHandler event="onclick" submit="true"
-									onStart="waitingDialog.show('removing')" onComplete="waitingDialog.hide();document.location='hr_jobs.xsp'"
-									refreshMode="partial" refreshId="content-wrapper" immediate="true"
-									execMode="partial" execId="content-wrapper">
-									<xp:this.action>
-										<xp:executeScript script="#{javascript:jobController.remove(job)}">
-										</xp:executeScript>
-									</xp:this.action>
-								</xp:eventHandler>
-							</xp:button>
+										title="edit">
+										edit </a>
+									<xp:button
+										styleClass="btn btn-success ${jobController.readOnly ? 'disabled' : ''}
+								btn-margin-right"
+										value="save" id="button1">
+										<xp:eventHandler event="onclick" submit="true"
+											onStart="waitingDialog.show('saving...')" onComplete="waitingDialog.hide()"
+											refreshMode="partial" refreshId="content-wrapper" execMode="partial"
+											execId="content-wrapper">
+											<xp:this.action>
+												<xp:executeScript script="#{javascript:jobController.update()}">
+												</xp:executeScript>
+											</xp:this.action>
+										</xp:eventHandler>
+									</xp:button>
+									<xp:button styleClass="btn btn-danger" value="remove"
+										id="button7">
+										<i class="fa fa-trash fa-fw"></i>
+										<xp:eventHandler event="onclick" submit="true"
+											onStart="waitingDialog.show('removing')"
+											onComplete="waitingDialog.hide();document.location='hr_jobs.xsp'"
+											refreshMode="partial" refreshId="content-wrapper" immediate="true"
+											execMode="partial" execId="content-wrapper">
+											<xp:this.action>
+												<xp:executeScript script="#{javascript:jobController.remove(job)}">
+												</xp:executeScript>
+											</xp:this.action>
+										</xp:eventHandler>
+									</xp:button>
+								</div>
+							</div>
 						</div>
+
 					</div>
 				</div>
-				<xc:watson_toneanalyzer toneAnalyzerable="#{job}"
-					toneAnalyzerableController="#{jobController}"></xc:watson_toneanalyzer>
+
+
+				<div class="row">
+					<div class="col-xs-12">
+						<xc:jobApplication_list title="job applications of this job"
+							jobApplicationList="#{javascript:jobApplicationController.getJobApplicationsByJob(job.id)}"></xc:jobApplication_list>
+
+					</div>
+				</div>
 				<div class="row">
 					<xp:div styleClass="col-md-12" id="pnlConfigurationList">
 						<xc:job_list></xc:job_list>

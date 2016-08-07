@@ -209,6 +209,34 @@ public class JobApplicationController extends ControllerBase implements IGuiCont
         return this.jobApplications;
     }
     
+	public List<JobApplication> getJobApplicationsByJob(String jobId) {
+		System.out.println("inside getApplicationsByJob: " + jobId);
+		try {
+			if (this.jobApplications.isEmpty()) {
+				if (this.searchQuery.equals("")) {
+					this.jobApplications = this.jobApplicationDAO
+							.searchByJob(jobId);
+				} else {
+					this.jobApplications = this.jobApplicationDAO
+							.search(this.searchQuery);
+				}
+				if (jobs != null) {
+					jobApplications.remove(this.jobApplication);
+				}
+			} else {
+				System.out.println("job applications are not empty!"
+						+ jobApplications.size() + " jobid: " + jobId);
+
+			}
+
+		} catch (Exception e) {
+			Logging.logError(e);
+		}
+		return this.jobApplications;
+	}
+
+
+    
     private void loadJob(){
         jobApplication.setJob(jobDAO.read(jobApplication.getJobId()));
     }

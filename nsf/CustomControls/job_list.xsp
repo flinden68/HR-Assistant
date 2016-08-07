@@ -19,9 +19,9 @@
 					<tr>
 						<th>name</th>
 						<th>company</th>
-						<th>date</th>
-						<th>tone analyzed</th>
-						
+						<th style="width:150px;">date</th>
+						<th style="width:140px">tone analyzed</th>
+						<th style="width:200px;"></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -29,17 +29,23 @@
 						value="#{jobController.jobs}">
 						<xp:tr styleClass="#{(i mod 2 eq 0) ? 'even': 'odd'}">
 							<td>
-								<xp:link value="hr_job.xsp?openxpage&amp;id=#{entry.id}&amp;readonly=true"
+								<xp:link
+									value="hr_job.xsp?openxpage&amp;id=#{entry.id}&amp;readonly=true"
 									escape="true" text="#{entry.name}" id="link2"></xp:link>
 							</td>
-							<!--
-								<xp:text escape="true" id="columnCompany" tagName="td"
-								value="#{entry.company.name}"> </xp:text>
-							-->
+
+							<xp:text escape="true" id="columnCompany" tagName="td"
+								value="#{entry.company.name}">
+							</xp:text>
 							<td>
 								<xp:text escape="true" id="computedField1" style="display:block"
 									value="#{entry.created}">
 								</xp:text>
+							</td>
+							<td>
+								<xp:image url="custom/img/icon_watson_toneanalyzer.png"
+									rendered="#{entry.toneAnalyzerResult!=null}" title="analyzed by IBM Watson"
+									id="image1"></xp:image>
 							</td>
 							<td>
 								<xp:link escape="true" styleClass="btn btn-warning btn-margin-right"
@@ -60,11 +66,6 @@
 										</xp:this.action>
 									</xp:eventHandler>
 								</xp:button>
-							</td>
-							<td>
-								<xp:image url="custom/img/icon_watson_toneanalyzer.png"
-									rendered="#{entry.toneAnalyzerResult!=null}" title="analyzed by IBM Watson"
-									id="image1"></xp:image>
 							</td>
 						</xp:tr>
 					</xp:repeat>

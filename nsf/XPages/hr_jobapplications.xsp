@@ -6,7 +6,8 @@
 			<xp:panel xp:key="Content">
 				<div class="row">
 					<div class="col-xs-12">
-						<xc:jobApplication_list></xc:jobApplication_list>
+						<xc:jobApplication_list title="all job applications"
+							jobApplicationList="#{jobApplicationController.jobApplications}"></xc:jobApplication_list>
 					</div>
 				</div>
 			</xp:panel>

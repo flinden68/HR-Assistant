@@ -5,46 +5,48 @@
 			var="jobApplication">
 		</xp:dataContext>
 	</xp:this.dataContexts>
+	<xp:this.dataContexts>
+		<xp:dataContext value="#{jobApplicationController.dataContext.job}"
+			var="job">
+		</xp:dataContext>
+	</xp:this.dataContexts>
 	<xc:ccLayout pageTitle="${jobApplicationController.pageTitle}"
 		pageSubTitle="#{javascript:jobApplicationController.getCreatedModifiedInfo(jobApplication)}">
 		<xp:this.facets>
 			<xp:panel xp:key="Content">
+
+
+
 				<div class="row">
 					<div class="col-md-6">
 						<!-- general form elements -->
 						<div class="box box-primary">
 							<div class="box-header with-border">
-								<h3 class="box-title">Job</h3>
+								<h3 class="box-title">Application</h3>
 							</div>
 							<!-- /.box-header -->
 							<!-- form start -->
 
 							<div class="box-body">
-								<xp:div
-									styleClass="form-group is-valid-#{javascript:getComponent('fldJob').isValid()}"
-									>
+								<!-- 	<xp:div
+									styleClass="form-group is-valid-#{javascript:getComponent('fldJob').isValid()}">
 									<label for="fldJob">Job</label>
-									<xp:panel id="comboJob" rendered="#{!jobApplication.hasJobId}">
-										<xp:comboBox id="fldJob"
-											value="#{jobApplication.jobId}" required="true"
-											>
-											<xp:selectItem
-												itemLabel="Please choose" itemValue="">
+								<xp:panel id="comboJob" rendered="#{!jobApplication.hasJobId}">
+										<xp:comboBox id="fldJob" value="#{jobApplication.jobId}"
+											required="true">
+											<xp:selectItem itemLabel="Please choose"
+												itemValue="">
 											</xp:selectItem>
-											<xp:selectItems
-												value="${jobApplicationController.jobSelection}">
+											<xp:selectItems value="${jobApplicationController.jobSelection}">
 											</xp:selectItems>
 											<xp:this.validators>
-												<xp:validateRequired
-													message="Job is mandatory">
+												<xp:validateRequired message="Job is mandatory">
 												</xp:validateRequired>
 											</xp:this.validators>
-	
-											<xp:eventHandler
-												event="onchange" submit="true"
-												onStart="waitingDialog.show('loading job')"
-												onComplete="waitingDialog.hide();" refreshMode="partial"
-												disableValidators="true" execMode="partial"
+
+											<xp:eventHandler event="onchange" submit="true"
+												onStart="waitingDialog.show('loading job')" onComplete="waitingDialog.hide();"
+												refreshMode="partial" disableValidators="true" execMode="partial"
 												refreshId="jobInfo">
 												<xp:this.action>
 													<xp:executeScript
@@ -53,74 +55,75 @@
 												</xp:this.action>
 											</xp:eventHandler>
 										</xp:comboBox>
-									</xp:panel>
+									</xp:panel> 
 									<xp:panel id="panel1" rendered="#{jobApplication.hasJobId}">
 										<xp:text value="#{jobApplication.job.name}"></xp:text>
 									</xp:panel>
 									<xp:message id="message2" for="fldJob"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
-								
-								<xp:panel id="jobInfo"
-									styleClass="form-group">
+
+								<xp:panel id="jobInfo" styleClass="form-group">
 
 									<xp:panel id="displayCompany" rendered="#{jobApplication.hasJobId}">
-									<p>
-										<b>
-											<xp:text id="computedField1" value="#{jobApplication.job.company.name}" escape="false" styleClass="form-control-static"></xp:text>
-										</b>
-									</p>
-									<xp:text id="inputText1" value="#{jobApplication.job.company.address.addressDisplay}" escape="false" styleClass="form-control-static">
-										
-									</xp:text>
+										<p>
+											<b>
+												<xp:text id="computedField1" value="#{jobApplication.job.company.name}"
+													escape="false" styleClass="form-control-static"></xp:text>
+											</b>
+										</p>
+										<xp:text id="inputText1"
+											value="#{jobApplication.job.company.address.addressDisplay}"
+											escape="false" styleClass="form-control-static">
+
+										</xp:text>
 									</xp:panel>
 								</xp:panel>
-								
+-->
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldDescription').isValid()}">
-									<label for="fldDescription">Description</label>
-									<xp:inputTextarea id="fldDescription" value="#{jobApplication.coverLetter}"
-										styleClass="form-control valid-#{javascript:this.isValid()}" required="true">
+									<label for="fldDescription">Cover letter / your motivation to apply for this job</label>
+									<xp:inputTextarea
+										id="fldDescription" value="#{jobApplication.coverLetter}"
+										styleClass="form-control valid-#{javascript:this.isValid()}"
+										required="true" rows="5">
 										<xp:this.validators>
-											<xp:validateRequired message="Please give information">
+											<xp:validateRequired
+												message="Please give information">
 											</xp:validateRequired>
-										</xp:this.validators>
+									 	</xp:this.validators>
 									</xp:inputTextarea>
 									<xp:message id="message8" for="fldDescription"
 										styleClass="help-block with-errors"></xp:message>
-								</xp:div>
-								
-								<xp:div
-									styleClass="form-group">
+								</xp:div> 
+
+								<xp:div styleClass="form-group">
 									<label for="fldLogo">Resume</label>
 									<xp:panel styleClass='input-group' id='fileupload1'>
 										<span class="input-group-btn">
-											<span class="btn btn-primary btn-file">				
+											<span class="btn btn-primary btn-file">
 												<xp:fileUpload id="fileUpload3"
-													value="#{jobApplicationController.upload.uploadFile}">					
+													value="#{jobApplicationController.upload.uploadFile}">
 													<xp:text escape="true" id="computedField2" value="Browse">
-														
+
 													</xp:text>
 												</xp:fileUpload>
 											</span>
 										</span>
-										<input type="text"
-											id="placeholder"
-											class="form-control" 
-											readonly="readonly" 
-											placeholder="" />
+										<input type="text" id="placeholder" class="form-control"
+											readonly="readonly" placeholder="" />
 									</xp:panel>
 								</xp:div>
-								
-								<xc:ccAttachmentList
-									controller="#{javascript:jobApplicationController}">
+
+								<xc:ccAttachmentList controller="#{javascript:jobApplicationController}">
 								</xc:ccAttachmentList>
-								
+
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldFirstName').isValid()}">
 									<label for="fldFirstName">Applicant first name</label>
-									<xp:inputText id="fldFirstName" value="#{jobApplication.applicant.firstName}"
-										styleClass="valid-#{javascript:this.isValid()}" required="true">
+									<xp:inputText id="fldFirstName"
+										value="#{jobApplication.applicant.firstName}" styleClass="valid-#{javascript:this.isValid()}"
+										required="true">
 										<xp:this.validators>
 											<xp:validateRequired message="Please give a applicant first name">
 											</xp:validateRequired>
@@ -130,12 +133,13 @@
 									<xp:message id="message3" for="fldFirstName"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
-								
+
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldLastName').isValid()}">
 									<label for="fldLastName">Applicant last name</label>
-									<xp:inputText id="fldLastName" value="#{jobApplication.applicant.lastName}"
-										styleClass="valid-#{javascript:this.isValid()}" required="true">
+									<xp:inputText id="fldLastName"
+										value="#{jobApplication.applicant.lastName}" styleClass="valid-#{javascript:this.isValid()}"
+										required="true">
 										<xp:this.validators>
 											<xp:validateRequired message="Please give a applicant last name">
 											</xp:validateRequired>
@@ -145,12 +149,13 @@
 									<xp:message id="message4" for="fldLastName"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
-								
+
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldStreetName').isValid()}">
 									<label for="fldStreetName">Street name</label>
-									<xp:inputText id="fldStreetName" value="#{jobApplication.applicant.address.street}"
-										styleClass="valid-#{javascript:this.isValid()}" required="true">
+									<xp:inputText id="fldStreetName"
+										value="#{jobApplication.applicant.address.street}" styleClass="valid-#{javascript:this.isValid()}"
+										required="true">
 										<xp:this.validators>
 											<xp:validateRequired message="Please give a street name">
 											</xp:validateRequired>
@@ -160,11 +165,12 @@
 									<xp:message id="message1" for="fldStreetName"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
-								
+
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldStreetNumber').isValid()}">
 									<label for="fldStreetNumber">Street number</label>
-									<xp:inputText id="fldStreetNumber" value="#{jobApplication.applicant.address.streetNumber}"
+									<xp:inputText id="fldStreetNumber"
+										value="#{jobApplication.applicant.address.streetNumber}"
 										styleClass="valid-#{javascript:this.isValid()}" required="true">
 										<xp:this.validators>
 											<xp:validateRequired message="Please give a street number">
@@ -175,12 +181,13 @@
 									<xp:message id="message6" for="fldStreetNumber"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
-								
+
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldZip').isValid()}">
 									<label for="fldZip">Zip code</label>
-									<xp:inputText id="fldZip" value="#{jobApplication.applicant.address.zip}"
-										styleClass="valid-#{javascript:this.isValid()}" required="true">
+									<xp:inputText id="fldZip"
+										value="#{jobApplication.applicant.address.zip}" styleClass="valid-#{javascript:this.isValid()}"
+										required="true">
 										<xp:this.validators>
 											<xp:validateRequired message="Please give a zip code">
 											</xp:validateRequired>
@@ -190,12 +197,13 @@
 									<xp:message id="message7" for="fldZip"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
-								
+
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldCity').isValid()}">
 									<label for="fldCity">City</label>
-									<xp:inputText id="fldCity" value="#{jobApplication.applicant.address.city}"
-										styleClass="valid-#{javascript:this.isValid()}" required="true">
+									<xp:inputText id="fldCity"
+										value="#{jobApplication.applicant.address.city}" styleClass="valid-#{javascript:this.isValid()}"
+										required="true">
 										<xp:this.validators>
 											<xp:validateRequired message="Please give a city">
 											</xp:validateRequired>
@@ -205,17 +213,16 @@
 									<xp:message id="message5" for="fldCity"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
-								
+
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldCountry').isValid()}">
 									<label for="fldCountry">Country</label>
-									<xp:comboBox id="fldCountry" value="#{jobApplication.applicant.address.country}"
-										required="true">
+									<xp:comboBox id="fldCountry"
+										value="#{jobApplication.applicant.address.country}" required="true">
 										<xp:selectItem itemLabel="Please choose industry"
 											itemValue="">
 										</xp:selectItem>
-										<xp:selectItems
-											value="${companyController.countrySelection}">
+										<xp:selectItems value="${companyController.countrySelection}">
 										</xp:selectItems>
 										<xp:this.validators>
 											<xp:validateRequired message="Country is mandatory">
@@ -223,18 +230,17 @@
 										</xp:this.validators>
 
 										<xp:eventHandler event="onchange" submit="true"
-											onStart="waitingDialog.show('loading countries')"
-											onComplete="waitingDialog.hide();" refreshMode="partial"
-											disableValidators="true" refreshId="fldCountry">
-	
+											onStart="waitingDialog.show('loading countries')" onComplete="waitingDialog.hide();"
+											refreshMode="partial" disableValidators="true" refreshId="fldCountry">
+
 										</xp:eventHandler>
-										
+
 									</xp:comboBox>
 									<xp:message id="message9" for="fldCountry"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
 
-								
+
 							</div>
 							<!-- /.box-body -->
 
@@ -260,7 +266,8 @@
 										id="button7">
 										<i class="fa fa-trash fa-fw"></i>
 										<xp:eventHandler event="onclick" submit="true"
-											onStart="waitingDialog.show('removing')" onComplete="waitingDialog.hide();document.location='appl_jobapplications.xsp'"
+											onStart="waitingDialog.show('removing')"
+											onComplete="waitingDialog.hide();document.location='appl_jobapplications.xsp'"
 											refreshMode="partial" refreshId="content-wrapper" immediate="true"
 											execMode="partial" execId="content-wrapper">
 											<xp:this.action>
@@ -275,7 +282,18 @@
 						</div>
 					</div>
 					<xp:div styleClass="col-md-6" id="pnlConfigurationList">
-						<xc:jobApplication_list></xc:jobApplication_list>
+						<div class="box box-primary">
+							<div class="box-header with-border">
+								<h3 class="box-title">Job Info</h3>
+							</div>
+							<!-- /.box-header -->
+							<!-- form start -->
+
+							<xp:panel tagName="div" readonly="true" styleClass="box-body">
+								<xc:job_NameDescription></xc:job_NameDescription>
+							</xp:panel>
+						</div>
+
 					</xp:div>
 				</div>
 			</xp:panel>

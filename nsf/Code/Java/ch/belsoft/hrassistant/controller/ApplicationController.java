@@ -41,6 +41,10 @@ public class ApplicationController implements Serializable {
 		initConfiguration();
 	}
 
+	public String getLinkEditMode() {
+		return XPagesUtil.getCurrentUrl().replace("readonly=true", "readonly=false");
+	}
+
 	public String getUsername() {
 		return XPagesUtil.getUserNameCommon();
 	}

@@ -26,7 +26,7 @@
 				</thead>
 				<tbody>
 					<xp:repeat id="rptList" rows="10" var="entry" indexVar="i"
-						value="#{jobApplicationController.jobApplications}">
+						repeatControls="true" value="#{compositeData.jobApplicationList}">
 						<xp:tr styleClass="#{(i mod 2 eq 0) ? 'even': 'odd'}">
 							<xp:text escape="true" id="columnName" tagName="td"
 								value="#{entry.job.name}">
