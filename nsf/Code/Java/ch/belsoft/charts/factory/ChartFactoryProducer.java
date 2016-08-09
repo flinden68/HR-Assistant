@@ -38,4 +38,8 @@ public class ChartFactoryProducer implements Serializable {
 				ChartFactoryToneAnalyzer.ToneCategoryEnum.SOCIAL_TONE);
 	}
 
+	public ChartFactoryJobApplications getChartFactoryApplicationsByJob() {
+		return new ChartFactoryJobApplications();
+	}
+
 }

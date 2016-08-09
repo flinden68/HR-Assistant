@@ -13,7 +13,7 @@ public class DataSet implements Serializable {
 	private String label = "";
 	private List<Float> data = new ArrayList<Float>();
 
-	private String backgroundColor = "rgba(179,181,198,0.5)";
+	private List<String> backgroundColor = new ArrayList<String>();;
 	private String borderColor = "rgba(179,181,198,1)";
 	private String pointBackgroundColor = "rgba(179,181,198,1)";
 	private String pointBorderColor = "#fff";
@@ -40,12 +40,15 @@ public class DataSet implements Serializable {
 		this.data.add(data);
 	}
 
-	public String getBackgroundColor() {
-		return backgroundColor;
-	}
+	/*
+	 * public String getBackgroundColor() { return backgroundColor; }
+	 * 
+	 * public void setBackgroundColor(String backgroundColor) {
+	 * this.backgroundColor = backgroundColor; }
+	 */
 
-	public void setBackgroundColor(String backgroundColor) {
-		this.backgroundColor = backgroundColor;
+	public void addBackgroundColor(String backgroundColor) {
+		this.backgroundColor.add(backgroundColor);
 	}
 
 	public String getBorderColor() {
@@ -86,6 +89,14 @@ public class DataSet implements Serializable {
 
 	public void setPointHoverBorderColor(String pointHoverBorderColor) {
 		this.pointHoverBorderColor = pointHoverBorderColor;
+	}
+
+	public List<String> getBackgroundColor() {
+		return backgroundColor;
+	}
+
+	public void setBackgroundColor(List<String> backgroundColor) {
+		this.backgroundColor = backgroundColor;
 	}
 
 }

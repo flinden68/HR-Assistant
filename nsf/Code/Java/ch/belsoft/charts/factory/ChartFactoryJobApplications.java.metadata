@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="c72" sequence="13" unid="ED0CB94B9650CBECC125800A0071A4D5">
+<created><datetime dst="true">20160809T224117,65+02</datetime></created>
+<modified><datetime dst="true">20160809T224256,20+02</datetime></modified>
+<revised><datetime dst="true">20160809T224256,18+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160809T224256,18+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160809T224117,66+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
+<wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+
+
+
+
+
+<item name="$TITLE"><text>ch/belsoft/charts/factory/ChartFactoryJobApplications.java</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>ch/belsoft/charts/factory/ChartFactoryJobApplications.java</text></item></note>

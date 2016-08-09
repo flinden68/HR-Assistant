@@ -25,10 +25,10 @@ public abstract class ChartFactory<T> implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private final ObjectMapper mapper = new ObjectMapper();
+	private static final ObjectMapper mapper = new ObjectMapper();
 	protected static final String opacity = "0.5";
 
-	protected String getChartAsJson(Chart chart) {
+	public static String getChartAsJson(Chart chart) {
 		String result = "";
 
 		try {

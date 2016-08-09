@@ -17,13 +17,19 @@ import ch.belsoft.charts.model.DataSet;
 import ch.belsoft.tools.Logging;
 import ch.belsoft.tools.Util;
 
-public abstract class ChartFactoryToneAnalyzer<T> extends
-		ChartFactory<ToneAnalyzable> implements Serializable {
+public class ChartFactoryToneAnalyzer extends ChartFactory<ToneAnalyzable>
+		implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
+	private ToneCategoryEnum tone;
+
+	public ChartFactoryToneAnalyzer(ToneCategoryEnum tone) {
+		this.tone = tone;
+	}
 
 	public static enum ToneCategoryEnum {
 		EMOTION_TONE("emotion_tone"), LANGUAGE_TONE("language_tone"), SOCIAL_TONE(
@@ -55,6 +61,10 @@ public abstract class ChartFactoryToneAnalyzer<T> extends
 
 		ToneCategory result = null;
 
+		if (toneAnalyzerResult == null) {
+			return null;
+		}
+
 		for (ToneCategory t : toneAnalyzerResult.getToneCategories()) {
 			if (t.getCategory_id().equals(tone.toString())) {
 				result = t;
@@ -73,7 +83,7 @@ public abstract class ChartFactoryToneAnalyzer<T> extends
 
 			DataSet dataSet = new DataSet();
 			dataSet.setLabel(toneCategory.getCategory_name());
-			dataSet.setBackgroundColor(Util.getRgbaColorOfString(dataSetName,
+			dataSet.addBackgroundColor(Util.getRgbaColorOfString(dataSetName,
 					opacity));
 			for (Tone tone : toneCategory.getTones()) {
 				chart.addLabel(tone.getName());
@@ -85,5 +95,35 @@ public abstract class ChartFactoryToneAnalyzer<T> extends
 		} catch (Exception e) {
 			Logging.logError(e);
 		}
+	}
+
+	@Override
+	public Chart createChart(ToneAnalyzable toneAnalyzable) {
+		Chart chart = new Chart();
+		try {
+			ToneCategory toneCat = this.getToneCategoryByTone(tone,
+					toneAnalyzable.getToneAnalyzerResult());
+			this.fillChartDataSets(chart, toneCat, toneAnalyzable.getName());
+		} catch (Exception e) {
+			Logging.logError(e);
+		}
+		return chart;
+	}
+
+	@Override
+	public Chart createChart(List<ToneAnalyzable> toneAnalyzableList) {
+		Chart chart = new Chart();
+		try {
+			for (ToneAnalyzable toneAnalyzable : toneAnalyzableList) {
+				ToneCategory toneCat = this.getToneCategoryByTone(tone,
+						toneAnalyzable.getToneAnalyzerResult());
+				this
+						.fillChartDataSets(chart, toneCat, toneAnalyzable
+								.getName());
+			}
+		} catch (Exception e) {
+			Logging.logError(e);
+		}
+		return chart;
 	}
 }
