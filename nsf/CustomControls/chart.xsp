@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
-	<div class="box box-primary">
+	<xp:div styleClass="box box-primary" id="pnlChart">
 		<div class="box-header with-border">
 			<xp:text escape="true" id="computedField1" styleClass="box-title"
 				tagName="h3" value="${compositeData.title}"></xp:text>
+			<xc:chart_typeSelection refreshId="pnlChart"></xc:chart_typeSelection>
 			<div class="box-body">
 				<div class="chart">
 					<canvas id="chart_canvas_${compositeData.chartAlias}"
@@ -12,8 +13,8 @@
 						<xp:this.value><![CDATA[
 				dojo.addOnLoad(function(){
     var config#{compositeData.chartAlias} = {
-        type: '#{applicationController.chartType}',
-        data: #{compositeData.data},
+        type: '#{javascript:chartTypeSelection.getChartType(compositeData.chart.alias)}',
+        data: #{compositeData.chart},
         
         options: { 
          responsive: true,
@@ -82,6 +83,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</xp:div>
 
 </xp:view>

@@ -2,6 +2,7 @@ package ch.belsoft.hrassistant.controller;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Vector;
@@ -34,15 +35,13 @@ public class ApplicationController implements Serializable {
 
 	private ConfigurationController configurationController = null;
 
-	private List<String> chartTypeSelection;
-	private String chartType;;
-
 	public ApplicationController() {
 		initConfiguration();
 	}
 
 	public String getLinkEditMode() {
-		return XPagesUtil.getCurrentUrl().replace("readonly=true", "readonly=false");
+		return XPagesUtil.getCurrentUrl().replace("readonly=true",
+				"readonly=false");
 	}
 
 	public String getUsername() {
@@ -68,16 +67,6 @@ public class ApplicationController implements Serializable {
 
 	public void initConfiguration() {
 		try {
-
-			chartTypeSelection = new ArrayList<String>();
-			chartTypeSelection.add("Radar Chart|radar");
-			chartTypeSelection.add("Line Chart|line");
-			chartTypeSelection.add("Bar Chart|bar");
-			chartTypeSelection.add("Polar Area Chart|polarArea");
-			chartTypeSelection.add("Pie Chart|pie");
-			chartTypeSelection.add("doughnut Chart|doughnut");
-
-			this.chartType = "radar";
 
 			this.clearConfiguration();
 			this.configurationController = (ConfigurationController) XPagesUtil
@@ -316,22 +305,6 @@ public class ApplicationController implements Serializable {
 		} catch (Exception e) {
 			Logging.logError(e);
 		}
-	}
-
-	public List<String> getChartTypeSelection() {
-		return chartTypeSelection;
-	}
-
-	public void setChartTypeSelection(List<String> chartTypeSelection) {
-		this.chartTypeSelection = chartTypeSelection;
-	}
-
-	public String getChartType() {
-		return chartType;
-	}
-
-	public void setChartType(String chartType) {
-		this.chartType = chartType;
 	}
 
 	/*

@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faces-config>
 	<managed-bean>
+		<managed-bean-name>chartTypeSelection
+		</managed-bean-name>
+		<managed-bean-class>ch.belsoft.charts.factory.ChartTypeSelection
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
 		<managed-bean-name>chartFactoryProducer
 		</managed-bean-name>
 		<managed-bean-class>ch.belsoft.charts.factory.ChartFactoryProducer

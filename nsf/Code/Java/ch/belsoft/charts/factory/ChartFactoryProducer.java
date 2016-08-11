@@ -39,7 +39,8 @@ public class ChartFactoryProducer implements Serializable {
 	}
 
 	public ChartFactoryJobApplications getChartFactoryApplicationsByJob() {
-		return new ChartFactoryJobApplications();
+		return new ChartFactoryJobApplications(
+				ChartFactoryJobApplications.ChartAlias.JOB_APPLICATIONS_BY_JOB);
 	}
 
 }

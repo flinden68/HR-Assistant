@@ -4,21 +4,11 @@
 		<xp:this.facets>
 			<xp:panel xp:key="Content">
 				<div class="row">
-					<div class="col-xs-12">
-						<xp:div styleClass="box box-primary" id="div1">
-							<div class="box-header">
-								<xp:text escape="true" id="computedField1" tagName="h3"
-									styleClass="box-title" value="Applications per Job"></xp:text>
-							</div>
-							<!-- /.box-header -->
-							<div class="box-body">
-								<xc:chart
-									data="#{javascript:chartFactoryProducer.getChartFactoryApplicationsByJob().createChart(jobApplicationController.jobApplications)}"
-									chartAlias="appl_per_job" title="Applications per Job">
-								</xc:chart>
-							</div>
-
-						</xp:div>
+					<div class="col-xs-4">
+						<xc:chart
+							chart="#{javascript:chartFactoryProducer.getChartFactoryApplicationsByJob().createChart(jobApplicationController.jobApplications)}"
+							chartAlias="appl_per_job" title="Applications per Job">
+						</xc:chart>
 					</div>
 				</div>
 
@@ -35,23 +25,23 @@
 							<!-- /.box-header -->
 
 							<div class="box-body">
-								<xp:div styleClass="row" loaded="false">
+								<xp:div styleClass="row">
 									<div class="col-md-4 col-xs-12">
 										<xc:chart
-											data="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerEmotionTone().createChart(jobController.jobs)}"
+											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerEmotionTone().createChart(jobController.jobs)}"
 											chartAlias="emotion" title="Emotion Tone">
 										</xc:chart>
 									</div>
 									<div class="col-md-4 col-xs-12">
 										<xc:chart
-											data="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerLanguageTone().createChart(jobController.jobs)}"
+											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerLanguageTone().createChart(jobController.jobs)}"
 											chartAlias="language" title="Language Tone">
 										</xc:chart>
 
 									</div>
 									<div class="col-md-4 col-xs-12">
 										<xc:chart
-											data="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerSocialTone().createChart(jobController.jobs)}"
+											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerSocialTone().createChart(jobController.jobs)}"
 											chartAlias="social" title="Social Tone">
 										</xc:chart>
 									</div>
