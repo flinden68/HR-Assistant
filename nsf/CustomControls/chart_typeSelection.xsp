@@ -2,15 +2,10 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core">
 	<div class="box-tools col-md-6 col-xs-12">
 		<div class="form-group col-md-12">
-			<div class="col-md-6">
-				<label for="inputEmail3" class="pull-right control-label">Chart Type
-					Selection
-				</label>
-			</div>
-			<div class="col-md-6">
+			<div class="col-md-12">
 				<xp:comboBox id="fldChartType" styleClass="font-normal"
-					value="#{applicationController.chartType}">
-					<xp:selectItems value="${applicationController.chartTypeSelection}">
+					value="">
+					<xp:selectItems value="${chartTypeSelection.chartTypeSelection}">
 					</xp:selectItems>
 					<xp:eventHandler event="onchange" submit="true"
 						onStart="waitingDialog.show('setting chart type...')" onComplete="waitingDialog.hide();"

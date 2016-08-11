@@ -14,8 +14,8 @@
       </designer-extension>
     </composite-extension>
     <property>
-      <property-name>data</property-name>
-      <property-class>string</property-class>
+      <property-name>chart</property-name>
+      <property-class>object</property-class>
       <property-extension>
         <required>true</required>
       </property-extension>

@@ -28,6 +28,8 @@ public class ChartFactoryToneAnalyzer extends ChartFactory<ToneAnalyzable>
 	private ToneCategoryEnum tone;
 
 	public ChartFactoryToneAnalyzer(ToneCategoryEnum tone) {
+		this.chartAlias = tone.toString();
+		this.setDefaultChartType(this.chartAlias, ChartTypeSelection.RADAR);
 		this.tone = tone;
 	}
 
@@ -37,9 +39,6 @@ public class ChartFactoryToneAnalyzer extends ChartFactory<ToneAnalyzable>
 
 		private final String tone;
 
-		/**
-		 * @param text
-		 */
 		private ToneCategoryEnum(final String tone) {
 			this.tone = tone;
 		}
@@ -99,7 +98,7 @@ public class ChartFactoryToneAnalyzer extends ChartFactory<ToneAnalyzable>
 
 	@Override
 	public Chart createChart(ToneAnalyzable toneAnalyzable) {
-		Chart chart = new Chart();
+		Chart chart = new Chart(this.chartAlias);
 		try {
 			ToneCategory toneCat = this.getToneCategoryByTone(tone,
 					toneAnalyzable.getToneAnalyzerResult());
@@ -112,7 +111,7 @@ public class ChartFactoryToneAnalyzer extends ChartFactory<ToneAnalyzable>
 
 	@Override
 	public Chart createChart(List<ToneAnalyzable> toneAnalyzableList) {
-		Chart chart = new Chart();
+		Chart chart = new Chart(this.chartAlias);
 		try {
 			for (ToneAnalyzable toneAnalyzable : toneAnalyzableList) {
 				ToneCategory toneCat = this.getToneCategoryByTone(tone,
