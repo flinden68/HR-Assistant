@@ -32,11 +32,11 @@ public class ChartFactoryJobApplications extends ChartFactory<JobApplication>
 
 	public ChartFactoryJobApplications(ChartAlias chartAlias) {
 		this.chartAlias = chartAlias.toString();
-		this.setDefaultChartType(this.chartAlias, ChartTypeSelection.DOUGHNUT);
+
 	}
 
 	public static enum ChartAlias {
-		JOB_APPLICATIONS_BY_JOB("job_applications_by_job");
+		JOB_APPLICATIONS_BY_JOB("appl_per_job");
 
 		private final String alias;
 
@@ -63,6 +63,7 @@ public class ChartFactoryJobApplications extends ChartFactory<JobApplication>
 
 	@Override
 	public Chart createChart(List<JobApplication> jobApplicationList) {
+		this.setDefaultChartType(this.chartAlias, ChartTypeSelection.DOUGHNUT);
 		Chart chart = new Chart(this.chartAlias);
 		try {
 

@@ -20,7 +20,7 @@
 							<div class="box-header">
 								<xp:text escape="true" id="computedField2" tagName="h3"
 									styleClass="box-title" value="All Tone Anaylized Jobs"></xp:text>
-								<xc:chart_typeSelection refreshId="pnlCharts"></xc:chart_typeSelection>
+
 							</div>
 							<!-- /.box-header -->
 
@@ -29,20 +29,20 @@
 									<div class="col-md-4 col-xs-12">
 										<xc:chart
 											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerEmotionTone().createChart(jobController.jobs)}"
-											chartAlias="emotion" title="Emotion Tone">
+											chartAlias="emotion_tone" title="Emotion Tone">
 										</xc:chart>
 									</div>
 									<div class="col-md-4 col-xs-12">
 										<xc:chart
 											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerLanguageTone().createChart(jobController.jobs)}"
-											chartAlias="language" title="Language Tone">
+											chartAlias="language_tone" title="Language Tone">
 										</xc:chart>
 
 									</div>
 									<div class="col-md-4 col-xs-12">
 										<xc:chart
 											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerSocialTone().createChart(jobController.jobs)}"
-											chartAlias="social" title="Social Tone">
+											chartAlias="social_tone" title="Social Tone">
 										</xc:chart>
 									</div>
 								</xp:div>

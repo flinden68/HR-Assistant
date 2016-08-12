@@ -22,7 +22,7 @@
 					</xp:this.action>
 				</xp:eventHandler>
 			</xp:button>
-			<xc:chart_typeSelection refreshId="pnlToneAnalyzer"></xc:chart_typeSelection>
+	
 		</div>
 
 		<!-- /.box-header -->
