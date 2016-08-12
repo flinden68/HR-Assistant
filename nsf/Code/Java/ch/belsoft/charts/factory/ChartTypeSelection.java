@@ -37,12 +37,20 @@ public class ChartTypeSelection implements Serializable {
 
 	private HashMap<String, String> chartTypeByChartAlias = new HashMap<String, String>();
 	private static final String BEAN_NAME = "chartTypeSelection";
+	private List<String> chartTypeSelection;
 
 	public static ChartTypeSelection getBean() {
 		return (ChartTypeSelection) XPagesUtil.resolveVariable(BEAN_NAME);
 	}
 
-	private List<String> chartTypeSelection;
+	public HashMap<String, String> getChartTypeByChartAlias() {
+		return chartTypeByChartAlias;
+	}
+
+	public void setChartTypeByChartAlias(
+			HashMap<String, String> chartTypeByChartAlias) {
+		this.chartTypeByChartAlias = chartTypeByChartAlias;
+	}
 
 	public ChartTypeSelection() {
 		chartTypeSelection = new ArrayList<String>();
@@ -63,16 +71,22 @@ public class ChartTypeSelection implements Serializable {
 	}
 
 	public String getChartType(String alias) {
-		if(chartTypeByChartAlias.containsKey(alias)){
-			return chartTypeByChartAlias.get(alias);		
-		}else{
+		
+		System.out.println("getting the chart type by alias: "+alias+" and im bean id: "+this);
+		
+		if (chartTypeByChartAlias.containsKey(alias)) {
+			return chartTypeByChartAlias.get(alias);
+		} else {
+			System.out.println("the default chart type is not there yet: alias:"+alias);
 			return "";
 		}
-	
+
 	}
 
 	public void setChartType(String alias, String chartType) {
+		System.out.println("inside setChartType: "+alias+ " type: "+chartType+" bean id: "+this);
 		this.chartTypeByChartAlias.put(alias, chartType);
+		System.out.println("so now: "+ getChartType(alias));
+		
 	}
-
 }

@@ -29,7 +29,7 @@ public class ChartFactoryToneAnalyzer extends ChartFactory<ToneAnalyzable>
 
 	public ChartFactoryToneAnalyzer(ToneCategoryEnum tone) {
 		this.chartAlias = tone.toString();
-		this.setDefaultChartType(this.chartAlias, ChartTypeSelection.RADAR);
+		this.setDefaultChartType(this.chartAlias, ChartTypeSelection.RADAR.toString());
 		this.tone = tone;
 	}
 
@@ -76,18 +76,18 @@ public class ChartFactoryToneAnalyzer extends ChartFactory<ToneAnalyzable>
 	}
 
 	protected void fillChartDataSets(Chart chart, ToneCategory toneCategory,
-			String dataSetName) {
+			String dataSetName, String dataSetLabelName) {
 
 		try {
 
 			DataSet dataSet = new DataSet();
-			dataSet.setLabel(toneCategory.getCategory_name());
+			dataSet.setLabel(dataSetLabelName);
 			dataSet.addBackgroundColor(Util.getRgbaColorOfString(dataSetName,
 					opacity));
 			for (Tone tone : toneCategory.getTones()) {
 				chart.addLabel(tone.getName());
 				dataSet.addData(tone.getScore());
-				dataSet.setLabel(toneCategory.getCategory_name());
+			//	dataSet.setLabel(dataSetLabelName);
 			}
 			chart.addDataSet(dataSet);
 
@@ -102,7 +102,8 @@ public class ChartFactoryToneAnalyzer extends ChartFactory<ToneAnalyzable>
 		try {
 			ToneCategory toneCat = this.getToneCategoryByTone(tone,
 					toneAnalyzable.getToneAnalyzerResult());
-			this.fillChartDataSets(chart, toneCat, toneAnalyzable.getName());
+			this.fillChartDataSets(chart, toneCat, toneAnalyzable.getName(),
+					toneCat.getCategory_name());
 		} catch (Exception e) {
 			Logging.logError(e);
 		}
@@ -116,9 +117,8 @@ public class ChartFactoryToneAnalyzer extends ChartFactory<ToneAnalyzable>
 			for (ToneAnalyzable toneAnalyzable : toneAnalyzableList) {
 				ToneCategory toneCat = this.getToneCategoryByTone(tone,
 						toneAnalyzable.getToneAnalyzerResult());
-				this
-						.fillChartDataSets(chart, toneCat, toneAnalyzable
-								.getName());
+				this.fillChartDataSets(chart, toneCat,
+						toneAnalyzable.getName(), toneAnalyzable.getName());
 			}
 		} catch (Exception e) {
 			Logging.logError(e);

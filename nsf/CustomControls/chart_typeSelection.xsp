@@ -3,8 +3,8 @@
 	<div class="box-tools col-md-6 col-xs-12">
 		<div class="form-group col-md-12">
 			<div class="col-md-12">
-				<xp:comboBox id="fldChartType" styleClass="font-normal"
-					value="">
+			<xp:comboBox id="fldChartType" styleClass="font-normal"
+					value="#{chartTypeSelection.chartTypeByChartAlias[compositeData.chartAlias]}">
 					<xp:selectItems value="${chartTypeSelection.chartTypeSelection}">
 					</xp:selectItems>
 					<xp:eventHandler event="onchange" submit="true"
