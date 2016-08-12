@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	readonly="${jobApplicationController.readOnly}">
 	<xp:div
 		styleClass="form-group is-valid-#{javascript:getComponent('fldDescription').isValid()}">
 		<label for="fldDescription">
@@ -19,7 +20,8 @@
 
 	<xp:div styleClass="form-group">
 		<label for="fldLogo">Resume</label>
-		<xp:panel styleClass='input-group' id='fileupload1'>
+		<xp:panel styleClass='input-group' id='fileupload1'
+			loaded="${!jobApplicationController.readOnly}">
 			<span class="input-group-btn">
 				<span class="btn btn-primary btn-file">
 
@@ -34,15 +36,27 @@
 			<input type="text" id="placeholder" class="form-control"
 				readonly="readonly" placeholder="" />
 		</xp:panel>
+		<xc:ccAttachmentList controller="#{javascript:jobApplicationController}"
+			readOnly="${jobApplicationController.readOnly}">
+		</xc:ccAttachmentList>
+
 	</xp:div>
 
-	<xc:ccAttachmentList controller="#{javascript:jobApplicationController}">
-	</xc:ccAttachmentList>
 
-	<xp:div>
+	<xp:div styleClass="form-group" loaded="${jobApplicationController.readOnly}">
+		<label>Applicant name</label>
+		<div class="row">
+			<xp:text escape="true" id="computedField1" styleClass="col-xs-12"
+				tagName="div"
+				value="${jobApplication.applicant.firstName} ${jobApplication.applicant.lastName}"></xp:text>
+		</div>
+	</xp:div>
+
+	<xp:div loaded="${!jobApplicationController.readOnly}">
 		<xp:this.styleClass><![CDATA[#{javascript:"form-group is-valid-"+(getComponent('fldFirstName').isValid() && getComponent('fldLastName').isValid())}]]></xp:this.styleClass>
 		<label for="fldFirstName">Applicant name</label>
-		<div class="row">
+
+		<xp:div styleClass="row">
 			<div class="col-xs-6">
 				<xp:inputText id="fldFirstName"
 					value="#{jobApplication.applicant.firstName}" styleClass="valid-#{javascript:this.isValid()}"
@@ -69,13 +83,14 @@
 					</xp:this.attrs>
 				</xp:inputText>
 			</div>
-		</div>
+			<xp:message id="message3" for="fldFirstName" styleClass="help-block with-errors">
+			</xp:message>
+			<xp:message id="message4" for="fldLastName" styleClass="help-block with-errors">
+			</xp:message>
+		</xp:div>
 
 
-		<xp:message id="message3" for="fldFirstName" styleClass="help-block with-errors">
-		</xp:message>
-		<xp:message id="message4" for="fldLastName" styleClass="help-block with-errors">
-		</xp:message>
+
 	</xp:div>
 
 

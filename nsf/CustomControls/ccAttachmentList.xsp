@@ -18,10 +18,10 @@
 					value="#{compositeData.controller.attachmentHolder.attachmentsAsList}">
 					<xp:tr styleClass="#{(i mod 2 eq 0) ? 'even': 'odd'}">
 						<td>
-							<xp:image url="#{attachment.extension}.png"
-								id="image1" style="width:25px">
+							<xp:image url="#{attachment.extension}.png" id="image1"
+								style="width:25px">
 							</xp:image>
-						</td>
+						</td> 
 						<xp:text escape="true" id="columnName" tagName="td"
 							value="#{attachment.nameOnly}">
 						</xp:text>
@@ -31,7 +31,7 @@
 
 						<td>
 							<xp:button styleClass="btn btn-danger" value="remove"
-								id="button7">
+								loaded="${!compositeData.readOnly}" id="button7">
 								<i class="fa fa-trash fa-fw"></i>
 								<xp:eventHandler event="onclick" submit="true"
 									onStart="waitingDialog.show('removing')" onComplete="waitingDialog.hide()"

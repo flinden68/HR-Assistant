@@ -48,7 +48,7 @@
 									<xp:message id="message2" for="fldStreetName"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
-								
+
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldStreetNumber').isValid()}">
 									<label for="fldStreetNumber">Street number</label>
@@ -63,7 +63,7 @@
 									<xp:message id="message3" for="fldStreetNumber"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
-								
+
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldZip').isValid()}">
 									<label for="fldZip">Zip code</label>
@@ -78,7 +78,7 @@
 									<xp:message id="message4" for="fldZip"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
-								
+
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldCity').isValid()}">
 									<label for="fldCity">City</label>
@@ -93,7 +93,7 @@
 									<xp:message id="message5" for="fldCity"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
-								
+
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldCountry').isValid()}">
 									<label for="fldCountry">Country</label>
@@ -102,8 +102,7 @@
 										<xp:selectItem itemLabel="Please choose industry"
 											itemValue="">
 										</xp:selectItem>
-										<xp:selectItems
-											value="${companyController.countrySelection}">
+										<xp:selectItems value="${companyController.countrySelection}">
 										</xp:selectItems>
 										<xp:this.validators>
 											<xp:validateRequired message="Country is mandatory">
@@ -111,22 +110,22 @@
 										</xp:this.validators>
 
 										<xp:eventHandler event="onchange" submit="true"
-											onStart="waitingDialog.show('loading countries')"
-											onComplete="waitingDialog.hide();" refreshMode="partial"
-											disableValidators="true" refreshId="fldCountry">
-	
+											onStart="waitingDialog.show('loading countries')" onComplete="waitingDialog.hide();"
+											refreshMode="partial" disableValidators="true" refreshId="fldCountry">
+
 										</xp:eventHandler>
-										
+
 									</xp:comboBox>
 									<xp:message id="message8" for="fldCountry"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
-								
+
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldDescription').isValid()}">
 									<label for="fldDescription">Description</label>
 									<xp:inputTextarea id="fldDescription" value="#{company.description}"
-										styleClass="form-control valid-#{javascript:this.isValid()}" required="true">
+										styleClass="form-control valid-#{javascript:this.isValid()}"
+										required="true">
 										<xp:this.validators>
 											<xp:validateRequired message="Please give a description">
 											</xp:validateRequired>
@@ -135,30 +134,26 @@
 									<xp:message id="message7" for="fldDescription"
 										styleClass="help-block with-errors"></xp:message>
 								</xp:div>
-								
-								<xp:div
-									styleClass="form-group">
+
+								<xp:div styleClass="form-group">
 									<label for="fldLogo">Logo</label>
 									<xp:panel styleClass='input-group' id='fileupload1'>
 										<span class="input-group-btn">
-											<span class="btn btn-primary btn-file">				
+											<span class="btn btn-primary btn-file">
 												<xp:fileUpload id="fileUpload3"
-													value="#{companyController.upload.uploadFile}">					
+													value="#{companyController.upload.uploadFile}">
 													<xp:text escape="true" id="computedField2" value="Browse">
-														
+
 													</xp:text>
 												</xp:fileUpload>
 											</span>
 										</span>
-										<input type="text"
-											id="placeholder"
-											class="form-control" 
-											readonly="readonly" 
-											placeholder="" />
+										<input type="text" id="placeholder" class="form-control"
+											readonly="readonly" placeholder="" />
 									</xp:panel>
 								</xp:div>
-								
-								<xc:ccAttachmentList
+
+								<xc:ccAttachmentList readOnly="${companyController.readOnly}"
 									controller="#{javascript:companyController}">
 								</xc:ccAttachmentList>
 
@@ -167,8 +162,8 @@
 							<!-- /.box-body -->
 
 							<div class="box-footer">
-								<a href="hr_companies.xsp" class="btn btn-default "
-									title="back to jobs">cancel</a>
+								<a href="hr_companies.xsp" class="btn btn-default " title="back to jobs">
+									cancel</a>
 								<div class="pull-right">
 									<xp:button styleClass="btn btn-success btn-margin-right"
 										value="save" id="button1">
@@ -177,8 +172,7 @@
 											refreshMode="partial" refreshId="content-wrapper" execMode="partial"
 											execId="content-wrapper">
 											<xp:this.action>
-												<xp:executeScript
-													script="#{javascript:companyController.update()}">
+												<xp:executeScript script="#{javascript:companyController.update()}">
 												</xp:executeScript>
 											</xp:this.action>
 										</xp:eventHandler>
@@ -188,7 +182,8 @@
 										id="button7">
 										<i class="fa fa-trash fa-fw"></i>
 										<xp:eventHandler event="onclick" submit="true"
-											onStart="waitingDialog.show('removing')" onComplete="waitingDialog.hide();document.location='hr_companies.xsp'"
+											onStart="waitingDialog.show('removing')"
+											onComplete="waitingDialog.hide();document.location='hr_companies.xsp'"
 											refreshMode="partial" refreshId="content-wrapper" immediate="true"
 											execMode="partial" execId="content-wrapper">
 											<xp:this.action>
@@ -198,7 +193,7 @@
 											</xp:this.action>
 										</xp:eventHandler>
 									</xp:button>
-									
+
 								</div>
 							</div>
 						</div>

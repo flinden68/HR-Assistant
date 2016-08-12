@@ -55,6 +55,11 @@
 			</property-name>
 			<value>#{attachmentController}</value>
 		</managed-property>
+		<managed-property>
+			<property-name>toneAnalyzerInjector
+			</property-name>
+			<value>#{toneAnalyzerInjector}</value>
+		</managed-property>
 	</managed-bean>
 	<!-- Job Controller -->
 	<managed-bean>
