@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="29e" sequence="15" unid="280926159AFFE2DDC1257FEC0069406F">
-<created><datetime dst="true">20160710T210937,75+02</datetime></created>
-<modified><datetime dst="true">20160712T144234,86+02</datetime></modified>
-<revised><datetime dst="true">20160712T144234,84+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160712T144234,84+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160711T105437,55+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
-<wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="7e2" sequence="18" unid="6716274639FC6180C1257FEA006CFAF5">
+<created><datetime dst="true">20160708T215021,33+02</datetime></created>
+<modified><datetime dst="true">20160813T100548,00+02</datetime></modified>
+<revised><datetime dst="true">20160813T100547,99+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160813T100548,00+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160708T215021,34+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
+<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>ch/belsoft/hrassistant/servlet/factory/ServletUtils.java</text></item>
+
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
 <item name="$FileNames" sign="true"><text>ch/belsoft/hrassistant/servlet/factory/ServletUtils.java</text></item>
-
 
 </note>

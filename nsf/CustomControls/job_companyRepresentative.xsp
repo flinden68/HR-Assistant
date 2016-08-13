@@ -4,29 +4,34 @@
 	<xp:div
 		styleClass="form-group is-valid-#{javascript:getComponent('fldCompany').isValid()}">
 		<label for="fldCompany">Company</label>
-		<xp:comboBox id="fldCompany" value="#{job.companyId}"
-			required="true">
-			<xp:selectItem itemLabel="Please choose" itemValue="">
-			</xp:selectItem>
-			<xp:selectItems value="${jobController.companySelection}">
-			</xp:selectItems>
-			<xp:this.validators>
-				<xp:validateRequired message="Company is mandatory">
-				</xp:validateRequired>
-			</xp:this.validators>
-
-			<xp:eventHandler event="onchange" submit="true"
-				onStart="waitingDialog.show('loading company')" onComplete="waitingDialog.hide();"
-				refreshMode="partial" disableValidators="true" execMode="partial"
-				refreshId="companyInfo">
-				<xp:this.action>
-					<xp:executeScript script="#{javascript:jobController.changeCompany();}">
-					</xp:executeScript>
-				</xp:this.action>
-			</xp:eventHandler>
-		</xp:comboBox>
-		<xp:message id="message2" for="fldCompany" styleClass="help-block with-errors">
-		</xp:message>
+		<xp:panel id="panel-dropdown" rendered="${!jobController.readOnly}">
+			<xp:comboBox id="fldCompany" value="#{job.companyId}"
+				required="true">
+				<xp:selectItem itemLabel="Please choose" itemValue="">
+				</xp:selectItem>
+				<xp:selectItems value="${jobController.companySelection}">
+				</xp:selectItems>
+				<xp:this.validators>
+					<xp:validateRequired message="Company is mandatory">
+					</xp:validateRequired>
+				</xp:this.validators>
+	
+				<xp:eventHandler event="onchange" submit="true"
+					onStart="waitingDialog.show('loading company')" onComplete="waitingDialog.hide();"
+					refreshMode="partial" disableValidators="true" execMode="partial"
+					refreshId="companyInfo">
+					<xp:this.action>
+						<xp:executeScript script="#{javascript:jobController.changeCompany();}">
+						</xp:executeScript>
+					</xp:this.action>
+				</xp:eventHandler>
+			</xp:comboBox>
+			<xp:message id="message2" for="fldCompany" styleClass="help-block with-errors">
+			</xp:message>
+		</xp:panel>
+		<xp:panel id="panel-companyname" rendered="${jobController.readOnly}">
+			<xp:inputText value="#{job.company.name}"></xp:inputText>
+		</xp:panel>
 	</xp:div>
 
 	<xp:panel id="companyInfo" styleClass="form-group">

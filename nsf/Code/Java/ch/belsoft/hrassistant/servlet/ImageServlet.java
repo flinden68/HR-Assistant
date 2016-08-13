@@ -17,7 +17,6 @@ public class ImageServlet extends BaseServlet {
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
         super.service(servletRequest, servletResponse);
         try {
-            
             AttachmentHolder attachmentHolder = null;
             Attachment attachment = null;
             

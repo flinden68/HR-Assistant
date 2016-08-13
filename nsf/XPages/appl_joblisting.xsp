@@ -59,18 +59,11 @@
 								</div>
 								<div class="box-footer">
 									<div class="pull-right">
-										<xp:button styleClass="btn btn-success btn-margin-right"
-											value="more info" id="button2">
-											<xp:eventHandler event="onclick" submit="true"
-												onStart="waitingDialog.show('more info...')" onComplete="waitingDialog.hide()"
-												refreshMode="partial" refreshId="content-wrapper" execMode="partial"
-												execId="content-wrapper">
-												<xp:this.action>
-													<xp:executeScript script="#{javascript://jobController.update()}">
-													</xp:executeScript>
-												</xp:this.action>
-											</xp:eventHandler>
-										</xp:button>
+										<xp:link escape="true"
+											text="More info" id="link2"
+											styleClass="btn btn-success btn-margin-right">
+											<xp:this.value><![CDATA[#{javascript:"appl_job.xsp?openxpage&id="+job.getId()+"&readonly=true"}]]></xp:this.value>
+										</xp:link>
 										<xp:link escape="true"
 											text="Apply" id="link1"
 											 styleClass="btn btn-primary btn-margin-right">

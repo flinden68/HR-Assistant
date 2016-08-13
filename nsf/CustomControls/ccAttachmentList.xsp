@@ -30,7 +30,12 @@
 						</xp:text>
 
 						<td>
-							<xp:button styleClass="btn btn-danger" value="remove"
+							<xp:link styleClass="btn btn-primary btn-margin-right"
+								id="downloadLink"
+								 value="#{javascript:compositeData.controller.attachmentHolder.getAttachmentUrl(attachment.getName())}">
+								<i class="fa fa-download"></i>							
+							</xp:link>
+							<xp:button styleClass="btn btn-danger" value=""
 								id="button7">
 								<i class="fa fa-trash fa-fw"></i>
 								<xp:eventHandler event="onclick" submit="true"
