@@ -28,12 +28,15 @@
 					<xp:repeat id="rptList" rows="10" var="entry" indexVar="i"
 						repeatControls="true" value="#{compositeData.jobApplicationList}">
 						<xp:tr styleClass="#{(i mod 2 eq 0) ? 'even': 'odd'}">
+							<td>
+								<xp:link
+									value="hr_jobapplication.xsp?openxpage&amp;id=#{entry.id}&amp;readonly=true"
+									escape="true" text="#{entry.applicant.fullName}" id="link2"></xp:link>
+							</td>
 							<xp:text escape="true" id="columnName" tagName="td"
 								value="#{entry.job.name}">
 							</xp:text>
-							<xp:text escape="true" id="columnCompany" tagName="td"
-								value="#{entry.applicant.fullName}">
-							</xp:text>
+
 							<td>
 								<xp:text escape="true" id="computedField1" style="display:block"
 									value="#{entry.created}">

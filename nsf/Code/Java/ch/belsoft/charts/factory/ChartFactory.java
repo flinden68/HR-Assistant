@@ -11,6 +11,7 @@ import com.ibm.bluemix.services.watson.toneanalyzer.model.Tone;
 import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneAnalyzerResult;
 import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneCategory;
 
+import ch.belsoft.charts.factory.ChartFactoryJobApplications.ChartAlias;
 import ch.belsoft.charts.model.Chart;
 import ch.belsoft.charts.model.DataSet;
 import ch.belsoft.hrassistant.config.model.ConfigDefault;
@@ -27,6 +28,19 @@ public abstract class ChartFactory<T> implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private static final ObjectMapper mapper = new ObjectMapper();
 	protected static final String opacity = "0.5";
+
+	protected String chartAlias;
+
+	protected void setDefaultChartType(String alias, String defaultChartType) {
+		System.out.println("inside setDefaultChartType: alias: " + alias
+				+ " defaultChartType:" + defaultChartType);
+		ChartTypeSelection chartTypeSelection = ChartTypeSelection.getBean();
+		String chartType = chartTypeSelection.getChartType(alias);
+
+		if (chartType.equals("")) {
+			chartTypeSelection.setChartType(alias, defaultChartType);
+		}
+	}
 
 	public static String getChartAsJson(Chart chart) {
 		String result = "";
@@ -46,5 +60,13 @@ public abstract class ChartFactory<T> implements Serializable {
 	public abstract Chart createChart(T chartable);
 
 	public abstract Chart createChart(List<T> chartable);
+
+	public String getChartAlias() {
+		return chartAlias;
+	}
+
+	public void setChartAlias(String chartAlias) {
+		this.chartAlias = chartAlias;
+	}
 
 }

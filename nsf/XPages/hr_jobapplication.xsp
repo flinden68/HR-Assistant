@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.dataContexts>
+		<xp:dataContext value="#{jobApplicationController.dataContext}"
+			var="jobApplication">
+		</xp:dataContext>
+	</xp:this.dataContexts>
+	<xp:this.dataContexts>
+		<xp:dataContext value="#{jobApplicationController.dataContext.job}"
+			var="job">
+		</xp:dataContext>
+	</xp:this.dataContexts>
+	<xc:ccLayout pageTitle="${jobApplicationController.pageTitle}"
+		pageSubTitle="#{javascript:jobApplicationController.getCreatedModifiedInfo(jobApplication)}">
+		<xp:this.facets>
+			<xp:panel xp:key="Content">
+				<div class="row">
+					<div class="col-md-6">
+						<!-- general form elements -->
+						<div class="box box-primary">
+							<div class="box-header with-border">
+								<h3 class="box-title">Application</h3>
+							</div>
+							<!-- /.box-header -->
+							<!-- form start -->
+
+							<div class="box-body">
+								<!--
+									<xp:div styleClass="form-group
+									is-valid-#{javascript:getComponent('fldJob').isValid()}">
+									<label for="fldJob">Job</label> <xp:panel id="comboJob"
+									rendered="#{!jobApplication.hasJobId}"> <xp:comboBox
+									id="fldJob" value="#{jobApplication.jobId}" required="true">
+									<xp:selectItem itemLabel="Please choose" itemValue="">
+									</xp:selectItem> <xp:selectItems
+									value="${jobApplicationController.jobSelection}">
+									</xp:selectItems> <xp:this.validators> <xp:validateRequired
+									message="Job is mandatory"> </xp:validateRequired>
+									</xp:this.validators> <xp:eventHandler event="onchange"
+									submit="true" onStart="waitingDialog.show('loading job')"
+									onComplete="waitingDialog.hide();" refreshMode="partial"
+									disableValidators="true" execMode="partial"
+									refreshId="jobInfo"> <xp:this.action> <xp:executeScript
+									script="#{javascript:jobController.changeJob();}">
+									</xp:executeScript> </xp:this.action> </xp:eventHandler>
+									</xp:comboBox> </xp:panel> <xp:panel id="panel1"
+									rendered="#{jobApplication.hasJobId}"> <xp:text
+									value="#{jobApplication.job.name}"></xp:text> </xp:panel>
+									<xp:message id="message2" for="fldJob" styleClass="help-block
+									with-errors"></xp:message> </xp:div> <xp:panel id="jobInfo"
+									styleClass="form-group"> <xp:panel id="displayCompany"
+									rendered="#{jobApplication.hasJobId}"> <p> <b> <xp:text
+									id="computedField1" value="#{jobApplication.job.company.name}"
+									escape="false" styleClass="form-control-static"></xp:text> </b>
+									</p> <xp:text id="inputText1"
+									value="#{jobApplication.job.company.address.addressDisplay}"
+									escape="false" styleClass="form-control-static"> </xp:text>
+									</xp:panel> </xp:panel>
+								-->
+								<xc:jobApplication_ApplicantInfos></xc:jobApplication_ApplicantInfos>
+
+
+							</div>
+							<!-- /.box-body -->
+
+							<div class="box-footer">
+								<a href="hr_jobapplications.xsp" class="btn btn-default "
+									title="back to jobapplications">cancel</a>
+								<div class="pull-right">
+									<xp:link value="${applicationController.linkEditMode}"
+										styleClass="btn btn-warning
+								btn-margin-right" loaded="${jobApplicationController.readOnly}"
+										text="edit" title="edit"></xp:link>
+									<xp:button styleClass="btn btn-success btn-margin-right"
+										loaded="${!jobApplicationController.readOnly}" value="save"
+										id="button1">
+										<xp:eventHandler event="onclick" submit="true"
+											onStart="waitingDialog.show('saving...')" onComplete="waitingDialog.hide()"
+											refreshMode="partial" refreshId="content-wrapper" execMode="partial"
+											execId="content-wrapper">
+											<xp:this.action>
+												<xp:executeScript
+													script="#{javascript:jobApplicationController.update()}">
+												</xp:executeScript>
+											</xp:this.action>
+										</xp:eventHandler>
+									</xp:button>
+
+									<xp:button styleClass="btn btn-danger" value="remove"
+										loaded="${!jobApplicationController.readOnly}" id="button7">
+										<i class="fa fa-trash fa-fw"></i>
+										<xp:eventHandler event="onclick" submit="true"
+											onStart="waitingDialog.show('removing')"
+											onComplete="waitingDialog.hide();document.location='appl_jobapplications.xsp'"
+											refreshMode="partial" refreshId="content-wrapper" immediate="true"
+											execMode="partial" execId="content-wrapper">
+											<xp:this.action>
+												<xp:executeScript
+													script="#{javascript:jobApplicationController.remove(jobApplication)}">
+												</xp:executeScript>
+											</xp:this.action>
+										</xp:eventHandler>
+									</xp:button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<xp:div styleClass="col-md-6" id="pnlConfigurationList">
+						<div class="box box-primary">
+							<div class="box-header with-border">
+								<h3 class="box-title">Job Info</h3>
+							</div>
+							<!-- /.box-header -->
+							<!-- form start -->
+
+							<xp:panel tagName="div" readonly="true" styleClass="box-body">
+								<xc:job_NameDescription></xc:job_NameDescription>
+							</xp:panel>
+						</div>
+
+					</xp:div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<xc:watson_toneanalyzer toneAnalyzerable="#{jobApplication}"
+							toneAnalyzerableController="#{jobApplicationController}"></xc:watson_toneanalyzer>
+					</div>
+				</div>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>

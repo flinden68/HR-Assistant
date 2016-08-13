@@ -14,6 +14,7 @@ import com.ibm.bluemix.services.watson.toneanalyzer.model.Tone;
 import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneAnalyzerResult;
 import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneCategory;
 
+import ch.belsoft.charts.factory.ChartFactoryToneAnalyzer.ToneCategoryEnum;
 import ch.belsoft.charts.model.Chart;
 import ch.belsoft.charts.model.DataSet;
 
@@ -29,6 +30,31 @@ public class ChartFactoryJobApplications extends ChartFactory<JobApplication>
 	 */
 	private static final long serialVersionUID = 1L;
 
+	public ChartFactoryJobApplications(ChartAlias chartAlias) {
+		this.chartAlias = chartAlias.toString();
+
+	}
+
+	public static enum ChartAlias {
+		JOB_APPLICATIONS_BY_JOB("appl_per_job");
+
+		private final String alias;
+
+		private ChartAlias(final String alias) {
+			this.alias = alias;
+		}
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see java.lang.Enum#toString()
+		 */
+		@Override
+		public String toString() {
+			return alias;
+		}
+	}
+
 	@Override
 	public Chart createChart(JobApplication jobApplication) {
 		// makes no sense yet..
@@ -37,7 +63,8 @@ public class ChartFactoryJobApplications extends ChartFactory<JobApplication>
 
 	@Override
 	public Chart createChart(List<JobApplication> jobApplicationList) {
-		Chart chart = new Chart();
+		this.setDefaultChartType(this.chartAlias, ChartTypeSelection.DOUGHNUT);
+		Chart chart = new Chart(this.chartAlias);
 		try {
 
 			DataSet dataSet = new DataSet();

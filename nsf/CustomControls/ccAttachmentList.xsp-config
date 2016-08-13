@@ -17,5 +17,12 @@
       <property-name>controller</property-name>
       <property-class>object</property-class>
     </property>
+    <property>
+      <property-name>readOnly</property-name>
+      <property-class>boolean</property-class>
+      <property-extension>
+        <required>true</required>
+      </property-extension>
+    </property>
   </composite-component>
 </faces-config>

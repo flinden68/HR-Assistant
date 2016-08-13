@@ -6,6 +6,7 @@ import java.util.List;
 
 import ch.belsoft.charts.factory.ChartFactory;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Chart implements Serializable {
@@ -14,9 +15,16 @@ public class Chart implements Serializable {
      * 
      */
 	private static final long serialVersionUID = 1L;
+
+	@JsonIgnore
+	private String alias = "";
 	private List<String> labels = new ArrayList<String>();
 	@JsonProperty("datasets")
 	private List<DataSet> dataSets = new ArrayList<DataSet>();
+
+	public Chart(String alias) {
+		this.alias = alias;
+	}
 
 	public List<String> getLabels() {
 		return labels;
@@ -47,6 +55,14 @@ public class Chart implements Serializable {
 
 	public void addDataSet(DataSet dataSet) {
 		this.dataSets.add(dataSet);
+	}
+
+	public String getAlias() {
+		return alias;
+	}
+
+	public void setAlias(String alias) {
+		this.alias = alias;
 	}
 
 }

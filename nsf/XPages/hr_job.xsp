@@ -58,10 +58,10 @@
 								btn-margin-right"
 										title="edit">
 										edit </a>
-									<xp:button
-										styleClass="btn btn-success ${jobController.readOnly ? 'disabled' : ''}
-								btn-margin-right"
-										value="save" id="button1">
+									<xp:button loaded="${!jobController.readOnly}"
+										styleClass="btn btn-success 
+								btn-margin-right" value="save"
+										id="button1">
 										<xp:eventHandler event="onclick" submit="true"
 											onStart="waitingDialog.show('saving...')" onComplete="waitingDialog.hide()"
 											refreshMode="partial" refreshId="content-wrapper" execMode="partial"
