@@ -1,4 +1,4 @@
-package com.ibm.bluemix.services.watson.toneanalyzer.service;
+package com.ibm.bluemix.services.watson.toneanalyzer.interfaces;
 
 import com.ibm.bluemix.services.ICloudService;
 import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneAnalyzerRequest;

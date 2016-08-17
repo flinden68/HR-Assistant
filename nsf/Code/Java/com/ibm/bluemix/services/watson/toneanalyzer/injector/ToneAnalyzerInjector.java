@@ -41,7 +41,7 @@ public class ToneAnalyzerInjector implements Serializable {
 	}
 
 	public void analyzeTone(ToneAnalyzable toneAnalyzerable) {
-		try {
+		try { 
 			ToneAnalyzerRequest toneAnalyzerRequest = new ToneAnalyzerRequest();
 			String textToAnalyze = StringEscapeUtils
 					.escapeHtml4(toneAnalyzerable.getTextToAnalyze());

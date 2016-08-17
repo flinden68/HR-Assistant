@@ -2,6 +2,7 @@ package com.ibm.bluemix.services.watson.toneanalyzer.service;
 
 import java.io.Serializable;
 
+import com.ibm.bluemix.services.watson.toneanalyzer.interfaces.IToneAnalyzerService;
 import com.ibm.bluemix.services.watson.toneanalyzer.interfaces.ToneAnalyzable;
 import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneAnalyzerRequest;
 import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneAnalyzerResult;

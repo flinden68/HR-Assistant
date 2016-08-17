@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import com.ibm.bluemix.services.CloudService;
+import com.ibm.bluemix.services.watson.toneanalyzer.interfaces.IToneAnalyzerService;
 import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneAnalyzerRequest;
 import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneAnalyzerResult;
 import ch.belsoft.tools.RestUtil;
