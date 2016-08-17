@@ -126,6 +126,12 @@
 							toneAnalyzerableController="#{jobApplicationController}"></xc:watson_toneanalyzer>
 					</div>
 				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<xc:jobApplication_list title="Other applicants for the same job"
+							jobApplicationList="#{javascript:jobApplicationController.getJobApplicationsByJob(jobApplication.jobId)}"></xc:jobApplication_list>
+					</div>
+				</div>
 			</xp:panel>
 		</xp:this.facets>
 	</xc:ccLayout>

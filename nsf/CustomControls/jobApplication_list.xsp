@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
 	<xp:div styleClass="box" id="pnlDataItemList">
-		<xc:ccDataItemListHeader title="List of all job applications"
+		<xc:ccDataItemListHeader title="${compositeData.title}"
 			refreshIdForSearch="pnlDataItemList" controller="#{jobApplicationController}">
 		</xc:ccDataItemListHeader>
 		<div class="box-header">
@@ -19,8 +19,8 @@
 				<thead>
 					<tr>
 						<th>job</th>
-						<th>applicant</th>
 						<th>date</th>
+						<th>applicant</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -42,21 +42,29 @@
 									value="#{entry.created}">
 								</xp:text>
 							</td>
-							<!--
-								<td> <xp:link escape="true" styleClass="btn btn-warning
-								btn-margin-right" text="edit" id="link1"
-								value="jobapplication.xsp?openxpage&amp;id=#{entry.id}"> <i
-								class="fa fa-pencil fa-fw"></i> </xp:link> <xp:button
-								styleClass="btn btn-danger" value="remove" id="button7"> <i
-								class="fa fa-trash fa-fw"></i> <xp:eventHandler event="onclick"
-								submit="true" onStart="waitingDialog.show('removing')"
-								onComplete="waitingDialog.hide()" refreshMode="partial"
-								refreshId="content-wrapper" immediate="true" execMode="partial"
-								execId="content-wrapper"> <xp:this.action> <xp:executeScript
-								script="#{javascript:jobApplicationController.removeFromList(entry)}">
-								</xp:executeScript> </xp:this.action> </xp:eventHandler>
-								</xp:button> </td>
-							-->
+
+							<td>
+								<xp:link escape="true"
+									styleClass="btn btn-warning
+								btn-margin-right" text="edit"
+									id="link1" value="hr_jobapplication.xsp?openxpage&amp;id=#{entry.id}">
+									<i class="fa fa-pencil fa-fw"></i>
+								</xp:link>
+								<xp:button styleClass="btn btn-danger" value="remove"
+									id="button7">
+									<i class="fa fa-trash fa-fw"></i>
+									<xp:eventHandler event="onclick" submit="true"
+										onStart="waitingDialog.show('removing')" onComplete="waitingDialog.hide()"
+										refreshMode="partial" refreshId="content-wrapper" immediate="true"
+										execMode="partial" execId="content-wrapper">
+										<xp:this.action>
+											<xp:executeScript
+												script="#{javascript:jobApplicationController.removeFromList(entry)}">
+											</xp:executeScript>
+										</xp:this.action>
+									</xp:eventHandler>
+								</xp:button>
+							</td>
 						</xp:tr>
 					</xp:repeat>
 				</tbody>

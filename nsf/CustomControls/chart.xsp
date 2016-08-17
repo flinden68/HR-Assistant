@@ -14,9 +14,7 @@
 						<xp:this.value><![CDATA[
 				dojo.addOnLoad(function(){
     var config#{compositeData.chartAlias} = {
-        type: '#{chartTypeSelection.chartTypeByChartAlias[compositeData.chartAlias]}',
         data: #{compositeData.chart},
-        
         options: { 
          responsive: true,
     maintainAspectRatio: true,
@@ -33,7 +31,8 @@
                 beginAtZero: true
               }
             }
-        }
+        },
+        type: '#{chartTypeSelection.chartTypeByChartAlias[compositeData.chartAlias]}'
     };
 
     

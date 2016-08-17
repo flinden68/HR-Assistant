@@ -58,6 +58,7 @@ public class ChartFactoryToneAnalyzer extends ChartFactory<ToneAnalyzable>
 			ToneAnalyzerResult toneAnalyzerResult)
 			throws NoSuchElementException {
 
+		this.setDefaultChartType(this.chartAlias, ChartTypeSelection.RADAR);
 		ToneCategory result = null;
 
 		if (toneAnalyzerResult == null) {
@@ -99,6 +100,7 @@ public class ChartFactoryToneAnalyzer extends ChartFactory<ToneAnalyzable>
 	@Override
 	public Chart createChart(ToneAnalyzable toneAnalyzable) {
 		Chart chart = new Chart(this.chartAlias);
+		this.setDefaultChartType(this.chartAlias, ChartTypeSelection.RADAR);
 		try {
 			ToneCategory toneCat = this.getToneCategoryByTone(tone,
 					toneAnalyzable.getToneAnalyzerResult());

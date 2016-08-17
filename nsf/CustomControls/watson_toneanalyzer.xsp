@@ -6,11 +6,11 @@
 		<div class="box-header">
 			<xp:text escape="true" id="computedField4" tagName="h3"
 				styleClass="box-title" value="Watson Tone
-			Analyzer">
+			Analyzer"> 
 			</xp:text>
 		</div>
 		<div class="box-header">
-			<xp:button value="refresh" id="button2" styleClass="btn btn-danger">
+			<xp:button value="refresh" id="button2" styleClass="btn btn-danger" loaded="${!compositeData.toneAnalyzerableController.readOnly}">
 				<xp:eventHandler event="onclick" submit="true"
 					onStart="waitingDialog.show('analyzing text...')" onComplete="waitingDialog.hide()"
 					refreshMode="partial" refreshId="pnlToneAnalyzer"
@@ -34,19 +34,19 @@
 				<div class="col-md-4 col-xs-12">
 					<xc:chart
 						chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerEmotionTone().createChart(compositeData.toneAnalyzerable)}"
-						chartAlias="emotion" title="Emotion Tone">
+						chartAlias="emotion_tone" title="Emotion Tone">
 					</xc:chart>
 				</div>
 				<div class="col-md-4 col-xs-12">
 					<xc:chart
 						chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerLanguageTone().createChart(compositeData.toneAnalyzerable)}"
-						chartAlias="lang" title="Language Tone">
+						chartAlias="language_tone" title="Language Tone">
 					</xc:chart>
 				</div>
 				<div class="col-md-4 col-xs-12">
 					<xc:chart
 						chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerSocialTone().createChart(compositeData.toneAnalyzerable)}"
-						chartAlias="social" title="Social Tone">
+						chartAlias="social_tone" title="Social Tone">
 					</xc:chart>
 				</div>
 			</xp:div>
