@@ -49,4 +49,8 @@ public class AttachmentHolder extends DataItem implements Serializable {
     public boolean isShowAttachments(){
         return attachments.isEmpty();
     }
+    
+    public String getAttachmentUrl(String attachmentName){
+        return "/xsp/attachment/"+getId()+ "/"+ attachmentName;
+    }
 }

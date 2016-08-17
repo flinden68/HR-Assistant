@@ -21,7 +21,7 @@
 							<xp:image url="#{attachment.extension}.png" id="image1"
 								style="width:25px">
 							</xp:image>
-						</td> 
+						</td>
 						<xp:text escape="true" id="columnName" tagName="td"
 							value="#{attachment.nameOnly}">
 						</xp:text>
@@ -30,6 +30,11 @@
 						</xp:text>
 
 						<td>
+							<xp:link styleClass="btn btn-primary btn-margin-right"
+								id="downloadLink"
+								 value="#{javascript:compositeData.controller.attachmentHolder.getAttachmentUrl(attachment.getName())}">
+								<i class="fa fa-download"></i>
+							</xp:link>
 							<xp:button styleClass="btn btn-danger" value="remove"
 								loaded="${!compositeData.readOnly}" id="button7">
 								<i class="fa fa-trash fa-fw"></i>

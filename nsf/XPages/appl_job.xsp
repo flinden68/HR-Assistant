@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.dataContexts>
+		<xp:dataContext value="#{jobController.dataContext}"
+			var="job">
+		</xp:dataContext>
+	</xp:this.dataContexts>
+	<xc:ccLayout pageTitle="${jobController.pageTitle}"
+		pageSubTitle="#{javascript:jobController.getCreatedModifiedInfo(job)}">
+		<xp:this.facets>
+			<xp:panel xp:key="Content" readonly="${jobController.readOnly}">
+				<div class="row">
+					<div class="col-xs-12">
+
+						<div class="nav-tabs-custom">
+							<ul class="nav nav-tabs">
+								<li class="active">
+									<a data-toggle="tab" href="#tab_1" aria-expanded="false">Name and
+										Description</a>
+								</li>
+							</ul>
+							<div class="tab-content">
+								<div id="tab_1" class="tab-pane active">
+									<div class="row">
+
+										<div class="col-md-6">
+											<!-- general form elements -->
+											<xc:job_NameDescription></xc:job_NameDescription>
+
+										</div>
+										<div class="col-md-6">
+											<xc:job_companyRepresentative></xc:job_companyRepresentative>
+											<xc:job_categorization></xc:job_categorization>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<!-- /.tab-content -->
+
+							<div class="box-footer">
+								<a href="appl_joblisting.xsp" class="btn
+								btn-default " title="back to jobs">
+									cancel </a>
+								<div class="pull-right">
+									<xp:link escape="true"
+											text="Apply" id="link1"
+											 styleClass="btn btn-primary btn-margin-right">
+											<xp:this.value><![CDATA[#{javascript:"appl_jobapplication.xsp?openxpage&jobid="+job.getId()}]]></xp:this.value>
+										</xp:link>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>

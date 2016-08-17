@@ -17,21 +17,16 @@ public class AttachmentServlet extends BaseServlet {
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
         super.service(servletRequest, servletResponse);
         try {
-            
             AttachmentHolder attachmentHolder = null;
             Attachment attachment = null;
             
-            System.out.println("attachmentController="+AttachmentController.get());
-            System.out.println("getRouteParam()="+getRouteParam());
             if(getRouteParam().size()==2){
                 //route param 1 = attachmentId
                 //route param 2 = attachment name
                 if( "GET".equals(getRequestMethod())) {
                     //get the attachment from the
                     String attachmentId = getRouteParam().get(0);
-                    System.out.println("attachmentId = "+ attachmentId);
                     attachmentHolder = AttachmentController.get().findAttachment(attachmentId);
-                    System.out.println("attachmentHolder="+attachmentHolder);
                 }
             }
             
@@ -48,7 +43,7 @@ public class AttachmentServlet extends BaseServlet {
                         getResponse().setContentLength((int) attachment.getLength());
                         
                         getResponse().setContentType(attachment.getContent_type());
-                        getResponse().setHeader("Content-disposition", "inline; filename=\""+attachment.getName()+"\"");
+                        getResponse().setHeader("Content-disposition", "attachment; filename=\""+attachment.getName()+"\"");
                         
                         getOut().write(AttachmentController.get().decodeBase64Attachment(attachment));
                         
