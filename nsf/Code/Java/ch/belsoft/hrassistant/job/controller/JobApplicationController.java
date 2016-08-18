@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.faces.model.SelectItem;
 
+import com.ibm.bluemix.services.watson.personalityinsights.injector.PersonalityInsightsInjector;
+import com.ibm.bluemix.services.watson.personalityinsights.interfaces.PersonalityInsightableController;
 import com.ibm.bluemix.services.watson.toneanalyzer.injector.ToneAnalyzerInjector;
 import com.ibm.bluemix.services.watson.toneanalyzer.interfaces.ToneAnalyzableController;
 
@@ -26,7 +28,8 @@ import ch.belsoft.tools.Logging;
 import ch.belsoft.tools.XPagesUtil;
 
 public class JobApplicationController extends ControllerBase implements
-		IGuiController<JobApplication>, ToneAnalyzableController, Serializable {
+		IGuiController<JobApplication>, ToneAnalyzableController,
+		PersonalityInsightableController, Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private static final String PAGETITLE_NEW = "New Job application: {NAME}({COMPANY})";
@@ -354,6 +357,17 @@ public class JobApplicationController extends ControllerBase implements
 	public void setToneAnalyzerInjector(
 			ToneAnalyzerInjector toneAnalyzerInjector) {
 		this.toneAnalyzerInjector = toneAnalyzerInjector;
+	}
+
+	public PersonalityInsightsInjector getPersonalityInsightsInjector() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setPersonalityInsightsInjector(
+			PersonalityInsightsInjector personalityInsightsInjector) {
+		// TODO Auto-generated method stub
+
 	}
 
 }
