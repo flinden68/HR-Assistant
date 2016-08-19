@@ -6,33 +6,93 @@
 			<xp:panel xp:key="Content">
 				<div class="row">
 					<div class="col-xs-12">
-						<div class="box-header">
-							<div class="pull-left">
-								<xp:comboBox id="fldCountry" value="#{jobController.searchQueryListing}"
-										required="true">
-										<xp:selectItem itemLabel="All countries"
-											itemValue="">
-										</xp:selectItem>
-										<xp:selectItems
-											value="${jobController.countrySelection}">
-										</xp:selectItems>
-
-										<xp:eventHandler event="onchange" submit="true"
-											onStart="waitingDialog.show('loading company')"
-											onComplete="waitingDialog.hide();" refreshMode="partial"
-											disableValidators="true" execMode="partial" refreshId="job-listing">
-											<xp:this.action>
-												<xp:executeScript
-													script="#{javascript:jobController.filterJoblisting();}">
-												</xp:executeScript>
-											</xp:this.action>
-										</xp:eventHandler>
-									</xp:comboBox>
+						<div class="box box-default">
+							<div class="box-header">
+								<div class="col-md-4">
+								
+								</div>
+								<div class="col-md-4">
+									<center><h4><strong>Get hired, love your job</strong></h4></center>
+									<div class="col-md-12">
+										<div class="input-group input-group-sm">
+											<xp:inputText id="inputText1" styleClass="form-control pull-right" onfocus="select()"
+												value="#{jobController.searchQuery}">
+												<xp:eventHandler event="onkeypress" submit="false">
+													<xp:this.script>
+														<xp:executeClientScript
+															script="onKeyPressSubmit('#{id:btnSearch}', thisEvent)">
+														</xp:executeClientScript> 
+													</xp:this.script>
+												</xp:eventHandler>
+												<xp:this.attrs>
+													<xp:attr name="placeholder" value="Search">
+													</xp:attr>
+												</xp:this.attrs>
+											</xp:inputText>
+											<div class="input-group-btn" styleClass="btn btn-default">
+												<xp:button value="" id="btnSearch" styleClass="btn btn-default">
+													<i class="fa fa-search"></i>
+													<xp:eventHandler event="onclick" submit="true"
+														onStart="waitingDialog.show('searching...')" onComplete="waitingDialog.hide()"
+														refreshMode="partial" refreshId="pnlDataItemList"
+														disableValidators="true"
+														execId="pnlDataItemList">
+														<xp:this.action>
+															<xp:executeScript
+																script="#{javascript:jobController.clearDataItemList()}">
+															</xp:executeScript>
+														</xp:this.action>
+													</xp:eventHandler>
+												</xp:button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+							
+								</div>
 							</div>
-							<xc:ccPager repeatId="rptList"></xc:ccPager>
+							
+							<div class="box-body">
+								<div class="col-md-4">
+								
+								</div>
+								<div class="col-md-4">									
+									<div class="col-md-5">
+										<b>Filter by location</b>
+									</div>
+									<div class="col-md-7">
+										<xp:comboBox id="fldCountry" value="#{jobController.searchQueryListing}"
+											required="true">
+											<xp:selectItem itemLabel="All countries"
+												itemValue="">
+											</xp:selectItem>
+											<xp:selectItems
+												value="${jobController.countrySelection}">
+											</xp:selectItems>
+	
+											<xp:eventHandler event="onchange" submit="true"
+												onStart="waitingDialog.show('loading company')"
+												onComplete="waitingDialog.hide();" refreshMode="partial"
+												disableValidators="true" execMode="partial" refreshId="pnlDataItemList">
+												<xp:this.action>
+													<xp:executeScript
+														script="#{javascript:jobController.filterJoblisting();}">
+													</xp:executeScript>
+												</xp:this.action>
+											</xp:eventHandler>
+										</xp:comboBox>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<xc:ccPager repeatId="rptList"></xc:ccPager>
+								</div>
+							</div>
+							
 						</div>
 					</div>
-					<xp:panel id="job-listing">
+					<xp:panel id="pnlDataItemList">
+					
 					<xp:repeat id="rptList" rows="6" var="job" indexVar="i"
 						value="#{jobController.jobs}">
 						<div class="col-md-6">

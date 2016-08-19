@@ -322,14 +322,18 @@
 		<!-- Main Footer -->
 		<footer class="main-footer">
 			<!-- To the right -->
-			<div class="pull-right hidden-xs">Anything you want</div>
+			<div class="pull-right hidden-xs">
+				This software is open source and under the &#160;
+				<a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License 2.0</a>
+			</div>
 			<!-- Default to the left -->
 			<strong>
-				Copyright 2015
-				<a href="#">Company</a>
-				.
+				Build by&#160;
+				<a href="http://www.belsoft-collaboration.ch" target="_blank">Belsoft Collaboration</a>
+				&#160;and&#160;
+				<a href="http://www.elstarit.nl" target="_blank">elstar IT</a>
 			</strong>
-			All rights reserved.
+			
 		</footer>
 
 		<!-- Control Sidebar -->
