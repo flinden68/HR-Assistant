@@ -46,6 +46,7 @@ public class JobApplicationController extends ControllerBase implements
 	private List<Job> jobs;
 	private String searchQueryListing;
 	private ToneAnalyzerInjector toneAnalyzerInjector = null;
+	private PersonalityInsightsInjector personalityInsightsInjector = null;
 
 	public JobApplicationController() {
 	}
@@ -360,14 +361,17 @@ public class JobApplicationController extends ControllerBase implements
 	}
 
 	public PersonalityInsightsInjector getPersonalityInsightsInjector() {
-		// TODO Auto-generated method stub
-		return null;
+		return personalityInsightsInjector;
 	}
 
 	public void setPersonalityInsightsInjector(
 			PersonalityInsightsInjector personalityInsightsInjector) {
-		// TODO Auto-generated method stub
+		this.personalityInsightsInjector = personalityInsightsInjector;
+	}
 
+	public void analyzeTextPersonalityInsights() {
+		this.personalityInsightsInjector
+				.analyzePersonalityInsights(this.jobApplication);
 	}
 
 }

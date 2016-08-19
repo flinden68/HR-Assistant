@@ -1,8 +1,8 @@
 package com.ibm.bluemix.services.watson.personalityinsights.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.ibm.bluemix.services.watson.personalityinsights.model.PersonalityInsightsResult.ContentLanguage;
-import com.ibm.bluemix.services.watson.personalityinsights.model.PersonalityInsightsResult.ContentTypes;
+import com.ibm.bluemix.services.watson.personalityinsights.model.PersonalityInsightsRequest.ContentLanguage;
+import com.ibm.bluemix.services.watson.personalityinsights.model.PersonalityInsightsRequest.ContentTypes;
 
 public class ContentItem {
 

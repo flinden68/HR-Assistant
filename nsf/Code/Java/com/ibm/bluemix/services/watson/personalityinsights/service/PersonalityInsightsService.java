@@ -8,6 +8,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import com.ibm.bluemix.services.CloudService;
 import com.ibm.bluemix.services.watson.personalityinsights.interfaces.IPersonalityInsightsService;
+import com.ibm.bluemix.services.watson.personalityinsights.model.PersonalityInsightsRequest;
+import com.ibm.bluemix.services.watson.personalityinsights.model.PersonalityInsightsResult;
 import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneAnalyzerRequest;
 import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneAnalyzerResult;
 import ch.belsoft.tools.RestUtil;
@@ -35,6 +37,24 @@ public class PersonalityInsightsService extends CloudService implements
 
 	public String getServiceName() {
 		return SERVICE_NAME;
+	}
+
+	public PersonalityInsightsResult analyzePersonalityInsights(
+			PersonalityInsightsRequest req) {
+		PersonalityInsightsResult result = null;
+		try {
+			super.connect();
+			String postDataString = mapper.writeValueAsString(req);
+			String response = RestUtil.post(API_URL, bluemixUtil
+					.getAuthorizationHeader(), postDataString);
+			XPagesUtil.showErrorMessage(response);
+			mapper.enable(DeserializationFeature.UNWRAP_ROOT_VALUE);
+			result = mapper
+					.readValue(response, PersonalityInsightsResult.class);
+		} catch (Exception e) {
+			Logging.logError(e);
+		}
+		return result;
 	}
 
 }
