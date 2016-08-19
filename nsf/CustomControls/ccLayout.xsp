@@ -298,6 +298,7 @@
 					</xp:text>
 
 				</h1>
+				<!--
 				<ol class="breadcrumb">
 					<li>
 						<a href="#">
@@ -307,6 +308,7 @@
 					</li>
 					<li class="active">Here</li>
 				</ol>
+				-->
 			</section>
 
 			<!-- Main content -->
