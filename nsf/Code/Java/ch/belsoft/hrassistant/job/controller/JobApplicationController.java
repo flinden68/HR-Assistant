@@ -370,8 +370,8 @@ public class JobApplicationController extends ControllerBase implements
 	}
 
 	public void analyzeTextPersonalityInsights() {
-		this.personalityInsightsInjector
-				.analyzePersonalityInsights(this.jobApplication);
+		//this.personalityInsightsInjector
+		//		.analyzePersonalityInsights(this.jobApplication);
 	}
 
 }
