@@ -40,8 +40,14 @@ public class ToneAnalyzerInjector implements Serializable {
 		return toneAnalyzerConsumer;
 	}
 
+	/**
+	 * This function analyses the personality with a given object that has text to analyze
+	 * 
+	 * @param toneAnalyzerable
+	 *            an object containing a text to analyze
+	 */
 	public void analyzeTone(ToneAnalyzable toneAnalyzerable) {
-		try { 
+		try {
 			ToneAnalyzerRequest toneAnalyzerRequest = new ToneAnalyzerRequest();
 			String textToAnalyze = StringEscapeUtils
 					.escapeHtml4(toneAnalyzerable.getTextToAnalyze());

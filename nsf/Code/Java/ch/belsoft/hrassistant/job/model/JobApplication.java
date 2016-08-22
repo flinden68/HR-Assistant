@@ -3,13 +3,15 @@ package ch.belsoft.hrassistant.job.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.ibm.bluemix.services.watson.personalityinsights.interfaces.PersonalityInsightable;
+import com.ibm.bluemix.services.watson.personalityinsights.model.PersonalityInsightsResult;
 import com.ibm.bluemix.services.watson.toneanalyzer.interfaces.ToneAnalyzable;
 import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneAnalyzerResult;
 
 import ch.belsoft.hrassistant.model.DataItem;
 
 public class JobApplication extends DataItem implements ToneAnalyzable,
-		Serializable {
+		PersonalityInsightable, Serializable {
 
 	/**
      * 
@@ -22,6 +24,7 @@ public class JobApplication extends DataItem implements ToneAnalyzable,
 	private String jobId = "";
 	private final DataType dataType = DataType.JOBAPPLICATION;
 	private ToneAnalyzerResult toneAnalyzerResult;
+	private PersonalityInsightsResult personalityInsightsResult;
 
 	public boolean isHasJobId() {
 		return !"".equals(jobId);
@@ -90,6 +93,15 @@ public class JobApplication extends DataItem implements ToneAnalyzable,
 
 	public void setTextToAnalyze(String textToAnalyze) {
 		// TODO Auto-generated method stub
-
 	}
+
+	public PersonalityInsightsResult getPersonalityInsightsResult() {
+		return personalityInsightsResult;
+	}
+
+	public void setPersonalityInsightsResult(
+			PersonalityInsightsResult personalityInsightsResult) {
+		this.personalityInsightsResult = personalityInsightsResult;
+	}
+
 }
