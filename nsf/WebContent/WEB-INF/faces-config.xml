@@ -335,7 +335,8 @@
 		</managed-bean-class>
 		<managed-bean-scope>view</managed-bean-scope>
 		<managed-property>
-			<property-name>personalityInsightsService</property-name>
+			<property-name>personalityInsightsService
+			</property-name>
 			<value>
 				#{personalityInsightsService}
 			</value>

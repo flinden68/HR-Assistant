@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="cf2" sequence="24" unid="672FA0B164FCFE2FC1258012006C1138">
+<noteinfo noteid="cf2" sequence="40" unid="672FA0B164FCFE2FC1258012006C1138">
 <created><datetime dst="true">20160817T214022,96+02</datetime></created>
-<modified><datetime dst="true">20160817T214235,03+02</datetime></modified>
-<revised><datetime dst="true">20160817T214235,02+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160817T214235,02+02</datetime></lastaccessed>
+<modified><datetime dst="true">20160819T204842,42+02</datetime></modified>
+<revised><datetime dst="true">20160819T204842,41+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160819T204842,41+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20160817T214022,96+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
 <wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
-
-
 
 
 

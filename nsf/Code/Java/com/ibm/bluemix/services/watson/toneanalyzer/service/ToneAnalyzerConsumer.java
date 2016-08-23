@@ -7,7 +7,6 @@ import com.ibm.bluemix.services.watson.toneanalyzer.interfaces.ToneAnalyzable;
 import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneAnalyzerRequest;
 import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneAnalyzerResult;
 
-
 import ch.belsoft.tools.Logging;
 
 public class ToneAnalyzerConsumer implements Serializable {
@@ -23,6 +22,12 @@ public class ToneAnalyzerConsumer implements Serializable {
 		this.toneAnalyzerService = svc;
 	}
 
+	/**
+	 * @param toneAnalyzerRequest
+	 *            a created request object with content items
+	 * @param toneAnalyzable
+	 *            the result will be setted into this object
+	 */
 	public void analyzeTone(ToneAnalyzerRequest toneAnalyzerRequest,
 			ToneAnalyzable toneAnalyzable) {
 		try {

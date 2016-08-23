@@ -6,7 +6,7 @@ import com.ibm.bluemix.services.watson.toneanalyzer.injector.ToneAnalyzerInjecto
 public interface ToneAnalyzableController {
 
 	public void analyzeText();
-
+ 
 	public ToneAnalyzerInjector getToneAnalyzerInjector();
 	 
 	public void setToneAnalyzerInjector(ToneAnalyzerInjector toneAnalyzerInjector);
