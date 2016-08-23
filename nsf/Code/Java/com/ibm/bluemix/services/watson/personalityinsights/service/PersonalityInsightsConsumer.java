@@ -24,7 +24,7 @@ public class PersonalityInsightsConsumer implements Serializable {
 	public PersonalityInsightsConsumer(final IPersonalityInsightsService svc) {
 		this.personalityInsightsService = svc;
 	}
-
+ 
 	public void analyzePersonalityInsights(
 			PersonalityInsightsRequest personalityInsightsRequest,
 			PersonalityInsightable personalityInsightable) {
