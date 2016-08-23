@@ -1,6 +1,7 @@
 package com.ibm.bluemix.services.watson.personalityinsights.service;
 
 import ch.belsoft.tools.Logging;
+import ch.belsoft.tools.Util;
 import ch.belsoft.tools.XPagesUtil;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -45,6 +46,7 @@ public class PersonalityInsightsService extends CloudService implements
 		try {
 			super.connect();
 			String postDataString = mapper.writeValueAsString(req);
+			XPagesUtil.showErrorMessage(postDataString);
 			String response = RestUtil.post(API_URL, bluemixUtil
 					.getAuthorizationHeader(), postDataString);
 			XPagesUtil.showErrorMessage(response);

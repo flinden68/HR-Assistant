@@ -70,14 +70,20 @@ public class RestUtil {
 		// Add all headers
 		if (StringUtil.isNotEmpty(auth)) {
 			postRequest.addHeader(HEADER_AUTHORIZATION, auth);
+			// XPagesUtil.showErrorMessage("adding header: "+HEADER_AUTHORIZATION+"-----"+auth);
 		}
 		if (headers != null && headers.size() > 0) {
 			for (Map.Entry<String, String> entry : headers.entrySet()) {
+				// System.out.println("adding header: "+entry.getKey()+": "+entry.getValue());
 				postRequest.addHeader(entry.getKey(), entry.getValue());
 			}
 		}
 
-		System.out.println("executing url: " + url);
+		// System.out.println("executing url: " + url);
+
+		// postDataString =
+		// "{'contentType':'application/json','contentLanguage':'en','source':'HR Assistant','contentItems':[{'content':'Dear TEST TEST TEST TEST TEST aring from you soon.','id':'','updated':0,'contentType':'text/plain','contentLanguage':'en','userid':'','sourceid':''}]} ";
+		// System.out.println("postDataString: " + postDataString);
 
 		return executor.execute(
 				postRequest.bodyString(postDataString,

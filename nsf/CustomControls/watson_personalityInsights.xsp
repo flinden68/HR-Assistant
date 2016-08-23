@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:div styleClass="box" id="pnlPersonalityInsights">
+
+
+		<div class="box-header">
+			<xp:text escape="true" id="computedField4" tagName="h3"
+				styleClass="box-title" value="Watson Personality Insights">
+			</xp:text>
+		</div>
+		<div class="box-header">
+			<xp:button value="refresh" id="button2" styleClass="btn btn-danger"
+				loaded="${!compositeData.personalityInsightableController.readOnly}">
+				<xp:eventHandler event="onclick" submit="true"
+					onStart="waitingDialog.show('analyzing text...')" onComplete="waitingDialog.hide()"
+					refreshMode="partial" refreshId="pnlPersonalityInsights"
+					disableValidators="true" execMode="partial" execId="content-wrapper">
+					<xp:this.action>
+						<xp:executeScript
+							script="#{compositeData.personalityInsightableController.analyzeTextPersonalityInsights}">
+						</xp:executeScript>
+					</xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+			<xp:messages id="messages1"></xp:messages>
+		</div>
+
+		<!--
+			/.box-header <div class="box-body"> <xp:div styleClass="row"
+			rendered="#{compositeData.toneAnalyzerable.toneAnalyzerResult!=null}">
+			<div class="col-md-4 col-xs-12"> <xc:chart
+			chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerEmotionTone().createChart(compositeData.toneAnalyzerable)}"
+			chartAlias="emotion_tone" title="Emotion Tone"> </xc:chart> </div>
+			<div class="col-md-4 col-xs-12"> <xc:chart
+			chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerLanguageTone().createChart(compositeData.toneAnalyzerable)}"
+			chartAlias="language_tone" title="Language Tone"> </xc:chart> </div>
+			<div class="col-md-4 col-xs-12"> <xc:chart
+			chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerSocialTone().createChart(compositeData.toneAnalyzerable)}"
+			chartAlias="social_tone" title="Social Tone"> </xc:chart> </div>
+			</xp:div> </div>
+		-->
+	</xp:div>
+</xp:view>

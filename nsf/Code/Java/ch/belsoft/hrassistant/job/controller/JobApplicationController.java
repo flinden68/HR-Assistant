@@ -218,7 +218,7 @@ public class JobApplicationController extends ControllerBase implements
 	}
 
 	public List<JobApplication> getJobApplicationsByJob(String jobId) {
-		System.out.println("inside getApplicationsByJob: " + jobId);
+	//	System.out.println("inside getApplicationsByJob: " + jobId);
 		try {
 			if (this.jobApplications.isEmpty()) {
 				if (this.searchQuery.equals("")) {
@@ -232,8 +232,8 @@ public class JobApplicationController extends ControllerBase implements
 					jobApplications.remove(this.jobApplication);
 				}
 			} else {
-				System.out.println("job applications are not empty!"
-						+ jobApplications.size() + " jobid: " + jobId);
+		//		System.out.println("job applications are not empty!"
+		//				+ jobApplications.size() + " jobid: " + jobId);
 
 			}
 

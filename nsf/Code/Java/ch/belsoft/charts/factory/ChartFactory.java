@@ -36,10 +36,10 @@ public abstract class ChartFactory<T> implements Serializable {
 		ChartTypeSelection chartTypeSelection = ChartTypeSelection.getBean();
 		String chartType = chartTypeSelection.getChartType(alias);
 
-		System.out.println("inside setDefaultChartType:"+alias+" defaultChartType:"+defaultChartType+" chart type="+chartType);
+		//System.out.println("inside setDefaultChartType:"+alias+" defaultChartType:"+defaultChartType+" chart type="+chartType);
 		
 		if (chartType.equals("")) {
-			System.out.println("setting the chart type: "+alias+" defaultChartType:"+defaultChartType);
+		//	System.out.println("setting the chart type: "+alias+" defaultChartType:"+defaultChartType);
 			chartTypeSelection.setChartType(alias, defaultChartType);
 		}
 	}

@@ -1,9 +1,11 @@
 package com.ibm.bluemix.services.watson.personalityinsights.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * Used to send to a IBM Watson PersonaltyInsight request.
@@ -16,13 +18,12 @@ public class PersonalityInsightsRequest {
 	/*
 	 * header: text/plain text/html application/json
 	 */
-	@JsonIgnore
-	private ContentTypes contentType = ContentTypes.TEXT_PLAIN;
-	@JsonIgnore
+	private ContentTypes contentType = ContentTypes.APPLICATION_JSON;
+
 	private ContentLanguage contentLanguage = ContentLanguage.ENGLISH;
 
 	private String source = "HR Assistant";
- 
+
 	/**
 	 * Class constructor with given {@link #contentType} and
 	 * {@link #contentLanguage}
@@ -50,6 +51,7 @@ public class PersonalityInsightsRequest {
 			contentTypeValue = s;
 		}
 
+		@JsonValue
 		public String toString() {
 			return contentTypeValue;
 		}
@@ -57,7 +59,7 @@ public class PersonalityInsightsRequest {
 	}
 
 	public enum ContentLanguage {
-		ARABIC("ar"), ENGLISH("text/html"), SPANISH("es"), JAPANESE("ja");
+		ARABIC("ar"), ENGLISH("en"), SPANISH("es"), JAPANESE("ja");
 
 		private final String contentLanguageValue;
 
@@ -65,6 +67,7 @@ public class PersonalityInsightsRequest {
 			contentLanguageValue = s;
 		}
 
+		@JsonValue
 		public String toString() {
 			return contentLanguageValue;
 		}
@@ -72,7 +75,7 @@ public class PersonalityInsightsRequest {
 	}
 
 	@JsonProperty("contentItems")
-	private List<ContentItem> contentItems = null;
+	private List<ContentItem> contentItems = new ArrayList<ContentItem>();
 
 	public List<ContentItem> getContentItems() {
 		return contentItems;
