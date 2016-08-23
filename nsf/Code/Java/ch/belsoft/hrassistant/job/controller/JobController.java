@@ -100,7 +100,6 @@ IGuiController<Job>, ToneAnalyzableController, Serializable {
     }
     
     public void apply(Job job) {
-        System.out.println("Apply.....");
         XPagesUtil
         .redirect("jobapplication.xsp?openxpage&jobid=" + job.getId());
     }

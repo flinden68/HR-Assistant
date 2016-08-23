@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="133a" sequence="15" unid="AAB01FC6D6A132A6C125801700643250">
+<created><datetime dst="true">20160822T201424,80+02</datetime></created>
+<modified><datetime dst="true">20160822T203558,56+02</datetime></modified>
+<revised><datetime dst="true">20160822T203558,55+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160822T203558,56+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160822T201424,84+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
+<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>com/ibm/bluemix/services/watson/alchemylanguage/model/AlchemyLanguageResult.java</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>com/ibm/bluemix/services/watson/alchemylanguage/model/AlchemyLanguageResult.java</text></item></note>
