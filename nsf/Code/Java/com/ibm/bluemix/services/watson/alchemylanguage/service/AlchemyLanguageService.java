@@ -1,4 +1,4 @@
-package com.ibm.bluemix.services.watson.alchemylanguage.keyword.service;
+package com.ibm.bluemix.services.watson.alchemylanguage.service;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -35,11 +35,10 @@ public class AlchemyLanguageService extends CloudService implements IAlchemyLang
         AlchemyLanguageResult result = null;
         try {
             super.connect();
-            request.setApikey(API_KEY);
+            request.setApikey(getApiKey());
             request.setExtract(StringUtils.join(ExtractTypes.extractTypeSelection(),","));
             String postDataString = mapper.writeValueAsString(request);
-            String response = RestUtil.post(API_URL, bluemixUtil
-                    .getAuthorizationHeader(), postDataString);
+            String response = RestUtil.post(API_URL, postDataString);
             XPagesUtil.showErrorMessage(response);
             mapper.enable(DeserializationFeature.UNWRAP_ROOT_VALUE);
             result = mapper.readValue(response, AlchemyLanguageResult.class);

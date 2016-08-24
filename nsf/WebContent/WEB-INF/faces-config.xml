@@ -305,6 +305,34 @@
 			</value>
 		</managed-property>
 	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>alchemyLanguageService
+		</managed-bean-name>
+		<managed-bean-class>
+			com.ibm.bluemix.services.watson.alchemylanguage.service.AlchemyLanguageService
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>apiKey</property-name>
+			<value>8d206d1c3b19f8b729ed3f28f518804ea6353bf5
+			</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>alchemyLanguageInjector
+		</managed-bean-name>
+		<managed-bean-class>
+			com.ibm.bluemix.services.watson.alchemylanguage.injector.AlchemyLanguageInjector
+		</managed-bean-class>
+		<managed-bean-scope>view</managed-bean-scope>
+		<managed-property>
+			<property-name>alchemyLanguageService</property-name>
+			<value>
+				#{alchemyLanguageService}
+			</value>
+		</managed-property>
+	</managed-bean>
 	<managed-bean>
 		<managed-bean-name>testConfiguration
 		</managed-bean-name>

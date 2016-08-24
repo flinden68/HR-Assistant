@@ -8,18 +8,18 @@ import ch.belsoft.tools.Logging;
 import ch.belsoft.tools.XPagesUtil;
 
 import com.ibm.bluemix.services.watson.alchemylanguage.interfaces.AlchemyLanguageAnalyzable;
-import com.ibm.bluemix.services.watson.alchemylanguage.keyword.service.AlchemyLanguageConsumer;
-import com.ibm.bluemix.services.watson.alchemylanguage.keyword.service.AlchemyLanguageService;
 import com.ibm.bluemix.services.watson.alchemylanguage.model.AlchemyLanguageRequest;
+import com.ibm.bluemix.services.watson.alchemylanguage.service.AlchemyLanguageConsumer;
+import com.ibm.bluemix.services.watson.alchemylanguage.service.AlchemyLanguageService;
 
 public class AlchemyLanguageInjector implements Serializable {
     
     private static final long serialVersionUID = 1L;
     
-    private AlchemyLanguageService alchemyLanguageKeywordService = null;
-    private AlchemyLanguageConsumer alchemyLanguageKeywordConsumer = null;
+    private AlchemyLanguageService alchemyLanguageService = null;
+    private AlchemyLanguageConsumer alchemyLanguageConsumer = null;
     
-    private static final String BEAN_NAME = "alchemyLanguageKeywordInjector";
+    private static final String BEAN_NAME = "alchemyLanguageInjector";
     
     public AlchemyLanguageInjector(){
         
@@ -30,38 +30,38 @@ public class AlchemyLanguageInjector implements Serializable {
         return (AlchemyLanguageInjector) XPagesUtil.resolveVariable(BEAN_NAME);
     }
     
-    public void analyzeText(AlchemyLanguageAnalyzable alchemyLanguageKeywordAnalyzable) {
+    public void analyzeText(AlchemyLanguageAnalyzable alchemyLanguageAnalyzable) {
         try {
-            AlchemyLanguageRequest alchemyLanguageKeywordRequest = new AlchemyLanguageRequest();
+            AlchemyLanguageRequest alchemyLanguageRequest = new AlchemyLanguageRequest();
             String textToAnalyze = StringEscapeUtils
-            .escapeHtml4(alchemyLanguageKeywordAnalyzable.getTextToAnalyze());
-            alchemyLanguageKeywordRequest.setText(textToAnalyze);
-            
-            getAlchemyLanguageKeywordConsumer().analyzeText(alchemyLanguageKeywordRequest, alchemyLanguageKeywordAnalyzable);
+            .escapeHtml4(alchemyLanguageAnalyzable.getTextToAnalyze());
+            alchemyLanguageRequest.setText(textToAnalyze);
+            System.out.println("textToAnalyze="+textToAnalyze);
+            getAlchemyLanguageConsumer().analyzeText(alchemyLanguageRequest, alchemyLanguageAnalyzable);
         } catch (Exception e) {
             Logging.logError(e);
         }
     }
     
-    public AlchemyLanguageService getAlchemyLanguageKeywordService() {
-        return alchemyLanguageKeywordService;
+    public AlchemyLanguageService getAlchemyLanguageService() {
+        return alchemyLanguageService;
     }
     
-    public void setAlchemyLanguageKeywordService(
-            AlchemyLanguageService alchemyLanguageKeywordService) {
-        this.alchemyLanguageKeywordService = alchemyLanguageKeywordService;
+    public void setAlchemyLanguageService(
+            AlchemyLanguageService alchemyLanguageService) {
+        this.alchemyLanguageService = alchemyLanguageService;
     }
     
-    public AlchemyLanguageConsumer getAlchemyLanguageKeywordConsumer() {
-        if (alchemyLanguageKeywordConsumer == null) {
-            alchemyLanguageKeywordConsumer = new AlchemyLanguageConsumer(alchemyLanguageKeywordService);
+    public AlchemyLanguageConsumer getAlchemyLanguageConsumer() {
+        if (alchemyLanguageConsumer == null) {
+            alchemyLanguageConsumer = new AlchemyLanguageConsumer(alchemyLanguageService);
         }
-        return alchemyLanguageKeywordConsumer;
+        return alchemyLanguageConsumer;
     }
     
-    public void setAlchemyLanguageKeywordConsumer(
-            AlchemyLanguageConsumer alchemyLanguageKeywordConsumer) {
-        this.alchemyLanguageKeywordConsumer = alchemyLanguageKeywordConsumer;
+    public void setAlchemyLanguageConsumer(
+            AlchemyLanguageConsumer alchemyLanguageConsumer) {
+        this.alchemyLanguageConsumer = alchemyLanguageConsumer;
     }
     
     

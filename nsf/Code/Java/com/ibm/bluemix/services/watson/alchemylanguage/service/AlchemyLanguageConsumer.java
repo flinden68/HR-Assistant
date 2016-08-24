@@ -1,4 +1,4 @@
-package com.ibm.bluemix.services.watson.alchemylanguage.keyword.service;
+package com.ibm.bluemix.services.watson.alchemylanguage.service;
 
 import java.io.Serializable;
 

@@ -3,9 +3,9 @@ package com.ibm.bluemix.services.watson.alchemylanguage.interfaces;
 import com.ibm.bluemix.services.watson.alchemylanguage.injector.AlchemyLanguageInjector;
 
 
-public interface AlchemyLanguageAnalyzableController {
+public interface AlchemyLanguageController {
     
-    public void analyzeText();
+    public void analyzeTextAlchemyLanguage();
     
     public AlchemyLanguageInjector getAlchemyLanguageInjector();
     

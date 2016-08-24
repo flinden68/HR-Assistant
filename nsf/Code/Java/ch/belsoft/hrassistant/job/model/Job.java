@@ -5,6 +5,8 @@ import java.util.Date;
 
 import ch.belsoft.hrassistant.model.DataItem;
 
+import com.ibm.bluemix.services.watson.alchemylanguage.interfaces.AlchemyLanguageAnalyzable;
+import com.ibm.bluemix.services.watson.alchemylanguage.model.AlchemyLanguageResult;
 import com.ibm.bluemix.services.watson.toneanalyzer.interfaces.ToneAnalyzable;
 import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneAnalyzerResult;
 import com.ibm.xsp.http.MimeMultipart;
@@ -13,7 +15,7 @@ import com.ibm.xsp.http.MimeMultipart;
  * @author FDN
  * 
  */
-public class Job extends DataItem implements ToneAnalyzable, Serializable {
+public class Job extends DataItem implements ToneAnalyzable, AlchemyLanguageAnalyzable, Serializable {
     
     private static final long serialVersionUID = 1L;
     private final DataType dataType = DataType.JOB;
@@ -29,6 +31,7 @@ public class Job extends DataItem implements ToneAnalyzable, Serializable {
     private String descriptionAbstract;
     private Date startDate;
     private ToneAnalyzerResult toneAnalyzerResult;
+    private AlchemyLanguageResult alchemyLanguageResult;
     
     public String getName() {
         return name;
@@ -149,6 +152,16 @@ public class Job extends DataItem implements ToneAnalyzable, Serializable {
     public void setTextToAnalyze(String textToAnalyze) {
         // no setter needed.
         return;
+    }
+    
+    public AlchemyLanguageResult getAlchemyLanguageResult() {
+        // TODO Auto-generated method stub
+        return alchemyLanguageResult;
+    }
+    
+    public void setAlchemyLanguageResult(
+            AlchemyLanguageResult alchemyLanguageResult) {
+        this.alchemyLanguageResult = alchemyLanguageResult;
     }
     
 }
