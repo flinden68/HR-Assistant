@@ -23,11 +23,13 @@ import ch.belsoft.hrassistant.job.model.Person;
 import ch.belsoft.tools.Logging;
 import ch.belsoft.tools.XPagesUtil;
 
+import com.ibm.bluemix.services.watson.alchemylanguage.injector.AlchemyLanguageInjector;
+import com.ibm.bluemix.services.watson.alchemylanguage.interfaces.AlchemyLanguageController;
 import com.ibm.bluemix.services.watson.toneanalyzer.injector.ToneAnalyzerInjector;
 import com.ibm.bluemix.services.watson.toneanalyzer.interfaces.ToneAnalyzableController;
 
 public class JobController extends ControllerBase implements
-IGuiController<Job>, ToneAnalyzableController, Serializable {
+IGuiController<Job>, ToneAnalyzableController, AlchemyLanguageController, Serializable {
     
     private static final long serialVersionUID = 1L;
     private static final String PAGETITLE_NEW = "New Job";
@@ -44,6 +46,7 @@ IGuiController<Job>, ToneAnalyzableController, Serializable {
     private String searchQueryListing;
     
     private ToneAnalyzerInjector toneAnalyzerInjector = null;
+    private AlchemyLanguageInjector alchemyLanguageInjector = null;
     
     public JobController() {
         super();
@@ -100,7 +103,6 @@ IGuiController<Job>, ToneAnalyzableController, Serializable {
     }
     
     public void apply(Job job) {
-        System.out.println("Apply.....");
         XPagesUtil
         .redirect("jobapplication.xsp?openxpage&jobid=" + job.getId());
     }
@@ -307,6 +309,25 @@ IGuiController<Job>, ToneAnalyzableController, Serializable {
     public void setToneAnalyzerInjector(
             ToneAnalyzerInjector toneAnalyzerInjector) {
         this.toneAnalyzerInjector = toneAnalyzerInjector;
+    }
+    
+    public void analyzeTextAlchemyLanguage() {
+        try {
+            this.alchemyLanguageInjector.analyzeText(this.job);
+        } catch (Exception e) {
+            Logging.logError(e);
+        }
+    }
+    
+    public AlchemyLanguageInjector getAlchemyLanguageInjector() {
+        // TODO Auto-generated method stub
+        return alchemyLanguageInjector;
+    }
+    
+    public void setAlchemyLanguageInjector(
+            AlchemyLanguageInjector alchemyLanguageInjector) {
+        this.alchemyLanguageInjector = alchemyLanguageInjector;
+        
     }
     
 }

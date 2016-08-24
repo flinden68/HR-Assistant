@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
- maintenanceversion='1.0' replicaid='C1257FD30065445B'>
-<noteinfo noteid='126' unid='B94659652EFDAF21C1257FD2004790AD' sequence='143'>
-<created><datetime dst='true'>20160614T150140,93+02</datetime></created>
-<modified><datetime dst='true'>20160822T171834,32+02</datetime></modified>
-<revised><datetime dst='true'>20160822T171834,30+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20160822T171834,30+02</datetime></lastaccessed>
-<addedtofile><datetime dst='true'>20160711T105435,25+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
+ maintenanceversion='1.2' replicaid='C1257FD800653235'>
+<noteinfo noteid='11a' unid='A00D51362E958991C1257FD800653237' sequence='58'>
+<created><datetime dst='true'>20160620T202519,91+02</datetime></created>
+<modified><datetime dst='true'>20160819T182317,94+02</datetime></modified>
+<revised><datetime dst='true'>20160819T182317,93+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20160819T182317,94+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20160620T202519,94+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
+<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
 <item name='IconBitmap' summary='true'>
 <rawitemdata type='6'>
 AiAgAQAA///////wD///4Af//8AD//4AAH/8AAA/+AAAH/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAA

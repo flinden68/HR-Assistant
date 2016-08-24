@@ -1,16 +1,16 @@
-package com.ibm.bluemix.services.watson.alchemylanguage.keyword.model;
+package com.ibm.bluemix.services.watson.alchemylanguage.model;
 
 
 public class AlchemyLanguageKeyword {
     
-    private float relevance = 0;
+    private String relevance = "";
     private String text = "";
     
-    public void setRelevance(float relevance) {
+    public void setRelevance(String relevance) {
         this.relevance = relevance;
     }
     
-    public float getRelevance() {
+    public String getRelevance() {
         return relevance;
     }
     
