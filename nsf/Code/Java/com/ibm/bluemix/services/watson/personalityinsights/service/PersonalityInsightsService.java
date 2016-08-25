@@ -11,6 +11,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import com.ibm.bluemix.services.CloudService;
 import com.ibm.bluemix.services.watson.personalityinsights.interfaces.IPersonalityInsightsService;
+import com.ibm.bluemix.services.watson.personalityinsights.model.ContentItem;
 import com.ibm.bluemix.services.watson.personalityinsights.model.PersonalityInsightsRequest;
 import com.ibm.bluemix.services.watson.personalityinsights.model.PersonalityInsightsResult;
 import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneAnalyzerRequest;
@@ -42,18 +43,28 @@ public class PersonalityInsightsService extends CloudService implements
 		return SERVICE_NAME;
 	}
 
+	/*
+	 * This implementation will post the String only.. since the Watson
+	 * Personality Insights API could not accept JSON (non-Javadoc)
+	 * 
+	 * @seecom.ibm.bluemix.services.watson.personalityinsights.interfaces.
+	 * IPersonalityInsightsService
+	 * #analyzePersonalityInsights(com.ibm.bluemix.services
+	 * .watson.personalityinsights.model.PersonalityInsightsRequest)
+	 */
 	public PersonalityInsightsResult analyzePersonalityInsights(
 			PersonalityInsightsRequest req) {
 		PersonalityInsightsResult result = null;
 		try {
 			super.connect();
-			String postDataString = mapper.writeValueAsString(req);
-			XPagesUtil.showErrorMessage(postDataString);
+			ContentItem ci = req.getFirstContentItem();
 			String response = RestUtil.post(API_URL, bluemixUtil
-					.getAuthorizationHeader(), null, postDataString,
+					.getAuthorizationHeader(), null, ci.getContent(),
 					ContentType.TEXT_PLAIN);
+
 			XPagesUtil.showErrorMessage(response);
-			mapper.enable(DeserializationFeature.UNWRAP_ROOT_VALUE);
+		//	mapper.enable(DeserializationFeature.UNWRAP_ROOT_VALUE);
+//			mapper.enable(DeserializationFeature.)
 			result = mapper
 					.readValue(response, PersonalityInsightsResult.class);
 		} catch (Exception e) {

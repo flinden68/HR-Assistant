@@ -16,8 +16,10 @@ public class Util {
 	private static final String HASH = "#";
 
 	public static void logEvent(String sError) {
-		OpenLogItem
-				.logEvent(null, sError, OpenLogItem.getSeverity().INFO, null);
+		// OpenLogItem
+		// .logEvent(null, sError, OpenLogItem.getSeverity().INFO, null);
+
+		Logging.logEvent(sError);
 	}
 
 	// public static void logError(Exception e) {
@@ -40,7 +42,7 @@ public class Util {
 		int r = (hash & 0xFF0000) >> 16;
 		int g = (hash & 0x00FF00) >> 8;
 		int b = hash & 0x0000FF;
-			return String.format("rgba(%1$d,%2$d,%3$d, %4$s)", r, g, b, opacity);
+		return String.format("rgba(%1$d,%2$d,%3$d, %4$s)", r, g, b, opacity);
 	}
 
 	/*

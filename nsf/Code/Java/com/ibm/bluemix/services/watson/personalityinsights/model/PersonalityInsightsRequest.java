@@ -2,6 +2,7 @@ package com.ibm.bluemix.services.watson.personalityinsights.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -14,6 +15,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * 
  */
 public class PersonalityInsightsRequest {
+
+	private static final String MSG_CONTENTITEMS_EMPTY = "The list of content items is empty..";
 
 	/*
 	 * header: text/plain text/html application/json
@@ -76,6 +79,19 @@ public class PersonalityInsightsRequest {
 
 	@JsonProperty("contentItems")
 	private List<ContentItem> contentItems = new ArrayList<ContentItem>();
+
+	/**
+	 * @return first Element of the setted content items
+	 * @throws NoSuchElementException
+	 *             if the contentitems are not initialized (0 size)
+	 */
+	public ContentItem getFirstContentItem() throws NoSuchElementException {
+		if (this.contentItems.size() > 0) {
+			return contentItems.get(0);
+		} else {
+			throw new NoSuchElementException(MSG_CONTENTITEMS_EMPTY);
+		}
+	}
 
 	public List<ContentItem> getContentItems() {
 		return contentItems;
