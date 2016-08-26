@@ -3,7 +3,6 @@ package ch.belsoft.charts.factory;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 import ch.belsoft.charts.model.Chart;
 import ch.belsoft.charts.model.DataSet;
@@ -14,8 +13,6 @@ import com.ibm.bluemix.services.watson.alchemylanguage.interfaces.AlchemyLanguag
 import com.ibm.bluemix.services.watson.alchemylanguage.model.AlchemyLanguageChartCategory;
 import com.ibm.bluemix.services.watson.alchemylanguage.model.AlchemyLanguageExtractTypes;
 import com.ibm.bluemix.services.watson.alchemylanguage.model.AlchemyLanguageKeyword;
-import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneAnalyzerResult;
-import com.ibm.bluemix.services.watson.toneanalyzer.model.ToneCategory;
 
 public class ChartFactoryAlchemyLanguage extends ChartFactory<AlchemyLanguageAnalyzable>
 implements Serializable {
@@ -29,7 +26,7 @@ implements Serializable {
     
     public ChartFactoryAlchemyLanguage(AlchemyLanguageExtractTypes extract) {
         this.chartAlias = extract.toString();
-        this.setDefaultChartType(this.chartAlias, ChartTypeSelection.BAR.toString());
+        this.setDefaultChartType(this.chartAlias, ChartTypeSelection.BAR);
         this.extract = extract;
     }
     
@@ -52,28 +49,6 @@ implements Serializable {
         public String toString() {
             return tone;
         }
-    }
-    
-    protected ToneCategory getToneCategoryByTone(ToneCategoryEnum tone,
-            ToneAnalyzerResult toneAnalyzerResult)
-    throws NoSuchElementException {
-        
-        this.setDefaultChartType(this.chartAlias, ChartTypeSelection.RADAR);
-        ToneCategory result = null;
-        
-        if (toneAnalyzerResult == null) {
-            return null;
-        }
-        
-        for (ToneCategory t : toneAnalyzerResult.getToneCategories()) {
-            if (t.getCategory_id().equals(tone.toString())) {
-                result = t;
-                return result;
-            }
-        }
-        
-        throw new NoSuchElementException(tone.toString()
-                + " not found in the tone analyzer result");
     }
     
     protected void fillChartDataSets(Chart chart, List<AlchemyLanguageChartCategory> chartCategories,
@@ -112,9 +87,10 @@ implements Serializable {
                         
                         chartCategories.add(chartCategory);
                     }
+                    this.fillChartDataSets(chart, chartCategories, alchemyLanguageAnalyzable.getName(),
+                            alchemyLanguageAnalyzable.getName());
                 }
-                this.fillChartDataSets(chart, chartCategories, alchemyLanguageAnalyzable.getName(),
-                        extract.toString());
+                
             }
         } catch (Exception e) {
             Logging.logError(e);
@@ -125,20 +101,24 @@ implements Serializable {
     @Override
     public Chart createChart(List<AlchemyLanguageAnalyzable> alchemyLanguageAnalyzableList) {
         Chart chart = new Chart(this.chartAlias);
+        this.setDefaultChartType(this.chartAlias, ChartTypeSelection.BAR);
         List<AlchemyLanguageChartCategory> chartCategories = new ArrayList<AlchemyLanguageChartCategory>();
         try {
             for (AlchemyLanguageAnalyzable alchemyLanguageAnalyzable : alchemyLanguageAnalyzableList) {
-                if(extract == AlchemyLanguageExtractTypes.KEYWORDS){
-                    for(AlchemyLanguageKeyword keyword : alchemyLanguageAnalyzable.getAlchemyLanguageResult().getKeywords()){
-                        AlchemyLanguageChartCategory chartCategory = new AlchemyLanguageChartCategory();
-                        chartCategory.setName(keyword.getText());
-                        chartCategory.setScore(keyword.getRelevance());
-                        
-                        chartCategories.add(chartCategory);
+                if(alchemyLanguageAnalyzable.getAlchemyLanguageResult() != null){
+                    if(extract == AlchemyLanguageExtractTypes.KEYWORDS){
+                        for(AlchemyLanguageKeyword keyword : alchemyLanguageAnalyzable.getAlchemyLanguageResult().getKeywords()){
+                            AlchemyLanguageChartCategory chartCategory = new AlchemyLanguageChartCategory();
+                            chartCategory.setName(keyword.getText());
+                            chartCategory.setScore(keyword.getRelevance());
+                            
+                            chartCategories.add(chartCategory);
+                        }
+                        this.fillChartDataSets(chart, chartCategories, alchemyLanguageAnalyzable.getName(),
+                                alchemyLanguageAnalyzable.getName());
                     }
+                    
                 }
-                this.fillChartDataSets(chart, chartCategories, alchemyLanguageAnalyzable.getName(),
-                        extract.toString());
             }
         } catch (Exception e) {
             Logging.logError(e);
