@@ -36,10 +36,10 @@ public class ChartFactoryProducer implements Serializable {
                 AlchemyLanguageExtractTypes.KEYWORDS);
     }
     
-    public ChartFactoryAlchemyLanguage getChartFactoryAlchemyLanguageTaxanomies() {
+    /*public ChartFactoryAlchemyLanguage getChartFactoryAlchemyLanguageTaxanomies() {
         return new ChartFactoryAlchemyLanguage(
                 AlchemyLanguageExtractTypes.TAXONOMY);
-    }
+    }*/
     
     /**
      * @return OPENNESS Chart

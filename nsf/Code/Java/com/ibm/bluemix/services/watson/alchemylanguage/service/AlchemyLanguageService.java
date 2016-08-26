@@ -7,9 +7,9 @@ import ch.belsoft.tools.XPagesUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ibm.bluemix.services.CloudService;
 import com.ibm.bluemix.services.watson.alchemylanguage.interfaces.IAlchemyLanguageService;
+import com.ibm.bluemix.services.watson.alchemylanguage.model.AlchemyLanguageExtractTypes;
 import com.ibm.bluemix.services.watson.alchemylanguage.model.AlchemyLanguageRequest;
 import com.ibm.bluemix.services.watson.alchemylanguage.model.AlchemyLanguageResult;
-import com.ibm.bluemix.services.watson.alchemylanguage.model.AlchemyLanguageExtractTypes;
 
 public class AlchemyLanguageService extends CloudService implements IAlchemyLanguageService {
     
@@ -34,7 +34,7 @@ public class AlchemyLanguageService extends CloudService implements IAlchemyLang
             super.connect();
             request.setApikey(getApiKey());
             //request.setExtract(StringUtils.join(ExtractTypes.extractTypeSelection(),","));
-            request.setExtract(AlchemyLanguageExtractTypes.KEYWORDS.toString()+","+AlchemyLanguageExtractTypes.TAXONOMY.toString());
+            request.setExtract(AlchemyLanguageExtractTypes.KEYWORDS.toString());
             String url = API_URL + "?" + request.toQueryString();
             
             String postDataString = mapper.writeValueAsString(request);

@@ -135,6 +135,14 @@
 				</div>
 				<div class="row">
 					<div class="col-xs-12">
+						<xc:watson_alchemy_language
+							alchemyLanguageAnalyzable="#{jobApplication}" 
+							alchemyLanguageController="#{jobApplicationController}">
+						</xc:watson_alchemy_language>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
 						<xc:jobApplication_list title="Other applicants for the same job"
 							jobApplicationList="#{javascript:jobApplicationController.getJobApplicationsByJob(jobApplication.jobId)}"></xc:jobApplication_list>
 					</div>

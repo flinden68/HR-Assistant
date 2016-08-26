@@ -3,7 +3,7 @@ package com.ibm.bluemix.services.watson.alchemylanguage.model;
 import java.util.Arrays;
 
 public enum AlchemyLanguageExtractTypes {
-    KEYWORDS("keywords"), TAXONOMY("taxonomy"), CONCEPTS("concepts");
+    KEYWORDS("keywords");//, TAXONOMY("taxonomy"), CONCEPTS("concepts");
     
     private final String extractType;
     

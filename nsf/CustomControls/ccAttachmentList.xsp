@@ -35,7 +35,7 @@
 								 value="#{javascript:compositeData.controller.attachmentHolder.getAttachmentUrl(attachment.getName())}">
 								<i class="fa fa-download"></i>
 							</xp:link>
-							<xp:button styleClass="btn btn-danger" value="remove"
+							<xp:button styleClass="btn btn-danger" value=""
 								loaded="${!compositeData.readOnly}" id="button7">
 								<i class="fa fa-trash fa-fw"></i>
 								<xp:eventHandler event="onclick" submit="true"
