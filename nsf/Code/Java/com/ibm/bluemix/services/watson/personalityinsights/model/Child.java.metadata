@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="d9e" sequence="9" unid="9CE70D9DEA6457C7C125801A00483BC8">
+<created><datetime dst="true">20160825T150858,96+02</datetime></created>
+<modified><datetime dst="true">20160825T150949,72+02</datetime></modified>
+<revised><datetime dst="true">20160825T150949,70+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160825T150949,70+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160825T150858,96+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
+<wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+
+
+
+
+
+<item name="$TITLE"><text>com/ibm/bluemix/services/watson/personalityinsights/model/Child.java</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>com/ibm/bluemix/services/watson/personalityinsights/model/Child.java</text></item></note>

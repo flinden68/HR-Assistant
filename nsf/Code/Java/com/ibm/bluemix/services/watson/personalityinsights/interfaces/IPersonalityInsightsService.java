@@ -4,6 +4,11 @@ import com.ibm.bluemix.services.watson.personalityinsights.model.PersonalityInsi
 import com.ibm.bluemix.services.watson.personalityinsights.model.PersonalityInsightsResult;
 
 public interface IPersonalityInsightsService {
+	/**
+	 * @param req
+	 *            Request object filled with ContentItems
+	 * @return Result object
+	 */
 	public PersonalityInsightsResult analyzePersonalityInsights(
 			PersonalityInsightsRequest req);
 }
