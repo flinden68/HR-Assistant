@@ -86,7 +86,6 @@ Serializable {
         try {
             connectToService();
             String query = SEARCH_PATTERN_BY_COMPANYID+companyId;
-            System.out.println("query="+query);
             result = (List<Job>) cloudantService.search(SEARCH_INDEX,
                     Job.class, SEARCH_COUNT, query);
             

@@ -3,12 +3,13 @@ package com.ibm.bluemix.services.watson.alchemylanguage.model;
 
 public class AlchemyLanguageTaxonomy {
     
-    private String score = "0";
+    private float score = 0;
     private String label = "";
-    public void setScore(String score) {
+    
+    public void setScore(float score) {
         this.score = score;
     }
-    public String getScore() {
+    public float getScore() {
         return score;
     }
     public void setLabel(String label) {
@@ -18,4 +19,12 @@ public class AlchemyLanguageTaxonomy {
         return label;
     }
     
+    @Override
+    public String toString(){
+        return "score : " + getScore() + " - label : " + getLabel();
+    }
+    
+    public int getPercentage(){
+        return Math.round(score * 100);
+    }
 }

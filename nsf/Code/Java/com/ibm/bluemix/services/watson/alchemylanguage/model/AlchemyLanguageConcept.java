@@ -3,17 +3,19 @@ package com.ibm.bluemix.services.watson.alchemylanguage.model;
 
 public class AlchemyLanguageConcept {
     
-    private String relevance = "";
+    private float relevance = 0;
     private String text = "";
     private String dbpedia = "";
     private String freebase = "";
     private String yago = "";
+    private String opencyc = "";
+    private String website = "";
     
-    public void setRelevance(String relevance) {
+    public void setRelevance(float relevance) {
         this.relevance = relevance;
     }
     
-    public String getRelevance() {
+    public float getRelevance() {
         return relevance;
     }
     
@@ -47,5 +49,21 @@ public class AlchemyLanguageConcept {
     
     public String getYago() {
         return yago;
+    }
+    
+    public String getOpencyc() {
+        return opencyc;
+    }
+    
+    public void setOpencyc(String opencyc) {
+        this.opencyc = opencyc;
+    }
+    
+    public String getWebsite() {
+        return website;
+    }
+    
+    public void setWebsite(String website) {
+        this.website = website;
     }
 }

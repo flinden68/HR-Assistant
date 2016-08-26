@@ -22,6 +22,10 @@
 									<a data-toggle="tab" href="#tab_2" aria-expanded="true">IBM
 										Watson Tone Analyzed Job Text</a>
 								</li>
+								<li class="">
+									<a data-toggle="tab" href="#tab_3" aria-expanded="true">IBM
+										Watson Text Analysis Job Text</a>
+								</li>
 							</ul>
 							<div class="tab-content">
 								<div id="tab_1" class="tab-pane active">
@@ -42,6 +46,11 @@
 								<div id="tab_2" class="tab-pane">
 									<xc:watson_toneanalyzer
 										toneAnalyzerable="#{job}" toneAnalyzerableController="#{jobController}"></xc:watson_toneanalyzer>
+								</div>
+								
+								<div id="tab_3" class="tab-pane">
+									<xc:watson_alchemy_language
+										alchemyLanguageAnalyzable="#{job}" alchemyLanguageController="#{jobController}"></xc:watson_alchemy_language>
 								</div>
 								<!-- /.tab-pane -->
 

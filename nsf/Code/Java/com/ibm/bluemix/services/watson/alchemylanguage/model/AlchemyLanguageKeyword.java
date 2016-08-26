@@ -3,14 +3,14 @@ package com.ibm.bluemix.services.watson.alchemylanguage.model;
 
 public class AlchemyLanguageKeyword {
     
-    private String relevance = "";
+    private float relevance = 0;
     private String text = "";
     
-    public void setRelevance(String relevance) {
+    public void setRelevance(float relevance) {
         this.relevance = relevance;
     }
     
-    public String getRelevance() {
+    public float getRelevance() {
         return relevance;
     }
     
@@ -20,5 +20,14 @@ public class AlchemyLanguageKeyword {
     
     public String getText() {
         return text;
+    }
+    
+    @Override
+    public String toString(){
+        return "relevance : " + getRelevance() + " - text : " + getText();
+    }
+    
+    public int getPercentage(){
+        return Math.round(relevance * 100);
     }
 }

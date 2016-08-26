@@ -1,10 +1,25 @@
 package com.ibm.bluemix.services.watson.alchemylanguage.model;
 
+import java.util.Collections;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.ibm.bluemix.services.watson.alchemylanguage.comparator.AlchemyLanguageKeywordComparator;
+import com.ibm.bluemix.services.watson.alchemylanguage.comparator.AlchemyLanguageTaxonomyComparator;
 
 public class AlchemyLanguageResult {
+    
+    @JsonProperty("status")
+    private String status = "";
+    
+    @JsonProperty("usage")
+    private String usage = "";
+    
+    @JsonProperty("totalTransactions")
+    private String totalTransactions = "";
+    
+    @JsonProperty("language")
+    private String language = "";
     
     @JsonProperty("keywords")
     private List<AlchemyLanguageKeyword> keywords = null;
@@ -23,6 +38,7 @@ public class AlchemyLanguageResult {
     }
     
     public List<AlchemyLanguageKeyword> getKeywords() {
+        Collections.sort(keywords, new AlchemyLanguageKeywordComparator());
         return keywords;
     }
     
@@ -43,10 +59,55 @@ public class AlchemyLanguageResult {
     }
     
     public void setTaxonomies(List<AlchemyLanguageTaxonomy> taxonomies) {
+        Collections.sort(taxonomies, new AlchemyLanguageTaxonomyComparator());
         this.taxonomies = taxonomies;
     }
     
     public List<AlchemyLanguageTaxonomy> getTaxonomies() {
         return taxonomies;
     }
+    
+    public String getStatus() {
+        return status;
+    }
+    
+    public String getUsage() {
+        return usage;
+    }
+    
+    public String getTotalTransactions() {
+        return totalTransactions;
+    }
+    
+    public String getLanguage() {
+        return language;
+    }
+    
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
+    public void setUsage(String usage) {
+        this.usage = usage;
+    }
+    
+    public void setTotalTransactions(String totalTransactions) {
+        this.totalTransactions = totalTransactions;
+    }
+    
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+    
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("status : "+ getStatus()+ ",");
+        sb.append("language : "+ getLanguage() + ",");
+        sb.append("transactions : "+ getTotalTransactions() + ",");
+        sb.append("keywords : "+ getKeywords());
+        
+        return sb.toString();
+    }
+    
 }

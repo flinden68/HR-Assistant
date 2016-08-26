@@ -6,7 +6,6 @@ import java.util.List;
 
 public class ServletUtils {
     public static List<String> findRouteParameters(String pathInfo){
-        //System.out.println("pathInfo: " + pathInfo);
         List<String> param = Arrays.asList(pathInfo.split("/(.*?)"));
         List<String> routeParm = new ArrayList<String>();
         if(param.size() > 3) {

@@ -39,4 +39,24 @@ public class AlchemyLanguageRequest {
         return extract;
     }
     
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("apikey : "+ getApikey() + ",");
+        sb.append("outputMode : "+ getOutputMode() + ",");
+        sb.append("extract : "+ getExtract() + ",");
+        sb.append("text : "+ getText());
+        
+        return sb.toString();
+    }
+    
+    public String toQueryString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("apikey="+ getApikey() + "&");
+        sb.append("outputMode="+ getOutputMode() + "&");
+        sb.append("extract="+ getExtract() + "&");
+        sb.append("text="+ getText());
+        return sb.toString();
+    }
+    
 }

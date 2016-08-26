@@ -1,10 +1,10 @@
 package com.ibm.bluemix.services.watson.alchemylanguage.injector;
 
 import java.io.Serializable;
-
-import org.apache.commons.lang3.StringEscapeUtils;
+import java.net.URLEncoder;
 
 import ch.belsoft.tools.Logging;
+import ch.belsoft.tools.Util;
 import ch.belsoft.tools.XPagesUtil;
 
 import com.ibm.bluemix.services.watson.alchemylanguage.interfaces.AlchemyLanguageAnalyzable;
@@ -33,10 +33,9 @@ public class AlchemyLanguageInjector implements Serializable {
     public void analyzeText(AlchemyLanguageAnalyzable alchemyLanguageAnalyzable) {
         try {
             AlchemyLanguageRequest alchemyLanguageRequest = new AlchemyLanguageRequest();
-            String textToAnalyze = StringEscapeUtils
-            .escapeHtml4(alchemyLanguageAnalyzable.getTextToAnalyze());
-            alchemyLanguageRequest.setText(textToAnalyze);
-            System.out.println("textToAnalyze="+textToAnalyze);
+            String textToAnalyze = Util.removeHTMLTagsFromText(alchemyLanguageAnalyzable.getTextToAnalyze());
+            alchemyLanguageRequest.setText(URLEncoder.encode(textToAnalyze, "UTF-8"));
+            
             getAlchemyLanguageConsumer().analyzeText(alchemyLanguageRequest, alchemyLanguageAnalyzable);
         } catch (Exception e) {
             Logging.logError(e);

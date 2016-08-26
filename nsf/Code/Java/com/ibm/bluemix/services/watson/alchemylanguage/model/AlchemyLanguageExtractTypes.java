@@ -2,15 +2,15 @@ package com.ibm.bluemix.services.watson.alchemylanguage.model;
 
 import java.util.Arrays;
 
-public enum ExtractTypes {
-    KEYWORDS("keywords"), ENTITIES("entities"), TAXONOMY("taxonomy");
+public enum AlchemyLanguageExtractTypes {
+    KEYWORDS("keywords"), TAXONOMY("taxonomy"), CONCEPTS("concepts");
     
     private final String extractType;
     
     /**
      * @param text
      */
-    private ExtractTypes(final String extractType) {
+    private AlchemyLanguageExtractTypes(final String extractType) {
         this.extractType = extractType;
     }
     
@@ -20,7 +20,7 @@ public enum ExtractTypes {
     }
     
     public static String[] extractTypeSelection() {
-        ExtractTypes[] extractTypes = values();
+        AlchemyLanguageExtractTypes[] extractTypes = values();
         String[] selectionItem = new String[extractTypes.length];
         
         for (int i = 0; i < extractTypes.length; i++) {

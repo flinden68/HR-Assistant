@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:div styleClass="box" id="pnlAlchemyLanguageAnalyzer">
+
+
+		<div class="box-header">
+			<xp:text escape="true" id="computedField4" tagName="h3"
+				styleClass="box-title" value="Watson Text analysis"> 
+			</xp:text>
+		</div>
+		<div class="box-header">
+			<xp:button value="Refresh" id="button2" styleClass="btn btn-danger" loaded="${!compositeData.alchemyLanguageController.readOnly}">
+				<xp:eventHandler event="onclick" submit="true"
+					onStart="waitingDialog.show('analyzing text...')" onComplete="waitingDialog.hide()"
+					refreshMode="partial" refreshId="pnlAlchemyLanguageAnalyzer"
+					disableValidators="true" execMode="partial" execId="content-wrapper">
+					<xp:this.action>
+						<xp:executeScript
+							script="#{compositeData.alchemyLanguageController.analyzeTextAlchemyLanguage}">
+						</xp:executeScript>
+					</xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+		</div>
+
+		<!-- /.box-header -->
+		
+
+		<div class="box-body">
+			<xp:div styleClass="row"
+				rendered="#{compositeData.alchemyLanguageAnalyzable.alchemyLanguageResult!=null}">
+				
+				<div class="col-md-6 col-xs-12">
+					<xc:watson_alchemy_language_keywords
+						alchemyLanguageAnalyzable="#{compositeData.alchemyLanguageAnalyzable}"
+						alchemyLanguageController="#{compositeData.alchemyLanguageController}">
+					</xc:watson_alchemy_language_keywords>
+				</div>
+				<div class="col-md-6 col-xs-12">
+					<xc:chart
+						chart="#{javascript:chartFactoryProducer.getChartFactoryAlchemyLanguageKeywords().createChart(compositeData.alchemyLanguageAnalyzable)}"
+						chartAlias="alchemy_language_keyword" title="Keywords analysis">
+					</xc:chart>
+				</div>
+			</xp:div>
+		</div>
+
+	</xp:div>
+</xp:view>

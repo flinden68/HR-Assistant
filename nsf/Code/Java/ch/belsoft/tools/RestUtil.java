@@ -77,7 +77,7 @@ public class RestUtil {
             }
         }
         
-        System.out.println("executing url: " + url);
+        //System.out.println("executing url: " + url);
         
         return executor.execute(
                 postRequest.bodyString(postDataString,

@@ -231,9 +231,6 @@ PersonalityInsightableController, Serializable {
                     jobApplications.remove(this.jobApplication);
                 }
             } else {
-                //TODO to be removed
-                System.out.println("job applications are not empty!"
-                        + jobApplications.size() + " jobid: " + jobId);
                 
             }
             

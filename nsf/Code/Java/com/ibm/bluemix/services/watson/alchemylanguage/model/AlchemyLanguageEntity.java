@@ -3,10 +3,10 @@ package com.ibm.bluemix.services.watson.alchemylanguage.model;
 
 public class AlchemyLanguageEntity {
     
-    private String relevance = "";
-    private String text = "";
-    private int count = 0;
     private String type = "";
+    private String relevance = "";
+    private int count = 0;
+    private String text = "";
     
     public void setRelevance(String relevance) {
         this.relevance = relevance;
@@ -24,12 +24,9 @@ public class AlchemyLanguageEntity {
         return text;
     }
     
-    public void setCount(int count) {
-        this.count = count;
-    }
-    
-    public int getCount() {
-        return count;
+    @Override
+    public String toString(){
+        return "relevance : " + getRelevance() + " - text : " + getText();
     }
     
     public void setType(String type) {
@@ -40,4 +37,11 @@ public class AlchemyLanguageEntity {
         return type;
     }
     
+    public void setCount(int count) {
+        this.count = count;
+    }
+    
+    public int getCount() {
+        return count;
+    }
 }
