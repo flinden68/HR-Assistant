@@ -66,6 +66,11 @@
 			<value>#{personalityInsightsInjector}
 			</value>
 		</managed-property>
+		<managed-property>
+			<property-name>alchemyLanguageInjector
+			</property-name>
+			<value>#{alchemyLanguageInjector}</value>
+		</managed-property>
 	</managed-bean>
 	<!-- Job Controller -->
 	<managed-bean>
@@ -75,11 +80,6 @@
 			ch.belsoft.hrassistant.job.controller.JobController
 		</managed-bean-class>
 		<managed-bean-scope>view</managed-bean-scope>
-		<managed-property>
-			<property-name>toneAnalyzerInjector
-			</property-name>
-			<value>#{toneAnalyzerInjector}</value>
-		</managed-property>
 		<managed-property>
 			<property-name>jobDAO</property-name>
 			<value>#{jobDAO}</value>

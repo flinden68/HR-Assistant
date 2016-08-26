@@ -155,7 +155,6 @@ public class Job extends DataItem implements ToneAnalyzable, AlchemyLanguageAnal
     }
     
     public AlchemyLanguageResult getAlchemyLanguageResult() {
-        // TODO Auto-generated method stub
         return alchemyLanguageResult;
     }
     

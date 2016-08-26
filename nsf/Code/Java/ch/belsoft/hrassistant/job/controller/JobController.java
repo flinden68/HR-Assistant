@@ -320,7 +320,6 @@ IGuiController<Job>, ToneAnalyzableController, AlchemyLanguageController, Serial
     }
     
     public AlchemyLanguageInjector getAlchemyLanguageInjector() {
-        // TODO Auto-generated method stub
         return alchemyLanguageInjector;
     }
     
