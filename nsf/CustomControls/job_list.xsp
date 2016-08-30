@@ -20,7 +20,7 @@
 						<th>name</th>
 						<th>company</th>
 						<th style="width:150px;">date</th>
-						<th style="width:140px">analyzed</th>
+						<th style="width:120px">IBM Watson</th>
 						<th style="width:200px;"></th>
 					</tr>
 				</thead>
@@ -43,14 +43,15 @@
 								</xp:text>
 							</td>
 							<td>
-								<xp:image url="custom/img/icon_watson_toneanalyzer.png"
+								<xp:image url="custom/img/icon_watson_toneanalyzer.png" style="margin-right:3px;"
 									rendered="#{entry.toneAnalyzerResult!=null}" title="Tome analyzed by IBM Watson"
 									id="image1">
 								</xp:image>
-								<xp:image url="custom/img/alchemy-language-service-icon.png"
+								<xp:image url="custom/img/alchemy-language-service-icon.png" style="margin-right:3px;"
 									rendered="#{entry.alchemyLanguageResult!=null}" title="Text analyzed by IBM Watson"
 									id="image2">
 								</xp:image>
+								
 							</td>
 							<td>
 								<xp:link escape="true" styleClass="btn btn-warning btn-margin-right"

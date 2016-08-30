@@ -21,7 +21,8 @@
 						<th>job</th>
 						<th>date</th>
 						<th>applicant</th>
-						<th></th>
+						<th style="width:120px">IBM Watson</th>
+						<th style="width:200px;"></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -42,7 +43,20 @@
 									value="#{entry.created}">
 								</xp:text>
 							</td>
-
+							<td>
+								<xp:image url="custom/img/icon_watson_toneanalyzer.png"
+									style="margin-right:3px;" rendered="#{entry.toneAnalyzerResult!=null}"
+									title="Tome analyzed by IBM Watson" id="image1">
+								</xp:image>
+								<xp:image url="custom/img/alchemy-language-service-icon.png"
+									style="margin-right:3px;" rendered="#{entry.alchemyLanguageResult!=null}"
+									title="Text analyzed by IBM Watson" id="image2">
+								</xp:image>
+								<xp:image url="custom/img/icon_watson_personalityinsights.png"
+									rendered="#{entry.personalityInsightsResult!=null}" title="Personality insights analyzed by IBM Watson"
+									id="image3">
+								</xp:image>
+							</td>
 							<td>
 								<xp:link escape="true"
 									styleClass="btn btn-warning

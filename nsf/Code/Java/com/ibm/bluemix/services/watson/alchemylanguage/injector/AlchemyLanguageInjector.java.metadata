@@ -1,15 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="132a" sequence="12" unid="53B72DA726350865C125801700642842">
-<created><datetime dst="true">20160822T201359,06+02</datetime></created>
-<modified><datetime dst="true">20160822T201624,32+02</datetime></modified>
-<revised><datetime dst="true">20160822T201624,31+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160822T201624,32+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160822T201359,07+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
-<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="d92" sequence="11" unid="EC62030F777B06C5C1258019006BADB9">
+<created><datetime dst="true">20160824T213608,25+02</datetime></created>
+<modified><datetime dst="true">20160830T214407,43+02</datetime></modified>
+<revised><datetime dst="true">20160830T214407,41+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160830T214407,41+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160824T213608,26+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
+<wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>com/ibm/bluemix/services/watson/alchemylanguage/injector/AlchemyLanguageInjector.java</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
-<item name="$FileNames" sign="true"><text>com/ibm/bluemix/services/watson/alchemylanguage/injector/AlchemyLanguageInjector.java</text></item></note>
+<item name="$FileNames" sign="true"><text>com/ibm/bluemix/services/watson/alchemylanguage/injector/AlchemyLanguageInjector.java</text></item>
+
+
+</note>
