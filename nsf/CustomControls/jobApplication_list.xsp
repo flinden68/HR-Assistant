@@ -19,9 +19,9 @@
 
 				<thead>
 					<tr>
+						<th>applicant</th>
 						<th>job</th>
 						<th>date</th>
-						<th>applicant</th>
 						<th style="width:120px">IBM Watson</th>
 						<th style="width:200px;"></th>
 					</tr>

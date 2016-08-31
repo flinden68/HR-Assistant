@@ -39,8 +39,8 @@
 				</div>
 				<div class="col-md-6 col-xs-12">
 					<xc:chart
-						chart="#{javascript:chartFactoryProducer.getChartFactoryAlchemyLanguageKeywords().createChart(compositeData.alchemyLanguageAnalyzable)}"
-						chartAlias="keywords_jobs"
+						chart="#{javascript:chartFactoryProducer.getChartFactoryAlchemyLanguageKeywords('job').createChart(compositeData.alchemyLanguageAnalyzable)}"
+						chartAlias="keywords_job"
 						chartAliasGUI="alchemy_language_keyword_#{compositeData.alchemyLanguageAnalyzable.id}"
 						title="Keywords analysis">
 					</xc:chart>
