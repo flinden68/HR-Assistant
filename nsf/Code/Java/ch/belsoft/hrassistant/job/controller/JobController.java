@@ -43,7 +43,7 @@ IGuiController<Job>, ToneAnalyzableController, AlchemyLanguageController, Serial
     private Job job = null;
     private List<Job> jobs = new ArrayList<Job>();
     private List<Company> companies;
-    private String searchQueryListing;
+    private String searchQueryListing = "";
     
     private ToneAnalyzerInjector toneAnalyzerInjector = null;
     private AlchemyLanguageInjector alchemyLanguageInjector = null;
@@ -175,9 +175,23 @@ IGuiController<Job>, ToneAnalyzableController, AlchemyLanguageController, Serial
                 } else {
                     this.jobs = this.jobDAO.search(this.searchQuery);
                 }
+                
+                
                 if (jobs != null) {
                     jobs.remove(this.job);
                 }
+            }
+            
+            //filter the jobs list
+            if(!"".equals(searchQueryListing)){
+                List<Job> jobsFiltered = new ArrayList<Job>();
+                for(Job jobInlist : jobs){
+                    if(searchQueryListing.equals(jobInlist.getCompany().getAddress().getCountry())){
+                        jobsFiltered.add(jobInlist);
+                    }
+                }
+                jobs.clear();
+                jobs.addAll(jobsFiltered);
             }
             
         } catch (Exception e) {
@@ -216,11 +230,12 @@ IGuiController<Job>, ToneAnalyzableController, AlchemyLanguageController, Serial
     }
     
     public void filterJoblisting() {
-        if ("".equals(searchQueryListing)) {
+        //System.out.println("filterJoblisting = " + getSearchQueryListing());
+        /*if ("".equals(searchQueryListing)) {
             jobs = jobDAO.read();
         } else {
             jobs = jobDAO.searchByCountry(searchQueryListing);
-        }
+        }*/
     }
     
     public List<String> getCountrySelection() {

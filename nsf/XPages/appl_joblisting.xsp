@@ -77,7 +77,7 @@
 												disableValidators="true" execMode="partial" refreshId="pnlDataItemList">
 												<xp:this.action>
 													<xp:executeScript
-														script="#{javascript:jobController.filterJoblisting();}">
+														script="#{javascript://jobController.filterJoblisting();}">
 													</xp:executeScript>
 												</xp:this.action>
 											</xp:eventHandler>
