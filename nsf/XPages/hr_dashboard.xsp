@@ -4,11 +4,15 @@
 		<xp:this.facets>
 			<xp:panel xp:key="Content">
 				<div class="row">
-					<div class="col-xs-4">
+					<div class="col-xs-12 col-md-3">
 						<xc:chart
 							chart="#{javascript:chartFactoryProducer.getChartFactoryApplicationsByJob().createChart(jobApplicationController.jobApplications)}"
 							chartAlias="appl_per_job" chartAliasGUI="appl_per_job" title="Applications per Job">
 						</xc:chart>
+					</div>
+					<div class="col-xs-12 col-md-9">
+						<xc:jobApplication_list title="Recent job applications"
+							showButtons="false" jobApplicationList="#{jobApplicationController.jobApplicationsRecent}"></xc:jobApplication_list>
 					</div>
 				</div>
 
@@ -19,7 +23,7 @@
 						<xp:div styleClass="box box-primary" id="pnlCharts">
 							<div class="box-header">
 								<xp:text escape="true" id="computedField2" tagName="h3"
-									styleClass="box-title" value="All Tone Anaylized Jobs"></xp:text>
+									styleClass="box-title" value="IBM Watson Tone Anaylized Jobs"></xp:text>
 
 							</div>
 							<!-- /.box-header -->
@@ -68,8 +72,7 @@
 								<div class="col-md-6 col-xs-12">
 									<xc:chart
 										chart="#{javascript:chartFactoryProducer.getChartFactoryAlchemyLanguageKeywords('jobs').createChart(jobController.jobs)}"
-										chartAlias="keywords_jobs" 
-										chartAliasGUI="keywords_jobs"
+										chartAlias="keywords_jobs" chartAliasGUI="keywords_jobs"
 										title="Jobs">
 									</xc:chart>
 								</div>
@@ -77,8 +80,7 @@
 								<div class="col-md-6 col-xs-12">
 									<xc:chart
 										chart="#{javascript:chartFactoryProducer.getChartFactoryAlchemyLanguageKeywords('jobapplications').createChart(jobApplicationController.jobApplications)}"
-										chartAlias="keywords_jobapplications"
-										chartAliasGUI="keywords_jobapplications"
+										chartAlias="keywords_jobapplications" chartAliasGUI="keywords_jobapplications"
 										title="Job Applications">
 									</xc:chart>
 								</div>

@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="125a" sequence="42" unid="14A767A954102C4AC125800D0023BEE8">
-<created><datetime dst="true">20160812T083026,32+02</datetime></created>
-<modified><datetime dst="true">20160831T214531,18+02</datetime></modified>
-<revised><datetime dst="true">20160831T214531,17+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160831T214531,18+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160812T083028,30+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
-<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="b16" sequence="154" unid="0B01FDD970B6845AC1257FEF0072F630">
+<created><datetime dst="true">20160713T225541,28+02</datetime></created>
+<modified><datetime dst="true">20160831T232445,36+02</datetime></modified>
+<revised><datetime dst="true">20160831T232445,34+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160831T232445,34+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160713T225541,28+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
+<wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$Flags"><text>gC~4;</text></item>
 <item name="$TITLE" sign="true"><text>jobApplication_list.xsp</text></item>
-
-
-<item name="$DesignerVersion"><text>8.5.2</text></item>
 
 
 
 
 
 <item name="$FileNames" sign="true"><text>jobApplication_list.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
 
 </note>

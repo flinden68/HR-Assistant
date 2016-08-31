@@ -23,7 +23,8 @@
 						<th>job</th>
 						<th>date</th>
 						<th style="width:120px">IBM Watson</th>
-						<th style="width:200px;"></th>
+						<xp:panel tagName="th" style="width:200px;"
+							loaded="${compositeData.showButtons}"></xp:panel>
 					</tr>
 				</thead>
 				<tbody>
@@ -58,7 +59,7 @@
 									id="image3">
 								</xp:image>
 							</td>
-							<td>
+							<xp:td loaded="${compositeData.showButtons}">
 								<xp:link escape="true"
 									styleClass="btn btn-warning
 								btn-margin-right" text="edit"
@@ -79,7 +80,7 @@
 										</xp:this.action>
 									</xp:eventHandler>
 								</xp:button>
-							</td>
+							</xp:td>
 						</xp:tr>
 					</xp:repeat>
 				</tbody>

@@ -5,7 +5,7 @@
 
 		<div class="box-header">
 			<xp:text escape="true" id="computedField4" tagName="h3"
-				styleClass="box-title" value="Watson Personality Insights">
+				styleClass="box-title" value="IBM Watson Personality Insights">
 			</xp:text>
 		</div>
 		<div class="box-header">

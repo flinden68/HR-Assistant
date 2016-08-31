@@ -373,7 +373,7 @@
 					</xp:div>
 
 					<h3 class="control-sidebar-heading">
-						Watson Test
+						IBM Watson Test
 					</h3>
 					This will analize the tone..
 					<xp:div id="pnlWatsonTone">
