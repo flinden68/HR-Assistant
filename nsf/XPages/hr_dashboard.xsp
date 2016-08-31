@@ -56,7 +56,7 @@
 				<div class="row">
 
 					<div class="col-md-12">
-						<div styleClass="box box-primary" id="div1">
+						<div class="box box-primary" id="div1">
 							<div class="box-header">
 								<xp:text escape="true" id="computedField1" tagName="h3"
 									styleClass="box-title" value="All Text Anaylized Jobs and Job applications"></xp:text>
@@ -67,17 +67,18 @@
 							<div class="box-body">
 								<div class="col-md-6 col-xs-12">
 									<xc:chart
-										chart="#{javascript:chartFactoryProducer.getChartFactoryAlchemyLanguageKeywords().createChart(jobController.jobs)}"
-										chartAlias="alchemy_language_jobs_keyword" chartAliasGUI="alchemy_language_jobs_keyword"
+										chart="#{javascript:chartFactoryProducer.getChartFactoryAlchemyLanguageKeywords('jobs').createChart(jobController.jobs)}"
+										chartAlias="keywords_jobs" 
+										chartAliasGUI="keywords_jobs"
 										title="Jobs">
 									</xc:chart>
 								</div>
 
 								<div class="col-md-6 col-xs-12">
 									<xc:chart
-										chart="#{javascript:chartFactoryProducer.getChartFactoryAlchemyLanguageKeywords().createChart(jobApplicationController.jobApplications)}"
-										chartAlias="alchemy_language_jobapplications_keyword"
-										chartAliasGUI="alchemy_language_jobapplications_keyword"
+										chart="#{javascript:chartFactoryProducer.getChartFactoryAlchemyLanguageKeywords('jobapplications').createChart(jobApplicationController.jobApplications)}"
+										chartAlias="keywords_jobapplications"
+										chartAliasGUI="keywords_jobapplications"
 										title="Job Applications">
 									</xc:chart>
 								</div>

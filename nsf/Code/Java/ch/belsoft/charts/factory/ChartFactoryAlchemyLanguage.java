@@ -24,31 +24,10 @@ implements Serializable {
     
     private final AlchemyLanguageExtractTypes extract;
     
-    public ChartFactoryAlchemyLanguage(AlchemyLanguageExtractTypes extract) {
-        this.chartAlias = extract.toString();
-        this.setDefaultChartType(this.chartAlias, ChartTypeSelection.BAR);
+    public ChartFactoryAlchemyLanguage(AlchemyLanguageExtractTypes extract, String alias) {
+        this.chartAlias = extract.toString()+"_"+alias;
+        this.setDefaultChartType(this.chartAlias, ChartTypeSelection.BAR.toString());
         this.extract = extract;
-    }
-    
-    public static enum ToneCategoryEnum {
-        EMOTION_TONE("emotion_tone"), LANGUAGE_TONE("language_tone"), SOCIAL_TONE(
-        "social_tone");
-        
-        private final String tone;
-        
-        private ToneCategoryEnum(final String tone) {
-            this.tone = tone;
-        }
-        
-        /*
-         * (non-Javadoc)
-         * 
-         * @see java.lang.Enum#toString()
-         */
-        @Override
-        public String toString() {
-            return tone;
-        }
     }
     
     protected void fillChartDataSets(Chart chart, List<AlchemyLanguageChartCategory> chartCategories,
@@ -75,7 +54,7 @@ implements Serializable {
     @Override
     public Chart createChart(AlchemyLanguageAnalyzable alchemyLanguageAnalyzable) {
         Chart chart = new Chart(this.chartAlias);
-        this.setDefaultChartType(this.chartAlias, ChartTypeSelection.BAR);
+        this.setDefaultChartType(this.chartAlias, ChartTypeSelection.BAR.toString());
         List<AlchemyLanguageChartCategory> chartCategories = new ArrayList<AlchemyLanguageChartCategory>();
         try {
             if(alchemyLanguageAnalyzable.getAlchemyLanguageResult() != null){
@@ -101,7 +80,8 @@ implements Serializable {
     @Override
     public Chart createChart(List<AlchemyLanguageAnalyzable> alchemyLanguageAnalyzableList) {
         Chart chart = new Chart(this.chartAlias);
-        this.setDefaultChartType(this.chartAlias, ChartTypeSelection.BAR);
+        this.setDefaultChartType(this.chartAlias, ChartTypeSelection.BAR.toString());
+        
         List<AlchemyLanguageChartCategory> chartCategories = new ArrayList<AlchemyLanguageChartCategory>();
         try {
             for (AlchemyLanguageAnalyzable alchemyLanguageAnalyzable : alchemyLanguageAnalyzableList) {
@@ -120,6 +100,7 @@ implements Serializable {
                     
                 }
             }
+            
         } catch (Exception e) {
             Logging.logError(e);
         }

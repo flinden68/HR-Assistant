@@ -31,9 +31,9 @@ public class ChartFactoryProducer implements Serializable {
                 ChartFactoryJobApplications.ChartAlias.JOB_APPLICATIONS_BY_JOB);
     }
     
-    public ChartFactoryAlchemyLanguage getChartFactoryAlchemyLanguageKeywords() {
+    public ChartFactoryAlchemyLanguage getChartFactoryAlchemyLanguageKeywords(String alias) {
         return new ChartFactoryAlchemyLanguage(
-                AlchemyLanguageExtractTypes.KEYWORDS);
+                AlchemyLanguageExtractTypes.KEYWORDS, alias);
     }
     
     /*public ChartFactoryAlchemyLanguage getChartFactoryAlchemyLanguageTaxanomies() {

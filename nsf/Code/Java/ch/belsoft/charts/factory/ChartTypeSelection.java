@@ -74,4 +74,9 @@ public class ChartTypeSelection implements Serializable {
         //	System.out.println("so now: "+ getChartType(alias));
         
     }
+    
+    @Override
+    public String toString(){
+        return "ChartTypeSelection [alias- " + chartTypeByChartAlias + ", chartTypeSelection - "+chartTypeSelection+"]";
+    }
 }
