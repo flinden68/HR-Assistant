@@ -7,7 +7,7 @@
 					<div class="col-xs-4">
 						<xc:chart
 							chart="#{javascript:chartFactoryProducer.getChartFactoryApplicationsByJob().createChart(jobApplicationController.jobApplications)}"
-							chartAlias="appl_per_job" title="Applications per Job">
+							chartAlias="appl_per_job" chartAliasGUI="appl_per_job" title="Applications per Job">
 						</xc:chart>
 					</div>
 				</div>
@@ -29,20 +29,21 @@
 									<div class="col-md-4 col-xs-12">
 										<xc:chart
 											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerEmotionTone().createChart(jobController.jobs)}"
-											chartAlias="emotion_tone" title="Emotion Tone">
+											chartAlias="emotion_tone" chartAliasGUI="emotion_tone" title="Emotion Tone">
 										</xc:chart>
 									</div>
 									<div class="col-md-4 col-xs-12">
 										<xc:chart
 											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerLanguageTone().createChart(jobController.jobs)}"
-											chartAlias="language_tone" title="Language Tone">
+											chartAlias="language_tone" chartAliasGUI="language_tone"
+											title="Language Tone">
 										</xc:chart>
 
 									</div>
 									<div class="col-md-4 col-xs-12">
 										<xc:chart
 											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerSocialTone().createChart(jobController.jobs)}"
-											chartAlias="social_tone" title="Social Tone">
+											chartAlias="social_tone" chartAliasGUI="social_tone" title="Social Tone">
 										</xc:chart>
 									</div>
 								</xp:div>
@@ -51,7 +52,7 @@
 						</xp:div>
 					</div>
 				</div>
-				
+
 				<div class="row">
 
 					<div class="col-md-12">
@@ -67,14 +68,17 @@
 								<div class="col-md-6 col-xs-12">
 									<xc:chart
 										chart="#{javascript:chartFactoryProducer.getChartFactoryAlchemyLanguageKeywords().createChart(jobController.jobs)}"
-										chartAlias="alchemy_language_jobs_keyword" title="Jobs">
+										chartAlias="alchemy_language_jobs_keyword" chartAliasGUI="alchemy_language_jobs_keyword"
+										title="Jobs">
 									</xc:chart>
 								</div>
-								
+
 								<div class="col-md-6 col-xs-12">
 									<xc:chart
 										chart="#{javascript:chartFactoryProducer.getChartFactoryAlchemyLanguageKeywords().createChart(jobApplicationController.jobApplications)}"
-										chartAlias="alchemy_language_jobapplications_keyword" title="Job Applications">
+										chartAlias="alchemy_language_jobapplications_keyword"
+										chartAliasGUI="alchemy_language_jobapplications_keyword"
+										title="Job Applications">
 									</xc:chart>
 								</div>
 							</div>

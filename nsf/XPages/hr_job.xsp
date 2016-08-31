@@ -127,30 +127,33 @@
 							</div>
 							<!-- /.box-header -->
 
-							<div class="box-body">
+							<xp:div styleClass="box-body"
+								rendered="#{javascript:jobApplications.length>0}">
 								<xp:div styleClass="row">
 									<div class="col-md-4 col-xs-12">
 										<xc:chart
-											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerEmotionTone().createChart(jobApplicationController.getJobApplicationsByJob(job.id))}"
-											chartAlias="emotion_tone" title="Emotion Tone">
+											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerEmotionTone().createChart(jobApplications)}"
+											chartAlias="emotion_tone" chartAliasGUI="emotion_tone_#{job.id}"
+											title="Emotion Tone">
 										</xc:chart>
 									</div>
 									<div class="col-md-4 col-xs-12">
 										<xc:chart
 											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerLanguageTone().createChart(jobApplications)}"
-											chartAlias="language_tone" title="Language Tone">
+											chartAlias="language_tone" chartAliasGUI="language_tone_#{job.id}"
+											title="Language Tone">
 										</xc:chart>
 
 									</div>
 									<div class="col-md-4 col-xs-12">
 										<xc:chart
 											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerSocialTone().createChart(jobApplications)}"
-											chartAlias="social_tone" title="Social Tone">
+											chartAlias="social_tone" chartAliasGUI="social_tone_#{job.id}"
+											title="Social Tone">
 										</xc:chart>
 									</div>
 								</xp:div>
-							</div>
-
+							</xp:div>
 						</xp:div>
 					</div>
 				</div>

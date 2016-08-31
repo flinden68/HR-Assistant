@@ -12,7 +12,8 @@
 			<xc:ccPager repeatId="rptList"></xc:ccPager>
 		</div>
 
-		<div class="box-body table-responsive">
+		<xp:div styleClass="box-body table-responsive"
+			rendered="#{javascript:compositeData.jobApplicationList.length>0}">
 			<xc:ccMessageBoxSearch controller="#{jobApplicationController}"></xc:ccMessageBoxSearch>
 			<table class="table table-hover table-striped">
 
@@ -83,6 +84,6 @@
 					</xp:repeat>
 				</tbody>
 			</table>
-		</div>
+		</xp:div>
 	</xp:div>
 </xp:view>

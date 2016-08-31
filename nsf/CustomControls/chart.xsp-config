@@ -28,6 +28,13 @@
       </property-extension>
     </property>
     <property>
+      <property-name>chartAliasGUI</property-name>
+      <property-class>string</property-class>
+      <property-extension>
+        <required>true</required>
+      </property-extension>
+    </property>
+    <property>
       <property-name>title</property-name>
       <property-class>string</property-class>
       <property-extension>

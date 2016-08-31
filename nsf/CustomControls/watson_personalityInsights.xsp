@@ -30,25 +30,31 @@
 				<div class="col-md-3 col-xs-12">
 					<xc:chart
 						chart="#{javascript:chartFactoryProducer.getChartFactoryPersonalityInsightsOpenness().createChart(compositeData.personalityInsightable)}"
-						chartAlias="Openness" title="Openness">
+						chartAlias="Openness" chartAliasGUI="Openness#{compositeData.personalityInsightable.id}"
+						title="Openness">
 					</xc:chart>
 				</div>
 				<div class="col-md-3 col-xs-12">
 					<xc:chart
 						chart="#{javascript:chartFactoryProducer.getChartFactoryPersonalityInsightsConscientiousness().createChart(compositeData.personalityInsightable)}"
-						chartAlias="Conscientiousness" title="Conscientiousness">
+						chartAlias="Conscientiousness"
+						chartAliasGUI="Conscientiousness#{compositeData.personalityInsightable.id}"
+						title="Conscientiousness">
 					</xc:chart>
 				</div>
 				<div class="col-md-3 col-xs-12">
 					<xc:chart
 						chart="#{javascript:chartFactoryProducer.getChartFactoryPersonalityInsightsAgreeableness().createChart(compositeData.personalityInsightable)}"
-						chartAlias="Agreeableness" title="Agreeableness">
+						chartAlias="Agreeableness"
+						chartAliasGUI="Agreeableness#{compositeData.personalityInsightable.id}"
+						title="Agreeableness">
 					</xc:chart>
 				</div>
 				<div class="col-md-3 col-xs-12">
 					<xc:chart
 						chart="#{javascript:chartFactoryProducer.getChartFactoryPersonalityInsightsEmotionalRange().createChart(compositeData.personalityInsightable)}"
-						chartAlias="Neuroticism" title="Emotional range">
+						chartAlias="Neuroticism" chartAliasGUI="Neuroticism#{compositeData.personalityInsightable.id}"
+						title="Emotional range">
 					</xc:chart>
 				</div>
 			</xp:div>
@@ -57,21 +63,27 @@
 				<div class="col-md-3 col-xs-12">
 					<xc:chart
 						chart="#{javascript:chartFactoryProducer.getChartFactoryPersonalityInsightsExtraversion().createChart(compositeData.personalityInsightable)}"
-						chartAlias="Extraversion" title="Extraversion">
+						chartAlias="Extraversion"
+						chartAliasGUI="Extraversion#{compositeData.personalityInsightable.id}"
+						title="Extraversion">
 					</xc:chart>
 				</div>
 
 				<div class="col-md-3 col-xs-12">
 					<xc:chart
 						chart="#{javascript:chartFactoryProducer.getChartFactoryPersonalityInsightsHedonism().createChart(compositeData.personalityInsightable)}"
-						chartAlias="Hedonism_parent" title="Hedonism">
+						chartAlias="Hedonism_parent"
+						chartAliasGUI="Hedonism_parent#{compositeData.personalityInsightable.id}"
+						title="Hedonism">
 					</xc:chart>
 				</div>
 
 				<div class="col-md-3 col-xs-12">
 					<xc:chart
 						chart="#{javascript:chartFactoryProducer.getChartFactoryPersonalityInsightsSelfExpression().createChart(compositeData.personalityInsightable)}"
-						chartAlias="Self-expression_parent" title="Self-expression">
+						chartAlias="Self-expression_parent"
+						chartAliasGUI="SelfExpressionParent#{compositeData.personalityInsightable.id}"
+						title="Self-expression">
 					</xc:chart>
 				</div>
 
