@@ -113,7 +113,7 @@ public class ApplicationController implements Serializable {
     private void initUser(){
         String hostName = XPagesUtil.getHostName();
         //to avoid that we get stupid to login all the time, when we develop ;-)
-        if(!"localhost".equals(hostName)&&!"belsoft".equals(hostName)){
+        if(!hostName.contains("localhost")&&!hostName.contains("belsoft")){
             if(!user.isAuthenticated()){
                 String currentPage = XPagesUtil.getViewRoot().getPageName();
                 
