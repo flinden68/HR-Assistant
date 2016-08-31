@@ -8,12 +8,12 @@
 				chartAlias="#{compositeData.chartAlias}"></xc:chart_typeSelection>
 			<div class="box-body">
 				<div class="chart">
-					<canvas id="chart_canvas_${compositeData.chartAlias}"
+					<canvas id="chart_canvas_${compositeData.chartAlias}${compositeData.chart.hashCode}"
 						height="400" width="400" style="height:400px;width:400px;"></canvas>
 					<xp:scriptBlock id="scriptBlock2">
 						<xp:this.value><![CDATA[
 				dojo.addOnLoad(function(){
-    var config#{javascript:var s = compositeData.chartAlias; return s.replace("-", "_")} = {
+    var config#{javascript:var s = (compositeData.chartAlias+compositeData.chart.getHashCode()); return s.replace("-", "_")} = {
         data: #{compositeData.chart},
         options: { 
          responsive: true,
@@ -36,7 +36,7 @@
     };
 
     
-       var chart#{javascript:var s = compositeData.chartAlias; return s.replace("-", "_")} = new Chart(document.getElementById("chart_canvas_#{compositeData.chartAlias}"), config#{javascript:var s = compositeData.chartAlias; return s.replace("-", "_")});
+       var chart#{javascript:var s = (compositeData.chartAlias+compositeData.chart.getHashCode()); return s.replace("-", "_")} = new Chart(document.getElementById("chart_canvas_#{compositeData.chartAlias}${compositeData.chart.hashCode}"), config#{javascript:var s = (compositeData.chartAlias+compositeData.chart.getHashCode()); return s.replace("-", "_")});
     
 
     $('#randomizeData').click(function() {
@@ -47,7 +47,7 @@
 
         });
 
-        chart#{javascript:var s = compositeData.chartAlias; return s.replace("-", "_")}.update();
+        chart#{javascript:var s = (compositeData.chartAlias+compositeData.chart.getHashCode()); return s.replace("-", "_")}.update();
     });
 
     $('#addData').click(function() {
@@ -58,13 +58,13 @@
                 dataset.data.push(randomScalingFactor());
             });
 
-            chart#{javascript:var s = compositeData.chartAlias; return s.replace("-", "_")}.update();
+            chart#{javascript:var s = (compositeData.chartAlias+compositeData.chart.getHashCode()); return s.replace("-", "_")}.update();
         }
     });
 
     $('#removeDataset').click(function() {
         config.data.datasets.splice(0, 1);
-        chart#{javascript:var s = compositeData.chartAlias; return s.replace("-", "_")}.update();
+        chart#{javascript:var s = (compositeData.chartAlias+compositeData.chart.getHashCode()); return s.replace("-", "_")}.update();
     });
 
     $('#removeData').click(function() {
@@ -74,7 +74,7 @@
             dataset.data.pop();
         });
 
-        chart#{javascript:var s = compositeData.chartAlias; return s.replace("-", "_")}.update();
+        chart#{javascript:var s = (compositeData.chartAlias+compositeData.chart.getHashCode()); return s.replace("-", "_")}.update();
     });
     });
 		]]></xp:this.value>

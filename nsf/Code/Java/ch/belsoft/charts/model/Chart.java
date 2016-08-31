@@ -39,6 +39,10 @@ public class Chart implements Serializable {
 		return ChartFactory.getChartAsJson(this);
 	}
 
+	public String getHashCode() {
+		return Integer.toString(this.hashCode());
+	}
+
 	public void addLabel(String label) {
 		if (this.labels.contains(label) == false) {
 			this.labels.add(label);

@@ -4,12 +4,17 @@
 		<xp:dataContext value="#{jobController.dataContext}"
 			var="job">
 		</xp:dataContext>
+		<xp:dataContext
+			value="#{javascript:jobApplicationController.getJobApplicationsByJob(job.id)}"
+			var="jobApplications">
+		</xp:dataContext>
 	</xp:this.dataContexts>
 	<xc:ccLayout pageTitle="${jobController.pageTitle}"
 		pageSubTitle="#{javascript:jobController.getCreatedModifiedInfo(job)}">
 		<xp:this.facets>
-			<xp:panel xp:key="Content" readonly="${jobController.readOnly}">
-				<div class="row">
+			<xp:panel xp:key="Content">
+				<xp:panel tagName="div" styleClass="row"
+					readonly="${jobController.readOnly}">
 					<div class="col-xs-12">
 
 						<div class="nav-tabs-custom">
@@ -47,7 +52,7 @@
 									<xc:watson_toneanalyzer
 										toneAnalyzerable="#{job}" toneAnalyzerableController="#{jobController}"></xc:watson_toneanalyzer>
 								</div>
-								
+
 								<div id="tab_3" class="tab-pane">
 									<xc:watson_alchemy_language
 										alchemyLanguageAnalyzable="#{job}" alchemyLanguageController="#{jobController}"></xc:watson_alchemy_language>
@@ -100,16 +105,57 @@
 						</div>
 
 					</div>
-				</div>
+				</xp:panel>
 
 
 				<div class="row">
 					<div class="col-xs-12">
 						<xc:jobApplication_list title="job applications of this job"
-							jobApplicationList="#{javascript:jobApplicationController.getJobApplicationsByJob(job.id)}"></xc:jobApplication_list>
+							jobApplicationList="#{jobApplications}"></xc:jobApplication_list>
 
 					</div>
 				</div>
+
+				<div class="row">
+
+					<div class="col-md-12">
+						<xp:div styleClass="box box-primary" id="pnlCharts">
+							<div class="box-header">
+								<xp:text escape="true" id="computedField2" tagName="h3"
+									styleClass="box-title" value="All Tone Anaylized Applications for this job"></xp:text>
+
+							</div>
+							<!-- /.box-header -->
+
+							<div class="box-body">
+								<xp:div styleClass="row">
+									<div class="col-md-4 col-xs-12">
+										<xc:chart
+											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerEmotionTone().createChart(jobApplicationController.getJobApplicationsByJob(job.id))}"
+											chartAlias="emotion_tone" title="Emotion Tone">
+										</xc:chart>
+									</div>
+									<div class="col-md-4 col-xs-12">
+										<xc:chart
+											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerLanguageTone().createChart(jobApplications)}"
+											chartAlias="language_tone" title="Language Tone">
+										</xc:chart>
+
+									</div>
+									<div class="col-md-4 col-xs-12">
+										<xc:chart
+											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerSocialTone().createChart(jobApplications)}"
+											chartAlias="social_tone" title="Social Tone">
+										</xc:chart>
+									</div>
+								</xp:div>
+							</div>
+
+						</xp:div>
+					</div>
+				</div>
+
+
 				<div class="row">
 					<xp:div styleClass="col-md-12" id="pnlConfigurationList">
 						<xc:job_list></xc:job_list>

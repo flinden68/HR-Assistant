@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="136e" sequence="9" unid="1F813420EB10C8C7C125801800649322">
-<created><datetime dst="true">20160823T201832,66+02</datetime></created>
-<modified><datetime dst="true">20160824T122358,70+02</datetime></modified>
-<revised><datetime dst="true">20160824T122358,69+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160824T122358,70+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160823T201832,67+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
-<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="d62" sequence="11" unid="E4450CEA09E4B893C1258019006BAD51">
+<created><datetime dst="true">20160824T213607,21+02</datetime></created>
+<modified><datetime dst="true">20160830T214407,05+02</datetime></modified>
+<revised><datetime dst="true">20160830T214407,03+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160830T214407,03+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160824T213607,21+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
+<wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>com/ibm/bluemix/services/watson/alchemylanguage/service/AlchemyLanguageService.java</text></item>
-
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
 <item name="$FileNames" sign="true"><text>com/ibm/bluemix/services/watson/alchemylanguage/service/AlchemyLanguageService.java</text></item>
+
 
 </note>
