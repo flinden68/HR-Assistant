@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.dataContexts>
+		<xp:dataContext value="#{javascript:jobController.getJobsRecentLimited(5)}"
+			var="recentJobsLimited">
+		</xp:dataContext>
+	</xp:this.dataContexts>
+	<xp:this.dataContexts>
+		<xp:dataContext
+			value="#{javascript:jobApplicationController.getJobApplicationsRecentLimited(5)}"
+			var="recentJobApplicationsLimited">
+		</xp:dataContext>
+	</xp:this.dataContexts>
 	<xc:ccLayout pageTitle="Dashboard">
 		<xp:this.facets>
 			<xp:panel xp:key="Content">
@@ -18,13 +29,11 @@
 
 
 				<div class="row">
-
 					<div class="col-md-12">
 						<xp:div styleClass="box box-primary" id="pnlCharts">
 							<div class="box-header">
 								<xp:text escape="true" id="computedField2" tagName="h3"
-									styleClass="box-title" value="IBM Watson Tone Analized Jobs"></xp:text>
-
+									styleClass="box-title" value="IBM Watson Tone Anaylized Jobs (Recent 5)"></xp:text>
 							</div>
 							<!-- /.box-header -->
 
@@ -32,22 +41,24 @@
 								<xp:div styleClass="row">
 									<div class="col-md-4 col-xs-12">
 										<xc:chart
-											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerEmotionTone().createChart(jobController.jobs)}"
-											chartAlias="emotion_tone" chartAliasGUI="emotion_tone" title="Emotion Tone">
+											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerEmotionTone().createChart(recentJobsLimited)}"
+											chartAlias="emotion_tone" chartAliasGUI="emotion_tone_jobs"
+											title="Emotion Tone">
 										</xc:chart>
 									</div>
 									<div class="col-md-4 col-xs-12">
 										<xc:chart
-											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerLanguageTone().createChart(jobController.jobs)}"
-											chartAlias="language_tone" chartAliasGUI="language_tone"
+											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerLanguageTone().createChart(recentJobsLimited)}"
+											chartAlias="language_tone" chartAliasGUI="language_tone_jobs"
 											title="Language Tone">
 										</xc:chart>
 
 									</div>
 									<div class="col-md-4 col-xs-12">
 										<xc:chart
-											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerSocialTone().createChart(jobController.jobs)}"
-											chartAlias="social_tone" chartAliasGUI="social_tone" title="Social Tone">
+											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerSocialTone().createChart(recentJobsLimited)}"
+											chartAlias="social_tone" chartAliasGUI="social_tone_jobs"
+											title="Social Tone">
 										</xc:chart>
 									</div>
 								</xp:div>
@@ -56,6 +67,48 @@
 						</xp:div>
 					</div>
 				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<xp:div styleClass="box box-primary" id="div2">
+							<div class="box-header">
+								<xp:text escape="true" id="computedField3" tagName="h3"
+									styleClass="box-title"
+									value="IBM Watson Tone Anaylized Job Applications (Recent 5)"></xp:text>
+							</div>
+							<!-- /.box-header -->
+
+							<div class="box-body">
+								<xp:div styleClass="row">
+									<div class="col-md-4 col-xs-12">
+										<xc:chart
+											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerEmotionTone().createChart(recentJobApplicationsLimited)}"
+											chartAlias="emotion_tone" chartAliasGUI="emotion_tone_appl"
+											title="Emotion Tone">
+										</xc:chart>
+									</div>
+									<div class="col-md-4 col-xs-12">
+										<xc:chart
+											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerLanguageTone().createChart(recentJobApplicationsLimited)}"
+											chartAlias="language_tone" chartAliasGUI="language_tone_appl"
+											title="Language Tone">
+										</xc:chart>
+
+									</div>
+									<div class="col-md-4 col-xs-12">
+										<xc:chart
+											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerSocialTone().createChart(recentJobApplicationsLimited)}"
+											chartAlias="social_tone" chartAliasGUI="social_tone_appl"
+											title="Social Tone">
+										</xc:chart>
+									</div>
+								</xp:div>
+							</div>
+
+						</xp:div>
+					</div>
+				</div>
+
 
 				<div class="row">
 

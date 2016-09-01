@@ -3,6 +3,7 @@ package ch.belsoft.hrassistant.controller;
 import java.io.PrintWriter;
 import java.io.Serializable;
 import java.io.StringWriter;
+import java.util.Comparator;
 import java.util.List;
 
 import ch.belsoft.hrassistant.attachment.controller.AttachmentController;
@@ -10,6 +11,8 @@ import ch.belsoft.hrassistant.attachment.model.Attachment;
 import ch.belsoft.hrassistant.attachment.model.AttachmentHolder;
 import ch.belsoft.hrassistant.attachment.model.Upload;
 import ch.belsoft.hrassistant.dao.IDataItem;
+import ch.belsoft.hrassistant.job.model.JobApplication;
+import ch.belsoft.hrassistant.model.DataItem;
 import ch.belsoft.tools.Logging;
 import ch.belsoft.tools.Util;
 import ch.belsoft.tools.XPagesUtil;
@@ -198,4 +201,11 @@ public abstract class ControllerBase implements Serializable {
 	public void setAttachmentHolder(AttachmentHolder attachmentHolder) {
 		this.attachmentHolder = attachmentHolder;
 	}
+
+	public static final Comparator<IDataItem> CreatedComparator = new Comparator<IDataItem>() {
+		public int compare(IDataItem o1, IDataItem o2) {
+			return o2.getCreated().compareTo(o1.getCreated());
+		}
+	};
+
 }
