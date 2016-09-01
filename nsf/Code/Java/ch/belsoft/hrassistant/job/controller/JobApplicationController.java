@@ -166,7 +166,8 @@ public class JobApplicationController extends ControllerBase implements
 				if (!"".equals(jobApplication.getJobId())) {
 					url += "&jobid=" + jobApplication.getJobId();
 				}
-			//	XPagesUtil.redirect(url); not yet...will be done with a applicants portal..
+				// XPagesUtil.redirect(url); not yet...will be done with a
+				// applicants portal..
 			} else {
 				this.jobApplicationDAO.update(jobApplication);
 				read(jobApplication.getId());
@@ -202,12 +203,25 @@ public class JobApplicationController extends ControllerBase implements
 		return super.getListCount(this.jobApplications);
 	}
 
+	/**
+	 * @return all Job Applications, sorted descending by created
+	 */
 	public List<JobApplication> getJobApplicationsRecent() {
+		return this.getJobApplicationsRecentLimited(0);
+	}
+
+	/**
+	 * @param limit
+	 *            amount of jobapplications returned, 0 = all
+	 * @return all Job Applications, sorted descending by created
+	 */
+	public List<JobApplication> getJobApplicationsRecentLimited(int limit) {
 		List<JobApplication> result = this.getJobApplications();
 		try {
-			Logging.logEvent("inside getJobApplicationsRecent");
-			Collections.sort(result,
-					JobApplicationController.JobApplicationComparator);
+			Collections.sort(result, ControllerBase.CreatedComparator);
+			if (limit > 0) {
+				result = result.subList(0, limit);
+			}
 		} catch (Exception e) {
 			Logging.logError(e);
 		}
@@ -406,11 +420,5 @@ public class JobApplicationController extends ControllerBase implements
 		this.alchemyLanguageInjector = alchemyLanguageInjector;
 
 	}
-
-	public static final Comparator<JobApplication> JobApplicationComparator = new Comparator<JobApplication>() {
-		public int compare(JobApplication o1, JobApplication o2) {
-			return o2.getCreated().compareTo(o1.getCreated());
-		}
-	};
 
 }
