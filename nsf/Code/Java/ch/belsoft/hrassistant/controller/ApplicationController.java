@@ -111,6 +111,7 @@ public class ApplicationController implements Serializable {
     }
     
     private void initUser(){
+        
         String hostName = XPagesUtil.getHostName();
         //to avoid that we get stupid to login all the time, when we develop ;-)
         if(!hostName.contains("localhost")&&!hostName.contains("belsoft")){
@@ -129,6 +130,7 @@ public class ApplicationController implements Serializable {
     }
     
     public void loginUser(){
+        
         user.setAuthenticated(true);
         redirectToRealHomePage();
     }
@@ -276,12 +278,24 @@ public class ApplicationController implements Serializable {
     }
     
     public List<ConfigParamsMenuCategory> getConfigMenuItemCategories() {
-        
         List<ConfigParamsMenuCategory> result = new ArrayList<ConfigParamsMenuCategory>();
         
         try {
-            result = new ArrayList<ConfigParamsMenuCategory>(
+            List<ConfigParamsMenuCategory> categories = new ArrayList<ConfigParamsMenuCategory>(
                     this.configMapMenuItems.keySet());
+            
+            
+            if("".equals(user.getRole())){
+                //all the categories
+                result.addAll(categories);
+            }else{
+                for(ConfigParamsMenuCategory category : categories){
+                    if(category.toString().equals(user.getRole())){
+                        result.add(category);
+                    }
+                }
+            }
+            
         } catch (Exception e) {
             Logging.logError(e);
         }

@@ -207,21 +207,50 @@
 										</xp:text>
 									</p>
 								</li>
-								<!-- Menu Body
+								<!-- Menu Body -->
 								<li class="user-body">
 									<div class="row">
-										<div class="col-xs-4 text-center">
-											<a href="#">Followers</a>
+										<div class="col-xs-2 text-center">
+											<div class="radio">
+												<xp:radio text="All" id="radio1"
+										    		groupName="userRoles"
+										    		value="#{applicationController.user.role}"
+										    		selectedValue="">
+										    		<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="wrapper">
+														<xp:this.action>
+															<xp:executeScript script="#{javascript://toneAnalyzerService.analyzeTone}"></xp:executeScript>
+														</xp:this.action>
+													</xp:eventHandler>
+										    	</xp:radio>
+									    	</div>
 										</div>
-										<div class="col-xs-4 text-center">
-											<a href="#">Sales</a>
+										<div class="col-xs-2 text-center">
+											<div class="radio">
+												<xp:radio text="HR" id="radio2"
+										    		groupName="userRoles"
+										    		value="#{applicationController.user.role}"
+										    		selectedValue="#{configurationController.hrConfigParamsMenuCategory}">
+										    		<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="wrapper">
+														
+													</xp:eventHandler>
+										    	</xp:radio>
+									    	</div>
 										</div>
-										<div class="col-xs-4 text-center">
-											<a href="#">Friends</a>
+										<div class="col-xs-8 text-center">
+											<div class="radio">
+												<xp:radio text="Job applicant" id="radio3"
+										    		groupName="userRoles"
+										    		value="#{applicationController.user.role}"
+										    		selectedValue="#{configurationController.jobApplicantConfigParamsMenuCategory}">
+										    		<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="wrapper">
+														
+													</xp:eventHandler>
+										    	</xp:radio>
+										    </div>
 										</div>
 									</div>
 									
-								</li> -->
+								</li>
 								<!-- Menu Footer-->
 								<li class="user-footer">
 									<div class="pull-left">

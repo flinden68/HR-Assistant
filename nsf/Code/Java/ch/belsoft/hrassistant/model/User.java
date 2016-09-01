@@ -2,6 +2,8 @@ package ch.belsoft.hrassistant.model;
 
 import java.io.Serializable;
 
+import ch.belsoft.hrassistant.config.model.ConfigParamsMenuCategory;
+
 public class User implements Serializable {
     
     private static final long serialVersionUID = 1L;
@@ -9,6 +11,7 @@ public class User implements Serializable {
     private String password = "";
     private String passwordGenerated = "";
     private boolean authenticated = false;
+    private String role = "";
     
     public User(){
         
@@ -44,5 +47,25 @@ public class User implements Serializable {
     
     public String getPasswordGenerated() {
         return passwordGenerated;
+    }
+    
+    public void setRole(String role) {
+        this.role = role;
+    }
+    
+    public String getRole() {
+        return role;
+    }
+    
+    public boolean isAdministrationRole(){
+        return "".equals(getRole());
+    }
+    
+    public boolean isHrRole(){
+        return ConfigParamsMenuCategory.HR.toString().equals(getRole());
+    }
+    
+    public boolean isJobApplicantRole(){
+        return ConfigParamsMenuCategory.JOB_APPLICANT.toString().equals(getRole());
     }
 }

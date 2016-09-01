@@ -23,7 +23,7 @@
 						<xp:div styleClass="box box-primary" id="pnlCharts">
 							<div class="box-header">
 								<xp:text escape="true" id="computedField2" tagName="h3"
-									styleClass="box-title" value="IBM Watson Tone Anaylized Jobs"></xp:text>
+									styleClass="box-title" value="IBM Watson Tone Analized Jobs"></xp:text>
 
 							</div>
 							<!-- /.box-header -->
@@ -63,7 +63,7 @@
 						<div class="box box-primary" id="div1">
 							<div class="box-header">
 								<xp:text escape="true" id="computedField1" tagName="h3"
-									styleClass="box-title" value="All Text Anaylized Jobs and Job applications"></xp:text>
+									styleClass="box-title" value="IBM Watson Alchemy Language Analized Jobs and Job applications"></xp:text>
 
 							</div>
 							<!-- /.box-header -->

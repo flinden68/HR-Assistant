@@ -60,6 +60,29 @@
 		       
 		        <xp:message id="message2" for="fldPassword" styleClass="help-block with-errors"></xp:message>
 		    </xp:div>
+		    <div class="form-group">
+				<div class="col-lg-12">
+					<b>select  a role</b>
+				</div>
+				<div class="col-lg-2">
+			    	<div class="radio">
+				    	<xp:radio text="HR" id="radio1"
+				    		groupName="userRoles"
+				    		value="#{applicationController.user.role}"
+				    		selectedValue="#{configurationController.hrConfigParamsMenuCategory}">
+				    	</xp:radio>
+			    	</div>
+				</div>
+				<div class="col-lg-6">
+			    	<div class="radio">
+				    	<xp:radio text="Job applicant" id="radio2"
+				    		groupName="userRoles"
+				    		value="#{applicationController.user.role}"
+				    		selectedValue="#{configurationController.jobApplicantConfigParamsMenuCategory}">
+				    	</xp:radio>
+			    	</div>
+				</div>
+		    </div>
 		    
 		    <div class="row">
 		    	<div class="col-xs-8">

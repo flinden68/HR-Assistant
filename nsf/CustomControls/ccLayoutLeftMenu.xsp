@@ -19,7 +19,7 @@ MAYBE FOR LATER..
 
 	<ul class="sidebar-menu">
 		<xp:repeat id="repeat2" rows="30" disableOutputTag="true"
-			disableTheme="true" value="${applicationController.configMenuItemCategories}"
+			disableTheme="true" value="#{applicationController.configMenuItemCategories}"
 			var="menuCat">
 
 			<xp:text tagName="li" styleClass="header" value="#{menuCat}">
@@ -40,23 +40,26 @@ MAYBE FOR LATER..
 			</xp:repeat>
 		</xp:repeat>
 
-		<li class="header">Administration</li>
-		<!-- Optionally, you can add icons to the links -->
-		<li
-			class="#{applicationController.currentPageName=='admin_configurations.xsp'?'active':''}">
-			<a href="admin_configurations.xsp">
-				<i class="fa fa-cogs"></i>
-				<span>Configuration List</span>
-			</a>
-		</li>
-		<li
-			class="#{applicationController.currentPageName=='admin_cloudantstatus.xsp'?'active':''}">
-			<a href="admin_cloudantstatus.xsp">
-				<i class="fa fa-database"></i>
-				<span>Cloudant Status</span>
-			</a>
-		</li>
-
+		<xp:panel id="administrationRole"
+			rendered="#{applicationController.user.administrationRole}"
+			disableOutputTag="true">
+			<li class="header">Administration</li>
+			<!-- Optionally, you can add icons to the links -->
+			<li
+				class="#{applicationController.currentPageName=='admin_configurations.xsp'?'active':''}">
+				<a href="admin_configurations.xsp">
+					<i class="fa fa-cogs"></i>
+					<span>Configuration List</span>
+				</a>
+			</li>
+			<li
+				class="#{applicationController.currentPageName=='admin_cloudantstatus.xsp'?'active':''}">
+				<a href="admin_cloudantstatus.xsp">
+					<i class="fa fa-database"></i>
+					<span>Cloudant Status</span>
+				</a>
+			</li>
+		</xp:panel>
 
 
 

@@ -230,7 +230,7 @@ IGuiController<Job>, ToneAnalyzableController, AlchemyLanguageController, Serial
     }
     
     public void filterJoblisting() {
-        //System.out.println("filterJoblisting = " + getSearchQueryListing());
+        
         /*if ("".equals(searchQueryListing)) {
             jobs = jobDAO.read();
         } else {
