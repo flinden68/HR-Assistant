@@ -173,57 +173,46 @@
 
 							</div>
 							<div class="box-body">
-								<xp:div styleClass="row"
-									rendered="#{compositeData.personalityInsightable.personalityInsightsResult!=null}">
+								<xp:div styleClass="row">
 									<div class="col-md-3 col-xs-12">
 										<xc:chart
 											chart="#{javascript:chartFactoryProducer.getChartFactoryPersonalityInsightsOpenness().createChart(jobApplications)}"
-											chartAlias="Openness"
-											chartAliasGUI="Openness#{compositeData.personalityInsightable.id}"
-											title="Openness">
+											chartAlias="Openness" chartAliasGUI="Openness" title="Openness">
 										</xc:chart>
 									</div>
 									<div class="col-md-3 col-xs-12">
 										<xc:chart
 											chart="#{javascript:chartFactoryProducer.getChartFactoryPersonalityInsightsConscientiousness().createChart(jobApplications)}"
-											chartAlias="Conscientiousness"
-											chartAliasGUI="Conscientiousness#{compositeData.personalityInsightable.id}"
+											chartAlias="Conscientiousness" chartAliasGUI="Conscientiousness"
 											title="Conscientiousness">
 										</xc:chart>
 									</div>
 									<div class="col-md-3 col-xs-12">
 										<xc:chart
 											chart="#{javascript:chartFactoryProducer.getChartFactoryPersonalityInsightsAgreeableness().createChart(jobApplications)}"
-											chartAlias="Agreeableness"
-											chartAliasGUI="Agreeableness#{compositeData.personalityInsightable.id}"
+											chartAlias="Agreeableness" chartAliasGUI="Agreeableness"
 											title="Agreeableness">
 										</xc:chart>
 									</div>
 									<div class="col-md-3 col-xs-12">
 										<xc:chart
 											chart="#{javascript:chartFactoryProducer.getChartFactoryPersonalityInsightsEmotionalRange().createChart(jobApplications)}"
-											chartAlias="Neuroticism"
-											chartAliasGUI="Neuroticism#{compositeData.personalityInsightable.id}"
-											title="Emotional range">
+											chartAlias="Neuroticism" chartAliasGUI="Neuroticism" title="Emotional range">
 										</xc:chart>
 									</div>
 								</xp:div>
-								<xp:div styleClass="row"
-									rendered="#{compositeData.personalityInsightable.personalityInsightsResult!=null}">
+								<xp:div styleClass="row">
 									<div class="col-md-3 col-xs-12">
 										<xc:chart
 											chart="#{javascript:chartFactoryProducer.getChartFactoryPersonalityInsightsExtraversion().createChart(jobApplications)}"
-											chartAlias="Extraversion"
-											chartAliasGUI="Extraversion#{compositeData.personalityInsightable.id}"
-											title="Extraversion">
+											chartAlias="Extraversion" chartAliasGUI="Extraversion" title="Extraversion">
 										</xc:chart>
 									</div>
 
 									<div class="col-md-3 col-xs-12">
 										<xc:chart
 											chart="#{javascript:chartFactoryProducer.getChartFactoryPersonalityInsightsHedonism().createChart(jobApplications)}"
-											chartAlias="Hedonism_parent"
-											chartAliasGUI="Hedonism_parent#{compositeData.personalityInsightable.id}"
+											chartAlias="Hedonism_parent" chartAliasGUI="Hedonism_parent"
 											title="Hedonism">
 										</xc:chart>
 									</div>
@@ -231,8 +220,7 @@
 									<div class="col-md-3 col-xs-12">
 										<xc:chart
 											chart="#{javascript:chartFactoryProducer.getChartFactoryPersonalityInsightsSelfExpression().createChart(jobApplications)}"
-											chartAlias="Self-expression_parent"
-											chartAliasGUI="SelfExpressionParent#{compositeData.personalityInsightable.id}"
+											chartAlias="Self-expression_parent" chartAliasGUI="SelfExpressionParent"
 											title="Self-expression">
 										</xc:chart>
 									</div>
@@ -243,7 +231,7 @@
 						</xp:div>
 					</div>
 				</div>
- 
+
 
 
 

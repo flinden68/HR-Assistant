@@ -157,9 +157,30 @@ public class ChartFactoryPersonalityInsights extends
 	}
 
 	@Override
-	public Chart createChart(List<PersonalityInsightable> chartable) {
-		// TODO Auto-generated method stub
-		return null;
+	public Chart createChart(
+			List<PersonalityInsightable> personalityInsightableList) {
+		Chart chart = new Chart(this.chartAlias);
+		this.setDefaultChartType(this.chartAlias, ChartTypeSelection.RADAR);
+		try {
+			for (PersonalityInsightable personalityInsightable : personalityInsightableList) {
+
+				Child child = null;
+				if (personalityInsightable.getPersonalityInsightsResult() != null) {
+					child = this.getInsightsChildByPersonalityCategory(
+							this.personalityInsightsCategoryEnum,
+							personalityInsightable
+									.getPersonalityInsightsResult().getTree());
+
+				}
+				if (child != null) {
+					this.fillChartDataSets(chart, child, personalityInsightable
+							.getName(), personalityInsightable.getName());
+				}
+			}
+		} catch (Exception e) {
+			Logging.logError(e);
+		}
+		return chart;
 	}
 
 	// @Override
