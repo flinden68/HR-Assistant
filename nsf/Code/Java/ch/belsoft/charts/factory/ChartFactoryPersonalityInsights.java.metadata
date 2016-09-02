@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="daa" sequence="11" unid="9A17EE01C6934469C125801A004A7DF8">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="daa" sequence="203" unid="9A17EE01C6934469C125801A004A7DF8">
 <created><datetime dst="true">20160825T153339,12+02</datetime></created>
-<modified><datetime dst="true">20160825T153454,86+02</datetime></modified>
-<revised><datetime dst="true">20160825T153454,85+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160825T153454,85+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160825T153339,11+02</datetime></addedtofile></noteinfo>
+<modified><datetime dst="true">20160902T143907,24+02</datetime></modified>
+<revised><datetime dst="true">20160902T143907,22+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160902T143907,22+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160831T153004,37+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
 <wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
-
-
-
-
-
 <item name="$TITLE"><text>ch/belsoft/charts/factory/ChartFactoryPersonalityInsights.java</text></item>
+
+
+
+
+
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 

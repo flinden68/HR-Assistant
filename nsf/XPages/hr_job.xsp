@@ -25,7 +25,8 @@
 								</li>
 								<li class="">
 									<a data-toggle="tab" href="#tab_2" aria-expanded="true">IBM
-										IBM Watson Tone Anaylized Job Text</a>
+										IBM
+										Watson Tone Anaylized Job Text</a>
 								</li>
 								<li class="">
 									<a data-toggle="tab" href="#tab_3" aria-expanded="true">IBM
@@ -110,8 +111,8 @@
 
 				<div class="row">
 					<div class="col-xs-12">
-						<xc:jobApplication_list title="job applications of this job"
-							jobApplicationList="#{jobApplications}"></xc:jobApplication_list>
+						<xc:jobApplication_list rowCount="10"
+							title="job applications of this job" jobApplicationList="#{jobApplications}"></xc:jobApplication_list>
 
 					</div>
 				</div>

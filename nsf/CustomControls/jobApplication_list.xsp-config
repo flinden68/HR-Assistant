@@ -37,5 +37,12 @@
         <required>false</required>
       </property-extension>
     </property>
+    <property>
+      <property-name>rowCount</property-name>
+      <property-class>int</property-class>
+      <property-extension>
+        <required>true</required>
+      </property-extension>
+    </property>
   </composite-component>
 </faces-config>

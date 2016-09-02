@@ -62,9 +62,9 @@ public class PersonalityInsightsService extends CloudService implements
 					.getAuthorizationHeader(), null, ci.getContent(),
 					ContentType.TEXT_PLAIN);
 
-			XPagesUtil.showErrorMessage(response);
-		//	mapper.enable(DeserializationFeature.UNWRAP_ROOT_VALUE);
-//			mapper.enable(DeserializationFeature.)
+			// XPagesUtil.showErrorMessage(response);
+			// mapper.enable(DeserializationFeature.UNWRAP_ROOT_VALUE);
+			// mapper.enable(DeserializationFeature.)
 			result = mapper
 					.readValue(response, PersonalityInsightsResult.class);
 		} catch (Exception e) {
