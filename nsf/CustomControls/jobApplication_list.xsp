@@ -25,8 +25,8 @@
 						<th style="width:120px">IBM Watson</th>
 						<xp:panel tagName="th"
 							style="${compositeData.showButtons==false ? 'width:80px;' : 'width:280px;'}"></xp:panel>
-					</tr>
-				</thead>
+					</tr> 
+				</thead> 
 				<tbody>
 					<xp:repeat id="rptList" rows="10" var="entry" indexVar="i"
 						repeatControls="true" value="#{compositeData.jobApplicationList}">

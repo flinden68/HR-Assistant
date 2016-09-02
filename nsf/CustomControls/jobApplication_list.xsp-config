@@ -34,7 +34,7 @@
         <designer-extension>
           <default-value>true</default-value>
         </designer-extension>
-        <required>true</required>
+        <required>false</required>
       </property-extension>
     </property>
   </composite-component>
