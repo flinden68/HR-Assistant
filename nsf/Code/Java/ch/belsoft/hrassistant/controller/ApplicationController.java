@@ -25,6 +25,7 @@ public class ApplicationController implements Serializable {
     
     private static final long serialVersionUID = 1L;
     private static final String REALHOMEPAGE = "hr_dashboard.xsp";
+    private static final String REALJOBLISTING = "appl_joblisting.xsp";
     private static final String REALLOGIN = "login.xsp";
     private static final String BEAN_CONFIGURATIONCONTROLLER = "configurationController";
     private static final String BEAN_CONFIGURATIONDAO = "configurationDAO";
@@ -129,10 +130,17 @@ public class ApplicationController implements Serializable {
         }
     }
     
-    public void loginUser(){
-        
+    public void loginUser(){      
         user.setAuthenticated(true);
-        redirectToRealHomePage();
+        redirectBasedOnRole();
+    }
+    
+    public void redirectBasedOnRole(){
+    	if(user.getRole().equals(ConfigParamsMenuCategory.JOB_APPLICANT.toString())){
+        	redirectToJobListingPage();
+        }else{
+        	redirectToRealHomePage();
+        }
     }
     
     public void logoutUser(){
@@ -149,6 +157,15 @@ public class ApplicationController implements Serializable {
         try {
             
             XPagesUtil.getXSPContext().redirectToPage(REALLOGIN);
+        } catch (Exception e) {
+            Logging.logError(e);
+        }
+    }
+    
+    public void redirectToJobListingPage() {
+        try {
+            
+            XPagesUtil.getXSPContext().redirectToPage(REALJOBLISTING);
         } catch (Exception e) {
             Logging.logError(e);
         }
@@ -284,8 +301,7 @@ public class ApplicationController implements Serializable {
             List<ConfigParamsMenuCategory> categories = new ArrayList<ConfigParamsMenuCategory>(
                     this.configMapMenuItems.keySet());
             
-            
-            if("".equals(user.getRole())){
+            if("Administration".equals(user.getRole())){
                 //all the categories
                 result.addAll(categories);
             }else{

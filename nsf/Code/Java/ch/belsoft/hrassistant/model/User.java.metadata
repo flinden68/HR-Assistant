@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="13c6" sequence="15" unid="F73D7F0ED3E0A67CC125801F00528556">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="13c6" sequence="62" unid="F73D7F0ED3E0A67CC125801F00528556">
 <created><datetime dst="true">20160830T170120,86+02</datetime></created>
-<modified><datetime dst="true">20160830T220220,20+02</datetime></modified>
-<revised><datetime dst="true">20160830T220220,19+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160830T220220,20+02</datetime></lastaccessed>
+<modified><datetime dst="true">20160902T141444,84+02</datetime></modified>
+<revised><datetime dst="true">20160902T141444,83+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160902T141444,84+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20160830T170120,87+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
 <wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>

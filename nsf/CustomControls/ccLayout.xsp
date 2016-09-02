@@ -112,60 +112,59 @@
 
 							</a>
 							<ul class="dropdown-menu">
-								<!-- The user image in the menu -->
-								<li class="user-header">
-									<img src="custom/img/hrAssistent160.png" class="img-circle"
-										alt="User Image" />
-									<p>
-										<xp:text id="computedField4" value="#{applicationController.user.userName}">
-										</xp:text>
-									</p>
-								</li>
 								<!-- Menu Body -->
+								<!--
 								<li class="user-body">
+								
 									<div class="row">
-										<div class="col-xs-2 text-center">
+										
+										<div class="col-xs-12">
 											<div class="radio">
-												<xp:radio text="All" id="radio1" groupName="userRoles"
-													value="#{applicationController.user.role}" selectedValue="">
-													<xp:eventHandler event="onclick" submit="true"
-														refreshMode="partial" refreshId="wrapper">
+												<xp:radio text="Administrator: All Menu's visible" id="radio1" groupName="userRoles"
+													value="#{applicationController.user.role}" selectedValue="Administration">
+													<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="wrapper" onComplete="document.location='hr_dashboard.xsp'">
 														<xp:this.action>
-															<xp:executeScript
-																script="#{javascript://toneAnalyzerService.analyzeTone}">
+															<xp:executeScript>
+																<xp:this.script><![CDATA[#{javascript://applicationController.switchUser("Administration");}]]></xp:this.script>
+															</xp:executeScript>
+														</xp:this.action>
+													</xp:eventHandler>
+												</xp:radio>
+											</div>
+										
+											<div class="radio">
+												<xp:radio text="HR / Backoffice: HR and Administrator menu visible" id="radio2" groupName="userRoles"
+													value="#{applicationController.user.role}"
+													selectedValue="#{configurationController.hrConfigParamsMenuCategory}">
+													<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="wrapper" onComplete="document.location='hr_dashboard.xsp'">
+														<xp:this.action>
+															<xp:executeScript>
+																<xp:this.script><![CDATA[#{javascript://applicationController.switchUser(configurationController.hrConfigParamsMenuCategory);}]]></xp:this.script>
+															</xp:executeScript>
+														</xp:this.action>
+													</xp:eventHandler>
+												</xp:radio>
+											</div>
+										
+											<div class="radio">
+												<xp:radio text="Job Applicant: Job Applicant Menu visible" id="radio3"
+													groupName="userRoles" value="#{applicationController.user.role}"
+													selectedValue="#{configurationController.jobApplicantConfigParamsMenuCategory}">
+													<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="wrapper" onComplete="document.location='appl_joblisting.xsp'">
+														<xp:this.action>
+															<xp:executeScript>
+																<xp:this.script><![CDATA[#{javascript://applicationController.switchUser(configurationController.jobApplicantConfigParamsMenuCategory);}]]></xp:this.script>
 															</xp:executeScript>
 														</xp:this.action>
 													</xp:eventHandler>
 												</xp:radio>
 											</div>
 										</div>
-										<div class="col-xs-2 text-center">
-											<div class="radio">
-												<xp:radio text="HR" id="radio2" groupName="userRoles"
-													value="#{applicationController.user.role}"
-													selectedValue="#{configurationController.hrConfigParamsMenuCategory}">
-													<xp:eventHandler event="onclick" submit="true"
-														refreshMode="partial" refreshId="wrapper">
-
-													</xp:eventHandler>
-												</xp:radio>
-											</div>
-										</div>
-										<div class="col-xs-8 text-center">
-											<div class="radio">
-												<xp:radio text="Job applicant" id="radio3"
-													groupName="userRoles" value="#{applicationController.user.role}"
-													selectedValue="#{configurationController.jobApplicantConfigParamsMenuCategory}">
-													<xp:eventHandler event="onclick" submit="true"
-														refreshMode="partial" refreshId="wrapper">
-
-													</xp:eventHandler>
-												</xp:radio>
-											</div>
-										</div>
+									
 									</div>
-
+									
 								</li>
+								-->
 								<!-- Menu Footer-->
 								<li class="user-footer">
 									<div class="pull-left">
@@ -177,7 +176,7 @@
 										<xp:button styleClass="btn btn-default btn-flat"
 											value="Sign out" id="button3">
 											<xp:eventHandler event="onclick" submit="true"
-												onStart="waitingDialog.show('sign out...')" onComplete="waitingDialog.hide()">
+												onStart="waitingDialog.show('sign out...')" onComplete="waitingDialog.hide()" refreshMode="complete" immediate="true">
 												<xp:this.action>
 													<xp:executeScript
 														script="#{javascript:applicationController.logoutUser()}">
