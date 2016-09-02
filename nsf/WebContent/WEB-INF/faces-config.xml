@@ -257,7 +257,7 @@
     <managed-bean-scope>session</managed-bean-scope>
     <managed-property>
       <property-name>account</property-name>
-      <value>
+      		<value>
 				f44a2403-965e-4345-bc84-4fd485047735-bluemix:e0ab6592f8d6a0192d8d819fbe656a112f54fc82464a46ca9005cdc63b396d4a@f44a2403-965e-4345-bc84-4fd485047735-bluemix
 			</value>
     </managed-property>

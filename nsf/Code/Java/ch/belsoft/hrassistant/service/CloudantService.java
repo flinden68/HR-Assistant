@@ -38,8 +38,10 @@ public class CloudantService {
             bluemixUtil = new BluemixContextUtil(SERVICE_NAME, username,
                     password, "");
         }
+        
         connector = new CloudantConnector();
         connector.initCloudantClientAdvanced(bluemixUtil.getAccount(), bluemixUtil.getUsername(), bluemixUtil.getPassword(), cloudantDb, false, 1, 1, TimeUnit.MINUTES);
+        
         connected = true;
     }
     
