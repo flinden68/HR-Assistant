@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1212" sequence="81" unid="59F9C4E3A3606E39C125800D0023BEB4">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1212" sequence="131" unid="59F9C4E3A3606E39C125800D0023BEB4">
 <created><datetime dst="true">20160812T083025,80+02</datetime></created>
-<modified><datetime dst="true">20160901T165908,80+02</datetime></modified>
-<revised><datetime dst="true">20160901T165908,79+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160901T165908,80+02</datetime></lastaccessed>
+<modified><datetime dst="true">20160902T154831,24+02</datetime></modified>
+<revised><datetime dst="true">20160902T154831,23+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160902T154831,24+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20160812T083027,18+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
 <wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
@@ -15,6 +15,6 @@
 
 
 
-<item name="$FileNames" sign="true"><text>hr_dashboard.xsp</text></item>
 
-</note>
+
+<item name="$FileNames" sign="true"><text>hr_dashboard.xsp</text></item></note>

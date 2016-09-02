@@ -178,7 +178,7 @@ public class JobController extends ControllerBase implements
 			if (limit > 0) {
 				result = result.subList(0, limit);
 			}
-
+System.out.println("JOBS="+result);
 		} catch (Exception e) {
 			Logging.logError(e);
 		}

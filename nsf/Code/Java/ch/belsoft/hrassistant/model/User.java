@@ -11,7 +11,7 @@ public class User implements Serializable {
     private String password = "";
     private String passwordGenerated = "";
     private boolean authenticated = false;
-    private String role = "";
+    private String role = "Administration";
     
     public User(){
         
@@ -57,15 +57,8 @@ public class User implements Serializable {
         return role;
     }
     
-    public boolean isAdministrationRole(){
-        return "".equals(getRole());
+    public boolean isAdministrationMenu(){
+        return "Administration".equals(getRole())|| ConfigParamsMenuCategory.HR.toString().equals(getRole());
     }
     
-    public boolean isHrRole(){
-        return ConfigParamsMenuCategory.HR.toString().equals(getRole());
-    }
-    
-    public boolean isJobApplicantRole(){
-        return ConfigParamsMenuCategory.JOB_APPLICANT.toString().equals(getRole());
-    }
 }

@@ -40,27 +40,27 @@
 							<div class="box-body">
 								<xp:div styleClass="row">
 									<div class="col-md-4 col-xs-12">
-										<!--<xc:chart
+										<xc:chart
 											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerEmotionTone().createChart(recentJobsLimited)}"
 											chartAlias="emotion_tone" chartAliasGUI="emotion_tone_jobs"
 											title="Emotion Tone">
 										</xc:chart>
-									--></div>
+									</div>
 									<div class="col-md-4 col-xs-12">
-										<!--<xc:chart
+										<xc:chart
 											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerLanguageTone().createChart(recentJobsLimited)}"
 											chartAlias="language_tone" chartAliasGUI="language_tone_jobs"
 											title="Language Tone">
 										</xc:chart>
 
-									--></div>
+									</div>
 									<div class="col-md-4 col-xs-12">
-										<!--<xc:chart
+										<xc:chart
 											chart="#{javascript:chartFactoryProducer.getChartFactoryToneAnalyzerSocialTone().createChart(recentJobsLimited)}"
 											chartAlias="social_tone" chartAliasGUI="social_tone_jobs"
 											title="Social Tone">
 										</xc:chart>
-									--></div>
+									</div>
 								</xp:div>
 							</div>
 

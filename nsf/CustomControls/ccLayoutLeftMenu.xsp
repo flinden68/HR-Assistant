@@ -14,7 +14,7 @@
 
 	<ul class="sidebar-menu">
 		<xp:repeat id="repeat2" rows="30" disableOutputTag="true"
-			disableTheme="true" value="#{applicationController.configMenuItemCategories}"
+			disableTheme="true" value="${applicationController.configMenuItemCategories}"
 			var="menuCat">
 
 			<xp:text tagName="li" styleClass="header" value="#{menuCat}">
@@ -44,7 +44,7 @@
 		</xp:repeat>
 
 		<xp:panel id="administrationRole"
-			rendered="#{applicationController.user.administrationRole}"
+			rendered="#{applicationController.user.administrationMenu}"
 			disableOutputTag="true">
 			<li class="header">Administration</li>
 			<!-- Optionally, you can add icons to the links -->
