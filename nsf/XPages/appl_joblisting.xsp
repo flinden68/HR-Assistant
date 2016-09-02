@@ -95,7 +95,7 @@
 					
 					<xp:repeat id="rptList" rows="6" var="job" indexVar="i"
 						value="#{jobController.jobs}">
-						<div class="col-md-6">
+						<div class="col-md-4 box-joblisting">
 							<div class="box box-primary">
 								<div class="box-header">
 									<div class="pull-left">
