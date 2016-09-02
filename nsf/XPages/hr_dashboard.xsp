@@ -11,7 +11,7 @@
 			var="recentJobApplicationsLimited">
 		</xp:dataContext>
 	</xp:this.dataContexts>
-	<xc:ccLayout pageTitle="Dashboard">
+	<xc:ccLayout pageTitle="Dashboard"> 
 		<xp:this.facets>
 			<xp:panel xp:key="Content">
 				<div class="row">
@@ -109,8 +109,7 @@
 						</xp:div>
 					</div>
 				</div>
-
-
+				
 				<div class="row">
 
 					<div class="col-md-12">
