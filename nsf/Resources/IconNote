@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
- maintenanceversion='1.0' replicaid='C1257FD30065445B'>
-<noteinfo noteid='126' unid='B94659652EFDAF21C1257FD2004790AD' sequence='161'>
+ maintenanceversion='1.6' replicaid='C1257FD30065445B'>
+<noteinfo noteid='126' unid='B94659652EFDAF21C1257FD2004790AD' sequence='169'>
 <created><datetime dst='true'>20160614T150140,93+02</datetime></created>
-<modified><datetime dst='true'>20160902T085246,51+02</datetime></modified>
-<revised><datetime dst='true'>20160902T085246,49+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20160902T085246,49+02</datetime></lastaccessed>
+<modified><datetime dst='true'>20160902T160343,86+02</datetime></modified>
+<revised><datetime dst='true'>20160902T160343,84+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20160902T160343,84+02</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20160711T105435,25+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
 <item name='IconBitmap' summary='true'>

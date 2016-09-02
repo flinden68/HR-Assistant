@@ -5,6 +5,7 @@
 			refreshIdForSearch="pnlDataItemList" controller="#{jobApplicationController}">
 		</xc:ccDataItemListHeader>
 		<div class="box-header">
+			<xc:ccMessageBoxSearch controller="#{jobApplicationController}"></xc:ccMessageBoxSearch>
 			<!--
 				<a class="btn btn-primary" href="jobapplication.xsp">create job
 				application</a>
@@ -29,7 +30,7 @@
 
 		<xp:div styleClass="box-body table-responsive"
 			rendered="#{javascript:compositeData.jobApplicationList.length>0}">
-			<xc:ccMessageBoxSearch controller="#{jobApplicationController}"></xc:ccMessageBoxSearch>
+
 			<table class="table table-hover table-striped">
 
 				<thead>
