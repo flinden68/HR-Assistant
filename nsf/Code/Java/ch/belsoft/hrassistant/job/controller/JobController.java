@@ -143,7 +143,7 @@ public class JobController extends ControllerBase implements
 		try {
 			if (this.newDataItem) {
 				this.jobDAO.create(job);
-				XPagesUtil.redirect("job.xsp?openxpage&id=" + job.getId());
+				XPagesUtil.redirect("hr_job.xsp?openxpage&id=" + job.getId());
 			} else {
 				this.jobDAO.update(job);
 				read(job.getId());
