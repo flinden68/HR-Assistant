@@ -92,22 +92,24 @@ public class ChartFactoryPersonalityInsights extends
 	}
 
 	protected Child getInsightsChildByPersonalityCategory(
-			PersonalityInsightsCategoryEnum personalityCategory, Child tree)
-			throws NoSuchElementException {
+			PersonalityInsightsCategoryEnum personalityCategory, Child tree) {
 
 		Child result = null;
+		try {
+			if (tree == null) {
+				return null;
+			}
 
-		if (tree == null) {
-			return null;
+			result = this.getInsightsChildByChildren(personalityCategory, tree);
+			if (result == null) {
+				Logging.logEvent(personalityCategory.toString()
+						+ " not found in the personality insights result");
+			}
+		} catch (Exception e) {
+			Logging.logError(e);
 		}
 
-		result = this.getInsightsChildByChildren(personalityCategory, tree);
-		if (result == null) {
-			throw new NoSuchElementException(personalityCategory.toString()
-					+ " not found in the personality insights result");
-		} else {
-			return result;
-		}
+		return result;
 	}
 
 	protected void fillChartDataSets(Chart chart, Child child,
@@ -136,13 +138,18 @@ public class ChartFactoryPersonalityInsights extends
 		Chart chart = new Chart(this.chartAlias);
 		this.setDefaultChartType(this.chartAlias, ChartTypeSelection.RADAR);
 		try {
-			Child child = this.getInsightsChildByPersonalityCategory(
-					this.personalityInsightsCategoryEnum,
-					personalityInsightable.getPersonalityInsightsResult()
-							.getTree());
+			Child child = null;
+			if (personalityInsightable.getPersonalityInsightsResult() != null) {
+				child = this.getInsightsChildByPersonalityCategory(
+						this.personalityInsightsCategoryEnum,
+						personalityInsightable.getPersonalityInsightsResult()
+								.getTree());
 
-			this.fillChartDataSets(chart, child, personalityInsightable
-					.getName(), child.getName());
+			}
+			if (child != null) {
+				this.fillChartDataSets(chart, child, personalityInsightable
+						.getName(), child.getName());
+			}
 		} catch (Exception e) {
 			Logging.logError(e);
 		}

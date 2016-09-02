@@ -172,7 +172,7 @@
 		<label for="fldCountry">Country</label>
 		<xp:comboBox id="fldCountry"
 			value="#{jobApplication.applicant.address.country}" required="true">
-			<xp:selectItem itemLabel="Please choose industry"
+			<xp:selectItem itemLabel="Please choose country"
 				itemValue="">
 			</xp:selectItem>
 			<xp:selectItems value="${companyController.countrySelection}">

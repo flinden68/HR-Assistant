@@ -9,7 +9,22 @@
 				<a class="btn btn-primary" href="jobapplication.xsp">create job
 				application</a>
 			-->
-			<xc:ccPager repeatId="rptList"></xc:ccPager>
+			<div class="pull-right">
+				<xp:pager partialRefresh="true" id="pager2" for="rptList"
+					panelPosition="left" styleClass="bootstrapPager" partialExecute="true">
+					<xp:pagerControl type="Previous" id="pagerControl4"
+						styleClass="bootstrapPagerPrevious">
+						<xp:this.value><![CDATA[«]]></xp:this.value>
+					</xp:pagerControl>
+					<xp:pagerControl type="Group" id="pagerControl5"
+						styleClass="bootstrapPagerMiddle">
+					</xp:pagerControl>
+					<xp:pagerControl type="Next" id="pagerControl6"
+						styleClass="bootstrapPagerNext">
+						<xp:this.value><![CDATA[»]]></xp:this.value>
+					</xp:pagerControl>
+				</xp:pager>
+			</div>
 		</div>
 
 		<xp:div styleClass="box-body table-responsive"
@@ -25,11 +40,12 @@
 						<th style="width:120px">IBM Watson</th>
 						<xp:panel tagName="th"
 							style="${compositeData.showButtons==false ? 'width:80px;' : 'width:280px;'}"></xp:panel>
-					</tr> 
-				</thead> 
+					</tr>
+				</thead>
 				<tbody>
-					<xp:repeat id="rptList" rows="10" var="entry" indexVar="i"
-						repeatControls="true" value="#{compositeData.jobApplicationList}">
+					<xp:repeat id="rptList" rows="${compositeData.rowCount}"
+						var="entry" indexVar="i" repeatControls="false"
+						value="#{compositeData.jobApplicationList}">
 						<xp:tr styleClass="#{(i mod 2 eq 0) ? 'even': 'odd'}">
 							<td>
 								<xp:link

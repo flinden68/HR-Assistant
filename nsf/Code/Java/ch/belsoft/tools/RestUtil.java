@@ -15,11 +15,13 @@ import org.apache.http.entity.ContentType;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.impl.client.BasicResponseHandler;
 
+import sun.util.logging.resources.logging;
+
 import com.ibm.commons.util.StringUtil;
 
 /**
  * Utility class for sending REST requests
- *
+ * 
  * @author Brian Gleeson - brian.gleeson@ie.ibm.com
  */
 public class RestUtil {
@@ -51,7 +53,7 @@ public class RestUtil {
 
 	/**
 	 * Send POST request with authorization header and additional headers
-	 *
+	 * 
 	 * @param url
 	 *            - The url of the POST request
 	 * @param auth
@@ -77,6 +79,9 @@ public class RestUtil {
 				postRequest.addHeader(entry.getKey(), entry.getValue());
 			}
 		}
+
+		Logging.logEvent("posting with header Auth: " + HEADER_AUTHORIZATION
+				+ ": " + auth + ", url: " + url);
 
 		return executor.execute(
 				postRequest.bodyString(postDataString, contentType))
@@ -109,7 +114,7 @@ public class RestUtil {
 
 	/**
 	 * Send basic POST request
-	 *
+	 * 
 	 * @param url
 	 *            - The url of the POST request
 	 * @param postData
@@ -124,7 +129,7 @@ public class RestUtil {
 
 	/**
 	 * Send basic POST request with authorization header
-	 *
+	 * 
 	 * @param url
 	 *            - The url of the POST reques,t
 	 * @param auth
@@ -141,7 +146,7 @@ public class RestUtil {
 
 	/**
 	 * Send PUT request with authorization header
-	 *
+	 * 
 	 * @param url
 	 *            - The url of the POST request
 	 * @param auth
