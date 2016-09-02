@@ -16,32 +16,41 @@ input.font-normal,select.font-normal {
 	float: none;
 }
 
+.icon-watson {
+	background-image: url("custom/img/icon_watson.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 17px 17px;
+	display: inherit;
+	height: 17px;
+	margin-bottom: -3px;
+	margin-right: 2px;
+	width: 17px;
+}
 
-#wrapped_text_true {
-   /*  width: 600px;*/
-     height: 200px;
-     position: relative;
-     overflow:hidden;
+#wrapped_text_true { /*  width: 600px;*/
+	height: 200px;
+	position: relative;
+	overflow: hidden;
 }
 
 .fade_text {
-     bottom: 0;
-     position: absolute;
-  /*   width: 600px;*/
-     z-index: 9999;
-     background: url('img/fade_text.png') transparent no-repeat;
+	bottom: 0;
+	position: absolute;
+	/*   width: 600px;*/
+	z-index: 9999;
+	background: url('img/fade_text.png') transparent no-repeat;
 }
 
-span.show_text, span.hide_text  {
-   	text-decoration:underline;
-	cursor:pointer;
+span.show_text,span.hide_text {
+	text-decoration: underline;
+	cursor: pointer;
 }
 
 span.hide_text {
-  
-     display: none;
-    
+	display: none;
 }
+
 .form-group label {
 	display: block;
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
-	afterPageLoad="#{javascript:viewScope.pageTitle=compositeData.pageTitle}">
+	afterPageLoad="#{javascript:viewScope.pageTitle=compositeData.pageTitle}"
+	xmlns:xp_1="http://www.ibm.com/xsp/coreex">
 	<xc:ccJQuery></xc:ccJQuery>
 
 	<xp:div styleClass="wrapper" id="wrapper">
@@ -8,7 +9,7 @@
 		<!-- Main Header -->
 		<header class="main-header">
 
-			<!-- Logo --> 
+			<!-- Logo -->
 			<a href="home.xsp" class="logo">
 				<!-- mini logo for sidebar mini 50x50 pixels -->
 				<span class="logo-mini">
@@ -36,7 +37,8 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 								<i class="fa fa-database"></i>
 								<span
-									class="label label-#{(cloudantService.connected)?'success':'danger'}">&#160;&#160;&#160;</span>
+									class="label label-#{(cloudantService.connected)?'success':'danger'}">
+									&#160;&#160;&#160; </span>
 							</a>
 							<ul class="dropdown-menu">
 								<li class="header">Cloudant service</li>
@@ -57,151 +59,63 @@
 										</li>
 									</ul>
 								</li>
-								<li class="footer">
-								</li>
+								<li class="footer"></li>
 							</ul>
 						</li>
-						<!-- Messages: style can be found in dropdown.less
-						<li class="dropdown messages-menu">
-							
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<i class="fa fa-envelope-o"></i>
-								<span class="label label-success">
-									4
-								</span>
-							</a>
-							<ul class="dropdown-menu">
-								<li class="header">
-									You have 4 messages
-								</li>
-								<li>
-									
-									<ul class="menu">
-										<li>
-											<a href="#">
-												<div class="pull-left">
-													
-													<img src="dist/img/user2-160x160.jpg" class="img-circle"
-														alt="User Image" />
-												</div>
-												
-												<h4>
-													Support Team
-													<small>
-														<i class="fa fa-clock-o">
-														</i>
-														5 mins
-													</small>
-												</h4>
-												
-												<p>
-													Why not buy a new
-													awesome theme?
-												</p>
-											</a>
-										</li>
-										
-									</ul>
-									
-								</li>
-								<li class="footer">
-									<a href="#">See All Messages</a>
-								</li>
-							</ul>
-						</li>
+						<!--
+							Messages: style can be found in dropdown.less <li class="dropdown
+							messages-menu"> <a href="#" class="dropdown-toggle"
+							data-toggle="dropdown"> <i class="fa fa-envelope-o"></i> <span
+							class="label label-success"> 4 </span> </a> <ul
+							class="dropdown-menu"> <li class="header"> You have 4 messages
+							</li> <li> <ul class="menu"> <li> <a href="#"> <div
+							class="pull-left"> <img src="dist/img/user2-160x160.jpg"
+							class="img-circle" alt="User Image" /> </div> <h4> Support Team
+							<small> <i class="fa fa-clock-o"> </i> 5 mins </small> </h4> <p>
+							Why not buy a new awesome theme? </p> </a> </li> </ul> </li> <li
+							class="footer"> <a href="#">See All Messages</a> </li> </ul>
+							</li>
 						-->
 
-						<!-- Notifications Menu 
-						<li class="dropdown notifications-menu">
-							
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<i class="fa fa-bell-o"></i>
-								<span class="label label-warning">
-									10
-								</span>
-							</a>
-							<ul class="dropdown-menu">
-								<li class="header">
-									You have 10 notifications
-								</li>
-								<li>
-									
-									<ul class="menu">
-										<li>
-											<a href="#">
-												<i class="fa fa-users text-aqua">
-												</i>
-												5 new members joined
-												today
-											</a>
-										</li>
-										
-									</ul>
-								</li>
-								<li class="footer">
-									<a href="#">View all</a>
-								</li>
-							</ul>
-						</li>
+						<!--
+							Notifications Menu <li class="dropdown notifications-menu"> <a
+							href="#" class="dropdown-toggle" data-toggle="dropdown"> <i
+							class="fa fa-bell-o"></i> <span class="label label-warning"> 10
+							</span> </a> <ul class="dropdown-menu"> <li class="header"> You
+							have 10 notifications </li> <li> <ul class="menu"> <li> <a
+							href="#"> <i class="fa fa-users text-aqua"> </i> 5 new members
+							joined today </a> </li> </ul> </li> <li class="footer"> <a
+							href="#">View all</a> </li> </ul> </li>
 						-->
-						<!-- Tasks Menu
-						<li class="dropdown tasks-menu">
-							
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<i class="fa fa-flag-o"></i>
-								<span class="label label-danger">
-									9
-								</span>
-							</a>
-							<ul class="dropdown-menu">
-								<li class="header">You have 9 tasks</li>
-								<li>
-									
-									<ul class="menu">
-										<li>
-											<a href="#">
-												
-												<h3>
-													Design some buttons
-													<small class="pull-right">
-														20% </small>
-												</h3>
-												
-												<div class="progress xs">
-													
-													<div class="progress-bar progress-bar-aqua" style="width: 20%"
-														role="progressbar" aria-valuenow="20" aria-valuemin="0"
-														aria-valuemax="100">
-														<span class="sr-only">
-															20% Complete
-														</span>
-													</div>
-												</div>
-											</a>
-										</li>
-										
-									</ul>
-								</li>
-								<li class="footer">
-									<a href="#">View all tasks</a>
-								</li>
-							</ul>
-						</li>
-						 -->
+						<!--
+							Tasks Menu <li class="dropdown tasks-menu"> <a href="#"
+							class="dropdown-toggle" data-toggle="dropdown"> <i class="fa
+							fa-flag-o"></i> <span class="label label-danger"> 9 </span> </a>
+							<ul class="dropdown-menu"> <li class="header">You have 9
+							tasks</li> <li> <ul class="menu"> <li> <a href="#"> <h3> Design
+							some buttons <small class="pull-right"> 20% </small> </h3> <div
+							class="progress xs"> <div class="progress-bar progress-bar-aqua"
+							style="width: 20%" role="progressbar" aria-valuenow="20"
+							aria-valuemin="0" aria-valuemax="100"> <span class="sr-only"> 20%
+							Complete </span> </div> </div> </a> </li> </ul> </li> <li
+							class="footer"> <a href="#">View all tasks</a> </li> </ul> </li>
+						-->
 						<!-- User Account Menu -->
 						<li class="dropdown user user-menu">
-							
+
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 								<!-- The user image in the navbar-->
-								
+
 								<xp:text id="navbar-username" value="#{applicationController.user.userName}"
-									styleClass="hidden-xs"></xp:text>
-	
+									styleClass="hidden-xs">
+								</xp:text>
+
 							</a>
 							<ul class="dropdown-menu">
 								<!-- The user image in the menu -->
 								<li class="user-header">
-									<img src="custom/img/hrAssistent160.png" class="img-circle" alt="User Image" />
+									<img src="custom/img/hrAssistent160.png" class="img-circle"
+										alt="User Image" />
 									<p>
 										<xp:text id="computedField4" value="#{applicationController.user.userName}">
 										</xp:text>
@@ -212,60 +126,61 @@
 									<div class="row">
 										<div class="col-xs-2 text-center">
 											<div class="radio">
-												<xp:radio text="All" id="radio1"
-										    		groupName="userRoles"
-										    		value="#{applicationController.user.role}"
-										    		selectedValue="">
-										    		<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="wrapper">
+												<xp:radio text="All" id="radio1" groupName="userRoles"
+													value="#{applicationController.user.role}" selectedValue="">
+													<xp:eventHandler event="onclick" submit="true"
+														refreshMode="partial" refreshId="wrapper">
 														<xp:this.action>
-															<xp:executeScript script="#{javascript://toneAnalyzerService.analyzeTone}"></xp:executeScript>
+															<xp:executeScript
+																script="#{javascript://toneAnalyzerService.analyzeTone}">
+															</xp:executeScript>
 														</xp:this.action>
 													</xp:eventHandler>
-										    	</xp:radio>
-									    	</div>
+												</xp:radio>
+											</div>
 										</div>
 										<div class="col-xs-2 text-center">
 											<div class="radio">
-												<xp:radio text="HR" id="radio2"
-										    		groupName="userRoles"
-										    		value="#{applicationController.user.role}"
-										    		selectedValue="#{configurationController.hrConfigParamsMenuCategory}">
-										    		<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="wrapper">
-														
+												<xp:radio text="HR" id="radio2" groupName="userRoles"
+													value="#{applicationController.user.role}"
+													selectedValue="#{configurationController.hrConfigParamsMenuCategory}">
+													<xp:eventHandler event="onclick" submit="true"
+														refreshMode="partial" refreshId="wrapper">
+
 													</xp:eventHandler>
-										    	</xp:radio>
-									    	</div>
+												</xp:radio>
+											</div>
 										</div>
 										<div class="col-xs-8 text-center">
 											<div class="radio">
 												<xp:radio text="Job applicant" id="radio3"
-										    		groupName="userRoles"
-										    		value="#{applicationController.user.role}"
-										    		selectedValue="#{configurationController.jobApplicantConfigParamsMenuCategory}">
-										    		<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="wrapper">
-														
+													groupName="userRoles" value="#{applicationController.user.role}"
+													selectedValue="#{configurationController.jobApplicantConfigParamsMenuCategory}">
+													<xp:eventHandler event="onclick" submit="true"
+														refreshMode="partial" refreshId="wrapper">
+
 													</xp:eventHandler>
-										    	</xp:radio>
-										    </div>
+												</xp:radio>
+											</div>
 										</div>
 									</div>
-									
+
 								</li>
 								<!-- Menu Footer-->
 								<li class="user-footer">
 									<div class="pull-left">
-										<!--<a href="#" class="btn btn-default btn-flat">
-											Profile
-										</a>
-									--></div>
+										<!--
+											<a href="#" class="btn btn-default btn-flat"> Profile </a>
+										-->
+									</div>
 									<div class="pull-right">
-										<xp:button
-											styleClass="btn btn-default btn-flat" value="Sign out"
-											id="button3">
+										<xp:button styleClass="btn btn-default btn-flat"
+											value="Sign out" id="button3">
 											<xp:eventHandler event="onclick" submit="true"
 												onStart="waitingDialog.show('sign out...')" onComplete="waitingDialog.hide()">
 												<xp:this.action>
-													<xp:executeScript script="#{javascript:applicationController.logoutUser()}">
+													<xp:executeScript
+														script="#{javascript:applicationController.logoutUser()}">
 													</xp:executeScript>
 												</xp:this.action>
 											</xp:eventHandler>
@@ -293,11 +208,13 @@
 				<!-- Sidebar user panel (optional) -->
 				<div class="user-panel">
 					<div class="pull-left image">
-						<img src="custom/img/hrAssistent160.png" class="img-circle" alt="User Image" />
+						<img src="custom/img/hrAssistent160.png" class="img-circle"
+							alt="User Image" />
 					</div>
 					<div class="pull-left info">
 						<xp:text id="computedField3" value="#{applicationController.user.userName}"
-							tagName="p"></xp:text>
+							tagName="p">
+						</xp:text>
 						<!-- Status -->
 						<a href="#">
 							<i class="fa fa-circle text-success"></i>
@@ -325,15 +242,9 @@
 
 				</h1>
 				<!--
-				<ol class="breadcrumb">
-					<li>
-						<a href="#">
-							<i class="fa fa-dashboard"></i>
-							Level
-						</a>
-					</li>
-					<li class="active">Here</li>
-				</ol>
+					<ol class="breadcrumb"> <li> <a href="#"> <i class="fa
+					fa-dashboard"></i> Level </a> </li> <li class="active">Here</li>
+					</ol>
 				-->
 			</section>
 
@@ -352,16 +263,23 @@
 			<!-- To the right -->
 			<div class="pull-right hidden-xs">
 				This software is open source and under the &#160;
-				<a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License 2.0</a>
+				<a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">
+					Apache License 2.0
+				</a>
 			</div>
 			<!-- Default to the left -->
 			<strong>
 				Build by&#160;
-				<a href="http://www.belsoft-collaboration.ch" target="_blank">Belsoft Collaboration</a>
+				<a href="http://www.belsoft-collaboration.ch" target="_blank">
+					Belsoft
+					Collaboration
+				</a>
 				&#160;and&#160;
-				<a href="http://www.elstarit.nl" target="_blank">elstar IT</a>
+				<a href="http://www.elstarit.nl" target="_blank">
+					elstar IT
+				</a>
 			</strong>
-			
+
 		</footer>
 
 		<!-- Control Sidebar -->
@@ -382,9 +300,7 @@
 			<!-- Tab panes -->
 			<div class="tab-content">
 				<div class="tab-pane active" id="control-sidebar-test-tab">
-					<h3 class="control-sidebar-heading">
-						JUnit Tests
-					</h3>
+					<h3 class="control-sidebar-heading">JUnit Tests</h3>
 					This will test the configuration controller
 					<xp:div id="pnlTest">
 						<xp:button value="Run test" id="button1" styleClass="btn btn-warning"
@@ -394,11 +310,13 @@
 								refreshMode="partial" refreshId="pnlTest" immediate="true"
 								execMode="partial" execId="pnlTest">
 								<xp:this.action>
-									<xp:executeScript script="#{testConfiguration.test}"></xp:executeScript>
+									<xp:executeScript script="#{testConfiguration.test}">
+									</xp:executeScript>
 								</xp:this.action>
 							</xp:eventHandler>
 						</xp:button>
-						<xp:messages id="pnlTestResults" styleClass="alert alert-danger"></xp:messages>
+						<xp:messages id="pnlTestResults" styleClass="alert alert-danger">
+						</xp:messages>
 					</xp:div>
 
 					<h3 class="control-sidebar-heading">
@@ -413,11 +331,13 @@
 								refreshMode="partial" refreshId="pnlWatsonTone" immediate="true"
 								execMode="partial" execId="pnlWatsonTone">
 								<xp:this.action>
-									<xp:executeScript script="#{toneAnalyzerService.analyzeTone}"></xp:executeScript>
+									<xp:executeScript script="#{toneAnalyzerService.analyzeTone}">
+									</xp:executeScript>
 								</xp:this.action>
 							</xp:eventHandler>
 						</xp:button>
-						<xp:messages id="pnlWatsonResponse" styleClass="alert alert-danger"></xp:messages>
+						<xp:messages id="pnlWatsonResponse" styleClass="alert alert-danger">
+						</xp:messages>
 					</xp:div>
 				</div>
 
@@ -450,7 +370,8 @@
 						</xp:button>
 
 						<p>
-							this action will clear the in-memory configuration list.
+							this action will clear the in-memory
+							configuration list.
 						</p>
 					</div>
 					<!-- /.form-group -->
@@ -467,6 +388,9 @@
 		<div class="control-sidebar-bg"></div>
 	</xp:div>
 
-
+	<xp:scriptBlock id="scriptBlock1">
+		<xp:this.value><![CDATA[ 
+		  window.onunload = waitingDialog.hide(); ]]></xp:this.value>
+	</xp:scriptBlock>
 
 </xp:view>

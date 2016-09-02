@@ -1,20 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1332" sequence="16" unid="A1266B0C4EC71794C125801700642D39">
-<created><datetime dst="true">20160822T201411,77+02</datetime></created>
-<modified><datetime dst="true">20160824T131158,44+02</datetime></modified>
-<revised><datetime dst="true">20160824T131158,43+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160824T131158,44+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160822T201411,83+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
-<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="dfa" sequence="16" unid="BF054BBF021E7017C1258020004A2A51">
+<created><datetime dst="true">20160831T153004,97+02</datetime></created>
+<modified><datetime dst="true">20160902T092003,68+02</datetime></modified>
+<revised><datetime dst="true">20160902T092003,66+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160902T092003,66+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160831T153004,98+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
+<wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
-
-
 <item name="$TITLE"><text>com/ibm/bluemix/services/watson/alchemylanguage/interfaces/AlchemyLanguageController.java</text></item>
+
+
+
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
-<item name="$FileNames" sign="true"><text>com/ibm/bluemix/services/watson/alchemylanguage/interfaces/AlchemyLanguageController.java</text></item>
-
-
-</note>
+<item name="$FileNames" sign="true"><text>com/ibm/bluemix/services/watson/alchemylanguage/interfaces/AlchemyLanguageController.java</text></item></note>

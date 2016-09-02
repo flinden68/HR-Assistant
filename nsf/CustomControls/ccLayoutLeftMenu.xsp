@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
-	<!-- search form (Optional) 
-MAYBE FOR LATER..
-	<div action="#" method="get" class="sidebar-form">
-		<div class="input-group">
-			<input type="text" name="q" class="form-control" placeholder="Search..." />
-			<span class="input-group-btn">
-				<button type="submit" name="search" id="search-btn" class="btn btn-flat">
-					<i class="fa fa-search"></i>
-				</button>
-			</span>
-
-		</div>
-	</div> -->
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xp_1="http://www.ibm.com/xsp/coreex">
+	<!--
+		search form (Optional) MAYBE FOR LATER.. <div action="#" method="get"
+		class="sidebar-form"> <div class="input-group"> <input type="text"
+		name="q" class="form-control" placeholder="Search..." /> <span
+		class="input-group-btn"> <button type="submit" name="search"
+		id="search-btn" class="btn btn-flat"> <i class="fa fa-search"></i>
+		</button> </span> </div> </div>
+	-->
 	<!-- /.search form -->
 
 	<!-- Sidebar Menu -->
@@ -34,7 +29,15 @@ MAYBE FOR LATER..
 					<xp:link escape="true" value="#{menuItem.configKey}" text="#{menuItem.configValue}"
 						id="link1">
 						<i
-							class="fa fa-#{javascript:menuItem.getParamValue(ch.belsoft.hrassistant.config.model.ConfigParams.ICON)}"></i>
+							class="fa fa-#{javascript:menuItem.getParamValue(ch.belsoft.hrassistant.config.model.ConfigParams.ICON)}">
+						</i>
+						<xp:eventHandler event="onclick" submit="false">
+							<xp:this.script>
+								<xp:executeClientScript
+									script="waitingDialog.show('opening #{menuItem.configValue}')">
+								</xp:executeClientScript>
+							</xp:this.script>
+						</xp:eventHandler>
 					</xp:link>
 				</li>
 			</xp:repeat>

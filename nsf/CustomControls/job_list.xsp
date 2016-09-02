@@ -21,7 +21,7 @@
 						<th>company</th>
 						<th style="width:150px;">date</th>
 						<th style="width:120px">IBM Watson</th>
-						<th style="width:200px;"></th>
+						<th style="width:280px;"></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -43,17 +43,32 @@
 								</xp:text>
 							</td>
 							<td>
-								<xp:image url="custom/img/icon_watson_toneanalyzer.png" style="margin-right:3px;"
-									rendered="#{entry.toneAnalyzerResult!=null}" title="Tone analyzed by IBM Watson"
-									id="image1">
+								<xp:image url="custom/img/icon_watson_toneanalyzer.png"
+									style="margin-right:3px;" rendered="#{entry.toneAnalyzerResult!=null}"
+									title="Tone analyzed by IBM Watson" id="image1">
 								</xp:image>
-								<xp:image url="custom/img/alchemy-language-service-icon.png" style="margin-right:3px;"
-									rendered="#{entry.alchemyLanguageResult!=null}" title="Text analyzed by IBM Watson"
-									id="image2">
+								<xp:image url="custom/img/alchemy-language-service-icon.png"
+									style="margin-right:3px;" rendered="#{entry.alchemyLanguageResult!=null}"
+									title="Text analyzed by IBM Watson" id="image2">
 								</xp:image>
-								
+
 							</td>
 							<td>
+								<xp:button styleClass="btn btn-success  btn-margin-right"
+									value="analyze" id="button1">
+									<i class="fa fa-fw icon-watson"></i>
+									<xp:eventHandler event="onclick" submit="true"
+										onStart="waitingDialog.show('analyzing with IBM Watson')"
+										onComplete="waitingDialog.hide()" refreshMode="partial"
+										refreshId="content-wrapper" immediate="true" execMode="partial"
+										execId="content-wrapper">
+										<xp:this.action>
+											<xp:executeScript
+												script="#{javascript:jobController.setJob(entry);jobController.analyzeTextAllWatsonServices()}">
+											</xp:executeScript>
+										</xp:this.action>
+									</xp:eventHandler>
+								</xp:button>
 								<xp:link escape="true" styleClass="btn btn-warning btn-margin-right"
 									text="edit" id="link1" value="hr_job.xsp?openxpage&amp;id=#{entry.id}">
 									<i class="fa fa-pencil fa-fw"></i>
