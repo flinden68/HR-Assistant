@@ -23,10 +23,10 @@
 						<th>job</th>
 						<th>date</th>
 						<th style="width:120px">IBM Watson</th>
-						<xp:panel tagName="th" style="width:200px;"
-							loaded="${compositeData.showButtons}"></xp:panel>
-					</tr>
-				</thead>
+						<xp:panel tagName="th"
+							style="${compositeData.showButtons==false ? 'width:80px;' : 'width:280px;'}"></xp:panel>
+					</tr> 
+				</thead> 
 				<tbody>
 					<xp:repeat id="rptList" rows="10" var="entry" indexVar="i"
 						repeatControls="true" value="#{compositeData.jobApplicationList}">
@@ -34,7 +34,16 @@
 							<td>
 								<xp:link
 									value="hr_jobapplication.xsp?openxpage&amp;id=#{entry.id}&amp;readonly=true"
-									escape="true" text="#{entry.applicant.fullName}" id="link2"></xp:link>
+									escape="true" text="#{entry.applicant.fullName}" id="link2">
+									<xp:eventHandler event="onclick" submit="false">
+										<xp:this.script>
+											<xp:executeClientScript
+												script="waitingDialog.show('opening applicant #{entry.applicant.fullName}')">
+											</xp:executeClientScript>
+										</xp:this.script>
+									</xp:eventHandler>
+
+								</xp:link>
 							</td>
 							<xp:text escape="true" id="columnName" tagName="td"
 								value="#{entry.job.name}">
@@ -59,15 +68,30 @@
 									id="image3">
 								</xp:image>
 							</td>
-							<xp:td loaded="${compositeData.showButtons}">
-								<xp:link escape="true"
+							<xp:td>
+								<xp:button styleClass="btn btn-success  btn-margin-right"
+									value="analyze" id="button1">
+									<i class="fa fa-fw icon-watson"></i>
+									<xp:eventHandler event="onclick" submit="true"
+										onStart="waitingDialog.show('analyzing with IBM Watson')"
+										onComplete="waitingDialog.hide()" refreshMode="partial"
+										refreshId="content-wrapper" immediate="true" execMode="partial"
+										execId="content-wrapper">
+										<xp:this.action>
+											<xp:executeScript
+												script="#{javascript:jobApplicationController.setJobApplication(entry);jobApplicationController.analyzeTextAllWatsonServices()}">
+											</xp:executeScript>
+										</xp:this.action>
+									</xp:eventHandler>
+								</xp:button>
+								<xp:link escape="true" loaded="${compositeData.showButtons}"
 									styleClass="btn btn-warning
 								btn-margin-right" text="edit"
 									id="link1" value="hr_jobapplication.xsp?openxpage&amp;id=#{entry.id}">
 									<i class="fa fa-pencil fa-fw"></i>
 								</xp:link>
 								<xp:button styleClass="btn btn-danger" value="remove"
-									id="button7">
+									loaded="${compositeData.showButtons}" id="button7">
 									<i class="fa fa-trash fa-fw"></i>
 									<xp:eventHandler event="onclick" submit="true"
 										onStart="waitingDialog.show('removing')" onComplete="waitingDialog.hide()"
