@@ -3,15 +3,21 @@
 
 	<xp:div
 		styleClass="form-group is-valid-#{javascript:getComponent('fldJobName').isValid()}">
+
 		<label for="fldJobName">Job name</label>
+		<xp:link value="hr_job.xsp?openxpage&amp;id=#{job.id}&amp;readonly=true"
+			loaded="${compositeData.jobNameAsLink}" escape="true" text="#{job.name}"
+			id="link2"></xp:link>
 		<xp:inputText id="fldJobName" value="#{job.name}"
-			styleClass="valid-#{javascript:this.isValid()}" required="true">
+			rendered="${compositeData.jobNameAsLink!=true}" styleClass="valid-#{javascript:this.isValid()}"
+			required="true">
 			<xp:this.validators>
 				<xp:validateRequired message="Please give a job name">
 				</xp:validateRequired>
 			</xp:this.validators>
 		</xp:inputText>
-		<xp:message id="message1" for="fldJobName" styleClass="help-block with-errors"></xp:message>
+		<xp:message id="message1" for="fldJobName" styleClass="help-block with-errors"
+			loaded="${compositeData.jobNameAsLink!=true"></xp:message>
 	</xp:div>
 	<xp:div
 		styleClass="form-group
@@ -39,7 +45,7 @@
 			<xp:inputRichText value="#{job.description}" id="fldDescription"></xp:inputRichText>
 			<div class="fade_text"></div>
 		</div>
-		<xp:div loaded="${jobController.readOnly}">
+		<xp:div loaded="${jobController.readOnly}" styleClass="expandable">
 
 			<span class="show_text">Show More</span>
 			<span class="hide_text">Hide This</span>

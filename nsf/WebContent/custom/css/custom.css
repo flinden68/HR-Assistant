@@ -47,6 +47,18 @@ span.show_text,span.hide_text {
 	cursor: pointer;
 }
 
+.expandable {
+	background: red; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(#ffffff, #f0f0f0);
+	/* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#ffffff, #f0f0f0);
+	/* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#ffffff, #f0f0f0);
+	/* For Firefox 3.6 to 15 */
+	background: linear-gradient(#ffffff, #f0f0f0); /* Standard syntax */
+	text-align:center;
+}
+
 span.hide_text {
 	display: none;
 }
