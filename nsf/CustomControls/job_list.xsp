@@ -6,15 +6,29 @@
 			refreshIdForSearch="pnlDataItemList" controller="#{jobController}">
 		</xc:ccDataItemListHeader>
 		<div class="box-header">
-			<a class="btn btn-primary" href="hr_job.xsp">create job</a>
 
-			<xc:ccPager repeatId="rptList"></xc:ccPager>
+			<a class="btn btn-primary" href="hr_job.xsp">create job</a>
+			<div class="pull-right">
+				<xp:pager partialRefresh="true" id="pager2" for="rptList"
+					panelPosition="left" styleClass="bootstrapPager" partialExecute="true">
+					<xp:pagerControl type="Previous" id="pagerControl4"
+						styleClass="bootstrapPagerPrevious">
+						<xp:this.value><![CDATA[«]]></xp:this.value>
+					</xp:pagerControl>
+					<xp:pagerControl type="Group" id="pagerControl5"
+						styleClass="bootstrapPagerMiddle">
+					</xp:pagerControl>
+					<xp:pagerControl type="Next" id="pagerControl6"
+						styleClass="bootstrapPagerNext">
+						<xp:this.value><![CDATA[»]]></xp:this.value>
+					</xp:pagerControl>
+				</xp:pager>
+			</div>
 		</div>
 
 		<div class="box-body table-responsive">
 			<xc:ccMessageBoxSearch controller="#{jobController}"></xc:ccMessageBoxSearch>
 			<table class="table table-hover table-striped">
-
 				<thead>
 					<tr>
 						<th>name</th>
@@ -26,7 +40,7 @@
 				</thead>
 				<tbody>
 					<xp:repeat id="rptList" rows="10" var="entry" indexVar="i"
-						value="#{jobController.jobs}">
+						repeatControls="false" value="#{jobController.jobs}">
 						<xp:tr styleClass="#{(i mod 2 eq 0) ? 'even': 'odd'}">
 							<td>
 								<xp:link

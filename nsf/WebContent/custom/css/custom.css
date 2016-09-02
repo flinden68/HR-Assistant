@@ -118,6 +118,10 @@ span.hide_text {
 	padding: 6px 12px;
 }
 
+.xspFirstItem,.xspLastItem {
+	padding: 6px 12px;
+}
+
 .bootstrapPagerMiddle>span>span:focus,.bootstrapPagerMiddle>span>span:hover
 	{
 	background-color: #eee;
