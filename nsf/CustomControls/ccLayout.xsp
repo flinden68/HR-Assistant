@@ -386,7 +386,8 @@
 
 	<xp:scriptBlock id="scriptBlock1">
 		<xp:this.value><![CDATA[ 
-		  window.onunload = waitingDialog.hide(); ]]></xp:this.value>
+		  window.onunload = waitingDialog.hide();
+		  window.onload = waitingDialog.hide(); ]]></xp:this.value>
 	</xp:scriptBlock>
-
+ 
 </xp:view>
