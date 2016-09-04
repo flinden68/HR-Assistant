@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:div styleClass="alert alert-info alert-dismissible">
+		<button aria-hidden="true" data-dismiss="alert" class="close"
+			type="button">×</button>
+		<xp:panel tagName="h4">
+			<i class="icon fa fa-info"></i>
+			<xp:text escape="true" id="computedField2"
+				value="If you want IBM Watson to (re)analyze this data, please switch to edit mode."></xp:text>
+		</xp:panel>
+		<xp:link value="${applicationController.linkEditMode}"
+			styleClass="btn btn-warning
+								btn-margin-right" text="edit"
+			title="edit"></xp:link>
+	</xp:div>
+</xp:view>

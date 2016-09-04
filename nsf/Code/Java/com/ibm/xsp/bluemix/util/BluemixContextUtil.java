@@ -2,7 +2,9 @@ package com.ibm.xsp.bluemix.util;
 
 import javax.xml.bind.DatatypeConverter;
 
+import ch.belsoft.tools.Logging;
 import ch.belsoft.tools.Util;
+import ch.belsoft.tools.XPagesUtil;
 
 import com.ibm.commons.Platform;
 import com.ibm.commons.util.io.json.JsonException;
@@ -41,6 +43,8 @@ public class BluemixContextUtil {
 		setHardcodedPassword(password);
 
 		processVCAPServices();
+
+		// this.debugAuthentcation();
 	}
 
 	/**
@@ -53,12 +57,31 @@ public class BluemixContextUtil {
 		JsonJavaObject vcapJson = null;
 		JsonJavaFactory factory = JsonJavaFactory.instanceEx;
 		String sysEnv = BluemixContextManager.getInstance().getVCAP_SERVICES();
+
 		try {
 			vcapJson = (JsonJavaObject) JsonParser.fromJson(factory, sysEnv);
+
 		} catch (JsonException e) {
 			Platform.getInstance().log(e);
+			Logging.logError(e);
 		}
 		return vcapJson;
+	}
+
+	/**
+	 * Debug the Credentials (hardcoded or VCAP)
+	 */
+	private void debugAuthentcation() {
+
+		/*
+		 * XPagesUtil.showErrorMessage("bluemix util: serviceName: " +
+		 * serviceName + ", baseUrl: " + baseUrl + " username: " + username +
+		 * " password: " + password);
+		 * XPagesUtil.showErrorMessage("bluemix util: service name: " +
+		 * serviceName + ", hardcodedBaseUrl: " + hardcodedBaseUrl +
+		 * " hardcodedUsername: " + hardcodedUsername + " hardcodedPassword: " +
+		 * hardcodedPassword);
+		 */
 	}
 
 	/**
@@ -83,6 +106,7 @@ public class BluemixContextUtil {
 			setBaseUrl((String) credentials.get("url"));
 			setUsername((String) credentials.get("username"));
 			setPassword((String) credentials.get("password"));
+
 		}
 	}
 
@@ -93,7 +117,7 @@ public class BluemixContextUtil {
 	 */
 	public String getAuthorizationHeader() {
 		String auth = getUsername() + ":" + getPassword();
-
+		this.debugAuthentcation();
 		String header = "Basic "
 				+ DatatypeConverter.printBase64Binary(auth.getBytes());
 		return header;

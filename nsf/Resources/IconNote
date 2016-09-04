@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
  maintenanceversion='1.6' replicaid='C1257FD30065445B'>
-<noteinfo noteid='126' unid='B94659652EFDAF21C1257FD2004790AD' sequence='173'>
+<noteinfo noteid='126' unid='B94659652EFDAF21C1257FD2004790AD' sequence='176'>
 <created><datetime dst='true'>20160614T150140,93+02</datetime></created>
-<modified><datetime dst='true'>20160902T201741,57+02</datetime></modified>
-<revised><datetime dst='true'>20160902T201741,55+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20160902T201741,55+02</datetime></lastaccessed>
+<modified><datetime dst='true'>20160904T122022,24+02</datetime></modified>
+<revised><datetime dst='true'>20160904T122022,23+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20160904T122022,23+02</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20160711T105435,25+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
+<wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name='IconBitmap' summary='true'>
 <rawitemdata type='6'>
 AiAgAQAA///////wD///4Af//8AD//4AAH/8AAA/+AAAH/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAA
@@ -25,8 +26,8 @@ AAAAUEECICABAAD/////+A4DgA==
 </rawitemdata></item>
 <item name='$Daos'><text>0</text></item>
 <item name='$LaunchXPageRunOnServer'><text>0</text></item>
-<item name='$DefaultXPage'><text>hr_dashboard.xsp</text></item>
 <item name='$TITLE'><text>HR Assistant</text></item>
 <item name='$Flags'><text>J7!</text></item>
-<item name='$FlagsNoRefresh'><text>rv</text></item></note>
+<item name='$FlagsNoRefresh'><text>rv</text></item>
+<item name='$DefaultXPage'><text>login.xsp</text></item></note>
 

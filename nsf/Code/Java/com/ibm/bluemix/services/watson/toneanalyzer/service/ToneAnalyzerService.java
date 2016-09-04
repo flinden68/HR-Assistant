@@ -42,7 +42,6 @@ public class ToneAnalyzerService extends CloudService implements
 			String postDataString = mapper.writeValueAsString(req);
 			String response = RestUtil.post(API_URL, bluemixUtil
 					.getAuthorizationHeader(), postDataString);
-			XPagesUtil.showErrorMessage(response);
 			mapper.enable(DeserializationFeature.UNWRAP_ROOT_VALUE);
 			result = mapper.readValue(response, ToneAnalyzerResult.class);
 		} catch (Exception e) {
