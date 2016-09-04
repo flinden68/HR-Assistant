@@ -69,6 +69,92 @@
 					</div>
 				</div>
 
+
+
+
+
+
+
+
+
+
+<div class="row">
+
+					<div class="col-md-12">
+						<xp:div styleClass="box box-primary" id="div3">
+							<div class="box-header">
+								<xp:text escape="true" id="computedField4" tagName="h3"
+									styleClass="box-title"
+									value="IBM Watson Personality Insights analyzed Job Applications (Recent 5)"></xp:text>
+
+							</div>
+							<div class="box-body">
+								<xp:div styleClass="row">
+									<div class="col-md-3 col-xs-12">
+										<xc:chart
+											chart="#{javascript:chartFactoryProducer.getChartFactoryPersonalityInsightsOpenness().createChart(recentJobApplicationsLimited)}"
+											chartAlias="Openness" chartAliasGUI="Openness" title="Openness">
+										</xc:chart>
+									</div>
+									<div class="col-md-3 col-xs-12">
+										<xc:chart
+											chart="#{javascript:chartFactoryProducer.getChartFactoryPersonalityInsightsConscientiousness().createChart(recentJobApplicationsLimited)}"
+											chartAlias="Conscientiousness" chartAliasGUI="Conscientiousness"
+											title="Conscientiousness">
+										</xc:chart>
+									</div>
+									<div class="col-md-3 col-xs-12">
+										<xc:chart
+											chart="#{javascript:chartFactoryProducer.getChartFactoryPersonalityInsightsAgreeableness().createChart(recentJobApplicationsLimited)}"
+											chartAlias="Agreeableness" chartAliasGUI="Agreeableness"
+											title="Agreeableness">
+										</xc:chart>
+									</div>
+									<div class="col-md-3 col-xs-12">
+										<xc:chart
+											chart="#{javascript:chartFactoryProducer.getChartFactoryPersonalityInsightsEmotionalRange().createChart(recentJobApplicationsLimited)}"
+											chartAlias="Neuroticism" chartAliasGUI="Neuroticism" title="Emotional range">
+										</xc:chart>
+									</div>
+								</xp:div>
+								<xp:div styleClass="row">
+									<div class="col-md-3 col-xs-12">
+										<xc:chart
+											chart="#{javascript:chartFactoryProducer.getChartFactoryPersonalityInsightsExtraversion().createChart(recentJobApplicationsLimited)}"
+											chartAlias="Extraversion" chartAliasGUI="Extraversion" title="Extraversion">
+										</xc:chart>
+									</div>
+
+									<div class="col-md-3 col-xs-12">
+										<xc:chart
+											chart="#{javascript:chartFactoryProducer.getChartFactoryPersonalityInsightsHedonism().createChart(recentJobApplicationsLimited)}"
+											chartAlias="Hedonism_parent" chartAliasGUI="Hedonism_parent"
+											title="Hedonism">
+										</xc:chart>
+									</div>
+
+									<div class="col-md-3 col-xs-12">
+										<xc:chart
+											chart="#{javascript:chartFactoryProducer.getChartFactoryPersonalityInsightsSelfExpression().createChart(recentJobApplicationsLimited)}"
+											chartAlias="Self-expression_parent" chartAliasGUI="SelfExpressionParent"
+											title="Self-expression">
+										</xc:chart>
+									</div>
+
+								</xp:div>
+							</div>
+
+						</xp:div>
+					</div>
+				</div>
+
+
+
+
+
+
+
+
 				<div class="row">
 
 					<div class="col-md-12">
@@ -76,7 +162,7 @@
 							<div class="box-header">
 								<xp:text escape="true" id="computedField1" tagName="h3"
 									styleClass="box-title"
-									value="IBM Watson Alchemy Language Analized Jobs and Job applications"></xp:text>
+									value="IBM Watson Alchemy Language analized Jobs and Job applications"></xp:text>
 
 							</div>
 							<!-- /.box-header -->

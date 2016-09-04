@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" beforePageLoad="#{javascript:applicationController.setCurrentPageNameParent('hr_jobs.xsp');}">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	beforePageLoad="#{javascript:applicationController.setCurrentPageNameParent('hr_jobs.xsp');}">
 	<xp:this.dataContexts>
 		<xp:dataContext value="#{jobController.dataContext}"
 			var="job">
@@ -24,13 +25,14 @@
 										Description</a>
 								</li>
 								<li class="">
-									<a data-toggle="tab" href="#tab_2" aria-expanded="true">IBM
+									<a data-toggle="tab" href="#tab_2" aria-expanded="true">
 										IBM
-										Watson Tone Anaylized Job Text</a>
+										Watson
+										Tone Anaylized Job Text</a>
 								</li>
 								<li class="">
 									<a data-toggle="tab" href="#tab_3" aria-expanded="true">IBM
-										Watson Text Analysis Job Text</a>
+										Watson Alchemy Language Analysis</a>
 								</li>
 							</ul>
 							<div class="tab-content">
@@ -110,6 +112,7 @@
 				</xp:panel>
 
 
+
 				<div class="row">
 					<div class="col-xs-12">
 						<xc:jobApplication_list rowCount="10"
@@ -117,16 +120,7 @@
 
 					</div>
 				</div>
-				
-				<div class="row">
-					<div class="col-xs-12">
-						<xc:watson_alchemy_language_keywords
-							alchemyLanguageKeywords="#{javascript:jobApplicationController.getKeywordsFromJobApplicationsByJob(job.id)}"
-							title="Keywords of Job Applications for this job(Top 20)">
-						</xc:watson_alchemy_language_keywords>
 
-					</div>
-				</div>
 
 				<div class="row">
 
@@ -171,9 +165,7 @@
 				</div>
 
 
-
-
-				<div class="row">
+	<div class="row">
 
 					<div class="col-md-12">
 						<xp:div styleClass="box box-primary" id="div1">
@@ -242,6 +234,23 @@
 						</xp:div>
 					</div>
 				</div>
+
+				<div class="row">
+					<div class="col-xs-12">
+						<xc:watson_alchemy_language_keywords
+							alchemyLanguageKeywords="#{javascript:jobApplicationController.getKeywordsFromJobApplicationsByJob(job.id)}"
+							title="Keywords of Job Applications for this job(Top 20)">
+						</xc:watson_alchemy_language_keywords>
+
+					</div>
+				</div>
+
+
+
+
+
+
+			
 
 
 
