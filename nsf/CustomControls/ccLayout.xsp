@@ -3,6 +3,7 @@
 	afterPageLoad="#{javascript:viewScope.pageTitle=compositeData.pageTitle}"
 	xmlns:xp_1="http://www.ibm.com/xsp/coreex"
 	beforePageLoad="#{javascript:applicationController.authanticateUser()}">
+	
 	<xp:this.resources>
 		<xp:headTag tagName="meta">
 			<xp:this.attributes>

@@ -48,7 +48,6 @@ public class ApplicationController implements Serializable {
 
 	public ApplicationController() {
 		initConfiguration();
-		//authanticateUser();
 	}
 
 	public static ApplicationController get() {
@@ -120,14 +119,17 @@ public class ApplicationController implements Serializable {
 	}
 
 	public void authanticateUser() {
+		currentPage = XPagesUtil.getViewRoot().getPageName();
+		currentQueryString = XPagesUtil.getXSPContext().getUrl().getQueryString();
 		String hostName = XPagesUtil.getHostName();
 		// to avoid that we get stupid to login all the time, when we develop
 		// ;-)
+		
 		if (!hostName.contains("localhost") && !hostName.contains("belsoft")) {
 			if (!user.isAuthenticated()) {
+				
 				generatePassword();
-				currentPage = XPagesUtil.getViewRoot().getPageName();
-				currentQueryString = XPagesUtil.getXSPContext().getUrl().getQueryString();
+
 				if (!"/login.xsp".equals(currentPage)
 						&& !"/error.xsp".equals(currentPage)) {
 					redirectToLoginPage();

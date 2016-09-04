@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core"
 	styleClass="hold-transition login-page"
-	pageTitle="HR Assistant : Login">
+	pageTitle="HR Assistant : Login"
+	beforePageLoad="#{javascript:applicationController.authanticateUser()}">
 	<div class="login-box">
 		<div class="login-logo">HR Assistant</div>
 
