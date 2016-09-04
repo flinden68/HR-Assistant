@@ -2,7 +2,7 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core">
 	<xp:div>
 		<xp:this.styleClass><![CDATA[#{javascript:'form-group is-valid-'+(getComponent('fldStreetName').isValid() && getComponent('fldStreetNumber').isValid())}]]></xp:this.styleClass>
-		<label for="fldStreetName">Street</label>
+		<label for="fldStreetName">Street / Street No.</label>
 		<div class="row">
 			<div class="col-xs-8">
 				<xp:inputText id="fldStreetName" value="#{compositeData.address.street}"
@@ -40,35 +40,58 @@
 
 
 
-	<xp:div
-		styleClass="form-group is-valid-#{javascript:getComponent('fldZip').isValid()}">
-		<label for="fldZip">Zip code</label>
-		<xp:inputText id="fldZip" value="#{compositeData.address.zip}"
-			styleClass="valid-#{javascript:this.isValid()}" required="true">
-			<xp:this.validators>
-				<xp:validateRequired message="Please give a zip code">
-				</xp:validateRequired>
-			</xp:this.validators>
-		</xp:inputText>
+
+
+
+
+
+
+	<xp:div>
+		<xp:this.styleClass><![CDATA[#{javascript:'form-group is-valid-'+(getComponent('fldZip').isValid() && getComponent('fldCity').isValid())}]]></xp:this.styleClass>
+
+<label for="fldZip">Zip code / City</label>
+		<div class="row">
+			<div class="col-xs-4">
+				
+				<xp:inputText id="fldZip" value="#{compositeData.address.zip}"
+					styleClass="valid-#{javascript:this.isValid()}" required="true">
+					<xp:this.validators>
+						<xp:validateRequired message="Please give a zip code">
+						</xp:validateRequired>
+					</xp:this.validators>
+				</xp:inputText>
+
+			</div>
+
+			<div class="col-xs-8">
+
+				<xp:inputText id="fldCity" value="#{compositeData.address.city}"
+					styleClass="valid-#{javascript:this.isValid()}" required="true">
+					<xp:this.validators>
+						<xp:validateRequired message="Please give a city">
+						</xp:validateRequired>
+					</xp:this.validators>
+				</xp:inputText>
+			</div>
+		</div>
+
 
 		<xp:message id="message7" for="fldZip" styleClass="help-block with-errors">
 		</xp:message>
-	</xp:div>
-
-	<xp:div
-		styleClass="form-group is-valid-#{javascript:getComponent('fldCity').isValid()}">
-		<label for="fldCity">City</label>
-		<xp:inputText id="fldCity" value="#{compositeData.address.city}"
-			styleClass="valid-#{javascript:this.isValid()}" required="true">
-			<xp:this.validators>
-				<xp:validateRequired message="Please give a city">
-				</xp:validateRequired>
-			</xp:this.validators>
-		</xp:inputText>
-
 		<xp:message id="message5" for="fldCity" styleClass="help-block with-errors">
 		</xp:message>
 	</xp:div>
+
+
+
+
+
+
+
+
+
+
+
 
 	<xp:div
 		styleClass="form-group is-valid-#{javascript:getComponent('fldCountry').isValid()}">
