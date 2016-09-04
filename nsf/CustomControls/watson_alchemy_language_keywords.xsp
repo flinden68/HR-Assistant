@@ -2,15 +2,17 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
 	<xp:div styleClass="box box-primary" id="pnlAlchemyLanguageKeywords">
 		<div class="box-header with-border">
-			<h3>Keywords</h3>
+			<xp:text id="computedField1"
+				value="#{compositeData.title}" tagName="h4">
+			</xp:text>
 		</div>
 		
 		<div class="box-body">
 			<div class="progress-group">
 				<xp:repeat id="repeat1" 
-					rows="30"
+					rows="20"
 					indexVar="i"
-					value="#{compositeData.alchemyLanguageAnalyzable.alchemyLanguageResult.keywords}"
+					value="#{compositeData.alchemyLanguageKeywords}"
 					var="rptList">
 						<xp:text id="computedField2"  styleClass="progress-text"
 							value="#{rptList.text}" tagName="span">
@@ -23,37 +25,7 @@
 	                    </div>
 				</xp:repeat>
 			</div>
-			
-			<!--<table class="table table-hover table-striped">
-				<thead>
-					<tr>
-						<th>name</th>
-						<th>relevance</th>
-					</tr>
-				</thead>
-				<tbody>
-				<xp:repeat id="repeat1" 
-					rows="30"
-					indexVar="i"
-					value="#{compositeData.alchemyLanguageAnalyzable.alchemyLanguageResult.keywords}"
-					var="rptList">
-					<xp:tr styleClass="#{(i mod 2 eq 0) ? 'even': 'odd'}">
-						<td>
-							<xp:text id="analyzedText"
-								value="#{rptList.text}">
-							</xp:text>
-						</td>
-						<td>
-							<xp:text id="computedField1"
-								value="#{rptList.relevance}">
-							</xp:text>
-						</td>
-					</xp:tr>
-				</xp:repeat>
-				
-				</tbody>
-			</table>
-		--></div>
+		</div>
 		
 	</xp:div>
 </xp:view>

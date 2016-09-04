@@ -27,10 +27,7 @@
 							jobApplicationList="#{jobApplicationController.jobApplicationsRecent}"></xc:jobApplication_list>
 					</div>
 				</div>
-
-
-
-
+				
 				<div class="row">
 					<div class="col-md-12">
 						<xp:div styleClass="box box-primary" id="div2">
@@ -86,19 +83,17 @@
 
 							<div class="box-body">
 								<div class="col-md-6 col-xs-12">
-									<xc:chart
-										chart="#{javascript:chartFactoryProducer.getChartFactoryAlchemyLanguageKeywords('jobs').createChart(recentJobsLimited)}"
-										chartAlias="keywords_jobs" chartAliasGUI="keywords_jobs"
-										title="Jobs">
-									</xc:chart>
+									<xc:watson_alchemy_language_keywords
+										alchemyLanguageKeywords="#{jobController.keywordsFromRecentJobs}"
+										title="Keywords for Jobs (Top 20)">
+									</xc:watson_alchemy_language_keywords>
 								</div>
 
 								<div class="col-md-6 col-xs-12">
-									<xc:chart
-										chart="#{javascript:chartFactoryProducer.getChartFactoryAlchemyLanguageKeywords('jobapplications').createChart(recentJobApplicationsLimited)}"
-										chartAlias="keywords_jobapplications" chartAliasGUI="keywords_jobapplications"
-										title="Job Applications">
-									</xc:chart>
+									<xc:watson_alchemy_language_keywords
+										alchemyLanguageKeywords="#{jobApplicationController.keywordsFromRecentJobpplications}"
+										title="Keywords for Job Applications (Top 20)">
+									</xc:watson_alchemy_language_keywords>
 								</div>
 							</div>
 						</div>

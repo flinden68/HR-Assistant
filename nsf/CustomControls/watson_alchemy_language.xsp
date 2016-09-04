@@ -35,8 +35,8 @@
 
 				<div class="col-md-6 col-xs-12">
 					<xc:watson_alchemy_language_keywords
-						alchemyLanguageAnalyzable="#{compositeData.alchemyLanguageAnalyzable}"
-						alchemyLanguageController="#{compositeData.alchemyLanguageController}">
+						alchemyLanguageKeywords="#{compositeData.alchemyLanguageAnalyzable.alchemyLanguageResult.keywords}"
+						title="Keywords (Top 20)">
 					</xc:watson_alchemy_language_keywords>
 				</div>
 				<div class="col-md-6 col-xs-12">

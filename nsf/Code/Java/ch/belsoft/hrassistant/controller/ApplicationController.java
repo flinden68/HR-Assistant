@@ -40,13 +40,15 @@ public class ApplicationController implements Serializable {
 	 * menu item will be highlighted..
 	 */
 	private String currentPageNameParent = "";
+	private String currentPage = "";
+	private String currentQueryString = "";
 
 	private ConfigurationController configurationController = null;
 	private User user = new User();
 
 	public ApplicationController() {
 		initConfiguration();
-		initUser();
+		//authanticateUser();
 	}
 
 	public static ApplicationController get() {
@@ -67,7 +69,7 @@ public class ApplicationController implements Serializable {
 	 */
 	public void redirectToRealHomePage() {
 		try {
-			XPagesUtil.getXSPContext().redirectToPage(REALHOMEPAGE);
+			XPagesUtil.getXSPContext().redirectToPage(REALHOMEPAGE, true);
 		} catch (Exception e) {
 			Logging.logError(e);
 		}
@@ -117,20 +119,18 @@ public class ApplicationController implements Serializable {
 		}
 	}
 
-	private void initUser() {
-
+	public void authanticateUser() {
 		String hostName = XPagesUtil.getHostName();
 		// to avoid that we get stupid to login all the time, when we develop
 		// ;-)
 		if (!hostName.contains("localhost") && !hostName.contains("belsoft")) {
 			if (!user.isAuthenticated()) {
-				String currentPage = XPagesUtil.getViewRoot().getPageName();
-
+				generatePassword();
+				currentPage = XPagesUtil.getViewRoot().getPageName();
+				currentQueryString = XPagesUtil.getXSPContext().getUrl().getQueryString();
 				if (!"/login.xsp".equals(currentPage)
 						&& !"/error.xsp".equals(currentPage)) {
 					redirectToLoginPage();
-				} else {
-					generatePassword();
 				}
 			}
 		} else {
@@ -147,14 +147,16 @@ public class ApplicationController implements Serializable {
 		if (user.getRole().equals(
 				ConfigParamsMenuCategory.JOB_APPLICANT.toString())) {
 			redirectToJobListingPage();
-		} else {
-			redirectToRealHomePage();
+		} else if (user.getRole().equals(
+				ConfigParamsMenuCategory.HR.toString()) && currentPage.contains(REALJOBLISTING)) {
+				redirectToRealHomePage();
 		}
+		XPagesUtil.getXSPContext().redirectToPage(currentPage+currentQueryString, true);
 	}
 
 	public void logoutUser() {
 		user = new User();
-		redirectToLoginPage();
+		authanticateUser();
 	}
 
 	private void generatePassword() {
@@ -164,8 +166,7 @@ public class ApplicationController implements Serializable {
 
 	public void redirectToLoginPage() {
 		try {
-
-			XPagesUtil.getXSPContext().redirectToPage(REALLOGIN);
+			XPagesUtil.getXSPContext().redirectToPage(REALLOGIN, false);
 		} catch (Exception e) {
 			Logging.logError(e);
 		}
@@ -173,8 +174,7 @@ public class ApplicationController implements Serializable {
 
 	public void redirectToJobListingPage() {
 		try {
-
-			XPagesUtil.getXSPContext().redirectToPage(REALJOBLISTING);
+			XPagesUtil.getXSPContext().redirectToPage(REALJOBLISTING, true);
 		} catch (Exception e) {
 			Logging.logError(e);
 		}

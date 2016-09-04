@@ -6,6 +6,15 @@ public class AlchemyLanguageKeyword {
     private float relevance = 0;
     private String text = "";
     
+    public AlchemyLanguageKeyword(){
+    	
+    }
+    
+    public AlchemyLanguageKeyword(String text, float relevance){
+    	this.relevance = relevance;
+    	this.text = text;
+    }
+
     public void setRelevance(float relevance) {
         this.relevance = relevance;
     }

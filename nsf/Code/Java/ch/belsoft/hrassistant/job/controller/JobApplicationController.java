@@ -3,7 +3,9 @@ package ch.belsoft.hrassistant.job.controller;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.faces.model.SelectItem;
 
@@ -23,9 +25,11 @@ import ch.belsoft.hrassistant.job.model.Person;
 import ch.belsoft.tools.Logging;
 import ch.belsoft.tools.XPagesUtil;
 
+import com.ibm.bluemix.services.watson.alchemylanguage.comparator.AlchemyLanguageKeywordComparator;
 import com.ibm.bluemix.services.watson.alchemylanguage.injector.AlchemyLanguageInjector;
 import com.ibm.bluemix.services.watson.alchemylanguage.interfaces.AlchemyLanguageAnalyzable;
 import com.ibm.bluemix.services.watson.alchemylanguage.interfaces.AlchemyLanguageController;
+import com.ibm.bluemix.services.watson.alchemylanguage.model.AlchemyLanguageKeyword;
 import com.ibm.bluemix.services.watson.personalityinsights.injector.PersonalityInsightsInjector;
 import com.ibm.bluemix.services.watson.personalityinsights.interfaces.PersonalityInsightableController;
 import com.ibm.bluemix.services.watson.toneanalyzer.injector.ToneAnalyzerInjector;
@@ -227,6 +231,34 @@ public class JobApplicationController extends ControllerBase implements
 			Logging.logError(e);
 		}
 		return result;
+	}
+	
+	public List<AlchemyLanguageKeyword> getKeywordsFromRecentJobpplications(){
+		return collectAndCalculateAlchemyLangueKeywords(getJobApplicationsRecentLimited(5));
+	}
+	
+	public List<AlchemyLanguageKeyword> getKeywordsFromJobApplicationsByJob(String jobId){
+		return collectAndCalculateAlchemyLangueKeywords(getJobApplicationsByJob(jobId));
+	}
+	
+	private List<AlchemyLanguageKeyword> collectAndCalculateAlchemyLangueKeywords(List<JobApplication> jobApplicationsList){
+		Map<String, AlchemyLanguageKeyword> keywordsMap = new HashMap<String, AlchemyLanguageKeyword>();
+		
+		for(JobApplication j : jobApplicationsList){
+			if(j.getAlchemyLanguageResult()!=null){
+				for(AlchemyLanguageKeyword keyword : j.getAlchemyLanguageResult().getKeywords()){
+					if(keywordsMap.containsKey(keyword.getText())){
+						float relevanceTotal = keyword.getRelevance() + keywordsMap.get(keyword.getText()).getRelevance();
+						keywordsMap.get(keyword.getText()).setRelevance(relevanceTotal/2);
+					}else{
+						keywordsMap.put(keyword.getText(), new AlchemyLanguageKeyword(keyword.getText(), keyword.getRelevance()));
+					}
+				}
+			}
+		}
+		List<AlchemyLanguageKeyword> list = new ArrayList<AlchemyLanguageKeyword>(keywordsMap.values());
+		Collections.sort(list,new AlchemyLanguageKeywordComparator());
+		return list;
 	}
 
 	public List<JobApplication> getJobApplications() {
