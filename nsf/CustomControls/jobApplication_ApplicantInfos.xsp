@@ -93,7 +93,9 @@
 
 	</xp:div>
 
+	<xc:ccAddress address="#{jobApplication.applicant.address}"></xc:ccAddress>
 
+	<!-- 
 	<xp:div>
 		<xp:this.styleClass><![CDATA[#{javascript:'form-group is-valid-'+(getComponent('fldStreetName').isValid() && getComponent('fldStreetNumber').isValid())}]]></xp:this.styleClass>
 		<label for="fldStreetName">Street</label>
@@ -191,5 +193,5 @@
 		</xp:comboBox>
 		<xp:message id="message9" for="fldCountry" styleClass="help-block with-errors">
 		</xp:message>
-	</xp:div>
+	</xp:div> -->
 </xp:view>

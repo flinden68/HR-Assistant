@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="23e" sequence="101" unid="1B99E1A6DE1A64D3C1257FE5005D4381">
+<noteinfo noteid="23e" sequence="115" unid="1B99E1A6DE1A64D3C1257FE5005D4381">
 <created><datetime dst="true">20160703T185841,29+02</datetime></created>
-<modified><datetime dst="true">20160904T124933,58+02</datetime></modified>
-<revised><datetime dst="true">20160904T124933,56+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160904T124933,56+02</datetime></lastaccessed>
+<modified><datetime dst="true">20160904T140848,69+02</datetime></modified>
+<revised><datetime dst="true">20160904T140848,67+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160904T140848,67+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20160711T105437,31+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
 <wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$Flags"><text>gC~4K</text></item>
 <item name="$TITLE" sign="true"><text>hr_company.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5.2</text></item>
 
-
+<item name="$DesignerVersion"><text>8.5.1</text></item>
 
 
 

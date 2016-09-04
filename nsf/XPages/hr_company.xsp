@@ -38,102 +38,66 @@
 										styleClass="help-block with-errors">
 									</xp:message>
 								</xp:div>
-								<xp:div
-									styleClass="form-group is-valid-#{javascript:getComponent('fldStreetName').isValid()}">
-									<label for="fldStreetName">
-										Street name
-									</label>
-									<xp:inputText id="fldStreetName" value="#{company.address.street}"
-										styleClass="valid-#{javascript:this.isValid()}" required="true">
-										<xp:this.validators>
-											<xp:validateRequired message="Please give a street name">
-											</xp:validateRequired>
-										</xp:this.validators>
-									</xp:inputText>
 
-									<xp:message id="message2" for="fldStreetName"
-										styleClass="help-block with-errors">
-									</xp:message>
-								</xp:div>
+								<xc:ccAddress address="#{company.address}"></xc:ccAddress>
 
-								<xp:div
-									styleClass="form-group is-valid-#{javascript:getComponent('fldStreetNumber').isValid()}">
-									<label for="fldStreetNumber">
-										Street number
-									</label>
-									<xp:inputText id="fldStreetNumber" value="#{company.address.streetNumber}"
-										styleClass="valid-#{javascript:this.isValid()}" required="true">
-										<xp:this.validators>
-											<xp:validateRequired message="Please give a street number">
-											</xp:validateRequired>
-										</xp:this.validators>
-									</xp:inputText>
 
-									<xp:message id="message3" for="fldStreetNumber"
-										styleClass="help-block with-errors">
-									</xp:message>
-								</xp:div>
+								<!--
+									<xp:div styleClass="form-group
+									is-valid-#{javascript:getComponent('fldStreetName').isValid()}">
+									<label for="fldStreetName"> Street name </label> <xp:inputText
+									id="fldStreetName" value="#{company.address.street}"
+									styleClass="valid-#{javascript:this.isValid()}"
+									required="true"> <xp:this.validators> <xp:validateRequired
+									message="Please give a street name"> </xp:validateRequired>
+									</xp:this.validators> </xp:inputText> <xp:message id="message2"
+									for="fldStreetName" styleClass="help-block with-errors">
+									</xp:message> </xp:div> <xp:div styleClass="form-group
+									is-valid-#{javascript:getComponent('fldStreetNumber').isValid()}">
+									<label for="fldStreetNumber"> Street number </label>
+									<xp:inputText id="fldStreetNumber"
+									value="#{company.address.streetNumber}"
+									styleClass="valid-#{javascript:this.isValid()}"
+									required="true"> <xp:this.validators> <xp:validateRequired
+									message="Please give a street number"> </xp:validateRequired>
+									</xp:this.validators> </xp:inputText> <xp:message id="message3"
+									for="fldStreetNumber" styleClass="help-block with-errors">
+									</xp:message> </xp:div> <xp:div styleClass="form-group
+									is-valid-#{javascript:getComponent('fldZip').isValid()}">
+									<label for="fldZip">Zip code</label> <xp:inputText id="fldZip"
+									value="#{company.address.zip}"
+									styleClass="valid-#{javascript:this.isValid()}"
+									required="true"> <xp:this.validators> <xp:validateRequired
+									message="Please give a zip code"> </xp:validateRequired>
+									</xp:this.validators> </xp:inputText> <xp:message id="message4"
+									for="fldZip" styleClass="help-block with-errors"> </xp:message>
+									</xp:div> <xp:div styleClass="form-group
+									is-valid-#{javascript:getComponent('fldCity').isValid()}">
+									<label for="fldCity">City</label> <xp:inputText id="fldCity"
+									value="#{company.address.city}"
+									styleClass="valid-#{javascript:this.isValid()}"
+									required="true"> <xp:this.validators> <xp:validateRequired
+									message="Please give a city"> </xp:validateRequired>
+									</xp:this.validators> </xp:inputText> <xp:message id="message5"
+									for="fldCity" styleClass="help-block with-errors">
+									</xp:message> </xp:div> <xp:div styleClass="form-group
+									is-valid-#{javascript:getComponent('fldCountry').isValid()}">
+									<label for="fldCountry"> Country </label> <xp:comboBox
+									id="fldCountry" value="#{company.address.country}"
+									required="true"> <xp:selectItem itemLabel="Please choose
+									industry" itemValue=""> </xp:selectItem> <xp:selectItems
+									value="${companyController.countrySelection}">
+									</xp:selectItems> <xp:this.validators> <xp:validateRequired
+									message="Country is mandatory"> </xp:validateRequired>
+									</xp:this.validators> <xp:eventHandler event="onchange"
+									submit="true" onStart="waitingDialog.show('loading countries')"
+									onComplete="waitingDialog.hide();" refreshMode="partial"
+									disableValidators="true" refreshId="fldCountry">
 
-								<xp:div
-									styleClass="form-group is-valid-#{javascript:getComponent('fldZip').isValid()}">
-									<label for="fldZip">Zip code</label>
-									<xp:inputText id="fldZip" value="#{company.address.zip}"
-										styleClass="valid-#{javascript:this.isValid()}" required="true">
-										<xp:this.validators>
-											<xp:validateRequired message="Please give a zip code">
-											</xp:validateRequired>
-										</xp:this.validators>
-									</xp:inputText>
-
-									<xp:message id="message4" for="fldZip"
-										styleClass="help-block with-errors">
-									</xp:message>
-								</xp:div>
-
-								<xp:div
-									styleClass="form-group is-valid-#{javascript:getComponent('fldCity').isValid()}">
-									<label for="fldCity">City</label>
-									<xp:inputText id="fldCity" value="#{company.address.city}"
-										styleClass="valid-#{javascript:this.isValid()}" required="true">
-										<xp:this.validators>
-											<xp:validateRequired message="Please give a city">
-											</xp:validateRequired>
-										</xp:this.validators>
-									</xp:inputText>
-
-									<xp:message id="message5" for="fldCity"
-										styleClass="help-block with-errors">
-									</xp:message>
-								</xp:div>
-
-								<xp:div
-									styleClass="form-group is-valid-#{javascript:getComponent('fldCountry').isValid()}">
-									<label for="fldCountry">
-										Country
-									</label>
-									<xp:comboBox id="fldCountry" value="#{company.address.country}"
-										required="true">
-										<xp:selectItem itemLabel="Please choose industry"
-											itemValue="">
-										</xp:selectItem>
-										<xp:selectItems value="${companyController.countrySelection}">
-										</xp:selectItems>
-										<xp:this.validators>
-											<xp:validateRequired message="Country is mandatory">
-											</xp:validateRequired>
-										</xp:this.validators>
-
-										<xp:eventHandler event="onchange" submit="true"
-											onStart="waitingDialog.show('loading countries')" onComplete="waitingDialog.hide();"
-											refreshMode="partial" disableValidators="true" refreshId="fldCountry">
-
-										</xp:eventHandler>
-
-									</xp:comboBox>
-									<xp:message id="message8" for="fldCountry"
-										styleClass="help-block with-errors">
-									</xp:message>
-								</xp:div>
+									</xp:eventHandler> </xp:comboBox> <xp:message id="message8"
+									for="fldCountry" styleClass="help-block with-errors">
+									</xp:message> </xp:div>
+								-->
 
 								<xp:div
 									styleClass="form-group is-valid-#{javascript:getComponent('fldDescription').isValid()}">
