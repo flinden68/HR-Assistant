@@ -39,7 +39,7 @@
 
 										<div class="col-md-6">
 											<!-- general form elements -->
-											<xc:job_NameDescription></xc:job_NameDescription>
+											<xc:job_NameDescription jobNameAsLink="false"></xc:job_NameDescription>
 
 										</div>
 										<div class="col-md-6">

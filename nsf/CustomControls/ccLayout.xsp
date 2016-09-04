@@ -2,6 +2,15 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
 	afterPageLoad="#{javascript:viewScope.pageTitle=compositeData.pageTitle}"
 	xmlns:xp_1="http://www.ibm.com/xsp/coreex">
+	<xp:this.resources>
+		<xp:headTag tagName="meta">
+			<xp:this.attributes>
+				<xp:parameter name="name" value="viewport" />
+				<xp:parameter name="content"
+					value="width=device-width, initial-scale=1" />
+			</xp:this.attributes>
+		</xp:headTag>
+	</xp:this.resources>
 	<xc:ccJQuery></xc:ccJQuery>
 
 	<xp:div styleClass="wrapper" id="wrapper">
@@ -114,56 +123,41 @@
 							<ul class="dropdown-menu">
 								<!-- Menu Body -->
 								<!--
-								<li class="user-body">
-								
-									<div class="row">
-										
-										<div class="col-xs-12">
-											<div class="radio">
-												<xp:radio text="Administrator: All Menu's visible" id="radio1" groupName="userRoles"
-													value="#{applicationController.user.role}" selectedValue="Administration">
-													<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="wrapper" onComplete="document.location='hr_dashboard.xsp'">
-														<xp:this.action>
-															<xp:executeScript>
-																<xp:this.script><![CDATA[#{javascript://applicationController.switchUser("Administration");}]]></xp:this.script>
-															</xp:executeScript>
-														</xp:this.action>
-													</xp:eventHandler>
-												</xp:radio>
-											</div>
-										
-											<div class="radio">
-												<xp:radio text="HR / Backoffice: HR and Administrator menu visible" id="radio2" groupName="userRoles"
-													value="#{applicationController.user.role}"
-													selectedValue="#{configurationController.hrConfigParamsMenuCategory}">
-													<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="wrapper" onComplete="document.location='hr_dashboard.xsp'">
-														<xp:this.action>
-															<xp:executeScript>
-																<xp:this.script><![CDATA[#{javascript://applicationController.switchUser(configurationController.hrConfigParamsMenuCategory);}]]></xp:this.script>
-															</xp:executeScript>
-														</xp:this.action>
-													</xp:eventHandler>
-												</xp:radio>
-											</div>
-										
-											<div class="radio">
-												<xp:radio text="Job Applicant: Job Applicant Menu visible" id="radio3"
-													groupName="userRoles" value="#{applicationController.user.role}"
-													selectedValue="#{configurationController.jobApplicantConfigParamsMenuCategory}">
-													<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="wrapper" onComplete="document.location='appl_joblisting.xsp'">
-														<xp:this.action>
-															<xp:executeScript>
-																<xp:this.script><![CDATA[#{javascript://applicationController.switchUser(configurationController.jobApplicantConfigParamsMenuCategory);}]]></xp:this.script>
-															</xp:executeScript>
-														</xp:this.action>
-													</xp:eventHandler>
-												</xp:radio>
-											</div>
-										</div>
-									
-									</div>
-									
-								</li>
+									<li class="user-body"> <div class="row"> <div
+									class="col-xs-12"> <div class="radio"> <xp:radio
+									text="Administrator: All Menu's visible" id="radio1"
+									groupName="userRoles"
+									value="#{applicationController.user.role}"
+									selectedValue="Administration"> <xp:eventHandler
+									event="onclick" submit="true" refreshMode="partial"
+									refreshId="wrapper"
+									onComplete="document.location='hr_dashboard.xsp'">
+									<xp:this.action> <xp:executeScript>
+									<xp:this.script><![CDATA[#{javascript://applicationController.switchUser("Administration");}]]></xp:this.script>
+									</xp:executeScript> </xp:this.action> </xp:eventHandler>
+									</xp:radio> </div> <div class="radio"> <xp:radio text="HR /
+									Backoffice: HR and Administrator menu visible" id="radio2"
+									groupName="userRoles"
+									value="#{applicationController.user.role}"
+									selectedValue="#{configurationController.hrConfigParamsMenuCategory}">
+									<xp:eventHandler event="onclick" submit="true"
+									refreshMode="partial" refreshId="wrapper"
+									onComplete="document.location='hr_dashboard.xsp'">
+									<xp:this.action> <xp:executeScript>
+									<xp:this.script><![CDATA[#{javascript://applicationController.switchUser(configurationController.hrConfigParamsMenuCategory);}]]></xp:this.script>
+									</xp:executeScript> </xp:this.action> </xp:eventHandler>
+									</xp:radio> </div> <div class="radio"> <xp:radio text="Job
+									Applicant: Job Applicant Menu visible" id="radio3"
+									groupName="userRoles"
+									value="#{applicationController.user.role}"
+									selectedValue="#{configurationController.jobApplicantConfigParamsMenuCategory}">
+									<xp:eventHandler event="onclick" submit="true"
+									refreshMode="partial" refreshId="wrapper"
+									onComplete="document.location='appl_joblisting.xsp'">
+									<xp:this.action> <xp:executeScript>
+									<xp:this.script><![CDATA[#{javascript://applicationController.switchUser(configurationController.jobApplicantConfigParamsMenuCategory);}]]></xp:this.script>
+									</xp:executeScript> </xp:this.action> </xp:eventHandler>
+									</xp:radio> </div> </div> </div> </li>
 								-->
 								<!-- Menu Footer-->
 								<li class="user-footer">
@@ -176,7 +170,8 @@
 										<xp:button styleClass="btn btn-default btn-flat"
 											value="Sign out" id="button3">
 											<xp:eventHandler event="onclick" submit="true"
-												onStart="waitingDialog.show('sign out...')" onComplete="waitingDialog.hide()" refreshMode="complete" immediate="true">
+												onStart="waitingDialog.show('sign out...')" onComplete="waitingDialog.hide()"
+												refreshMode="complete" immediate="true">
 												<xp:this.action>
 													<xp:executeScript
 														script="#{javascript:applicationController.logoutUser()}">

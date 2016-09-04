@@ -16,6 +16,9 @@
     <property>
       <property-name>jobNameAsLink</property-name>
       <property-class>boolean</property-class>
+      <property-extension>
+        <required>true</required>
+      </property-extension>
     </property>
   </composite-component>
 </faces-config>
