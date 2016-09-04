@@ -80,8 +80,8 @@ public class RestUtil {
 			}
 		}
 
-		Logging.logEvent("posting with header Auth: " + HEADER_AUTHORIZATION
-				+ ": " + auth + ", url: " + url);
+	//	XPagesUtil.showErrorMessage("posting with header Auth: " + HEADER_AUTHORIZATION
+		//		+ ": " + auth + ", url: " + url);
 
 		return executor.execute(
 				postRequest.bodyString(postDataString, contentType))

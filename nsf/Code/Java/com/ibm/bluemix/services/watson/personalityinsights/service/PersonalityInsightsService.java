@@ -21,7 +21,7 @@ import ch.belsoft.tools.RestUtil;
 public class PersonalityInsightsService extends CloudService implements
 		IPersonalityInsightsService {
 
-	private static final String SERVICE_NAME = "Personality Insights-hr";
+	private static final String SERVICE_NAME = "personality_insights";
 	private static final String API_URL = "https://gateway.watsonplatform.net/personality-insights/api/v2/profile";
 	private static final String BEAN_NAME = "personalityInsightsService";
 

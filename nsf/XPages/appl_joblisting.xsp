@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	beforePageLoad="#{javascript:applicationController.setCurrentPageNameParent('');}">
 
 	<xc:ccLayout pageTitle="#{jobController.jobListTitle}">
 		<xp:this.facets>
@@ -9,19 +10,23 @@
 						<div class="box box-default">
 							<div class="box-header">
 								<div class="col-md-4">
-								
+
 								</div>
 								<div class="col-md-4">
-									<center><h4><strong>Get hired, love your job</strong></h4></center>
+									<center>
+										<h4>
+											<strong>Get hired, love your job</strong>
+										</h4>
+									</center>
 									<div class="col-md-12">
 										<div class="input-group input-group-sm">
-											<xp:inputText id="inputText1" styleClass="form-control pull-right" onfocus="select()"
-												value="#{jobController.searchQuery}">
+											<xp:inputText id="inputText1" styleClass="form-control pull-right"
+												onfocus="select()" value="#{jobController.searchQuery}">
 												<xp:eventHandler event="onkeypress" submit="false">
 													<xp:this.script>
 														<xp:executeClientScript
 															script="onKeyPressSubmit('#{id:btnSearch}', thisEvent)">
-														</xp:executeClientScript> 
+														</xp:executeClientScript>
 													</xp:this.script>
 												</xp:eventHandler>
 												<xp:this.attrs>
@@ -35,8 +40,7 @@
 													<xp:eventHandler event="onclick" submit="true"
 														onStart="waitingDialog.show('searching...')" onComplete="waitingDialog.hide()"
 														refreshMode="partial" refreshId="pnlDataItemList"
-														disableValidators="true"
-														execId="pnlDataItemList">
+														disableValidators="true" execId="pnlDataItemList">
 														<xp:this.action>
 															<xp:executeScript
 																script="#{javascript:jobController.clearDataItemList()}">
@@ -49,32 +53,31 @@
 									</div>
 								</div>
 								<div class="col-md-4">
-							
+
 								</div>
 							</div>
-							
+
 							<div class="box-body">
 								<div class="col-md-4">
-								
+
 								</div>
-								<div class="col-md-4">									
+								<div class="col-md-4">
 									<div class="col-md-5">
 										<b>Filter by location</b>
 									</div>
 									<div class="col-md-7">
-										<xp:comboBox id="fldCountry" value="#{jobController.searchQueryListing}"
-											required="true">
+										<xp:comboBox id="fldCountry"
+											value="#{jobController.searchQueryListing}" required="true">
 											<xp:selectItem itemLabel="All countries"
 												itemValue="">
 											</xp:selectItem>
-											<xp:selectItems
-												value="${jobController.countrySelection}">
+											<xp:selectItems value="${jobController.countrySelection}">
 											</xp:selectItems>
-	
+
 											<xp:eventHandler event="onchange" submit="true"
-												onStart="waitingDialog.show('loading company')"
-												onComplete="waitingDialog.hide();" refreshMode="partial"
-												disableValidators="true" execMode="partial" refreshId="pnlDataItemList">
+												onStart="waitingDialog.show('loading company')" onComplete="waitingDialog.hide();"
+												refreshMode="partial" disableValidators="true" execMode="partial"
+												refreshId="pnlDataItemList">
 												<xp:this.action>
 													<xp:executeScript
 														script="#{javascript://jobController.filterJoblisting();}">
@@ -88,53 +91,51 @@
 									<xc:ccPager repeatId="rptList"></xc:ccPager>
 								</div>
 							</div>
-							
+
 						</div>
 					</div>
 					<xp:panel id="pnlDataItemList">
-					
-					<xp:repeat id="rptList" rows="6" var="job" indexVar="i"
-						value="#{jobController.jobs}">
-						<div class="col-md-4 box-joblisting">
-							<div class="box box-primary">
-								<div class="box-header">
-									<div class="pull-left">
-										<xp:text escape="true" id="computedField1" styleClass="box-title"
-											value="#{job.name}" tagName="h3">
-										</xp:text>
-										<br />
-										<xp:text escape="true" id="computedField3" value="#{job.company.name}"
-											tagName="small">
-										</xp:text>
-									</div>
-									<div class="pull-right">
-										<img src="#{javascript:jobController.getLogo(job);}"
-											height="32px" />
-									</div>
-								</div>
-								<div class="box-body">
 
-									<xp:text escape="true" id="computedField2" value="#{job.descriptionAbstract}">
-									</xp:text>
-								</div>
-								<div class="box-footer">
-									<div class="pull-right">
-										<xp:link escape="true"
-											text="More info" id="link2"
-											styleClass="btn btn-success btn-margin-right">
-											<xp:this.value><![CDATA[#{javascript:"appl_job.xsp?openxpage&id="+job.getId()+"&readonly=true"}]]></xp:this.value>
-										</xp:link>
-										<xp:link escape="true"
-											text="Apply" id="link1"
-											 styleClass="btn btn-primary btn-margin-right">
-											<xp:this.value><![CDATA[#{javascript:"appl_jobapplication.xsp?openxpage&jobid="+job.getId()}]]></xp:this.value>
-										</xp:link>
+						<xp:repeat id="rptList" rows="6" var="job" indexVar="i"
+							value="#{jobController.jobs}">
+							<div class="col-md-4 box-joblisting">
+								<div class="box box-primary">
+									<div class="box-header">
+										<div class="pull-left">
+											<xp:text escape="true" id="computedField1"
+												styleClass="box-title" value="#{job.name}" tagName="h3">
+											</xp:text>
+											<br />
+											<xp:text escape="true" id="computedField3" value="#{job.company.name}"
+												tagName="small">
+											</xp:text>
+										</div>
+										<div class="pull-right">
+											<img src="#{javascript:jobController.getLogo(job);}"
+												height="32px" />
+										</div>
 									</div>
-								</div>
+									<div class="box-body">
 
+										<xp:text escape="true" id="computedField2" value="#{job.descriptionAbstract}">
+										</xp:text>
+									</div>
+									<div class="box-footer">
+										<div class="pull-right">
+											<xp:link escape="true" text="More info" id="link2"
+												styleClass="btn btn-success btn-margin-right">
+												<xp:this.value><![CDATA[#{javascript:"appl_job.xsp?openxpage&id="+job.getId()+"&readonly=true"}]]></xp:this.value>
+											</xp:link>
+											<xp:link escape="true" text="Apply" id="link1"
+												styleClass="btn btn-primary btn-margin-right">
+												<xp:this.value><![CDATA[#{javascript:"appl_jobapplication.xsp?openxpage&jobid="+job.getId()}]]></xp:this.value>
+											</xp:link>
+										</div>
+									</div>
+
+								</div>
 							</div>
-						</div>
-					</xp:repeat>
+						</xp:repeat>
 					</xp:panel>
 				</div>
 			</xp:panel>

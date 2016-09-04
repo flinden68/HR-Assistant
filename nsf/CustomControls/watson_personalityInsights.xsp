@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
 	<xp:div styleClass="box" id="pnlPersonalityInsights">
-
-
 		<div class="box-header">
 			<xp:text escape="true" id="computedField4" tagName="h3"
 				styleClass="box-title" value="IBM Watson Personality Insights">
 			</xp:text>
 		</div>
 		<div class="box-header">
-			<xp:button value="refresh" id="button2" styleClass="btn btn-danger"
+			<xp:button value="analyze" id="button2" styleClass="btn btn-danger"
 				loaded="${!compositeData.personalityInsightableController.readOnly}">
 				<xp:eventHandler event="onclick" submit="true"
-					onStart="waitingDialog.show('analyzing text...')" onComplete="waitingDialog.hide()"
+					onStart="waitingDialog.show('analyzing text.. in order to persist the IBM Watson result, please save after analyzing is finished..')" onComplete="waitingDialog.hide()"
 					refreshMode="partial" refreshId="pnlPersonalityInsights"
 					disableValidators="true" execMode="partial" execId="content-wrapper">
 					<xp:this.action>
@@ -25,6 +23,8 @@
 			<xp:messages id="messages1"></xp:messages>
 		</div>
 		<div class="box-body">
+			<xc:ccMessageBoxWatson
+				loaded="${compositeData.personalityInsightableController.readOnly}"></xc:ccMessageBoxWatson>
 			<xp:div styleClass="row"
 				rendered="#{compositeData.personalityInsightable.personalityInsightsResult!=null}">
 				<div class="col-md-3 col-xs-12">

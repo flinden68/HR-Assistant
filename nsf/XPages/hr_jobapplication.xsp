@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	beforePageLoad="#{javascript:applicationController.setCurrentPageNameParent('hr_jobapplications.xsp');}">
 	<xp:this.dataContexts>
 		<xp:dataContext value="#{jobApplicationController.dataContext}"
 			var="jobApplication">
@@ -25,41 +26,7 @@
 							<!-- form start -->
 
 							<div class="box-body">
-								<!--
-									<xp:div styleClass="form-group
-									is-valid-#{javascript:getComponent('fldJob').isValid()}">
-									<label for="fldJob">Job</label> <xp:panel id="comboJob"
-									rendered="#{!jobApplication.hasJobId}"> <xp:comboBox
-									id="fldJob" value="#{jobApplication.jobId}" required="true">
-									<xp:selectItem itemLabel="Please choose" itemValue="">
-									</xp:selectItem> <xp:selectItems
-									value="${jobApplicationController.jobSelection}">
-									</xp:selectItems> <xp:this.validators> <xp:validateRequired
-									message="Job is mandatory"> </xp:validateRequired>
-									</xp:this.validators> <xp:eventHandler event="onchange"
-									submit="true" onStart="waitingDialog.show('loading job')"
-									onComplete="waitingDialog.hide();" refreshMode="partial"
-									disableValidators="true" execMode="partial"
-									refreshId="jobInfo"> <xp:this.action> <xp:executeScript
-									script="#{javascript:jobController.changeJob();}">
-									</xp:executeScript> </xp:this.action> </xp:eventHandler>
-									</xp:comboBox> </xp:panel> <xp:panel id="panel1"
-									rendered="#{jobApplication.hasJobId}"> <xp:text
-									value="#{jobApplication.job.name}"></xp:text> </xp:panel>
-									<xp:message id="message2" for="fldJob" styleClass="help-block
-									with-errors"></xp:message> </xp:div> <xp:panel id="jobInfo"
-									styleClass="form-group"> <xp:panel id="displayCompany"
-									rendered="#{jobApplication.hasJobId}"> <p> <b> <xp:text
-									id="computedField1" value="#{jobApplication.job.company.name}"
-									escape="false" styleClass="form-control-static"></xp:text> </b>
-									</p> <xp:text id="inputText1"
-									value="#{jobApplication.job.company.address.addressDisplay}"
-									escape="false" styleClass="form-control-static"> </xp:text>
-									</xp:panel> </xp:panel>
-								-->
 								<xc:jobApplication_ApplicantInfos></xc:jobApplication_ApplicantInfos>
-
-
 							</div>
 							<!-- /.box-body -->
 

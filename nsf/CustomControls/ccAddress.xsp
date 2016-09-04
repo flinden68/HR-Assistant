@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:div>
+		<xp:this.styleClass><![CDATA[#{javascript:'form-group is-valid-'+(getComponent('fldStreetName').isValid() && getComponent('fldStreetNumber').isValid())}]]></xp:this.styleClass>
+		<label for="fldStreetName">Street</label>
+		<div class="row">
+			<div class="col-xs-8">
+				<xp:inputText id="fldStreetName" value="#{compositeData.address.street}"
+					styleClass="valid-#{javascript:this.isValid()}" required="true">
+					<xp:this.validators>
+						<xp:validateRequired message="Please give a street name">
+						</xp:validateRequired>
+					</xp:this.validators>
+					<xp:this.attrs>
+						<xp:attr name="placeholder" value="Street name"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</div>
+			<div class="col-xs-4">
+				<xp:inputText id="fldStreetNumber"
+					value="#{compositeData.address.streetNumber}" styleClass="valid-#{javascript:this.isValid()}"
+					required="true">
+					<xp:this.validators>
+						<xp:validateRequired message="Please give a street number">
+						</xp:validateRequired>
+					</xp:this.validators>
+					<xp:this.attrs>
+						<xp:attr name="placeholder" value="nr"></xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</div>
+		</div>
+
+
+		<xp:message id="message1" for="fldStreetName" styleClass="help-block with-errors">
+		</xp:message>
+		<xp:message id="message6" for="fldStreetNumber" styleClass="help-block with-errors">
+		</xp:message>
+	</xp:div>
+
+
+
+	<xp:div
+		styleClass="form-group is-valid-#{javascript:getComponent('fldZip').isValid()}">
+		<label for="fldZip">Zip code</label>
+		<xp:inputText id="fldZip" value="#{compositeData.address.zip}"
+			styleClass="valid-#{javascript:this.isValid()}" required="true">
+			<xp:this.validators>
+				<xp:validateRequired message="Please give a zip code">
+				</xp:validateRequired>
+			</xp:this.validators>
+		</xp:inputText>
+
+		<xp:message id="message7" for="fldZip" styleClass="help-block with-errors">
+		</xp:message>
+	</xp:div>
+
+	<xp:div
+		styleClass="form-group is-valid-#{javascript:getComponent('fldCity').isValid()}">
+		<label for="fldCity">City</label>
+		<xp:inputText id="fldCity" value="#{compositeData.address.city}"
+			styleClass="valid-#{javascript:this.isValid()}" required="true">
+			<xp:this.validators>
+				<xp:validateRequired message="Please give a city">
+				</xp:validateRequired>
+			</xp:this.validators>
+		</xp:inputText>
+
+		<xp:message id="message5" for="fldCity" styleClass="help-block with-errors">
+		</xp:message>
+	</xp:div>
+
+	<xp:div
+		styleClass="form-group is-valid-#{javascript:getComponent('fldCountry').isValid()}">
+		<label for="fldCountry">Country</label>
+		<xp:comboBox id="fldCountry" value="#{compositeData.address.country}"
+			required="true">
+			<xp:selectItem itemLabel="Please choose country"
+				itemValue="">
+			</xp:selectItem>
+			<xp:selectItems value="${companyController.countrySelection}">
+			</xp:selectItems>
+			<xp:this.validators>
+				<xp:validateRequired message="Country is mandatory">
+				</xp:validateRequired>
+			</xp:this.validators>
+
+			<!--
+				<xp:eventHandler event="onchange" submit="true"
+				onStart="waitingDialog.show('loading countries')"
+				onComplete="waitingDialog.hide();" refreshMode="partial"
+				disableValidators="true" refreshId="fldCountry"> </xp:eventHandler>
+			-->
+		</xp:comboBox>
+		<xp:message id="message9" for="fldCountry" styleClass="help-block with-errors">
+		</xp:message>
+	</xp:div>
+</xp:view>

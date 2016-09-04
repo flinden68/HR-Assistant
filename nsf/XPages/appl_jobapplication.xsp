@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	afterPageLoad="#{javascript:applicationController.setCurrentPageNameParent('appl_joblisting.xsp');}">
 	<xp:this.dataContexts>
 		<xp:dataContext value="#{jobApplicationController.dataContext}"
 			var="jobApplication">
@@ -73,7 +74,8 @@
 									<xp:button styleClass="btn btn-success btn-margin-right"
 										value="submit application" id="button1">
 										<xp:eventHandler event="onclick" submit="true"
-											onStart="waitingDialog.show('saving... thanks for applying for this job!')" onComplete="waitingDialog.hide();document.location='appl_joblisting.xsp'"
+											onStart="waitingDialog.show('saving... thanks for applying for this job!')"
+											onComplete="waitingDialog.hide();document.location='appl_joblisting.xsp'"
 											refreshMode="partial" refreshId="content-wrapper" execMode="partial"
 											execId="content-wrapper">
 											<xp:this.action>
@@ -112,7 +114,7 @@
 							<!-- form start -->
 
 							<xp:panel tagName="div" readonly="true" styleClass="box-body">
-								<xc:job_NameDescription></xc:job_NameDescription>
+								<xc:job_NameDescription jobNameAsLink="false"></xc:job_NameDescription>
 							</xp:panel>
 						</div>
 

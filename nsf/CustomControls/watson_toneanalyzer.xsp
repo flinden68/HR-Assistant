@@ -10,10 +10,10 @@
 			</xp:text>
 		</div>
 		<div class="box-header">
-			<xp:button value="refresh" id="button2" styleClass="btn btn-danger"
+			<xp:button value="analyze" id="button2" styleClass="btn btn-danger"
 				loaded="${!compositeData.toneAnalyzerableController.readOnly}">
 				<xp:eventHandler event="onclick" submit="true"
-					onStart="waitingDialog.show('analyzing text...')" onComplete="waitingDialog.hide()"
+					onStart="waitingDialog.show('analyzing text.. in order to persist the IBM Watson result, please save after analyzing is finished..')" onComplete="waitingDialog.hide()"
 					refreshMode="partial" refreshId="pnlToneAnalyzer"
 					disableValidators="true" execMode="partial" execId="content-wrapper">
 					<xp:this.action>
@@ -23,13 +23,15 @@
 					</xp:this.action>
 				</xp:eventHandler>
 			</xp:button>
-
+			<xp:messages id="messages1"></xp:messages>
 		</div>
 
 		<!-- /.box-header -->
 
 
 		<div class="box-body">
+			<xc:ccMessageBoxWatson
+				loaded="${compositeData.toneAnalyzerableController.readOnly}"></xc:ccMessageBoxWatson>
 			<xp:div styleClass="row"
 				rendered="#{compositeData.toneAnalyzerable.toneAnalyzerResult!=null}">
 				<div class="col-md-4 col-xs-12">

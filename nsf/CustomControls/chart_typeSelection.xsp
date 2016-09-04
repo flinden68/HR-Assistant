@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core">
-	<div class="box-tools col-md-6 col-xs-12">
-		<div class="form-group col-md-12">
-			<div class="col-md-12">
+	<div class="box-tools">
+		<div class="input-group input-group-sm" style="width:150px;">
+
 			<xp:comboBox id="fldChartType" styleClass="font-normal"
-					value="#{chartTypeSelection.chartTypeByChartAlias[compositeData.chartAlias]}">
-					<xp:selectItems value="${chartTypeSelection.chartTypeSelection}">
-					</xp:selectItems>
-					<xp:eventHandler event="onchange" submit="true"
-						onStart="waitingDialog.show('setting chart type...')" onComplete="waitingDialog.hide();"
-						refreshMode="partial" refreshId="${compositeData.refreshId}"
-						disableValidators="true" execMode="partial" execId="${compositeData.refreshId}">
-					</xp:eventHandler>
-				</xp:comboBox>
-			</div>
+				value="#{chartTypeSelection.chartTypeByChartAlias[compositeData.chartAlias]}">
+				<xp:selectItems value="${chartTypeSelection.chartTypeSelection}">
+				</xp:selectItems>
+				<xp:eventHandler event="onchange" submit="true"
+					onStart="waitingDialog.show('setting chart type...')" onComplete="waitingDialog.hide();"
+					refreshMode="partial" refreshId="${compositeData.refreshId}"
+					disableValidators="true" execMode="partial" execId="${compositeData.refreshId}">
+				</xp:eventHandler>
+			</xp:comboBox>
+
 		</div>
 	</div>
 </xp:view>

@@ -10,8 +10,8 @@
 	-->
 	<!-- /.search form -->
 
-	<!-- Sidebar Menu -->
-
+	<!-- Sidebar Menu 
+	<xp:text escape="true" id="computedField1" value="#{applicationController.currentPageNameParent}"></xp:text>-->
 	<ul class="sidebar-menu">
 		<xp:repeat id="repeat2" rows="30" disableOutputTag="true"
 			disableTheme="true" value="${applicationController.configMenuItemCategories}"
@@ -25,7 +25,7 @@
 				value="#{javascript:applicationController.getConfigMenuItemsByCategory(menuCat)}"
 				var="menuItem">
 				<li
-					class="#{applicationController.currentPageName==menuItem.configKey?'active':''}">
+					class="#{(applicationController.currentPageName==menuItem.configKey or applicationController.currentPageNameParent==menuItem.configKey)?'active':''}">
 					<xp:link escape="true" value="#{menuItem.configKey}" text="#{menuItem.configValue}"
 						id="link1">
 						<i
@@ -49,7 +49,7 @@
 			<li class="header">Administration</li>
 			<!-- Optionally, you can add icons to the links -->
 			<li
-				class="#{applicationController.currentPageName=='admin_configurations.xsp'?'active':''}">
+				class="#{(applicationController.currentPageName=='admin_configurations.xsp' or applicationController.currentPageNameParent=='admin_configurations.xsp')?'active':''}">
 				<a href="admin_configurations.xsp">
 					<i class="fa fa-cogs"></i>
 					<span>Configuration List</span>
