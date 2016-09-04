@@ -45,7 +45,7 @@ public class JobApplicationController extends ControllerBase implements
 	private static final String PAGETITLE_EXISTING = "Job application: {NAME}({COMPANY})";
 	private static final String PAGETITLE_REPLACE_NAME = "{NAME}";
 	private static final String PAGETITLE_REPLACE_COMPANY = "{COMPANY}";
-	private static final String PAGETITLE_JOBAPPLICATIONLIST_ALL = "All job applications";
+	private static final String PAGETITLE_JOBAPPLICATIONLIST_ALL = "Job applications";
 	private static final String PARAM_JOB_ID = "jobid";
 
 	private JobDAO jobDAO = new JobDAO();

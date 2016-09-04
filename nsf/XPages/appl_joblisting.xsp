@@ -88,7 +88,23 @@
 									</div>
 								</div>
 								<div class="col-md-4">
-									<xc:ccPager repeatId="rptList"></xc:ccPager>
+									<div class="pull-right">
+										<xp:pager partialRefresh="true" id="pager2" for="rptList"
+											panelPosition="left" styleClass="bootstrapPager"
+											partialExecute="true">
+											<xp:pagerControl type="Previous" id="pagerControl4"
+												styleClass="bootstrapPagerPrevious">
+												<xp:this.value><![CDATA[«]]></xp:this.value>
+											</xp:pagerControl>
+											<xp:pagerControl type="Group" id="pagerControl5"
+												styleClass="bootstrapPagerMiddle">
+											</xp:pagerControl>
+											<xp:pagerControl type="Next" id="pagerControl6"
+												styleClass="bootstrapPagerNext">
+												<xp:this.value><![CDATA[»]]></xp:this.value>
+											</xp:pagerControl>
+										</xp:pager>
+									</div>
 								</div>
 							</div>
 

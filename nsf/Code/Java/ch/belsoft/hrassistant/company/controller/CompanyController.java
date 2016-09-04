@@ -26,7 +26,7 @@ public class CompanyController extends ControllerBase implements IGuiController<
     private static final String PAGETITLE_NEW = "New Company";
     private static final String PAGETITLE_EXISTING = "Company: {NAME}";
     private static final String PAGETITLE_REPLACE_NAME = "{NAME}";
-    private static final String PAGETITLE_LIST_ALL = "All companies";
+    private static final String PAGETITLE_LIST_ALL = "Companies";
     
     private CompanyDAO companyDAO = new CompanyDAO();
     private JobDAO jobDAO = new JobDAO();

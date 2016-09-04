@@ -282,20 +282,20 @@
 		<aside class="control-sidebar control-sidebar-dark">
 			<!-- Create the tabs -->
 			<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-				<li class="active">
+				<!-- <li class="active">
 					<a href="#control-sidebar-test-tab" data-toggle="tab">
 						<i class="fa fa-check"></i>
 					</a>
-				</li>
-				<li>
+				</li> -->
+				<li class="active">
 					<a href="#control-sidebar-settings-tab" data-toggle="tab">
 						<i class="fa fa-gears"></i>
 					</a>
 				</li>
 			</ul>
 			<!-- Tab panes -->
-			<div class="tab-content">
-				<div class="tab-pane active" id="control-sidebar-test-tab">
+			 <div class="tab-content">
+			<!--	<div class="tab-pane active" id="control-sidebar-test-tab">
 					<h3 class="control-sidebar-heading">JUnit Tests</h3>
 					This will test the configuration controller
 					<xp:div id="pnlTest">
@@ -336,11 +336,11 @@
 						</xp:messages>
 					</xp:div>
 				</div>
-
+ -->
 
 				<!-- /.tab-pane -->
 				<!-- Settings tab content -->
-				<div class="tab-pane" id="control-sidebar-settings-tab">
+				<div class="tab-pane active" id="control-sidebar-settings-tab">
 					<!-- 	<form method="post"> -->
 					<h3 class="control-sidebar-heading">
 						Configuration

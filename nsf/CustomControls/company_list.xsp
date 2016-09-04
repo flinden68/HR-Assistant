@@ -7,14 +7,29 @@
 		</xc:ccDataItemListHeader>
 		<div class="box-header">
 			<a class="btn btn-primary" href="hr_company.xsp">create company</a>
-			
-			<xc:ccPager repeatId="rptList"></xc:ccPager>
+
+			<div class="pull-right">
+				<xp:pager partialRefresh="true" id="pager2" for="rptList"
+					panelPosition="left" styleClass="bootstrapPager" partialExecute="true">
+					<xp:pagerControl type="Previous" id="pagerControl4"
+						styleClass="bootstrapPagerPrevious">
+						<xp:this.value><![CDATA[«]]></xp:this.value>
+					</xp:pagerControl>
+					<xp:pagerControl type="Group" id="pagerControl5"
+						styleClass="bootstrapPagerMiddle">
+					</xp:pagerControl>
+					<xp:pagerControl type="Next" id="pagerControl6"
+						styleClass="bootstrapPagerNext">
+						<xp:this.value><![CDATA[»]]></xp:this.value>
+					</xp:pagerControl>
+				</xp:pager>
+			</div>
 		</div>
-	
+
 		<div class="box-body table-responsive">
 			<xc:ccMessageBoxSearch controller="#{companyController}"></xc:ccMessageBoxSearch>
 			<table class="table table-hover table-striped">
-		
+
 				<thead>
 					<tr>
 						<th>name</th>
@@ -32,7 +47,7 @@
 							<xp:text escape="false" id="columnStreet" tagName="td"
 								value="#{company.address.addressDisplay}">
 							</xp:text>
-		
+
 							<td>
 								<xp:link escape="true" styleClass="btn btn-warning btn-margin-right"
 									text="edit" id="link1" value="hr_company.xsp?openxpage&amp;id=#{company.id}">
@@ -57,6 +72,6 @@
 					</xp:repeat>
 				</tbody>
 			</table>
-	</div>
+		</div>
 	</xp:div>
 </xp:view>

@@ -41,7 +41,7 @@ public class JobController extends ControllerBase implements
 	private static final String PAGETITLE_EXISTING = "Job: {NAME}({COMPANY})";
 	private static final String PAGETITLE_REPLACE_NAME = "{NAME}";
 	private static final String PAGETITLE_REPLACE_COMPANY = "{COMPANY}";
-	private static final String PAGETITLE_JOBLIST_ALL = "All jobs";
+	private static final String PAGETITLE_JOBLIST_ALL = "Jobs";
 
 	private JobDAO jobDAO = new JobDAO();
 	private CompanyDAO companyDAO = new CompanyDAO();
