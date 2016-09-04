@@ -3,7 +3,10 @@
 	<xp:div>
 		<xp:this.styleClass><![CDATA[#{javascript:'form-group is-valid-'+(getComponent('fldStreetName').isValid() && getComponent('fldStreetNumber').isValid())}]]></xp:this.styleClass>
 		<label for="fldStreetName">Street / Street No.</label>
-		<div class="row">
+		<xp:text rendered="#{compositeData.readOnly}" escape="true"
+			id="computedField1"
+			value="#{compositeData.address.street} #{compositeData.address.streetNumber}"></xp:text>
+		<xp:div styleClass="row" rendered="#{!compositeData.readOnly}">
 			<div class="col-xs-8">
 				<xp:inputText id="fldStreetName" value="#{compositeData.address.street}"
 					styleClass="valid-#{javascript:this.isValid()}" required="true">
@@ -29,7 +32,7 @@
 					</xp:this.attrs>
 				</xp:inputText>
 			</div>
-		</div>
+		</xp:div>
 
 
 		<xp:message id="message1" for="fldStreetName" styleClass="help-block with-errors">
@@ -49,10 +52,13 @@
 	<xp:div>
 		<xp:this.styleClass><![CDATA[#{javascript:'form-group is-valid-'+(getComponent('fldZip').isValid() && getComponent('fldCity').isValid())}]]></xp:this.styleClass>
 
-<label for="fldZip">Zip code / City</label>
-		<div class="row">
+		<label for="fldZip">Zip code / City</label>
+		<xp:text rendered="#{compositeData.readOnly}" escape="true"
+			id="computedField2"
+			value="#{compositeData.address.zip} #{compositeData.address.city}"></xp:text>
+		<xp:div styleClass="row"  rendered="#{!compositeData.readOnly}">
 			<div class="col-xs-4">
-				
+
 				<xp:inputText id="fldZip" value="#{compositeData.address.zip}"
 					styleClass="valid-#{javascript:this.isValid()}" required="true">
 					<xp:this.validators>
@@ -73,7 +79,7 @@
 					</xp:this.validators>
 				</xp:inputText>
 			</div>
-		</div>
+		</xp:div>
 
 
 		<xp:message id="message7" for="fldZip" styleClass="help-block with-errors">

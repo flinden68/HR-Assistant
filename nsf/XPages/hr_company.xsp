@@ -39,7 +39,8 @@
 									</xp:message>
 								</xp:div>
 
-								<xc:ccAddress address="#{company.address}"></xc:ccAddress>
+								<xc:ccAddress address="#{company.address}"
+									readOnly="${companyController.readOnly}"></xc:ccAddress>
 
 
 								<!--
