@@ -152,7 +152,10 @@ public class ApplicationController implements Serializable {
 		} else if (user.getRole().equals(
 				ConfigParamsMenuCategory.HR.toString()) && currentPage.contains(REALJOBLISTING)) {
 				redirectToRealHomePage();
+		} else if(currentPage.contains(REALLOGIN)){
+			redirectToRealHomePage();
 		}
+		
 		XPagesUtil.getXSPContext().redirectToPage(currentPage+currentQueryString, true);
 	}
 
