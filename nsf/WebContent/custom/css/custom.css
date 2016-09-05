@@ -198,7 +198,7 @@ input[readonly] {
 
 /*box joblisting */
 .box-joblisting{
-	min-height: 200px !important; 
+	/*min-height: 200px !important; 
    	height:auto !important; 
-   	height: 200px !important; 
+   	height: 200px !important; */
 }
