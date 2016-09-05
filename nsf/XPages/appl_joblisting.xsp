@@ -112,7 +112,7 @@
 					</div>
 					<xp:panel id="pnlDataItemList">
 
-						<xp:repeat id="rptList" rows="6" var="job" indexVar="i"
+						<xp:repeat id="rptList" rows="10" var="job" indexVar="i"
 							value="#{jobController.jobs}">
 							<div class="col-md-4 box-joblisting">
 								<div class="box box-primary">

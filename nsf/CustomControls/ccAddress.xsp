@@ -54,9 +54,8 @@
 
 		<label for="fldZip">Zip code / City</label>
 		<xp:text rendered="#{compositeData.readOnly}" escape="true"
-			id="computedField2"
-			value="#{compositeData.address.zip} #{compositeData.address.city}"></xp:text>
-		<xp:div styleClass="row"  rendered="#{!compositeData.readOnly}">
+			id="computedField2" value="#{compositeData.address.zip} #{compositeData.address.city}"></xp:text>
+		<xp:div styleClass="row" rendered="#{!compositeData.readOnly}">
 			<div class="col-xs-4">
 
 				<xp:inputText id="fldZip" value="#{compositeData.address.zip}"
@@ -65,6 +64,9 @@
 						<xp:validateRequired message="Please give a zip code">
 						</xp:validateRequired>
 					</xp:this.validators>
+					<xp:this.attrs>
+						<xp:attr name="placeholder" value="zip"></xp:attr>
+					</xp:this.attrs>
 				</xp:inputText>
 
 			</div>
@@ -77,6 +79,9 @@
 						<xp:validateRequired message="Please give a city">
 						</xp:validateRequired>
 					</xp:this.validators>
+					<xp:this.attrs>
+						<xp:attr name="placeholder" value="city"></xp:attr>
+					</xp:this.attrs>
 				</xp:inputText>
 			</div>
 		</xp:div>

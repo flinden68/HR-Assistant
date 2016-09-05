@@ -165,12 +165,14 @@ public class JobApplicationController extends ControllerBase implements
 
 			if (this.newDataItem) {
 				this.jobApplicationDAO.create(jobApplication);
-				String url = "jobapplication.xsp?openxpage&id="
-						+ jobApplication.getId();
+				String url = "appl_jobapplication.xsp?openxpage&id="
+						+ jobApplication.getId()+"&readonly=true";
 				if (!"".equals(jobApplication.getJobId())) {
 					url += "&jobid=" + jobApplication.getJobId();
 				}
-				// XPagesUtil.redirect(url); not yet...will be done with a
+				url = "appl_joblisting.xsp";
+				 XPagesUtil.redirect(url); 
+				 //not yet...will be done with a
 				// applicants portal..
 			} else {
 				this.jobApplicationDAO.update(jobApplication);
