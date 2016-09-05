@@ -53,7 +53,7 @@
 						<th>type</th>
 						<th>sort</th>
 						<th>key / value</th>
-						<th></th>
+						<th style="width:190px;"></th>
 					</tr>
 					<tr>
 						<!-- 	<th>rev</th>

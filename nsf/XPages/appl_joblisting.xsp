@@ -2,7 +2,7 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
 	beforePageLoad="#{javascript:applicationController.setCurrentPageNameParent('');}">
 
-	<xc:ccLayout pageTitle="#{jobController.jobListTitle}">
+	<xc:ccLayout pageTitle="Job listing" pageSubTitle="search and find your next job!">
 		<xp:this.facets>
 			<xp:panel xp:key="Content">
 				<div class="row">
@@ -138,17 +138,16 @@
 									</div>
 									<div class="box-footer">
 										<div class="pull-right">
-											<xp:link escape="true" text="More info" id="link2"
+											<xp:link escape="true" text="more info" id="link2"
 												styleClass="btn btn-success btn-margin-right">
 												<xp:this.value><![CDATA[#{javascript:"appl_job.xsp?openxpage&id="+job.getId()+"&readonly=true"}]]></xp:this.value>
 											</xp:link>
-											<xp:link escape="true" text="Apply" id="link1"
+											<xp:link escape="true" text="apply" id="link1"
 												styleClass="btn btn-primary btn-margin-right">
 												<xp:this.value><![CDATA[#{javascript:"appl_jobapplication.xsp?openxpage&jobid="+job.getId()}]]></xp:this.value>
 											</xp:link>
 										</div>
 									</div>
-
 								</div>
 							</div>
 						</xp:repeat>
