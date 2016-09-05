@@ -7,7 +7,20 @@
 		</xc:ccDataItemListHeader>
 		<div class="box-header">
 
-			<a class="btn btn-primary" href="hr_job.xsp">create job</a>
+			<a class="btn btn-primary btn-margin-right" href="hr_job.xsp">create job
+			</a>
+			<xp:button styleClass="btn btn-primary" value="refresh" id="button2">
+				<i class="fa fa-refresh fa-fw"></i>
+				<xp:eventHandler event="onclick" submit="true"
+					onStart="waitingDialog.show('refreshing')" onComplete="waitingDialog.hide()"
+					refreshMode="partial" refreshId="pnlDataItemList" immediate="true"
+					execMode="partial" execId="pnlDataItemList">
+					<xp:this.action>
+						<xp:executeScript script="#{javascript:jobController.clearJobs()}">
+						</xp:executeScript>
+					</xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
 			<div class="pull-right">
 				<xp:pager partialRefresh="true" id="pager2" for="rptList"
 					panelPosition="left" styleClass="bootstrapPager" partialExecute="true">

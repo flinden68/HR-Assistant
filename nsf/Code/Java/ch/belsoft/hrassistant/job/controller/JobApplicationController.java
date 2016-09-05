@@ -232,32 +232,41 @@ public class JobApplicationController extends ControllerBase implements
 		}
 		return result;
 	}
-	
-	public List<AlchemyLanguageKeyword> getKeywordsFromRecentJobpplications(){
+
+	public List<AlchemyLanguageKeyword> getKeywordsFromRecentJobpplications() {
 		return collectAndCalculateAlchemyLangueKeywords(getJobApplicationsRecentLimited(5));
 	}
-	
-	public List<AlchemyLanguageKeyword> getKeywordsFromJobApplicationsByJob(String jobId){
+
+	public List<AlchemyLanguageKeyword> getKeywordsFromJobApplicationsByJob(
+			String jobId) {
 		return collectAndCalculateAlchemyLangueKeywords(getJobApplicationsByJob(jobId));
 	}
-	
-	private List<AlchemyLanguageKeyword> collectAndCalculateAlchemyLangueKeywords(List<JobApplication> jobApplicationsList){
+
+	private List<AlchemyLanguageKeyword> collectAndCalculateAlchemyLangueKeywords(
+			List<JobApplication> jobApplicationsList) {
 		Map<String, AlchemyLanguageKeyword> keywordsMap = new HashMap<String, AlchemyLanguageKeyword>();
-		
-		for(JobApplication j : jobApplicationsList){
-			if(j.getAlchemyLanguageResult()!=null){
-				for(AlchemyLanguageKeyword keyword : j.getAlchemyLanguageResult().getKeywords()){
-					if(keywordsMap.containsKey(keyword.getText())){
-						float relevanceTotal = keyword.getRelevance() + keywordsMap.get(keyword.getText()).getRelevance();
-						keywordsMap.get(keyword.getText()).setRelevance(relevanceTotal/2);
-					}else{
-						keywordsMap.put(keyword.getText(), new AlchemyLanguageKeyword(keyword.getText(), keyword.getRelevance()));
+
+		for (JobApplication j : jobApplicationsList) {
+			if (j.getAlchemyLanguageResult() != null) {
+				for (AlchemyLanguageKeyword keyword : j
+						.getAlchemyLanguageResult().getKeywords()) {
+					if (keywordsMap.containsKey(keyword.getText())) {
+						float relevanceTotal = keyword.getRelevance()
+								+ keywordsMap.get(keyword.getText())
+										.getRelevance();
+						keywordsMap.get(keyword.getText()).setRelevance(
+								relevanceTotal / 2);
+					} else {
+						keywordsMap.put(keyword.getText(),
+								new AlchemyLanguageKeyword(keyword.getText(),
+										keyword.getRelevance()));
 					}
 				}
 			}
 		}
-		List<AlchemyLanguageKeyword> list = new ArrayList<AlchemyLanguageKeyword>(keywordsMap.values());
-		Collections.sort(list,new AlchemyLanguageKeywordComparator());
+		List<AlchemyLanguageKeyword> list = new ArrayList<AlchemyLanguageKeyword>(
+				keywordsMap.values());
+		Collections.sort(list, new AlchemyLanguageKeywordComparator());
 		return list;
 	}
 
@@ -267,6 +276,8 @@ public class JobApplicationController extends ControllerBase implements
 			if (this.jobApplications.isEmpty()) {
 				if (this.searchQuery.equals("")) {
 					this.jobApplications = this.jobApplicationDAO.read();
+					Collections.sort(this.jobApplications,
+							ControllerBase.NameComparator);
 				} else {
 					this.jobApplications = this.jobApplicationDAO
 							.search(this.searchQuery);

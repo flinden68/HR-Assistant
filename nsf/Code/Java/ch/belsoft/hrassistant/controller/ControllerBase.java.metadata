@@ -1,18 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="186" sequence="202" unid="062FB6B5E38A95DDC1257FDB005D0F40">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="186" sequence="259" unid="062FB6B5E38A95DDC1257FDB005D0F40">
 <created><datetime dst="true">20160623T185627,52+02</datetime></created>
-<modified><datetime dst="true">20160712T144235,67+02</datetime></modified>
-<revised><datetime dst="true">20160712T144235,65+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160712T144235,65+02</datetime></lastaccessed>
+<modified><datetime dst="true">20160905T103806,91+02</datetime></modified>
+<revised><datetime dst="true">20160905T103806,89+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160905T103806,89+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20160711T105436,85+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
 <wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>ch/belsoft/hrassistant/controller/ControllerBase.java</text></item>
+
+
+
+
+
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
-<item name="$FileNames" sign="true"><text>ch/belsoft/hrassistant/controller/ControllerBase.java</text></item>
-
-
-</note>
+<item name="$FileNames" sign="true"><text>ch/belsoft/hrassistant/controller/ControllerBase.java</text></item></note>

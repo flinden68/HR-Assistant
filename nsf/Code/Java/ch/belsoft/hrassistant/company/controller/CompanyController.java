@@ -2,6 +2,8 @@ package ch.belsoft.hrassistant.company.controller;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import ch.belsoft.hrassistant.attachment.controller.AttachmentController;
@@ -13,6 +15,7 @@ import ch.belsoft.hrassistant.config.model.ConfigType;
 import ch.belsoft.hrassistant.controller.ApplicationController;
 import ch.belsoft.hrassistant.controller.ControllerBase;
 import ch.belsoft.hrassistant.controller.IGuiController;
+import ch.belsoft.hrassistant.dao.IDataItem;
 import ch.belsoft.hrassistant.job.dao.JobDAO;
 import ch.belsoft.hrassistant.job.model.Address;
 import ch.belsoft.hrassistant.job.model.Company;
@@ -178,7 +181,8 @@ public class CompanyController extends ControllerBase implements
 			if (this.companies.isEmpty()) {
 				if (this.searchQuery.equals("")) {
 					this.companies = this.companyDAO.read();
-
+					Collections.sort(this.companies,
+							ControllerBase.NameComparator);
 				} else {
 					this.companies = this.companyDAO.search(this.searchQuery);
 				}

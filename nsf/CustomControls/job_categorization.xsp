@@ -15,11 +15,12 @@
 				</xp:validateRequired>
 			</xp:this.validators>
 
-			<xp:eventHandler event="onchange" submit="true"
-				onStart="waitingDialog.show('loading industries')" onComplete="waitingDialog.hide();"
-				refreshMode="partial" disableValidators="true" refreshId="fldIndustry">
-
-			</xp:eventHandler>
+			<!--
+				<xp:eventHandler event="onchange" submit="true"
+				onStart="waitingDialog.show('loading industries')"
+				onComplete="waitingDialog.hide();" refreshMode="partial"
+				disableValidators="true" refreshId="fldIndustry"> </xp:eventHandler>
+			-->
 
 		</xp:comboBox>
 		<xp:message id="message6" for="fldIndustry" styleClass="help-block with-errors"></xp:message>
@@ -40,10 +41,12 @@
 				</xp:validateRequired>
 			</xp:this.validators>
 
-			<xp:eventHandler event="onchange" submit="true"
-				onStart="waitingDialog.show('loading job type')" onComplete="waitingDialog.hide();"
-				refreshMode="partial" disableValidators="true" refreshId="fldJobType">
-			</xp:eventHandler>
+			<!--
+				<xp:eventHandler event="onchange" submit="true"
+				onStart="waitingDialog.show('loading job type')"
+				onComplete="waitingDialog.hide();" refreshMode="partial"
+				disableValidators="true" refreshId="fldJobType"> </xp:eventHandler>
+			-->
 		</xp:comboBox>
 		<xp:message id="message5" for="fldJobType" styleClass="help-block with-errors"></xp:message>
 	</xp:div>
@@ -63,10 +66,13 @@
 				</xp:validateRequired>
 			</xp:this.validators>
 
-			<xp:eventHandler event="onchange" submit="true"
-				onStart="waitingDialog.show('loading job type')" onComplete="waitingDialog.hide();"
-				refreshMode="partial" disableValidators="true" refreshId="fldCareerLevel">
-			</xp:eventHandler>
+			<!--
+				<xp:eventHandler event="onchange" submit="true"
+				onStart="waitingDialog.show('loading job type')"
+				onComplete="waitingDialog.hide();" refreshMode="partial"
+				disableValidators="true" refreshId="fldCareerLevel">
+				</xp:eventHandler>
+			-->
 		</xp:comboBox>
 		<xp:message id="message7" for="fldCareerLevel" styleClass="help-block with-errors"></xp:message>
 	</xp:div>
