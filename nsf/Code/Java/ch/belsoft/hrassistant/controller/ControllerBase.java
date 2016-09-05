@@ -208,4 +208,10 @@ public abstract class ControllerBase implements Serializable {
 		}
 	};
 
+	public static final Comparator<IDataItem> NameComparator = new Comparator<IDataItem>() {
+		public int compare(IDataItem o1, IDataItem o2) {
+			return o1.getName().compareTo(o2.getName());
+		}
+	};
+
 }

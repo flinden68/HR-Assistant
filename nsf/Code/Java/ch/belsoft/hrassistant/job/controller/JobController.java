@@ -187,24 +187,31 @@ public class JobController extends ControllerBase implements
 		}
 		return result;
 	}
-	
-	public List<AlchemyLanguageKeyword> getKeywordsFromRecentJobs(){
+
+	public List<AlchemyLanguageKeyword> getKeywordsFromRecentJobs() {
 		Map<String, AlchemyLanguageKeyword> keywordsMap = new HashMap<String, AlchemyLanguageKeyword>();
-		
-		for(Job j : getJobsRecentLimited(5)){
-			if(j.getAlchemyLanguageResult()!=null){
-				for(AlchemyLanguageKeyword keyword : j.getAlchemyLanguageResult().getKeywords()){
-					if(keywordsMap.containsKey(keyword.getText())){
-						float relevanceTotal = keyword.getRelevance() + keywordsMap.get(keyword.getText()).getRelevance();
-						keywordsMap.get(keyword.getText()).setRelevance(relevanceTotal/2);
-					}else{
-						keywordsMap.put(keyword.getText(), new AlchemyLanguageKeyword(keyword.getText(), keyword.getRelevance()));
+
+		for (Job j : getJobsRecentLimited(5)) {
+			if (j.getAlchemyLanguageResult() != null) {
+				for (AlchemyLanguageKeyword keyword : j
+						.getAlchemyLanguageResult().getKeywords()) {
+					if (keywordsMap.containsKey(keyword.getText())) {
+						float relevanceTotal = keyword.getRelevance()
+								+ keywordsMap.get(keyword.getText())
+										.getRelevance();
+						keywordsMap.get(keyword.getText()).setRelevance(
+								relevanceTotal / 2);
+					} else {
+						keywordsMap.put(keyword.getText(),
+								new AlchemyLanguageKeyword(keyword.getText(),
+										keyword.getRelevance()));
 					}
 				}
 			}
 		}
-		List<AlchemyLanguageKeyword> list = new ArrayList<AlchemyLanguageKeyword>(keywordsMap.values());
-		Collections.sort(list,new AlchemyLanguageKeywordComparator());
+		List<AlchemyLanguageKeyword> list = new ArrayList<AlchemyLanguageKeyword>(
+				keywordsMap.values());
+		Collections.sort(list, new AlchemyLanguageKeywordComparator());
 		return list;
 	}
 
@@ -214,6 +221,7 @@ public class JobController extends ControllerBase implements
 			if (this.jobs.isEmpty()) {
 				if (this.searchQuery.equals("")) {
 					this.jobs = this.jobDAO.read();
+					Collections.sort(this.jobs, ControllerBase.NameComparator);
 				} else {
 					this.jobs = this.jobDAO.search(this.searchQuery);
 				}

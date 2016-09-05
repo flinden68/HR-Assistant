@@ -102,8 +102,8 @@ public class ChartFactoryPersonalityInsights extends
 
 			result = this.getInsightsChildByChildren(personalityCategory, tree);
 			if (result == null) {
-				Logging.logEvent(personalityCategory.toString()
-						+ " not found in the personality insights result");
+			//	Logging.logEvent(personalityCategory.toString()
+			//			+ " not found in the personality insights result");
 			}
 		} catch (Exception e) {
 			Logging.logError(e);
