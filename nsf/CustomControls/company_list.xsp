@@ -2,11 +2,26 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
 	<xp:div styleClass="box" id="pnlDataItemList">
 
-		<xc:ccDataItemListHeader title="List of all companies"
+		<xc:ccDataItemListHeader title="${compositeData.title}"
 			refreshIdForSearch="pnlDataItemList" controller="#{companyController}">
 		</xc:ccDataItemListHeader>
 		<div class="box-header">
-			<a class="btn btn-primary" href="hr_company.xsp">create company</a>
+			<a class="btn btn-primary btn-margin-right" href="hr_company.xsp">create company</a>
+
+			<xp:button styleClass="btn btn-primary" value="refresh" id="button1">
+				<i class="fa fa-refresh fa-fw"></i>
+				<xp:eventHandler event="onclick" submit="true"
+					onStart="waitingDialog.show('refreshing')" onComplete="waitingDialog.hide()"
+					refreshMode="partial" refreshId="pnlDataItemList" immediate="true"
+					execMode="partial" execId="pnlDataItemList">
+					<xp:this.action>
+						<xp:executeScript
+							script="#{javascript:companyController.clearCompanies()}">
+						</xp:executeScript>
+					</xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+
 
 			<div class="pull-right">
 				<xp:pager partialRefresh="true" id="pager2" for="rptList"
@@ -34,7 +49,7 @@
 					<tr>
 						<th>name</th>
 						<th>address</th>
-						<th></th>
+						<th style="width:200px;"></th>
 					</tr>
 				</thead>
 				<tbody>

@@ -74,11 +74,11 @@
 							<td>
 								<xp:image url="custom/img/icon_watson_toneanalyzer.png"
 									style="margin-right:3px;" rendered="#{entry.toneAnalyzerResult!=null}"
-									title="Tome analyzed by IBM Watson" id="image1">
+									title="Tone analyzed by IBM Watson" id="image1">
 								</xp:image>
 								<xp:image url="custom/img/alchemy-language-service-icon.png"
 									style="margin-right:3px;" rendered="#{entry.alchemyLanguageResult!=null}"
-									title="Text analyzed by IBM Watson" id="image2">
+									title="Alchemy Language analyzed by IBM Watson" id="image2">
 								</xp:image>
 								<xp:image url="custom/img/icon_watson_personalityinsights.png"
 									rendered="#{entry.personalityInsightsResult!=null}" title="Personality insights analyzed by IBM Watson"

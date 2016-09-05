@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
-	styleClass="hold-transition login-page"
-	pageTitle="HR Assistant : Login"
-	beforePageLoad="#{javascript:applicationController.authanticateUser()}">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" styleClass="hold-transition login-page"
+	pageTitle="HR Assistant : Login" beforePageLoad="#{javascript:applicationController.authanticateUser()}">
 	<div class="login-box">
 		<div class="login-logo">HR Assistant</div>
 
@@ -11,8 +9,7 @@
 			<p class="login-box-msg">your password:</p>
 			<p class="">
 				<h4>
-					<xp:text
-						value="#{applicationController.user.passwordGenerated}"
+					<xp:text value="#{applicationController.user.passwordGenerated}"
 						tagName="center">
 					</xp:text>
 				</h4>
@@ -21,25 +18,21 @@
 				<xp:this.styleClass><![CDATA[#{javascript:( getComponent("fldUserName").isValid() ? "form-group" : "form-group has-error" )}]]></xp:this.styleClass>
 				<div class="form-group has-feedback">
 					<xp:inputText id="fldUserName"
-						value="#{applicationController.user.userName}"
-						styleClass="form-control valid-#{javascript:this.isValid()}"
+						value="#{applicationController.user.userName}" styleClass="form-control valid-#{javascript:this.isValid()}"
 						required="true">
 						<xp:this.validators>
-							<xp:validateRequired
-								message="A user name is required.">
+							<xp:validateRequired message="A user name is required.">
 							</xp:validateRequired>
 						</xp:this.validators>
 						<xp:this.attrs>
-							<xp:attr name="placeholder"
-								value="User name">
+							<xp:attr name="placeholder" value="User name">
 							</xp:attr>
 						</xp:this.attrs>
 					</xp:inputText>
 					<span class="fa fa-user form-control-feedback"></span>
 				</div>
 
-				<xp:message id="message1" for="fldUserName"
-					styleClass="help-block with-errors">
+				<xp:message id="message1" for="fldUserName" styleClass="help-block with-errors">
 				</xp:message>
 			</xp:div>
 
@@ -47,25 +40,21 @@
 				<xp:this.styleClass><![CDATA[#{javascript:( getComponent("fldPassword").isValid() ? "form-group" : "form-group has-error" )}]]></xp:this.styleClass>
 				<div class="form-group has-feedback">
 					<xp:inputText id="fldPassword"
-						value="#{applicationController.user.password}"
-						styleClass="form-control valid-#{javascript:this.isValid()}"
+						value="#{applicationController.user.password}" styleClass="form-control valid-#{javascript:this.isValid()}"
 						required="true" validator="#{passwordValidator.validate}">
 						<xp:this.validators>
-							<xp:validateRequired
-								message="A password is required.">
+							<xp:validateRequired message="A password is required.">
 							</xp:validateRequired>
 						</xp:this.validators>
 						<xp:this.attrs>
-							<xp:attr name="placeholder"
-								value="Password">
+							<xp:attr name="placeholder" value="Password">
 							</xp:attr>
 						</xp:this.attrs>
 					</xp:inputText>
 					<span class="fa fa-lock form-control-feedback"></span>
 				</div>
 
-				<xp:message id="message2" for="fldPassword"
-					styleClass="help-block with-errors">
+				<xp:message id="message2" for="fldPassword" styleClass="help-block with-errors">
 				</xp:message>
 			</xp:div>
 			<div class="form-group">
@@ -77,24 +66,20 @@
 				</div>
 				<div class="col-lg-12">
 					<div class="radio">
-						<xp:radio
-							text="Administrator: All Menu's visible" id="radio3"
+						<xp:radio text="Administrator: All Menu's visible" id="radio3"
 							groupName="userRoles" value="#{applicationController.user.role}"
 							selectedValue="Administration">
 						</xp:radio>
 					</div>
 					<div class="radio">
-						<xp:radio
-							text="HR / Backoffice: HR and Administrator menu visible"
-							id="radio1" groupName="userRoles"
-							value="#{applicationController.user.role}"
+						<xp:radio text="HR / Backoffice: HR and Administrator menu visible"
+							id="radio1" groupName="userRoles" value="#{applicationController.user.role}"
 							selectedValue="#{configurationController.hrConfigParamsMenuCategory}">
 						</xp:radio>
 					</div>
 					<div class="radio">
-						<xp:radio
-							text="Job Applicant: Job Applicant Menu visible" id="radio2"
-							groupName="userRoles" value="#{applicationController.user.role}"
+						<xp:radio text="Job Applicant: Job Applicant Menu visible"
+							id="radio2" groupName="userRoles" value="#{applicationController.user.role}"
 							selectedValue="#{configurationController.jobApplicantConfigParamsMenuCategory}">
 						</xp:radio>
 					</div>
@@ -106,12 +91,10 @@
 
 				</div>
 				<div class="col-xs-4">
-					<xp:button
-						styleClass="btn btn-primary btn-block btn-flat" value="Sign in"
-						id="button1">
+					<xp:button styleClass="btn btn-primary btn-block btn-flat"
+						value="Sign in" id="button1">
 						<xp:eventHandler event="onclick" submit="true"
-							onStart="waitingDialog.show('sign in...')"
-							onComplete="waitingDialog.hide()">
+							onStart="waitingDialog.show('sign in...')" onComplete="waitingDialog.hide()">
 							<xp:this.action>
 								<xp:executeScript
 									script="#{javascript:applicationController.loginUser()}">
@@ -119,6 +102,14 @@
 							</xp:this.action>
 						</xp:eventHandler>
 					</xp:button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12" style="margin-top:10px;">
+
+					You can later switch the role by
+					signing out.
+					
 				</div>
 			</div>
 		</div>

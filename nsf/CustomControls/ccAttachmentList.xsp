@@ -6,10 +6,10 @@
 		<table class="table table-hover table-striped">
 			<thead>
 				<tr>
-					<th></th>
+					<th style="width:40px;"></th>
 					<th>name</th>
 					<th>type</th>
-					<th></th>
+					<th style="width:110px;"></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -32,7 +32,7 @@
 						<td>
 							<xp:link styleClass="btn btn-primary btn-margin-right"
 								id="downloadLink"
-								 value="#{javascript:compositeData.controller.attachmentHolder.getAttachmentUrl(attachment.getName())}">
+								value="#{javascript:compositeData.controller.attachmentHolder.getAttachmentUrl(attachment.getName())}">
 								<i class="fa fa-download"></i>
 							</xp:link>
 							<xp:button styleClass="btn btn-danger" value=""

@@ -7,7 +7,7 @@
 			<xp:panel xp:key="Content">
 				<div class="row">
 					<div class="col-xs-12">
-						<xc:company_list></xc:company_list>
+						<xc:company_list title="List of all companies"></xc:company_list>
 					</div>
 				</div>
 			</xp:panel>

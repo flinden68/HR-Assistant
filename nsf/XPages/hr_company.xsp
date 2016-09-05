@@ -183,7 +183,7 @@
 						</div>
 					</div>
 					<xp:div styleClass="col-md-6" id="pnlConfigurationList">
-						<xc:company_list></xc:company_list>
+						<xc:company_list title="List of all Other companies"></xc:company_list>
 					</xp:div>
 				</div>
 			</xp:panel>
