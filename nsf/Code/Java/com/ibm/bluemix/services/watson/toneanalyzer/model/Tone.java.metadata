@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257FD800653235" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1292" sequence="10" unid="955AE203795E834CC125800D0023BF0A">
-<created><datetime dst="true">20160812T083026,66+02</datetime></created>
-<modified><datetime dst="true">20160901T231047,25+02</datetime></modified>
-<revised><datetime dst="true">20160901T231047,24+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160901T231047,25+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160812T083029,30+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Administrator/O=Elstar</name></updatedby>
-<wassignedby><name>CN=Administrator/O=Elstar</name></wassignedby>
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.7" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="b62" sequence="32" unid="3321B793C3830F89C1257FF0003C28A1">
+<created><datetime dst="true">20160714T125705,61+02</datetime></created>
+<modified><datetime dst="true">20161003T160209,15+02</datetime></modified>
+<revised><datetime dst="true">20161003T160209,13+02</datetime></revised>
+<lastaccessed><datetime dst="true">20161003T160209,13+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160714T125705,61+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
+<wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>com/ibm/bluemix/services/watson/toneanalyzer/model/Tone.java</text></item>
-
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
 <item name="$FileNames" sign="true"><text>com/ibm/bluemix/services/watson/toneanalyzer/model/Tone.java</text></item>
+
 
 </note>

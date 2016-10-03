@@ -37,6 +37,9 @@ public class JobController extends ControllerBase implements
 		AlchemyLanguageController, Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
+	private static final String LOGO_DEFAULT = "hrassistant32.png";
+	
 	private static final String PAGETITLE_NEW = "New Job";
 	private static final String PAGETITLE_EXISTING = "Job: {NAME}({COMPANY})";
 	private static final String PAGETITLE_REPLACE_NAME = "{NAME}";
@@ -267,7 +270,7 @@ public class JobController extends ControllerBase implements
 						.next().getValue().getSrcForImageTag();
 			}
 		}
-		return new String("hrassistent32.png");
+		return new String(LOGO_DEFAULT);
 	}
 
 	public List<SelectItem> getCompanySelection() {

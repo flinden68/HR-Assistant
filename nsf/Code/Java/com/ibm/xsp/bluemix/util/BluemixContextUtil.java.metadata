@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="992" sequence="86" unid="E90234211F53608CC1257FD30034179E">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.7" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="992" sequence="155" unid="E90234211F53608CC1257FD30034179E">
 <created><datetime dst="true">20160615T112859,18+02</datetime></created>
-<modified><datetime dst="true">20160902T145032,27+02</datetime></modified>
-<revised><datetime dst="true">20160902T145032,25+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160902T145032,25+02</datetime></lastaccessed>
+<modified><datetime dst="true">20161003T160209,01+02</datetime></modified>
+<revised><datetime dst="true">20161003T160208,99+02</datetime></revised>
+<lastaccessed><datetime dst="true">20161003T160208,99+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20160711T105442,00+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
 <wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>com/ibm/xsp/bluemix/util/BluemixContextUtil.java</text></item>
-
-
-
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
-<item name="$FileNames" sign="true"><text>com/ibm/xsp/bluemix/util/BluemixContextUtil.java</text></item></note>
+<item name="$FileNames" sign="true"><text>com/ibm/xsp/bluemix/util/BluemixContextUtil.java</text></item>
+
+
+</note>

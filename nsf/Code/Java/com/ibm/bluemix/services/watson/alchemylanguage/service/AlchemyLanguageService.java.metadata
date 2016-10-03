@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="d62" sequence="11" unid="E4450CEA09E4B893C1258019006BAD51">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.7" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="d62" sequence="45" unid="E4450CEA09E4B893C1258019006BAD51">
 <created><datetime dst="true">20160824T213607,21+02</datetime></created>
-<modified><datetime dst="true">20160830T214407,05+02</datetime></modified>
-<revised><datetime dst="true">20160830T214407,03+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160830T214407,03+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160824T213607,21+02</datetime></addedtofile></noteinfo>
+<modified><datetime dst="true">20161003T160209,48+02</datetime></modified>
+<revised><datetime dst="true">20161003T160209,46+02</datetime></revised>
+<lastaccessed><datetime dst="true">20161003T160209,46+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160831T153006,05+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
 <wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
