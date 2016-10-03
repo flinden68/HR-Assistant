@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="b6a" sequence="3" unid="FBD81644E73409C9C1257FF0003C34F6">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.7" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="b6a" sequence="28" unid="FBD81644E73409C9C1257FF0003C34F6">
 <created><datetime dst="true">20160714T125737,18+02</datetime></created>
-<modified><datetime dst="true">20160714T125737,40+02</datetime></modified>
-<revised><datetime dst="true">20160714T125737,38+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160714T125737,38+02</datetime></lastaccessed>
+<modified><datetime dst="true">20161003T160209,11+02</datetime></modified>
+<revised><datetime dst="true">20161003T160209,09+02</datetime></revised>
+<lastaccessed><datetime dst="true">20161003T160209,09+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20160714T125737,18+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
 <wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
@@ -12,4 +12,7 @@
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
-<item name="$FileNames" sign="true"><text>com/ibm/bluemix/services/watson/toneanalyzer/model/ToneAnalyzerResult.java</text></item></note>
+<item name="$FileNames" sign="true"><text>com/ibm/bluemix/services/watson/toneanalyzer/model/ToneAnalyzerResult.java</text></item>
+
+
+</note>

@@ -41,6 +41,9 @@ public class JobApplicationController extends ControllerBase implements
 		Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
+	private static final String LOGO_DEFAULT = "hrassistant32.png";
+	
 	private static final String PAGETITLE_NEW = "New Job application: {NAME}({COMPANY})";
 	private static final String PAGETITLE_EXISTING = "Job application: {NAME}({COMPANY})";
 	private static final String PAGETITLE_REPLACE_NAME = "{NAME}";
@@ -335,7 +338,7 @@ public class JobApplicationController extends ControllerBase implements
 						.next().getValue().getSrcForImageTag();
 			}
 		}
-		return new String("hrassistent32.png");
+		return new String(LOGO_DEFAULT);
 	}
 
 	public List<SelectItem> getJobSelection() {

@@ -115,10 +115,9 @@
 
 		<property>
 			<name>pageIcon</name>
-			<value>/hrassistent32.png</value>
+			<value>/hrassistant32.png</value>
 		</property>
 	</control>
-
 
 	<control>
 		<name>InputField.EditBox</name>

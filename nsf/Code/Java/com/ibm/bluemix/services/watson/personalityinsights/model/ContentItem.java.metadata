@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="d1a" sequence="3" unid="7DC3BA49C6E05995C12580130074628F">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.7" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="d1a" sequence="79" unid="7DC3BA49C6E05995C12580130074628F">
 <created><datetime dst="true">20160818T231114,07+02</datetime></created>
-<modified><datetime dst="true">20160818T231114,17+02</datetime></modified>
-<revised><datetime dst="true">20160818T231114,15+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160818T231114,15+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20160818T231114,07+02</datetime></addedtofile></noteinfo>
+<modified><datetime dst="true">20161003T160209,40+02</datetime></modified>
+<revised><datetime dst="true">20161003T160209,38+02</datetime></revised>
+<lastaccessed><datetime dst="true">20161003T160209,38+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20160831T153006,34+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
 <wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
@@ -12,4 +12,7 @@
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
-<item name="$FileNames" sign="true"><text>com/ibm/bluemix/services/watson/personalityinsights/model/ContentItem.java</text></item></note>
+<item name="$FileNames" sign="true"><text>com/ibm/bluemix/services/watson/personalityinsights/model/ContentItem.java</text></item>
+
+
+</note>

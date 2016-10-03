@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1c6" sequence="570" unid="0C8B12D2FA053BD9C1257FD2004C2EF8">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.7" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1c6" sequence="623" unid="0C8B12D2FA053BD9C1257FD2004C2EF8">
 <created><datetime dst="true">20160614T155207,60+02</datetime></created>
-<modified><datetime dst="true">20160904T204054,43+02</datetime></modified>
-<revised><datetime dst="true">20160904T204054,41+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160904T204054,41+02</datetime></lastaccessed>
+<modified><datetime dst="true">20161003T160226,33+02</datetime></modified>
+<revised><datetime dst="true">20161003T160226,31+02</datetime></revised>
+<lastaccessed><datetime dst="true">20161003T160226,31+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20160711T105437,01+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
 <wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
@@ -11,13 +11,13 @@
 <item name="$TITLE" sign="true"><text>ccLayout.xsp</text></item>
 
 
+
+
+<item name="$FileNames" sign="true"><text>ccLayout.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5.2</text></item>
 
 
 
 
 
-
-
-
-<item name="$FileNames" sign="true"><text>ccLayout.xsp</text></item></note>
+</note>
