@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="d5e" sequence="142" unid="9C591B41BE04752EC1258019006BAD49">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.7" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="d5e" sequence="190" unid="9C591B41BE04752EC1258019006BAD49">
 <created><datetime dst="true">20160824T213607,13+02</datetime></created>
-<modified><datetime dst="true">20160904T153952,11+02</datetime></modified>
-<revised><datetime dst="true">20160904T153952,09+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160904T153952,09+02</datetime></lastaccessed>
+<modified><datetime dst="true">20161003T160224,01+02</datetime></modified>
+<revised><datetime dst="true">20161003T160223,99+02</datetime></revised>
+<lastaccessed><datetime dst="true">20161003T160223,99+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20160831T153006,89+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
 <wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$Flags"><text>gC~4;</text></item>
 <item name="$TITLE" sign="true"><text>watson_personalityInsights.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5.2</text></item>
-
-
-
 
 
 
 
 <item name="$FileNames" sign="true"><text>watson_personalityInsights.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5.2</text></item>
+
+
+
 
 </note>

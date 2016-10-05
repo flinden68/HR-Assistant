@@ -12,6 +12,9 @@
 			<xp:this.validators>
 				<xp:validateRequired message="Please give information">
 				</xp:validateRequired>
+				<xp:validateLength minimum="300"
+					message="Please provide more than 300 characters.">
+				</xp:validateLength>
 			</xp:this.validators>
 		</xp:inputTextarea>
 		<xp:message id="message8" for="fldDescription" styleClass="help-block with-errors">

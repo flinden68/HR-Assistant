@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="2c6" sequence="45" unid="30AEBEC098C3806FC1257FE5005D438D">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.7" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="2c6" sequence="75" unid="30AEBEC098C3806FC1257FE5005D438D">
 <created><datetime dst="true">20160703T185841,41+02</datetime></created>
-<modified><datetime dst="true">20160904T131450,31+02</datetime></modified>
-<revised><datetime dst="true">20160904T131450,29+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160904T131450,29+02</datetime></lastaccessed>
+<modified><datetime dst="true">20161003T160224,81+02</datetime></modified>
+<revised><datetime dst="true">20161003T160224,79+02</datetime></revised>
+<lastaccessed><datetime dst="true">20161003T160224,79+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20160711T105437,65+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
 <wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
@@ -11,10 +11,10 @@
 <item name="$TITLE" sign="true"><text>hr_jobs.xsp</text></item>
 
 
-
+<item name="$FileNames" sign="true"><text>hr_jobs.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5</text></item>
 
 
 
 
-<item name="$FileNames" sign="true"><text>hr_jobs.xsp</text></item></note>
+</note>

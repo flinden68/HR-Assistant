@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="bbe" sequence="168" unid="051569FA8050B0F8C1257FF500738EFF">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.7" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="bbe" sequence="229" unid="051569FA8050B0F8C1257FF500738EFF">
 <created><datetime dst="true">20160719T230212,47+02</datetime></created>
-<modified><datetime dst="true">20160904T151754,73+02</datetime></modified>
-<revised><datetime dst="true">20160904T151754,71+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160904T151754,71+02</datetime></lastaccessed>
+<modified><datetime dst="true">20161003T160223,93+02</datetime></modified>
+<revised><datetime dst="true">20161003T160223,91+02</datetime></revised>
+<lastaccessed><datetime dst="true">20161003T160223,91+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20160719T230212,47+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
 <wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
@@ -11,12 +11,12 @@
 <item name="$TITLE" sign="true"><text>watson_toneanalyzer.xsp</text></item>
 
 
+
+
+<item name="$FileNames" sign="true"><text>watson_toneanalyzer.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5.2</text></item>
 
 
 
 
-
-
-
-<item name="$FileNames" sign="true"><text>watson_toneanalyzer.xsp</text></item></note>
+</note>

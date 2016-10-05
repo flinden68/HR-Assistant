@@ -79,10 +79,12 @@ public class RestUtil {
 				postRequest.addHeader(entry.getKey(), entry.getValue());
 			}
 		}
-
-	//	XPagesUtil.showErrorMessage("posting with header Auth: " + HEADER_AUTHORIZATION
-		//		+ ": " + auth + ", url: " + url);
-
+		/*
+		 * XPagesUtil.showErrorMessage("posting with header Auth: " +
+		 * HEADER_AUTHORIZATION + ": " + auth + ", url: " + url +
+		 * ", content type: " + contentType + ", postDataString:" +
+		 * postDataString);
+		 */
 		return executor.execute(
 				postRequest.bodyString(postDataString, contentType))
 				.handleResponse(responseHandler);

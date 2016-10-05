@@ -58,9 +58,13 @@ public class PersonalityInsightsService extends CloudService implements
 		try {
 			super.connect();
 			ContentItem ci = req.getFirstContentItem();
+			// String response = RestUtil.post(API_URL, bluemixUtil
+			// .getAuthorizationHeader(), null, ci.getContent(),
+			// ContentType.TEXT_PLAIN);
+
 			String response = RestUtil.post(API_URL, bluemixUtil
-					.getAuthorizationHeader(), null, ci.getContent(),
-					ContentType.TEXT_PLAIN);
+					.getAuthorizationHeader(), null, req.getFirstContentItem()
+					.getContent(), ContentType.TEXT_PLAIN);
 
 			// XPagesUtil.showErrorMessage(response);
 			// mapper.enable(DeserializationFeature.UNWRAP_ROOT_VALUE);

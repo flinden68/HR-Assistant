@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="6e2" sequence="149" unid="A5A9D608BDEFF1A1C1257FD200483451">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.7" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="6e2" sequence="163" unid="A5A9D608BDEFF1A1C1257FD200483451">
 <created><datetime dst="true">20160614T150839,85+02</datetime></created>
-<modified><datetime dst="true">20160712T144233,16+02</datetime></modified>
-<revised><datetime dst="true">20160712T144233,14+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160712T144233,14+02</datetime></lastaccessed>
+<modified><datetime dst="true">20161003T160225,37+02</datetime></modified>
+<revised><datetime dst="true">20161003T160225,35+02</datetime></revised>
+<lastaccessed><datetime dst="true">20161003T160225,35+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20160711T105440,28+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
 <wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>

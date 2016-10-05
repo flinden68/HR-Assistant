@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="b12" sequence="96" unid="5A7F24FE20406BDCC1257FEF0072F624">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.7" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="b12" sequence="142" unid="5A7F24FE20406BDCC1257FEF0072F624">
 <created><datetime dst="true">20160713T225541,16+02</datetime></created>
-<modified><datetime dst="true">20160904T123906,84+02</datetime></modified>
-<revised><datetime dst="true">20160904T123906,82+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160904T123906,82+02</datetime></lastaccessed>
+<modified><datetime dst="true">20161003T160227,05+02</datetime></modified>
+<revised><datetime dst="true">20161003T160227,03+02</datetime></revised>
+<lastaccessed><datetime dst="true">20161003T160227,03+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20160713T225541,16+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
 <wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$Flags"><text>gC~4K</text></item>
 <item name="$TITLE" sign="true"><text>appl_jobapplication.xsp</text></item>
+
+
+<item name="$FileNames" sign="true"><text>appl_jobapplication.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
 
 
-
-
-
-<item name="$FileNames" sign="true"><text>appl_jobapplication.xsp</text></item></note>
+</note>

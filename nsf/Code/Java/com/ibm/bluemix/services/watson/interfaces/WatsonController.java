@@ -9,3 +9,4 @@ public abstract interface WatsonController {
 	public void analyzeTextAllWatsonServices();
 
 }
+ 

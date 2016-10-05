@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.6" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="bce" sequence="61" unid="69A0BEE2DEA37159C12580000068A188">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.7" replicaid="C1257FD30065445B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="bce" sequence="94" unid="69A0BEE2DEA37159C12580000068A188">
 <created><datetime dst="true">20160730T210250,96+02</datetime></created>
-<modified><datetime dst="true">20160904T124414,80+02</datetime></modified>
-<revised><datetime dst="true">20160904T124414,78+02</datetime></revised>
-<lastaccessed><datetime dst="true">20160904T124414,78+02</datetime></lastaccessed>
+<modified><datetime dst="true">20161003T160225,85+02</datetime></modified>
+<revised><datetime dst="true">20161003T160225,83+02</datetime></revised>
+<lastaccessed><datetime dst="true">20161003T160225,83+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20160730T210250,96+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></updatedby>
 <wassignedby><name>CN=Frédéric Dehédin/O=Belsoft-DEV</name></wassignedby>
 <item name="$Flags"><text>gC~4;</text></item>
 <item name="$TITLE"><text>chart_typeSelection.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5.2</text></item>
-
-
-
 
 
 
 
 <item name="$FileNames" sign="true"><text>chart_typeSelection.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5.2</text></item>
+
+
+
 
 </note>
