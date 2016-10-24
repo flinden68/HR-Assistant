@@ -17,6 +17,7 @@ The handling of the application should be self-explaining. However, here are som
 The application make use of 2 external OSGi plugins to do the heavy lifting of JSON Conversion and connection with Cloudant.
 The OSGi plugins, including the update sites can be found in the Bitbucket repositories.
 Cloudant connector - https://bitbucket.org/flinden68/cloudant-connector
+
 Jackson Mapper plugin - https://bitbucket.org/flinden68/jackson-json-mapper-plugin 
 
 ###Login
