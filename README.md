@@ -13,7 +13,11 @@ This Bluemix application is leveraging IBM Watson services which are helping:
 The Application is available here: https://hrassistant.eu-gb.mybluemix.net/
 
 The handling of the application should be self-explaining. However, here are some key points:
- 
+
+The application make use of 2 external OSGi plugins to do the heavy lifting of JSON Conversion and connection with Cloudant.
+The OSGi plugins, including the update sites can be found in the Bitbucket repositories.
+Cloudant connector - https://bitbucket.org/flinden68/cloudant-connector
+Jackson Mapper plugin - https://bitbucket.org/flinden68/jackson-json-mapper-plugin 
 
 ###Login
 The application has no proper login yet. In order to keep spam bots away, we integrated a simple Demo-Login. You can choose whatever use name you like, just enter the correct password which will be provided in the login form.
