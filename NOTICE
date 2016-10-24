@@ -9,8 +9,10 @@ This product includes software contributed to
 OpenNTF Alliance – (http://www.OpenNTF.org/)
 
 This package contains the following open source components: 
-Cloudant connector, https://bitbucket.org/flinden68/cloudant-connector
-Jackson Mapper plugin, https://bitbucket.org/flinden68/jackson-json-mapper-plugin
+Cloudant connector
+https://bitbucket.org/flinden68/cloudant-connector/src/eb9ce68c9eea4b4e9ceafa700e41f3be1f00d9da/license?at=master&fileviewer=file-view-default
+Jackson Mapper plugin
+https://bitbucket.org/flinden68/jackson-json-mapper-plugin/src/0d8291cdd4a445919e7cf40bac1a5f7c9239de56/license?at=master&fileviewer=file-view-default
 
 OpenLogItem.java
  <!-- 
