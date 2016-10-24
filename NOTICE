@@ -10,44 +10,55 @@ OpenNTF Alliance – (http://www.OpenNTF.org/)
 
 This package contains the following open source components: 
 Cloudant connector
-https://bitbucket.org/flinden68/cloudant-connector/src/eb9ce68c9eea4b4e9ceafa700e41f3be1f00d9da/license?at=master&fileviewer=file-view-default
+https://bitbucket.org/flinden68/cloudant-connector/
 
 Jackson Mapper plugin
-https://bitbucket.org/flinden68/jackson-json-mapper-plugin/src/0d8291cdd4a445919e7cf40bac1a5f7c9239de56/license?at=master&fileviewer=file-view-default
+https://bitbucket.org/flinden68/jackson-json-mapper-plugin/
 
 RestUtil.java and BluemixContextUtil.java
-https://github.com/OpenNTF/XPages-Fusion-Application/blob/master/LICENSE
+https://github.com/OpenNTF/XPages-Fusion-Application/
 
 AdminLTE
-https://github.com/almasaeed2010/AdminLTE/blob/master/LICENSE
+https://github.com/almasaeed2010/AdminLTE/
 
 Bootstrap
-http://getbootstrap.com/getting-started/#license-faqs
+http://getbootstrap.com/
 
 ChartJS
-https://github.com/chartjs/Chart.js/blob/master/LICENSE.md
+https://github.com/chartjs/Chart.js/
 
 JQuery datatables
-https://datatables.net/license/mit
+https://datatables.net/
 
 eonasdan-bootstrap-datetimepicker
-https://github.com/Eonasdan/bootstrap-datetimepicker/blob/master/LICENSE
+https://github.com/Eonasdan/bootstrap-datetimepicker/
 
 JQuery
-https://github.com/jquery/jquery/blob/master/LICENSE.txt
+https://github.com/jquery/jquery/
 
 JQueryUI
-https://github.com/jquery/jquery-ui/blob/master/LICENSE.txt
+https://github.com/jquery/jquery-ui/
 
 MomentJS
-https://github.com/moment/moment/blob/497f918515ae6ab900f008f19523b1e4ae5e2450/README.md
+https://github.com/moment/moment
 
 Apache Commons Codec
+http://commons.apache.org/proper/commons-codec/
+
 Apache Commons IO
+http://commons.apache.org/io/
+
 Apache Commons Lang
+http://commons.apache.org/proper/commons-lang/
+
+Apache HTTPComponents Client
+http://hc.apache.org/downloads.cgi
+
+Apache HttpComponents Core
+Available from http://archive.apache.org/dist/httpcomponents/
 
 Harmcrest
-https://github.com/hamcrest/JavaHamcrest/blob/master/LICENSE.txt
+https://github.com/hamcrest/JavaHamcrest
 
 OpenLogItem.java
  <!-- 
