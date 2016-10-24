@@ -11,8 +11,43 @@ OpenNTF Alliance – (http://www.OpenNTF.org/)
 This package contains the following open source components: 
 Cloudant connector
 https://bitbucket.org/flinden68/cloudant-connector/src/eb9ce68c9eea4b4e9ceafa700e41f3be1f00d9da/license?at=master&fileviewer=file-view-default
+
 Jackson Mapper plugin
 https://bitbucket.org/flinden68/jackson-json-mapper-plugin/src/0d8291cdd4a445919e7cf40bac1a5f7c9239de56/license?at=master&fileviewer=file-view-default
+
+RestUtil.java and BluemixContextUtil.java
+https://github.com/OpenNTF/XPages-Fusion-Application/blob/master/LICENSE
+
+AdminLTE
+https://github.com/almasaeed2010/AdminLTE/blob/master/LICENSE
+
+Bootstrap
+http://getbootstrap.com/getting-started/#license-faqs
+
+ChartJS
+https://github.com/chartjs/Chart.js/blob/master/LICENSE.md
+
+JQuery datatables
+https://datatables.net/license/mit
+
+eonasdan-bootstrap-datetimepicker
+https://github.com/Eonasdan/bootstrap-datetimepicker/blob/master/LICENSE
+
+JQuery
+https://github.com/jquery/jquery/blob/master/LICENSE.txt
+
+JQueryUI
+https://github.com/jquery/jquery-ui/blob/master/LICENSE.txt
+
+MomentJS
+https://github.com/moment/moment/blob/497f918515ae6ab900f008f19523b1e4ae5e2450/README.md
+
+Apache Commons Codec
+Apache Commons IO
+Apache Commons Lang
+
+Harmcrest
+https://github.com/hamcrest/JavaHamcrest/blob/master/LICENSE.txt
 
 OpenLogItem.java
  <!-- 
