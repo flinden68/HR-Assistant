@@ -2,12 +2,6 @@ OpenNTF Alliance HR Assistant
 Copyright 2016 Belsoft Collaboration AG
 Copyright 2016 elstar IT
 
-OpenNTF Alliance Client Level Tracking
-©  Copyright IBM Corp. 2009
-
-This product includes software contributed to
-OpenNTF Alliance – (http://www.OpenNTF.org/)
-
 This package contains the following open source components: 
 Cloudant connector
 https://bitbucket.org/flinden68/cloudant-connector/
@@ -16,49 +10,64 @@ Jackson Mapper plugin
 https://bitbucket.org/flinden68/jackson-json-mapper-plugin/
 
 RestUtil.java and BluemixContextUtil.java
+Licensed under Apache 2.0
 https://github.com/OpenNTF/XPages-Fusion-Application/
 
 AdminLTE
 https://github.com/almasaeed2010/AdminLTE/
+Licensed under MIT
 
 Bootstrap
 http://getbootstrap.com/
+Licensed under MIT
 
 ChartJS
 https://github.com/chartjs/Chart.js/
+Licensed under MIT
 
 JQuery datatables
 https://datatables.net/
+Licensed under MIT
 
 eonasdan-bootstrap-datetimepicker
 https://github.com/Eonasdan/bootstrap-datetimepicker/
+Licensed under MIT
 
 JQuery
 https://github.com/jquery/jquery/
+Licensed under Apache 2.0
 
 JQueryUI
 https://github.com/jquery/jquery-ui/
+Licensed under Apache 2.0
 
 MomentJS
 https://github.com/moment/moment
+Licensed under Apache 2.0
 
 Apache Commons Codec
+Licensed under Apache 2.0
 http://commons.apache.org/proper/commons-codec/
 
 Apache Commons IO
+Licensed under Apache 2.0
 http://commons.apache.org/io/
 
 Apache Commons Lang
+Licensed under Apache 2.0
 http://commons.apache.org/proper/commons-lang/
 
 Apache HTTPComponents Client
+Licensed under Apache 2.0
 http://hc.apache.org/downloads.cgi
 
 Apache HttpComponents Core
+Licensed under Apache 2.0
 Available from http://archive.apache.org/dist/httpcomponents/
 
 Harmcrest
 https://github.com/hamcrest/JavaHamcrest
+Licensed under BSD
 
 OpenLogItem.java
  <!-- 
