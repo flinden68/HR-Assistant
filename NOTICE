@@ -4,9 +4,11 @@ Copyright 2016 elstar IT
 
 This package contains the following open source components: 
 Cloudant connector
+icensed under Apache 2.0
 https://bitbucket.org/flinden68/cloudant-connector/
 
 Jackson Mapper plugin
+icensed under Apache 2.0
 https://bitbucket.org/flinden68/jackson-json-mapper-plugin/
 
 RestUtil.java and BluemixContextUtil.java
