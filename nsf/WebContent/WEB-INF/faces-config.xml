@@ -258,18 +258,18 @@
     <managed-property>
       <property-name>account</property-name>
       <value>
-				f44a2403-965e-4345-bc84-4fd485047735-bluemix:e0ab6592f8d6a0192d8d819fbe656a112f54fc82464a46ca9005cdc63b396d4a@f44a2403-965e-4345-bc84-4fd485047735-bluemix
+				CLOUDANT ACCOUNT
 			</value>
     </managed-property>
     <managed-property>
       <property-name>username</property-name>
-      <value>f44a2403-965e-4345-bc84-4fd485047735-bluemix
+      <value>CLOUDANT USERNAME
 			</value>
     </managed-property>
     <managed-property>
       <property-name>password</property-name>
       <value>
-				e0ab6592f8d6a0192d8d819fbe656a112f54fc82464a46ca9005cdc63b396d4a
+				CLOUDANT PASSWORD
 			</value>
     </managed-property>
     <managed-property>
@@ -286,13 +286,13 @@
     <managed-bean-scope>session</managed-bean-scope>
     <managed-property>
       <property-name>username</property-name>
-      <value>dab3983d-7c06-4a51-b1f2-d50bd211d093
+      <value>TONEANALYSER USERNAME
 			</value>
     </managed-property>
     <managed-property>
       <property-name>password</property-name>
       <value>
-				G41GQt8q6J5I
+				TONEANALYSER PASSWORD
 			</value>
     </managed-property>
   </managed-bean>
@@ -305,13 +305,13 @@
     <managed-bean-scope>session</managed-bean-scope>
     <managed-property>
       <property-name>username</property-name>
-      <value>d4b38d0d-f879-432f-bad9-cf9aedbc7155
+      <value>PERSONALINSIGHT USERNAME
 			</value>
     </managed-property>
     <managed-property>
       <property-name>password</property-name>
       <value>
-				p8v0RkpX8WTa
+				PERSONALINSIGHT PASSWORD
 			</value>
     </managed-property>
   </managed-bean>
@@ -324,7 +324,7 @@
     <managed-bean-scope>session</managed-bean-scope>
     <managed-property>
       <property-name>apiKey</property-name>
-      <value>8d206d1c3b19f8b729ed3f28f518804ea6353bf5
+      <value>ALCHEMY APIKEY
 			</value>
     </managed-property>
   </managed-bean>
