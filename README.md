@@ -15,16 +15,17 @@ The Application is available here: https://hrassistant.eu-gb.mybluemix.net/
 The handling of the application should be self-explaining. However, here are some key points:
  
 
-###Login
+### Login
 The application has no proper login yet. In order to keep spam bots away, we integrated a simple Demo-Login. You can choose whatever use name you like, just enter the correct password which will be provided in the login form.
 The Login also lets you choose a role. To access all features of the app, choose the Role “Administrator”.
  
 
-###Job Listing (Role “Job Applicant” and “Administrator”)
+### Job Listing (Role “Job Applicant” and “Administrator”)
 The job applicants seeking a job can browse and search for available job offers. By pressing “apply” the job applicant can enter and submit his personal data and most important: the cover letter.
  
 
-###Dashboard (Role “HR / Backoffice” and “Administrator”)
+### Dashboard (Role “HR / Backoffice” and “Administrator”)
 Data is presented to the HR / Backoffice employee in a graphical manner. Only recent data is being considered in the charts. It is used to have a quick overview of recent data.
-###Backoffice (Role “HR / Backoffice” and “Administrator”)
+
+### Backoffice (Role “HR / Backoffice” and “Administrator”)
 Jobs, Job Applications, Companies and Configurations can be managed in a convienient way. The HR / Backoffice employee can also analyze individual job applications and jobs with IBM Watson Services.
